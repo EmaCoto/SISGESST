@@ -16,11 +16,18 @@
 
         <!-- Styles -->
         @livewireStyles
+        <style>
+            /* Estilo para el input radio seleccionado */
+            .hidden:checked + label {
+
+                color: rgb(108, 162, 233);
+            }
+        </style>
     </head>
     <body class="font-sans antialiased">
         <x-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->

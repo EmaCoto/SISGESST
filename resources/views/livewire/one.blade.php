@@ -1,10 +1,4 @@
-<div>
-    <style>
-        /* Estilo para el input cuando está seleccionado */
-        #process:checked + label {
-            @apply text-sky-500;
-        }
-    </style>
+<div class="bg-transparent">
     <div class="mt-10 w-3/4 rounded-3xl border shadow-lg shadow-slate-200 flex flex-col justify-center m-auto p-4">
         <div class="">
             <div class="flex justify-center">
@@ -17,19 +11,28 @@
         <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-white via-green-500 from-white bg-gradient-to-r ">
         <div>
             <div class="flex flex-row-reverse w-10/12 m-auto">
-                <div class="text-green-500 m-5">
+                {{-- <div class="text-green-500 m-5">
                     <a href="{{ route('process.create') }}" class=" border border-gray-100 hover:border-green-500 font-medium rounded-lg text-sm pl-8 pr-2 py-2.5 mb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-2 w-6 h-6 mb-2 absolute">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>Añadir
                     </a>
-                </div>
+                </div> --}}
+                    <a href="{{ route('process.create') }}" class=" rounded-lg  relative w-36 h-10 cursor-pointer flex items-center border border-green-500 bg-green-500 group hover:bg-green-500 active:bg-green-500 active:border-green-500">
+                        <span class="text-white font-semibold ml-8 transform group-hover:translate-x-20 transition-all duration-300">Add Item</span>
+                        <span class="absolute right-0 h-full w-10 rounded-lg bg-green-500 flex items-center justify-center transform group-hover:translate-x-0 group-hover:w-full transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg w-8 text-white">
+                                <line y2="19" y1="5" x2="12" x1="12"></line>
+                                <line y2="12" y1="12" x2="19" x1="5"></line>
+                            </svg>
+                        </span>
+                    </a>
             </div>
             <ul class="m-auto w-10/12">
                 @forelse ($process as $processes)
                     <li>
                         <div class="flex justify-between hover:bg-black hover:bg-opacity-10 rounded-lg items-center">
-                            <input type="radio" name="process" id="process-{{ $processes->id }}" class="hidden" >
+                            <input type="radio" wire:model="selectedProcess" name="process" id="process-{{ $processes->id }}" class="hidden" value="{{ $processes->id }}" >
                             <label for="process-{{ $processes->id }}" class="font-medium cursor-pointer p-5 hover:text-sky-600 active:text-violet-700">{{ $processes->name }}</label>
                             <div class="flex m-2">
                                 <a href="{{ route('process.show', $processes) }}" class="mx-2 p-1 rounded-lg flex items-center bg-green-500 text-white hover:bg-green-800 hover:text-white">
@@ -70,11 +73,12 @@
             </ul>
 
             <div class="flex justify-center mt-8 p-6">
-                    <div>
-                        <button type="submit" class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 w-28 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Siguiente</button>
-                    </div>
+                <div>
+                    <button type="submit" wire:click="nextStep" class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 w-28 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" wire:loading.attr="disabled" @if (!$selectedProcess) disabled @endif>Siguiente</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 

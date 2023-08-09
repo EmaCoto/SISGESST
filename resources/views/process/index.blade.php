@@ -1,7 +1,8 @@
 <x-app-layout>
 <div>
     <div class="m-10">
-        <x-evaluation.one :process="$process" />
+        <livewire:one :process="$process" />
+        <livewire:two>
     </div>
 </div>
 </x-app-layout>
