@@ -23,8 +23,9 @@
                 color: rgb(108, 162, 233);
             }
         </style>
+        <title>sisgesst</title>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-container bg-cover bg-no-repeat bg-fixed">
         <x-banner />
 
         <div class="min-h-screen">

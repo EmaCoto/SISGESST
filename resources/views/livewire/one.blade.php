@@ -1,5 +1,5 @@
-<div class="bg-transparent">
-    <div class="mt-10 w-3/4 rounded-3xl border shadow-lg shadow-slate-200 flex flex-col justify-center m-auto p-4">
+
+    <div class="mt-10 w-4/5 rounded-3xl border shadow-lg shadow-slate-200 flex flex-col justify-center m-auto p-4 bg-white">
         <div class="">
             <div class="flex justify-center">
                 <h1 class="text-xl font-bold m-4">PROCESOS</h1>
@@ -79,6 +79,6 @@
             </div>
         </div>
     </div>
-</div>
+
 
 
