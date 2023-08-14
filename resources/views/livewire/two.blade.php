@@ -9,7 +9,6 @@
                             <p class="text-justify w-11/12">Seleccione la actividad quae aut quia illum nulla officiis fuga!</p>
                             <div class="w-full mt-2">
                                 <select name="" id="" class="w-11/12 border-0 border-b focus:border-b-green-500 shadow-sm shadow-slate-400 focus:rounded-t-xl focus:rounded-b-none rounded-full  focus:outline-none focus:ring-0">
-                                        <input type="search" name="" id="" wire:model="search">
                                         <option>Aislamiento de insumo</option>
                                         <option>Mezcla de insumo</option>
                                         <option>Calentamiento de la mezcla</option>

@@ -3,7 +3,7 @@
         <form action="{{ route('process.update', $process) }}" method="POST" class="mt-1">
             @method('PUT')
             @csrf
-
+            
             <div class="relative z-0 w-full mb-6 group">
                 <h1 class="font-bold text-lg">{{ $process->name }}</h1>
             </div>

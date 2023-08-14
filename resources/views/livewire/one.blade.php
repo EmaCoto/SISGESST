@@ -23,16 +23,7 @@
                         </svg>Añadir
                     </a>
                 </div> --}}
-            <a href="{{ route('process.create') }}" class=" rounded-lg  relative w-36 h-10 cursor-pointer flex items-center border border-green-500 bg-green-500 group hover:bg-green-500 active:bg-green-500 active:border-green-500">
-                <span class="text-white font-semibold ml-8 transform group-hover:translate-x-20 transition-all duration-300">Añadir</span>
-                <span class="absolute right-0 h-full w-10 rounded-lg bg-green-500 flex items-center justify-center transform group-hover:translate-x-0 group-hover:w-full transition-all duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24"
-                        fill="none" class="svg w-8 text-white">
-                        <line y2="19" y1="5" x2="12" x1="12"></line>
-                        <line y2="12" y1="12" x2="19" x1="5"></line>
-                    </svg>
-                </span>
-            </a>
+            <livewire:process.create/>
         </div>
         <ul class="m-auto mt-4 w-10/12">
             @forelse ($process as $processes)
@@ -41,20 +32,11 @@
                         <input type="radio" wire:model="selectedProcess" name="process" id="process-{{ $processes->id }}" class="hidden" value="{{ $processes->id }}">
                         <label for="process-{{ $processes->id }}" class="font-medium cursor-pointer p-5 hover:text-sky-600 active:text-violet-700">{{ $processes->name }}</label>
                         <div class="flex m-2">
-                            <a href="{{ route('process.show', $processes) }}"
-                                class="mx-2 p-1 rounded-lg flex items-center bg-green-500 text-white hover:bg-green-800 hover:text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </a>
-                            <a href="{{ route('process.edit', $processes) }}"
-                                class="mx-2 p-1 rounded-lg flex items-center bg-blue-500 text-white hover:bg-blue-800 hover:text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                                </svg>
-                            </a>
+
+                            @livewire('process.show', ['processes' => $processes], key(time().$processes->id))
+                        
+                            @livewire('process.edit', ['processes' => $processes], key(time().$processes->id))
+
 
                             <form action="{{ route('process.destroy', $processes) }}" method="POST">
                                 @csrf
