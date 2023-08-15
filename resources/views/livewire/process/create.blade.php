@@ -1,5 +1,5 @@
 <div>
-    <button class=" rounded-lg  relative w-36 h-10 cursor-pointer flex items-center border border-green-500 bg-green-500 group hover:bg-green-500 active:bg-green-500 active:border-green-500" wire:click="$set('open', 'false')">
+    <button class=" rounded-lg  relative w-36 h-10 cursor-pointer flex items-center border border-green-500 bg-green-500 group hover:bg-green-500 active:bg-green-500 active:border-green-500" wire:click="$set('open', 'true')">
         <span class="text-white font-semibold ml-8 transform group-hover:translate-x-20 transition-all duration-300">Añadir</span>
         <span class="absolute right-0 h-full w-10 rounded-lg bg-green-500 flex items-center justify-center transform group-hover:translate-x-0 group-hover:w-full transition-all duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24"
@@ -18,30 +18,36 @@
 
         <x-slot name='content'>
             <div>
-                <form action="{{ route('process.store') }}" method="POST" class="mt-1">
+                {{-- <div class="flex justify-end w-full align-middle text-lg font-bold">
+                    <span>cerrar</span>
+                    <div class="mx-2 group w-8 h-8 rounded-l-full rounded-br-full hover:rotate-45 ease-in duration-300 bg-green-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="group-hover:rotate-45 ease-in duration-300" wire:click="$set('open', false)">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                </div> --}}
+                <span class="text-gray-100 block text-center text-2xl font-bold my-4 bg-green-500 w-full px-6 py-2 rounded-lg shadow-md shadow-gray-400">Crear proceso</span>
+                <form wire:submit.prevent="save">
                     @csrf
-
                     <div class="relative z-0 w-full mb-6 group">
-                        <input type="text" name="name" id="name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                        <label for="name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre</label>
+                        <label for="name" class="block text-lg font-semibold mb-2">Proceso:</label>
+                        <x-input wire:model="name" name="name" id="name" placeholder="Example: Elaboración de anillo simbléfaron" class=""/>
+                        <x-input-error for="name"/>
                     </div>
-
                     <div class="relative z-0 w-full mb-6 mt-6 group">
-                        <textarea name="description" id="description" class="block h-24 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required></textarea>
-                        <label for="description" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Descripción</label>
-                    </div>
+                        <label for="description" class="block text-lg font-semibold mb-2">Descripcion:</label>
+                        <textarea rows="6" name="description" id="description" class="bg-gray-200 focus:bg-gray-50 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full h-44" wire:model="description"  placeholder="Example: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut sint eum repellat. Consequuntur debitis eius animi odit quis deleniti sequi deserunt nulla neque quisquam suscipit, exercitationem, tenetur libero aut sapiente."></textarea>
 
-                    <div>
-                        <a href="{{ route('process.index') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9 absolute cursor-pointer rounded-full hover:bg-green-500 grid grid-cols-3 gap-4 content-center hover:bg-opacity-20 p-1 ">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"/>
-                            </svg>
-                        </a>
-                        <input type="submit" value="Añadir proceso" class="text-white flex cursor-pointer justify-center m-auto bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                        <x-input-error for="description"/>
+                    </div>
+                    <div class="pyt-1 flex justify-center">
+                        <x-secondary-button class="mr-6 bg-gray-300" wire:click="$set('open', false)">
+                            Cancelar
+                        </x-secondary-button>
+                        <input type="submit" value="Añadir proceso" class="text-white flex cursor-pointer bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                     </div>
                 </form>
             </div>
         </x-slot>
-
     </x-dialog-modal>
 </div>

@@ -16,13 +16,6 @@
                   </svg>
                 <input type="text" name="" id="" wire:model="search" class="rounded-lg h-10 pl-8 border-2 focus:border-green-500 w-96 focus:ring-0" placeholder="Buscar...">
             </div>
-            {{-- <div class="text-green-500 m-5">
-                    <a href="{{ route('process.create') }}" class=" border border-gray-100 hover:border-green-500 font-medium rounded-lg text-sm pl-8 pr-2 py-2.5 mb-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-2 w-6 h-6 mb-2 absolute">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>Añadir
-                    </a>
-                </div> --}}
             <livewire:process.create/>
         </div>
         <ul class="m-auto mt-4 w-10/12">
@@ -32,21 +25,16 @@
                         <input type="radio" wire:model="selectedProcess" name="process" id="process-{{ $processes->id }}" class="hidden" value="{{ $processes->id }}">
                         <label for="process-{{ $processes->id }}" class="font-medium cursor-pointer p-5 hover:text-sky-600 active:text-violet-700">{{ $processes->name }}</label>
                         <div class="flex m-2">
-
                             @livewire('process.show', ['processes' => $processes], key(time().$processes->id))
-                        
+
                             @livewire('process.edit', ['processes' => $processes], key(time().$processes->id))
 
-
-                            <form action="{{ route('process.destroy', $processes) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
                                 <button type="submit" class="mx-2 p-1 rounded-lg flex items-center bg-red-500 text-white hover:bg-red-800 hover:text-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
                                     </svg>
                                 </button>
-                            </form>
+
                         </div>
                     </div>
                 </li>
@@ -68,4 +56,5 @@
             </div>
         </div>
     </div>
+    
 </div>

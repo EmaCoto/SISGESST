@@ -16,14 +16,7 @@
 
         <!-- Styles -->
         @livewireStyles
-        <style>
-            /* Estilo para el input radio seleccionado */
-            .hidden:checked + label {
-
-                color: rgb(108, 162, 233);
-            }
-        </style>
-        <title>sisgesst</title>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body class="font-sans antialiased bg-container bg-cover bg-no-repeat bg-fixed">
         <x-banner />
@@ -49,5 +42,13 @@
         @stack('modals')
 
         @livewireScripts
+        <script>
+            livewire.on('alert', function(message){
+                Swal.fire(
+                    'Good job!',
+                    message,
+                    'success')
+            })
+        </script>
     </body>
 </html>

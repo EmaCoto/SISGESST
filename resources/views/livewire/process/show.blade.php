@@ -15,10 +15,6 @@
 
         <x-slot name='content'>
             <div class="">
-                <form action="{{ route('process.update', $processes) }}" method="POST" class="mt-1">
-                    @method('PUT')
-                    @csrf
-
                     <div class="relative z-0 w-full mb-6 group">
                         <h1 class="font-bold text-lg">{{ $processes->name }}</h1>
                     </div>
@@ -30,7 +26,6 @@
                     <div>
                         <input type="submit" value="Cerrar" class="text-white flex justify-center m-auto bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600 hover:bg-gradient-to-br focus:outline-none focus:ring-gray-300 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                     </div>
-                </form>
             </div>
         </x-slot>
 

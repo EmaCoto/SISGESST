@@ -20,7 +20,7 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
             backgroundImage: {
-                'container': "url('/public/img/14.png')",
+                'container': "url('/public/img/bur.png')",
 
               },
         },
