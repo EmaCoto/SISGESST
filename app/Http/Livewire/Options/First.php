@@ -7,6 +7,8 @@ use Livewire\Component;
 class First extends Component
 {
     public $deficiencia = null;
+    public $selectedFirstRange = 0;
+
 
     public $options = [
         'Muy alto' => [
@@ -23,11 +25,21 @@ class First extends Component
         ],
         'Bajo' => [
             'description' => 'No se ha detectado consecuencia alguna, o la eficacia del conjunto de medidas preventivas existentes es alta, o ambas. El riesgo está controlado',
-            'rango' => "NA",
+            'rango' => "",
         ],
     ];
+
+    public function updatedDeficiencia()
+    {
+        if ($this->deficiencia) {
+            $this->selectedFirstRange = $this->options[$this->deficiencia]['rango'];
+        } else {
+            $this->selectedFirstRange = 0;
+        }
+    }
     public function render()
     {
         return view('livewire.options.first');
     }
+
 }

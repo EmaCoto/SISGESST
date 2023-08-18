@@ -22,4 +22,5 @@
                 <span class="text-xs">{{ $options[$exposicion]['description'] }}</span>
             @endif
         </div>
+        {{ $selectedSecondRange }}
     </div>

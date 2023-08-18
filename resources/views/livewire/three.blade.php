@@ -90,11 +90,13 @@
         </div>
         <div>
             <div class="flex p-10 justify-around w-11/12 m-auto">
+
                 <livewire:options.first/>
                 <livewire:options.second/>
-                <livewire:options.third/>
+                {{-- <livewire:options.third/> --}}
 
 
+                
             </div>
         </div>
     </div>

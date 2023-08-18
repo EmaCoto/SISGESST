@@ -21,4 +21,5 @@
                 <span class="text-xs">{{ $options[$deficiencia]['description'] }}</span>
             @endif
         </div>
+        {{ $selectedFirstRange }}
     </div>

@@ -9,9 +9,8 @@ class Third extends Component
     public $probabilidad = null;
 
     public $options = [
-        'Continua' => [
-            'description' => 'La situación de exposición se presenta sin interrupción o varias veces con tiempo prolongado durante la jornada laboral',
-            'rango' => "",
+        'Muy alto' => [
+            'description' => 'Situación deficiente con exposición continua o muy deficiente con exposición frecuente. Normalmente la materialización del riesgo ocurre con frecuencia','rango' => "",
         ],
         'Frecuente' => [
             'description' => 'La situación de exposición se presenta varias veces durante la jornada laboral por tiempos cortos',

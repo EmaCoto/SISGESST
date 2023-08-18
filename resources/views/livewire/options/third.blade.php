@@ -11,9 +11,9 @@
             @endforeach
         </select>
         <div class="w-full ml-2 mt-2 flex items-center justify-center border">
-            @if ($probabilidad)
-                <p class="text-xl font-semibold ">{{ $options[$probabilidad]['rango'] }}</p>
-            @endif
+                <label for="probabilidad">Probabilidad:</label>
+                    <span>{{ $probabilidad }}</span>
+                </select>
         </div>
     </div>
     <div class="mt-2 text-justify">

@@ -7,6 +7,8 @@ use Livewire\Component;
 class Second extends Component
 {
     public $exposicion = null;
+    public $selectedSecondRange = 0;
+
 
     public $options = [
         'Continua' => [
@@ -27,7 +29,15 @@ class Second extends Component
         ],
     ];
 
+    public function updatedExposicion()
+    {
+        if ($this->exposicion) {
+            $this->selectedSecondRange = $this->options[$this->exposicion]['rango'];
 
+        } else {
+            $this->selectedSecondRange = 0;
+        }
+    }
     public function render()
     {
         return view('livewire.options.second');
