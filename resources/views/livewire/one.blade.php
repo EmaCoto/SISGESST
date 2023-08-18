@@ -27,7 +27,8 @@
                             <td class="px-2  text-center">{{ $processes->id }}</td>
                             <td class="px-2  text-justify">{{ $processes->name }}</td>
                             <td class="px-2  text-justify">{{ $processes->description }}</td>
-                            <td class="flex px-2 justify-center m-auto"> @livewire('process.show', ['processes' => $processes], key(time().$processes->id))
+                            <td class="flex px-2 justify-center m-auto">
+                                @livewire('process.show', ['processes' => $processes], key(time().$processes->id))
                                 @livewire('process.edit', ['processes' => $processes], key(time().$processes->id))
                                 <button type="submit" class="mx-2 p-1 rounded-lg flex items-center bg-red-500 text-white hover:bg-red-800 hover:text-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
