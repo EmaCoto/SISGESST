@@ -1,8 +1,10 @@
 {{-- The whole world belongs to you. --}}
 
 
-<div class="w-4/5 mt-10 rounded-3xl border shadow-lg shadow-slate-200 flex flex-col justify-center m-auto p-4 bg-white">
+<div class="w-4/5 mt-10 rounded-lg border shadow-lg shadow-slate-200 flex flex-col justify-center m-auto p-4 bg-white">
     {{--first --}}
+    <form wire:submit.prevent="saveControls">
+        @csrf
         <div>
             <div class=" flex justify-center">
                 <h1 class="text-2xl font-bold mb-10 m-4">MATRIZ DE RIESGOS Y PELIGROS</h1>
@@ -19,7 +21,7 @@
                             </svg>
                         </div>
                         <div class="px-4 py-2 bg-white rounded-b-lg">
-                            <textarea id="editor" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
+                            <textarea wire:model="danger" id="editor" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
                         </div>
                     </div>
                     <div class="w-5/12 mb-2 border border-gray-200 rounded-lg bg-gray-50 focus-within:bg-green-500 ease-in duration-300">
@@ -33,7 +35,7 @@
                             </svg>
                         </div>
                         <div class="px-4 py-2 bg-white rounded-b-lg">
-                            <textarea id="editor" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
+                            <textarea wire:model="effects" id="editor" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
                         </div>
                     </div>
                 </div>
@@ -51,7 +53,7 @@
                             </svg>
                         </div>
                         <div class="px-4 py-2 bg-white rounded-b-lg">
-                            <textarea id="editor" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
+                            <textarea wire:model="source" id="editor" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
                         </div>
                     </div>
                     <div class="w-4/12 m-2 border border-gray-200 rounded-lg bg-gray-50 focus-within:bg-green-500 ease-in duration-300">
@@ -62,7 +64,7 @@
                             <img src="{{ asset('img/technical-support.svg') }}" alt="" class="h-6 w-6">
                         </div>
                         <div class="px-4 py-2 bg-white rounded-b-lg">
-                            <textarea id="editor" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
+                            <textarea wire:model="mean" id="editor" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
                         </div>
                     </div>
                     <div class="w-4/12 m-2 box-border border border-gray-200 rounded-lg bg-gray-50 focus-within:bg-green-500 ease-in duration-300">
@@ -75,13 +77,12 @@
                             </svg>
                         </div>
                         <div class="px-4 py-2 bg-white rounded-b-lg">
-                            <textarea id="editor" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
+                            <textarea wire:model="individual" id="editor" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     {{-- second --}}
     <div>
         <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-white via-green-500 from-white bg-gradient-to-r ">
@@ -91,18 +92,22 @@
         <div>
             <div class="flex p-10 justify-around w-11/12 m-auto">
 
-                <livewire:options.first/>
-                <livewire:options.second/>
-                {{-- <livewire:options.third/> --}}
-
-
-                
+                <livewire:options.first />
+                <livewire:options.second />
+                <livewire:options.third />
             </div>
         </div>
     </div>
+        <div class="flex justify-center mt-8 p-6">
+            <div>
+                <input type="submit" value="Siguiente" class="cursor-pointer text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 w-28 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+            </div>
+        </div>
+    </form>
+
 
     {{-- third --}}
-    <div>
+    {{-- <div>
             <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-white via-green-500 from-white bg-gradient-to-r ">
             <div class="w-11/12 flex justify-between">
                 <div class="w-10/12 flex justify-around m-auto">
@@ -157,13 +162,9 @@
 
                 </div>
             </div>
-    </div>
+    </div> --}}
 
-    <div class="flex justify-center mt-8 p-6">
-        <div>
-            <button type="submit" class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 w-28 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Siguiente</button>
-        </div>
-    </div>
+
 </div>
 
 
