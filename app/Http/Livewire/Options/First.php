@@ -36,10 +36,12 @@ class First extends Component
         } else {
             $this->selectedFirstRange = 0;
         }
+        $this->emit('selectedFirstRangeUpdated', $this->selectedFirstRange);
+
     }
+
     public function render()
     {
         return view('livewire.options.first');
     }
-
 }

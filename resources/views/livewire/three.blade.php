@@ -1,7 +1,7 @@
 {{-- The whole world belongs to you. --}}
 
 
-<div class="w-4/5 mt-10 rounded-lg border shadow-lg shadow-slate-200 flex flex-col justify-center m-auto p-4 bg-white">
+<div class="lg:w-4/5 mt-10 rounded-lg border shadow-lg shadow-slate-200 flex flex-col justify-center m-auto p-4 bg-white">
     {{--first --}}
     <form wire:submit.prevent="saveControls">
         @csrf
@@ -107,7 +107,7 @@
 
 
     {{-- third --}}
-    {{-- <div>
+    <div>
             <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-white via-green-500 from-white bg-gradient-to-r ">
             <div class="w-11/12 flex justify-between">
                 <div class="w-10/12 flex justify-around m-auto">
@@ -162,9 +162,7 @@
 
                 </div>
             </div>
-    </div> --}}
-
-
+    </div>
 </div>
 
 

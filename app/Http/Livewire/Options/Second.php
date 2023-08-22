@@ -37,6 +37,7 @@ class Second extends Component
         } else {
             $this->selectedSecondRange = 0;
         }
+        $this->emit('selectedSecondRangeUpdated', $this->selectedSecondRange);
     }
     public function render()
     {
