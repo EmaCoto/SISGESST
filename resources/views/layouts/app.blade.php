@@ -18,7 +18,7 @@
         @livewireStyles
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
-    <body class="font-sans antialiased bg-container bg-cover bg-no-repeat bg-fixed">
+    <body class="font-sans antialiased bg-container bg-cover bg-no-repeat bg-fixed overflow-hidden">
         <x-banner />
 
         <div class="min-h-screen">
