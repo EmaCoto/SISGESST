@@ -12,7 +12,6 @@ class Third extends Component
     public $SecondRange = 0;
     public $mul = 0;
 
-    
 
     public function selectedFirstRangeUpdated($range)
     {
