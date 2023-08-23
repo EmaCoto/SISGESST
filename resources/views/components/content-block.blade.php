@@ -16,8 +16,7 @@
         margin: 20px 0;
     }
 </style>
-<div class="w-full overflow-hidden py-8" style="height: 93vh">
-    <x-content-block>
 
-    </x-content-block>
+<div id="contentEval" class="bg-gray-100 border-8 border-gray-100 w-4/5 h-full mx-auto rounded-lg py-5 px-20 shadow-lg shadow-gray-600">
+    {{$slot}}
 </div>

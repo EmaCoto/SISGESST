@@ -1,6 +1,5 @@
 <div>
             {{-- <livewire:three /> --}}
-            <livewire:evaluations.evaluation />
-
+            <livewire:companies.index-company />
             {{-- <livewire:four/> --}}
 </div>
