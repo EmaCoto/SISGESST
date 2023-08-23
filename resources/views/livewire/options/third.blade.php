@@ -10,4 +10,7 @@
             {{ $product }}
         </div>
     </div>
+    <div class="mt-2 text-justify">
+        <span class="text-xs">{{ $description }}</span>
+    </div>
 </div>

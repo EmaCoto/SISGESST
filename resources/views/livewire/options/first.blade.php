@@ -16,7 +16,7 @@
                 @endif
             </div>
         </div>
-        <div class="mt-2 text-justify">
+        <div class="mt-2 text-justify h-28">
             @if ($deficiency)
                 <span class="text-xs">{{ $options[$deficiency]['description'] }}</span>
             @endif
