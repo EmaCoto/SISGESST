@@ -83,18 +83,22 @@
                 </div>
             </div>
         </div>
-    {{-- second --}}
+    {{-- second / risk evaluation--}}
     <div>
         <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-white via-green-500 from-white bg-gradient-to-r ">
         <div class="flex justify-center">
             <h1 class="text-xl font-bold mb-10 m-4">EVALUACIÓN DEL RIESGO</h1>
         </div>
         <div>
-            <div class="flex p-10 justify-around w-11/12 m-auto">
-
-                <livewire:options.first />
-                <livewire:options.second />
-                <livewire:options.third />
+            <div class="p-10 justify-around w-11/12 m-auto">
+                <div class="flex">
+                    <livewire:options.first />
+                    <livewire:options.second />
+                    <livewire:options.third />
+                </div>
+                <div class="flex">
+                    <livewire:options.fourth />
+                </div>
             </div>
         </div>
     </div>

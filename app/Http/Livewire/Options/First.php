@@ -25,20 +25,25 @@ class First extends Component
         ],
         'Bajo' => [
             'description' => 'No se ha detectado consecuencia alguna, o la eficacia del conjunto de medidas preventivas existentes es alta, o ambas. El riesgo está controlado',
-            'range' => "",
+            'range' => 0,
         ],
     ];
 
+    public function updatedSelectedFirstRange()
+    {
+        $this->emit('selectedFirstRangeUpdated', $this->selectedFirstRange);
+    }
+
     public function updatedDeficiency()
     {
-        if ($this->deficiency) {
-            $this->selectedFirstRange = $this->options[$this->deficiency]['range'];
-        } else {
-            $this->selectedFirstRange = 0;
-        }
-        $this->emit('selectedFirstRangeUpdated', $this->selectedFirstRange);
-
+    if ($this->deficiency) {
+        $this->selectedFirstRange = $this->options[$this->deficiency]['range'];
+    } else {
+        $this->selectedFirstRange = 0;
     }
+
+    $this->updatedSelectedFirstRange(); // Emit the event
+}
 
     public function render()
     {

@@ -29,16 +29,22 @@ class Second extends Component
         ],
     ];
 
+    public function updatedSelectedSecondRange()
+    {
+        $this->emit('selectedSecondRangeUpdated', $this->selectedSecondRange);
+    }
+
     public function updatedExposure()
     {
         if ($this->exposure) {
             $this->selectedSecondRange = $this->options[$this->exposure]['range'];
-
         } else {
             $this->selectedSecondRange = 0;
         }
-        $this->emit('selectedSecondRangeUpdated', $this->selectedSecondRange);
+
+        $this->updatedSelectedSecondRange(); // Emit the event
     }
+
     public function render()
     {
         return view('livewire.options.second');

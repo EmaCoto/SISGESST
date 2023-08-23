@@ -8,24 +8,41 @@ class Third extends Component
 {
     protected $listeners = ['selectedFirstRangeUpdated', 'selectedSecondRangeUpdated'];
 
-    public $FirstRange = 0;
-    public $SecondRange = 0;
-    public $mul = 0;
+
+
+    public $selectedFirstRange = 0;
+    public $selectedSecondRange = 0;
+    public $product = 0;
+    public $probabilityLevel = 'N/A';
 
 
     public function selectedFirstRangeUpdated($range)
     {
-        $this->FirstRange = $range;
+        $this->selectedFirstRange = $range;
+        $this->calculateProductAndProbability();
     }
 
     public function selectedSecondRangeUpdated($range)
     {
-        $this->SecondRange = $range;
+        $this->selectedSecondRange = $range;
+        $this->calculateProductAndProbability();
     }
 
-    public function multi(){
+    private function calculateProductAndProbability()
+    {
+        $this->product = $this->selectedFirstRange * $this->selectedSecondRange;
 
-        // $this->mul = $FirstRange * $SecondRange;
+        if ($this->product >= 2 && $this->product <= 4) {
+            $this->probabilityLevel = 'Bajo';
+        } elseif ($this->product >= 6 && $this->product <= 8) {
+            $this->probabilityLevel = 'Medio';
+        } elseif ($this->product >= 10 && $this->product <= 20) {
+            $this->probabilityLevel = 'Alto';
+        } elseif ($this->product >= 24 && $this->product <= 40) {
+            $this->probabilityLevel = 'Muy Alto';
+        } else {
+            $this->probabilityLevel = 'N/A';
+        }
     }
 
     public function render()
