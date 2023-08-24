@@ -48,6 +48,7 @@ class Third extends Component
         } else {
             $this->probabilityLevel = 'N/A';
         }
+        $this->emit('productUpdated', $this->product);
     }
 
     public function render()
