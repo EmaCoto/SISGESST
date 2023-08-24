@@ -114,60 +114,44 @@
 
     {{-- third --}}
     <div>
-            <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-white via-green-500 from-white bg-gradient-to-r ">
-            <div class="w-11/12 flex justify-between">
-                <div class="w-10/12 flex justify-around m-auto">
-                    <div>
-                        <div class="flex justify-center">
-                            <h1 class="text-xl font-bold mb-10 m-4">VALORACIÓN DEL RIESGO</h1>
-                        </div>
-                        <h1 class="text-sm font-semibold">ACEPTABILIDAD DEL RIESGO</h1>
-                        <p class="w-11/12 text-justify">Seleccione la acepta quae aut quia illum nulla officiis fuga!</p>
-                        <div class="w-full mt-2 ">
-                            <select name="" id="" class="w-11/12 border-0 border-b focus:border-b-green-500 shadow-sm shadow-slate-400 focus:rounded-t-xl focus:rounded-b-none rounded-full  focus:outline-none focus:ring-0">
-                                    <option>Aceptable</option>
-                                    <option>No aceptable</option>
-                              </select>
-                        </div>
-                    </div>
+        <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-white via-green-500 from-white bg-gradient-to-r ">
+        <div class="w-11/12 flex justify-between">
+            <div class="w-11/12 justify-around m-auto">
+                <div class="flex justify-center">
+                    <h1 class="text-xl font-bold mb-10 m-4">NÚMERO DE EXPUESTOS</h1>
                 </div>
-                <div class="w-11/12 justify-around m-auto">
-                    <div class="flex justify-center">
-                        <h1 class="text-xl font-bold mb-10 m-4">NÚMERO DE EXPUESTOS</h1>
-                    </div>
-                    <div class="flex">
-                        <div>
-                            <h1 class="text-sm font-semibold">VINCULADOS</h1>
-                            <p class="w-11/12 text-justify">Escribe el número de vinculados</p>
-                            <div class="w-full mt-2 ">
-                                <input type="number" id="" class="w-11/12 border-0 border-b focus:border-b-green-500 shadow-sm shadow-slate-400 focus:rounded-t-xl focus:rounded-b-none rounded-full  focus:outline-none focus:ring-0">
-                            </div>
-                        </div>
-                        <div>
-                            <h1 class="text-sm font-semibold">CONTRATISTAS</h1>
-                            <p class="w-11/12 text-justify">Escribe el número de contratistas</p>
-                            <div class="w-full mt-2 ">
-                                <input type="number" id="" class="w-11/12 border-0 border-b focus:border-b-green-500 shadow-sm shadow-slate-400 focus:rounded-t-xl focus:rounded-b-none rounded-full  focus:outline-none focus:ring-0">
-                            </div>
-                        </div>
-                        <div>
-                            <h1 class="text-sm font-semibold">TEMPORALES</h1>
-                            <p class="w-11/12 text-justify">Escribe el número de temporales</p>
-                            <div class="w-full mt-2 ">
-                                <input type="number" id="" class="w-11/12 border-0 border-b focus:border-b-green-500 shadow-sm shadow-slate-400 focus:rounded-t-xl focus:rounded-b-none rounded-full  focus:outline-none focus:ring-0">
-                            </div>
-                        </div>
-                        <div>
-                            <h1 class="text-sm font-semibold">TIEMPO DE EXPOSICIÓN</h1>
-                            <p class="w-11/12 text-justify">Escribe el número de vinculados</p>
-                            <div class="w-full mt-2 ">
-                                <input type="number" id="" class="w-11/12 border-0 border-b focus:border-b-green-500 shadow-sm shadow-slate-400 focus:rounded-t-xl focus:rounded-b-none rounded-full  focus:outline-none focus:ring-0">
-                            </div>
+                <div class="flex">
+                    <div>
+                        <h1 class="text-sm font-semibold">VINCULADOS</h1>
+                        <p class="w-11/12 text-justify">Escribe el número de vinculados</p>
+                        <div class="w-full mt-2 ">
+                            <input type="number" id="" class="w-11/12 border-0 border-b focus:border-b-green-500 shadow-sm shadow-slate-400 focus:rounded-t-xl focus:rounded-b-none rounded-full  focus:outline-none focus:ring-0">
                         </div>
                     </div>
-
+                    <div>
+                        <h1 class="text-sm font-semibold">CONTRATISTAS</h1>
+                        <p class="w-11/12 text-justify">Escribe el número de contratistas</p>
+                        <div class="w-full mt-2 ">
+                            <input type="number" id="" class="w-11/12 border-0 border-b focus:border-b-green-500 shadow-sm shadow-slate-400 focus:rounded-t-xl focus:rounded-b-none rounded-full  focus:outline-none focus:ring-0">
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-sm font-semibold">TEMPORALES</h1>
+                        <p class="w-11/12 text-justify">Escribe el número de temporales</p>
+                        <div class="w-full mt-2 ">
+                            <input type="number" id="" class="w-11/12 border-0 border-b focus:border-b-green-500 shadow-sm shadow-slate-400 focus:rounded-t-xl focus:rounded-b-none rounded-full  focus:outline-none focus:ring-0">
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-sm font-semibold">TIEMPO DE EXPOSICIÓN</h1>
+                        <p class="w-11/12 text-justify">Escribe el número de vinculados</p>
+                        <div class="w-full mt-2 ">
+                            <input type="number" id="" class="w-11/12 border-0 border-b focus:border-b-green-500 shadow-sm shadow-slate-400 focus:rounded-t-xl focus:rounded-b-none rounded-full  focus:outline-none focus:ring-0">
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
     </div>
 </div>
 
