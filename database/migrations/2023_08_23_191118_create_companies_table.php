@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->char('nit',30)->unique(); #nit
-            $table->string('name',60); #nombre
+            $table->char('name',60); #nombre
             $table->string('email', 100);#correo
             $table->integer('number_direct_workers')->default(0); #numero de trabajadores directos
             $table->integer('number_indirect_workers')->default(0); #numero de trabajadores indirectos

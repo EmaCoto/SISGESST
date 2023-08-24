@@ -8,6 +8,7 @@ use Livewire\Component;
 class IndexCompany extends Component
 {
     public $companies;
+    public $search;
     protected $listeners = ['render' => 'render'];
 
     public function mount()
@@ -17,6 +18,8 @@ class IndexCompany extends Component
 
     public function render()
     {
-        return view('livewire.companies.index-company');
+        $companiesSearch = Company::where('name', 'like', '%'. $this->search .'%')->get();
+
+        return view('livewire.companies.index-company', compact('companiesSearch'));
     }
 }
