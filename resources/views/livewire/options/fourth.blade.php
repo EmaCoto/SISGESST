@@ -4,7 +4,7 @@
         <h1 class="font-semibold">NIVEL DE CONSECUENCIA</h1>
     </div>
     <div class="flex">
-        <select wire:model="consequence" class="block cursor-pointer border-black mt-2 border-0 border-b border-t focus:border-t focus:border-b focus:border-0 rounded shadow-lg focus:border-green-500 focus:ring-0 focus:outline-none">
+        <select wire:model="consequence" class="block cursor-pointer bg-gray-100 border focus:bg-white border-gray-300 rounded-lg mt-2 border-b border-t focus:border-t focus:border-b focus:border-0 shadow-lg focus:border-green-500 focus:ring-0 focus:outline-none">
             <option value="">Seleccione una opción</option>
             @foreach ($options as $option => $number)
                 <option class="hover:bg-green-500" value="{{ $option }}">{{ $option }}</option>

@@ -10,7 +10,7 @@ class Fifth extends Component
 
     public $otherValue = 0;
     public $selectedFourthRange = 0;
-    public $intervention = 0;
+    public $intervention = 'N/A';
     public $description;
     public $resultado = 0;
 
@@ -24,8 +24,8 @@ class Fifth extends Component
 
     public function updateProduct($product)
     {
-    $this->otherValue = $product;
-    $this->calculateProductAndFourthRange();
+        $this->otherValue = $product;
+        $this->calculateProductAndFourthRange();
     }
     private function calculateProductAndFourthRange()
     {
@@ -37,15 +37,16 @@ class Fifth extends Component
         } elseif ($this->resultado >= 40 && $this->resultado <= 120) {
             $this->intervention = '120 - 40';
             $this->description='Mejorar si es posible. Sería conveniente justificar la intervención y su rentabilidad.';
-        } elseif ($this->resultado >= 150 && $this->resultado <= 400) {
+        } elseif ($this->resultado >= 150 && $this->resultado <= 500) {
             $this->intervention = '500 - 150';
             $this->description='Corregir y adoptar medidas de control de inmediato. Sin embargo, suspenda actividades si el nivel de riesgo está por encima o igual de 360';
-        } elseif ($this->resultado >= 500 && $this->resultado <= 600) {
+        } elseif ($this->resultado >= 600 && $this->resultado <= 4000) {
             $this->intervention = '4000 - 600';
             $this->description='Situación crítica. Suspender actividades hasta que el riesgo esté bajo control. Intervención urgente';
         } else {
             $this->intervention = 'N/A';
         }
+        $this->emit('resultadoUpdate', $this->resultado);
     }
 
     public function render()

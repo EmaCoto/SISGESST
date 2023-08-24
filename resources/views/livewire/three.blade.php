@@ -99,7 +99,7 @@
                 <div class="flex">
                     <livewire:options.fourth />
                     <livewire:options.fifth />
-
+                    <livewire:options.sixth />
                 </div>
             </div>
         </div>

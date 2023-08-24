@@ -3,7 +3,7 @@
         <h1 class="font-semibold">NIVEL DE RIESGO INTERVENCIÓN (NR)</h1>
     </div>
     <div class="flex">
-        <div class="py-2 w-full text-center mt-2 border-0 border-b border-t rounded shadow-lg border-black">
+        <div class="py-2 w-full block text-center bg-gray-100 border border-gray-300 rounded-lg mt-2 border-b border-t shadow-lg">
             <!-- Mostrar la variable $intervention -->
             <p>{{ $intervention }}</p>
         </div>

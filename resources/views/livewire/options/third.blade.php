@@ -3,7 +3,7 @@
         <h1 class="font-semibold">NIVEL DE PROBABILIDAD (ND*NE)</h1>
     </div>
     <div class="flex">
-        <div class="py-2 w-full text-center mt-2 border-0 border-b border-t rounded shadow-lg border-black">
+        <div class="py-2 w-full block text-center bg-gray-100 border border-gray-300 rounded-lg mt-2 border-b border-t shadow-lg">
             <p>{{ $probabilityLevel }}</p>
         </div>
         <div class="w-full ml-2 mt-2 flex items-center justify-center border text-xl font-semibold ">
