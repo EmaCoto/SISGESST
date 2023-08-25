@@ -1,6 +1,6 @@
 <x-app-layout>
 <div>
-    <div class="m-10">
+    <div>
         <x-welcome />
     </div>
 </div>

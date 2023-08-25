@@ -36,6 +36,7 @@ class Sixth extends Component
             $this->leveldescription = 'No aceptable';
         } else {
             $this->level = 'N/A';
+            $this->leveldescription = '';
         }
     }
 
