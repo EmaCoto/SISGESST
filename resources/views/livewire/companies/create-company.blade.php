@@ -1,5 +1,5 @@
 <div>
-    <button wire:click="$set('open', true)" class="text-gray-100  w-full h-full">Registrar Empresa</button>
+    <button wire:click="$set('open', true)" class="text-gray-100 p-1">Registrar Empresa</button>
 
     <x-dialog-modal wire:model="open">
         <x-slot name="content">
@@ -14,7 +14,7 @@
                 <x-label>Email:</x-label>
                 <x-input type="email" wire:model.defer="email"/>
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid md:grid-cols-2 gap-4">
                     <div>
                         <x-label>Trabajadores directos:</x-label>
                         <x-input type="number" wire:model.defer="direct_workers"/>
@@ -31,7 +31,7 @@
                 <x-label>Cargo:</x-label>
                 <x-input type="text" wire:model.defer="position"/>
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid md:grid-cols-2 gap-4">
                     <div>
                         <x-label>Ciudad:</x-label>
                         <select wire:model.defer="city" class="bg-gray-200 border-2 border-gray-300 rounded-lg h-8 text-sm pt-1 w-full">
@@ -49,7 +49,7 @@
                 </div>
             </div>
 
-            <div class="w-3/5 mx-auto flex justify-between mt-6 mb-1">
+            <div class="w-4/5 md:w-3/5 mx-auto flex justify-between mt-6 mb-1">
                 <button wire:click="$set('open', false)" class="bg-gray-300 px-5 py-1 rounded-lg font-semibold text-lg text-gray-600">Cancelar</button>
                 <button wire:click="save" class="bg-green-600 px-5 py-1 rounded-lg font-semibold text-lg text-gray-100">Registrar</button>
             </div>

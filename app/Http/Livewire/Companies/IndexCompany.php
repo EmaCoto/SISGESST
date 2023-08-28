@@ -7,19 +7,16 @@ use Livewire\Component;
 
 class IndexCompany extends Component
 {
-    public $companies;
     public $search;
     protected $listeners = ['render' => 'render'];
 
-    public function mount()
-    {
-        $this->companies = Company::orderBy('id', 'desc')->get();
-    }
 
     public function render()
     {
-        $companiesSearch = Company::where('name', 'like', '%'. $this->search .'%')->get();
+        $companies = Company::where('name', 'like', '%'. $this->search .'%')
+                            ->orWhere('nit', 'like', '%'. $this->search .'%')
+                            ->orderBy('id', 'desc')->get();
 
-        return view('livewire.companies.index-company', compact('companiesSearch'));
+        return view('livewire.companies.index-company', compact('companies'));
     }
 }
