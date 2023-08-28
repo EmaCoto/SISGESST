@@ -3,14 +3,14 @@
     <x-content-block>
             {{--first --}}
             <form wire:submit.prevent="saveControls">
-                @csrf
+            @csrf
                 <div>
-                    <div class=" flex justify-center">
+                    <div class="flex justify-center">
                         <h1 class="text-2xl font-bold mb-10 m-4">MATRIZ DE RIESGOS Y PELIGROS</h1>
                     </div>
                     <div>
-                        <div class="w-11/12 flex justify-around m-auto">
-                            <div class="w-5/12 mb-2 border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
+                        <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-4 m-auto p-2">
+                            <div class="mb-2 border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
                                 <div class="flex items-center justify-between px-3 py-2">
                                     <div class="flex items-center sm:pr-4">
                                         <h1 class="font-semibold ">PELIGRO (origen)</h1>
@@ -25,7 +25,7 @@
                                     <textarea wire:model="danger" id="" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
                                 </div>
                             </div>
-                            <div class="w-5/12 mb-2 border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
+                            <div class="mb-2 border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
                                 <div class="flex items-center justify-between px-3 py-2">
                                     <div class="flex items-center sm:pr-4">
                                         <h1 class="font-semibold">EFECTOS POSIBLES</h1>
@@ -43,8 +43,8 @@
                         <div class="flex justify-center">
                             <h1 class="text-xl font-bold pt-6 m-4">CONTROLES EXISTENTES</h1>
                         </div>
-                        <div class="flex justify-between w-10/12 m-auto">
-                            <div class="w-4/12 m-2 border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4 m-auto">
+                            <div class="m-2 border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
                                 <div class="flex items-center justify-between px-3 py-2">
                                     <div class="flex items-center sm:pr-4">
                                         <h1 class="font-semibold">FUENTE</h1>
@@ -57,7 +57,7 @@
                                     <textarea wire:model="source" id="" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
                                 </div>
                             </div>
-                            <div class="w-4/12 m-2 border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
+                            <div class="m-2 border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
                                 <div class="flex items-center justify-between px-3 py-2">
                                     <div class="flex items-center sm:pr-4">
                                         <h1 class="font-semibold">MEDIO</h1>
@@ -72,7 +72,7 @@
                                     <textarea wire:model="mean" id="" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
                                 </div>
                             </div>
-                            <div class="w-4/12 m-2 box-border border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
+                            <div class="m-2 md:col-span-2 lg:col-span-1 xl:col-span-1 2xl:col-span-1 box-border border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
                                 <div class="flex items-center justify-between px-3 py-2">
                                     <div class="flex items-center sm:pr-4">
                                         <h1 class="font-semibold">INDIVIDUO</h1>
@@ -95,53 +95,48 @@
                 <div class="flex justify-center">
                     <h1 class="text-xl font-bold mb-10 m-4">EVALUACIÓN DEL RIESGO</h1>
                 </div>
-                <div>
-                    <div class="p-10 justify-around w-11/12 m-auto">
-                        <div class="flex">
+                    <div class="justify-around m-auto">
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4">
                             <livewire:options.first />
                             <livewire:options.second />
                             <livewire:options.third />
-                        </div>
-                        <div class="flex">
                             <livewire:options.fourth />
                             <livewire:options.fifth />
                             <livewire:options.sixth />
                         </div>
                     </div>
-                </div>
             </div>
             {{-- third --}}
-            <div >
+            <div>
                 <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-gray-100 via-green-600 from-gray-100 bg-gradient-to-r ">
-                <div class="w-11/12 flex flex-col justify-around m-auto">
-                        <div class="flex justify-center">
-                            <h1 class="text-xl font-bold mb-10 m-4">NÚMERO DE EXPUESTOS</h1>
-                        </div>
-                        <div class="w-11/12 flex justify-between p-1 m-auto">
+                <div class="flex justify-center">
+                    <h1 class="text-xl font-bold mb-10 m-4">NÚMERO DE EXPUESTOS</h1>
+                </div>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-4">
                             <div>
                                 <h1 class="text-sm font-semibold">VINCULADOS</h1>
-                                <p class="w-11/12 text-justify">Escribe el número de vinculados</p>
+                                <p class="text-justify">Menciona el número de vinculados</p>
                                 <div class="w-full mt-2 ">
                                     <input type="number" id="" class="focus:bg-white focus:border-t focus:border-b focus:border-0 focus:border-green-500 focus:ring-0 focus:outline-none py-2 w-full block text-center h-10 bg-gray-100 border border-gray-300 rounded-lg mt-2 border-b border-t shadow-lg">
                                 </div>
                             </div>
                             <div>
                                 <h1 class="text-sm font-semibold">CONTRATISTAS</h1>
-                                <p class="w-11/12 text-justify">Escribe el número de contratistas</p>
+                                <p class="text-justify">Menciona el número de contratistas</p>
                                 <div class="w-full mt-2 ">
                                     <input type="number" id="" class="focus:bg-white focus:border-t focus:border-b focus:border-0 focus:border-green-500 focus:ring-0 focus:outline-none py-2 w-full block text-center h-10 bg-gray-100 border border-gray-300 rounded-lg mt-2 border-b border-t shadow-lg">
                                 </div>
                             </div>
                             <div>
                                 <h1 class="text-sm font-semibold">TEMPORALES</h1>
-                                <p class="w-11/12 text-justify">Escribe el número de temporales</p>
+                                <p class="text-justify">Menciona el número de temporales</p>
                                 <div class="w-full mt-2 ">
                                     <input type="number" id="" class="focus:bg-white focus:border-t focus:border-b focus:border-0 focus:border-green-500 focus:ring-0 focus:outline-none py-2 w-full block text-center h-10 bg-gray-100 border border-gray-300 rounded-lg mt-2 border-b border-t shadow-lg">
                                 </div>
                             </div>
                             <div>
                                 <h1 class="text-sm font-semibold">TIEMPO DE EXPOSICIÓN</h1>
-                                <p class="w-11/12 text-justify">Escribe el número de vinculados</p>
+                                <p class="text-justify">Menciona el tiepo de exposición</p>
                                 <div class="w-full mt-2 ">
                                     <input type="number" id="" class="focus:bg-white focus:border-t focus:border-b focus:border-0 focus:border-green-500 focus:ring-0 focus:outline-none py-2 w-full block text-center h-10 bg-gray-100 border border-gray-300 rounded-lg mt-2 border-b border-t shadow-lg">
                                 </div>
