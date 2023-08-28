@@ -24,7 +24,7 @@
                     </div>
             </ul>
         </div>
-        <div class="bg-gray-300 flex w-3/4 gap-4 rounded-lg py-2 pl-8 pr-20">
+        <div class="bg-gray-300 flex w-3/4 gap-4 rounded-lg py-2 pl-8 pr-10">
             <div class="flex pl-5 w-3/5 items-center gap-8 font-semibold text-lg text-gray-600">
                 <div>
                     <h1>{{$company->name}}</h1>
@@ -33,7 +33,7 @@
                     <h1>Nit: {{$company->nit}}</h1>
                 </div>
             </div>
-            <div class="w-2/5 flex justify-center gap-6 text-gray-100 font-semibold text-md">
+            <div class="w-3/5 flex justify-center gap-6 text-gray-100 font-semibold text-md">
                 <button class="bg-green-600 rounded-lg px-4">crear proceso</button>
                 <button class="bg-green-600 rounded-lg px-4">crear actividad</button>
                 <button class="bg-green-600 rounded-lg px-4">crear tarea</button>

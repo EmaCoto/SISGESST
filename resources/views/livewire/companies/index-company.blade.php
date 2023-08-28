@@ -4,7 +4,7 @@
             <label for="buscarEmp"
                 class="bg-gray-300 col-span-2 rounded-lg flex items-center justify-center w-full h-full px-3">Buscar
                 empresa</label>
-            <input wire:model.lazy="search" class="col-span-7 h-10 rounded-lg border-none bg-gray-300"
+            <input wire:model="search" class="col-span-7 h-10 rounded-lg border-none bg-gray-300"
                 placeholder="Nit example: 45740-8626" type="text" id="buscarEmp">
             <div class="bg-gray-300  col-span-1 rounded-lg flex align-middle justify-center">
                 <button class="w-full h-full">Buscar</button>
@@ -13,7 +13,7 @@
                 <livewire:companies.create-company />
             </div>
         </div>
-        <div class="grid lg:grid-cols-4 gap-8 mt-10 grid-cols-2">
+        <div class="grid lg:grid-cols-4 gap-8 mt-10 md:grid-cols-2 ">
             @foreach ($companies as $company)
                 <a href="{{ route('show-company', ['id' => $company->id]) }}"
                     class="block bg-gray-300 p-3 rounded-lg bg-opacity-70">
