@@ -32,4 +32,9 @@ class Company extends Model
     {
         return $this->belongsTo(City::class, 'city_id');
     }
+
+    public function processes()
+    {
+        return $this->hasMany(Process::class);
+    }
 }
