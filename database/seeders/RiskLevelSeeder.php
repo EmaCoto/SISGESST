@@ -13,27 +13,27 @@ class RiskLevelSeeder extends Seeder
      */
     public function run(): void
     {
-        RiskLevel::class([
+        RiskLevel::create([
             'name' => 'I',
-            'value' => '4000 - 600',
+            'value' => 600,
             'meaning' => 'Situación crítica. Suspender actividades hasta que el riesgo esté bajo control. Intervención urgente.',
             'color'=> '#FE0000',
         ]);
-        RiskLevel::class([
+        RiskLevel::create([
             'name' => 'II',
-            'value' => '500 - 150',
+            'value' => 150,
             'meaning' => 'Corregir y adoptar medidas de control de inmediato. Sin embargo, suspenda actividades si el nivel de riesgo está por encima o igual de 360.',
             'color'=> '#FD8D14',
         ]);
-        RiskLevel::class([
+        RiskLevel::create([
             'name' => 'III',
-            'value' => '120 - 40',
+            'value' => 40,
             'meaning' => 'Mejorar si es posible. Sería conveniente justificar la intervención y su rentabilidad.',
             'color'=> '#F8DE22',
         ]);
-        RiskLevel::class([
+        RiskLevel::create([
             'name' => 'IV',
-            'value' => '20',
+            'value' => 20,
             'meaning' => 'Situación deficiente con exposición continua o muy deficiente con exposición frecuente. Normalmente la materialización del riesgo ocurre con frecuencia.',
             'color'=> '#96C291',
         ]);

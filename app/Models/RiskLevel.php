@@ -21,3 +21,4 @@ class RiskLevel extends Model
     ];
 
 }
+

@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Evaluation;
+
 
 use App\Models\Controls;
 use Livewire\Component;
@@ -13,7 +14,7 @@ class Three extends Component
 
     public function render()
     {
-        return view('livewire.three');
+        return view('livewire.evaluation.three');
     }
 
     public function saveControls()

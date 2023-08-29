@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Livewire\Options;
+namespace App\Http\Livewire\Evaluation\Options;
+
 
 use Livewire\Component;
 
@@ -47,6 +48,6 @@ class Second extends Component
 
     public function render()
     {
-        return view('livewire.options.second');
+        return view('livewire.evaluation.options.second');
     }
 }

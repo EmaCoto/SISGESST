@@ -10,7 +10,7 @@
                     </div>
                     <div>
                         <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-4 m-auto p-2">
-                            <div class="mb-2 border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
+                            <div class="mb-2 border border-gray-100 rounded-lg bg-gray-100 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
                                 <div class="flex items-center justify-between px-3 py-2">
                                     <div class="flex items-center sm:pr-4">
                                         <h1 class="font-semibold ">PELIGRO (origen)</h1>
@@ -25,7 +25,7 @@
                                     <textarea wire:model="danger" id="" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
                                 </div>
                             </div>
-                            <div class="mb-2 border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
+                            <div class="mb-2 border border-gray-100 rounded-lg bg-gray-100 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
                                 <div class="flex items-center justify-between px-3 py-2">
                                     <div class="flex items-center sm:pr-4">
                                         <h1 class="font-semibold">EFECTOS POSIBLES</h1>
@@ -44,7 +44,7 @@
                             <h1 class="text-xl font-bold pt-6 m-4">CONTROLES EXISTENTES</h1>
                         </div>
                         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4 m-auto">
-                            <div class="m-2 border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
+                            <div class="m-2 border border-gray-100 rounded-lg bg-gray-100 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
                                 <div class="flex items-center justify-between px-3 py-2">
                                     <div class="flex items-center sm:pr-4">
                                         <h1 class="font-semibold">FUENTE</h1>
@@ -57,7 +57,7 @@
                                     <textarea wire:model="source" id="" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
                                 </div>
                             </div>
-                            <div class="m-2 border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
+                            <div class="m-2 border border-gray-100 rounded-lg bg-gray-100 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
                                 <div class="flex items-center justify-between px-3 py-2">
                                     <div class="flex items-center sm:pr-4">
                                         <h1 class="font-semibold">MEDIO</h1>
@@ -72,7 +72,7 @@
                                     <textarea wire:model="mean" id="" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
                                 </div>
                             </div>
-                            <div class="m-2 md:col-span-2 lg:col-span-1 xl:col-span-1 2xl:col-span-1 box-border border border-gray-200 rounded-lg bg-gray-200 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
+                            <div class="m-2 md:col-span-2 lg:col-span-1 xl:col-span-1 2xl:col-span-1 box-border border border-gray-100 rounded-lg bg-gray-100 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
                                 <div class="flex items-center justify-between px-3 py-2">
                                     <div class="flex items-center sm:pr-4">
                                         <h1 class="font-semibold">INDIVIDUO</h1>
@@ -91,24 +91,24 @@
                 </div>
             {{-- second / risk evaluation--}}
             <div>
-                <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-gray-100 via-green-600 from-gray-100 bg-gradient-to-r ">
+                <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-gray-200 via-green-600 from-gray-200 bg-gradient-to-r ">
                 <div class="flex justify-center">
                     <h1 class="text-xl font-bold mb-10 m-4">EVALUACIÓN DEL RIESGO</h1>
                 </div>
                     <div class="justify-around m-auto">
                         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4">
-                            <livewire:options.first />
-                            <livewire:options.second />
-                            <livewire:options.third />
-                            <livewire:options.fourth />
-                            <livewire:options.fifth />
-                            <livewire:options.sixth />
+                            <livewire:evaluation.options.first />
+                            <livewire:evaluation.options.second />
+                            <livewire:evaluation.options.third />
+                            <livewire:evaluation.options.fourth />
+                            <livewire:evaluation.options.fifth />
+                            <livewire:evaluation.options.sixth />
                         </div>
                     </div>
             </div>
             {{-- third --}}
             <div>
-                <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-gray-100 via-green-600 from-gray-100 bg-gradient-to-r ">
+                <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-gray-200 via-green-600 from-gray-200 bg-gradient-to-r ">
                 <div class="flex justify-center">
                     <h1 class="text-xl font-bold mb-10 m-4">NÚMERO DE EXPUESTOS</h1>
                 </div>
@@ -146,7 +146,7 @@
             </div>
                 <div class="flex justify-center mt-8 p-6">
                     <div>
-                        <input type="submit" value="Siguiente" class="cursor-pointer text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 w-28 font-medium rounded-lg text-base px-5 py-2.5 text-center mr-2 mb-2 hover:scale-90 duration-300">
+                        <input type="submit" value="Siguiente" class="cursor-pointer text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 w-28 font-medium rounded-lg text-base px-5 py-2.5 text-center mr-2 mb-2 hover:scale-90 duration-300">
                     </div>
                 </div>
             </form>

@@ -1,4 +1,4 @@
 <div>
-            <livewire:three />
-            {{-- <livewire:four/> --}}
+            <livewire:evaluation.three />
+            <livewire:evaluation.four />
 </div>
