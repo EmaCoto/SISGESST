@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\ConsequenceLevel;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ConsequenceLevelSeeder extends Seeder
@@ -23,19 +22,19 @@ class ConsequenceLevelSeeder extends Seeder
             'name' => 'Muy grave',
             'value' => '60',
             'meaning' => 'Lesiones o enfermedades graves irreparables (incapacidad permanente parcial o invalidez).',
-            'color'=> '#FE0000',
+            'color'=> '#FD8D14',
         ]);
         ConsequenceLevel::create([
             'name' => 'Grave',
             'value' => '25',
             'meaning' => 'Lesiones o enfermedades con incapacidad laboral temporal (ILT).',
-            'color'=> '#FE0000',
+            'color'=> '#F8DE22',
         ]);
         ConsequenceLevel::create([
             'name' => 'Leve',
             'value' => '10',
             'meaning' => 'Lesiones o enfermedades que no requieren incapacidad.',
-            'color'=> '#FE0000',
+            'color'=> '#96C291',
         ]);
 
     }
