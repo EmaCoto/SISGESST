@@ -17,6 +17,24 @@
         <!-- Styles -->
         @livewireStyles
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <style>
+            #contentEval{
+                overflow-y: scroll;
+                scroll-margin: 20px;
+            }
+            #contentEval::-webkit-scrollbar{
+                background: none;
+                width: 10px;
+                right: 10px;
+            }
+            #contentEval::-webkit-scrollbar-thumb {
+                background: #50A44E;
+                border-radius: 10px;
+            }
+            #contentEval::-webkit-scrollbar-track-piece{
+                margin: 20px 0;
+            }
+        </style>
     </head>
     <body class="font-sans antialiased bg-container bg-cover bg-no-repeat bg-fixed overflow-hidden">
         <x-banner />

@@ -1,6 +1,6 @@
-<div class="bg-gray-200 p-4 rounded-lg overflow-scroll">
+<div id="contentEval" class="bg-gray-200 p-4 rounded-lg overflow-y-scroll">
     <!-- component -->
-    {{-- <h1>{{$companyId}}</h1> --}}
+    <h1>{{$processId}}</h1>
     <h1 class="bg-green-600 p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-2/4 mx-auto text-center text-gray-100">Procesos</h1>
         <table class="w-full table-auto rounded-lg overflow-hidden">
             <thead class="rounded-t-lg">
@@ -32,7 +32,7 @@
                     </td>
                     <td class="py-3 px-6 text-center">
                         <div class="flex item-center justify-center">
-                            <button class="w-4 mr-2 text-green-600 transform hover:text-purple-500 hover:scale-110">
+                            <button wire:click="ShowActivityId({{$process->id}})" class="w-4 mr-2 text-green-600 transform hover:text-purple-500 hover:scale-110">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -78,5 +78,8 @@
                 @endforelse
             </tbody>
         </table>
+        <div class="px-6">
+            {{$processes->links()}}
+        </div>
 
 </div>

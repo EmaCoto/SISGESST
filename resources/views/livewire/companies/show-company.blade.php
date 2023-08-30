@@ -13,7 +13,7 @@
                 <span class="flex-1 mx-3 text-left whitespace-nowrap">Gestionar Empresa</span>
 
             </button>
-            <ul id="dropdown-example" class="hidden py-1">
+            <ul id="dropdown-example" class="hidden absolute w-44 py-1">
                 <div class="bg-cyan-300 rounded-lg">
                     <li>
                         <a href="#"

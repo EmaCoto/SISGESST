@@ -1,5 +1,6 @@
-<div class="bg-gray-200 p-4 rounded-lg overflow-scroll">
+<div id="contentEval" class="bg-gray-200 p-4 rounded-lg overflow-y-scroll">
     <!-- component -->
+    <h1>{{$process}} </h1>
     <h1 class="bg-green-600 p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-4/5 mx-auto text-center text-gray-100">Actividades - </h1>
     <table class="w-full table-auto rounded-lg overflow-hidden">
         <thead class="rounded-t-lg">
@@ -55,8 +56,10 @@
                 </td>
             </tr>
             @endforeach
-
         </tbody>
     </table>
+    <div class="px-6">
+        {{-- {{$activities->links()}} --}}
+    </div>
 
 </div>
