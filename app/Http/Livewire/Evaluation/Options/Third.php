@@ -2,58 +2,60 @@
 
 namespace App\Http\Livewire\Evaluation\Options;
 
-
+use App\Models\ProbabilityLevel;
 use Livewire\Component;
 
 class Third extends Component
 {
-    protected $listeners = ['selectedFirstRangeUpdated', 'selectedSecondRangeUpdated'];
+    protected $listeners = ['selectedValueFirst', 'selectedValueSecond'];
 
 
 
-    public $selectedFirstRange = 0;
-    public $selectedSecondRange = 0;
-    public $product = 0;
-    public $probabilityLevel = 'N/A';
-    public $description;
+    public $selectedValueFirst = 0;
+    public $selectedValueSecond = 0;
+    public $value = 0;
+    public $probabilityLevel;
+    public $name = 'N/A';
+    public $meaning;
 
 
-    public function selectedFirstRangeUpdated($range)
+    public function selectedValueFirst($range)
     {
-        $this->selectedFirstRange = $range;
+        $this->selectedValueFirst = $range;
         $this->calculateProductAndProbability();
     }
 
-    public function selectedSecondRangeUpdated($range)
+    public function selectedValueSecond($range)
     {
-        $this->selectedSecondRange = $range;
+        $this->selectedValueSecond = $range;
         $this->calculateProductAndProbability();
     }
 
     private function calculateProductAndProbability()
     {
-        $this->product = $this->selectedFirstRange * $this->selectedSecondRange;
+        $this->value = $this->selectedValueFirst * $this->selectedValueSecond;
 
-        if ($this->product >= 2 && $this->product <= 4) {
-            $this->probabilityLevel = 'Bajo';
-            $this->description='Situación mejorable con exposición ocasional o esporádica, o situación sin anomalía destacable con cualquier nivel de exposición.  No es esperable que se materialice el riesgo, aunque puede ser concebible.';
-        } elseif ($this->product >= 6 && $this->product <= 8) {
-            $this->probabilityLevel = 'Medio';
-            $this->description='Situación deficiente con exposición esporádica o bien situación mejorada con exposición continuada o frecuente.  Es posible que suceda el daño alguna vez.';
-        } elseif ($this->product >= 10 && $this->product <= 20) {
-            $this->probabilityLevel = 'Alto';
-            $this->description='situación deficiente con exposición frecuente u ocasioanal, o bien situación muy deficiente con exposición ocasional o esporádica.  La materialización del riesgo es posible que suceda varias veces en la vida laboral.';
-        } elseif ($this->product >= 24 && $this->product <= 40) {
-            $this->probabilityLevel = 'Muy Alto';
-            $this->description='Situación deficiente con exposición continua o muy deficiente con exposición frecuente. Normalmente la materialización del riesgo ocurre con frecuencia';
+        if ($this->value >= 2 && $this->value <= 4) {
+            $this->name = 'Bajo';
+            $this->meaning='Situación mejorable con exposición ocasional o esporádica, o situación sin anomalía destacable con cualquier nivel de exposición.  No es esperable que se materialice el riesgo, aunque puede ser concebible.';
+        } elseif ($this->value >= 6 && $this->value <= 8) {
+            $this->name = 'Medio';
+            $this->meaning='Situación deficiente con exposición esporádica o bien situación mejorada con exposición continuada o frecuente.  Es posible que suceda el daño alguna vez.';
+        } elseif ($this->value >= 10 && $this->value <= 20) {
+            $this->name = 'Alto';
+            $this->meaning='situación deficiente con exposición frecuente u ocasioanal, o bien situación muy deficiente con exposición ocasional o esporádica.  La materialización del riesgo es posible que suceda varias veces en la vida laboral.';
+        } elseif ($this->value >= 24 && $this->value <= 40) {
+            $this->name = 'Muy Alto';
+            $this->meaning='Situación deficiente con exposición continua o muy deficiente con exposición frecuente. Normalmente la materialización del riesgo ocurre con frecuencia';
         } else {
-            $this->probabilityLevel = 'N/A';
+            $this->name = 'N/A';
         }
-        $this->emit('productUpdated', $this->product);
+        $this->emit('valueUpdated', $this->value);
     }
 
     public function render()
     {
+        $this->probabilityLevel = ProbabilityLevel::all();
         return view('livewire.evaluation.options.third');
     }
 }

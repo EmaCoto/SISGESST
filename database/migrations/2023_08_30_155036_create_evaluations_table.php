@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('controls', function (Blueprint $table) {
+        Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
-            $table->string('danger');
-            $table->string('effects');
-            $table->string('source');
-            $table->string('mean');
-            $table->string('individual');
             $table->timestamps();
         });
     }
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('controls');
+        Schema::dropIfExists('evaluations');
     }
 };
