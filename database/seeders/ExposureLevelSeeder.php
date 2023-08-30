@@ -34,7 +34,7 @@ class ExposureLevelSeeder extends Seeder
             'name' => 'Esporádica  ',
             'value' => '1',
             'meaning' => 'La situación de exposición se presenta de manera eventual',
-            'color'=> '#96C291',
+            'color'=> '#539165',
         ]);
     }
 }

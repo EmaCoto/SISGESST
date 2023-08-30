@@ -7,10 +7,11 @@ use Livewire\Component;
 
 class First extends Component
 {
-
     public $deficiencyLevel;
     public $selectedDeficiency = null;
     public $selectedValue = null;
+    public $selectedMeaning = null;
+    public $selectedColor = null;
 
     public function render()
     {
@@ -21,10 +22,14 @@ class First extends Component
     public function updatedSelectedDeficiency()
     {
         if ($this->selectedDeficiency !== null) {
-            $selectedDeficiencyModel = DeficiencyLevel::where('value', $this->selectedDeficiency)->first();
-            $this->selectedValue = $selectedDeficiencyModel->value;
+            $selectedDeficiency = DeficiencyLevel::where('value', $this->selectedDeficiency)->first();
+            $this->selectedValue = $selectedDeficiency->value;
+            $this->selectedMeaning = $selectedDeficiency->meaning;
+            $this->selectedColor = $selectedDeficiency->color;
         } else {
             $this->selectedValue = null;
+            $this->selectedMeaning = null;
+            $this->selectedColor = null;
         }
         $this->emit('selectedValueFirst', $this->selectedValue);
     }

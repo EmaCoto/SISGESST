@@ -1,4 +1,3 @@
 <div>
-            <livewire:evaluation.evaluation />
-            {{-- <livewire:evaluation.four /> --}}
+    <livewire:evaluation.evaluation />
 </div>

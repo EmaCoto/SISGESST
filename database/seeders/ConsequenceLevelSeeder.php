@@ -34,7 +34,7 @@ class ConsequenceLevelSeeder extends Seeder
             'name' => 'Leve',
             'value' => '10',
             'meaning' => 'Lesiones o enfermedades que no requieren incapacidad.',
-            'color'=> '#96C291',
+            'color'=> '#539165',
         ]);
 
     }

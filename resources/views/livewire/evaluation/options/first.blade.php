@@ -9,8 +9,12 @@
                 <option value="{{ $deficiency->value }}">{{ $deficiency->name }}</option>
             @endforeach
         </select>
-        <div class="w-20 ml-2 mt-2 flex items-center rounded-lg justify-center border ">
-            <p type="text" class="text-xl font-semibold text-black bg-transparent outline-none border-none">{{ $selectedValue }}</p>
+        <div class="w-20 ml-2 mt-2 flex items-center rounded-lg justify-center border" style="background-color: {{ $selectedColor }};">
+            <p class="text-xl font-semibold text-white">{{ $selectedValue }}</p>
         </div>
     </div>
+    <div class="mt-2 text-justify h-28">
+        <span class="text-xs">{{ $selectedMeaning }}</span>
+    </div>
 </div>
+

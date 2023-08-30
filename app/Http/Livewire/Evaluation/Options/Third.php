@@ -9,8 +9,6 @@ class Third extends Component
 {
     protected $listeners = ['selectedValueFirst', 'selectedValueSecond'];
 
-
-
     public $selectedValueFirst = 0;
     public $selectedValueSecond = 0;
     public $value = 0;
@@ -50,7 +48,7 @@ class Third extends Component
         } else {
             $this->name = 'N/A';
         }
-        $this->emit('valueUpdated', $this->value);
+        $this->emit('valueThird', $this->value);
     }
 
     public function render()

@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Fifth extends Component
 {
-    protected $listeners = ['selectedFourthRangeUpdated','productUpdated' => 'updateProduct'];
+    protected $listeners = ['selectedValueFour', 'valueThird'];
 
     public $otherValue = 0;
     public $selectedFourthRange = 0;
@@ -16,13 +16,13 @@ class Fifth extends Component
 
 
 
-    public function selectedFourthRangeUpdated($range)
+    public function selectedValueFour($range)
     {
         $this->selectedFourthRange = $range;
         $this->calculateProductAndFourthRange();
     }
 
-    public function updateProduct($product)
+    public function valueThird($product)
     {
         $this->otherValue = $product;
         $this->calculateProductAndFourthRange();

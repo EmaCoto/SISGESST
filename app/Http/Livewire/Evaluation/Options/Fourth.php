@@ -10,6 +10,8 @@ class Fourth extends Component
     public $consequenceLevel;
     public $selectedConsequence = null;
     public $selectedValue = null;
+    public $selectedMeaning = null;
+    public $selectedColor = null;
 
     public function render()
     {
@@ -19,10 +21,15 @@ class Fourth extends Component
     public function updatedSelectedConsequence()
     {
         if ($this->selectedConsequence !== null) {
-            $selectedConsequenceModel = ConsequenceLevel::where('value', $this->selectedConsequence)->first();
-            $this->selectedValue = $selectedConsequenceModel->value;
+            $selectedConsequence = ConsequenceLevel::where('value', $this->selectedConsequence)->first();
+            $this->selectedValue = $selectedConsequence->value;
+            $this->selectedMeaning = $selectedConsequence->meaning;
+            $this->selectedColor = $selectedConsequence->color;
         } else {
             $this->selectedValue = null;
+            $this->selectedMeaning = null;
+            $this->selectedColor = null;
         }
+        $this->emit('selectedValueFour', $this->selectedValue);
     }
 }
