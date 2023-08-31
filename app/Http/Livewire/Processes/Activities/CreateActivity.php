@@ -6,6 +6,8 @@ use Livewire\Component;
 
 class CreateActivity extends Component
 {
+    public $open = false;
+
     public function render()
     {
         return view('livewire.processes.activities.create-activity');

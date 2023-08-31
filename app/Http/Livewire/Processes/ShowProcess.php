@@ -12,6 +12,7 @@ class ShowProcess extends Component
     use WithPagination;
     public $companyId;
     public $processId;
+    protected $listeners = ['render' => 'render'];
 
     public function mount($companyId)
     {
@@ -31,5 +32,4 @@ class ShowProcess extends Component
         $this->processId = $id;
         $this->emit('ShowActivityId', $this->processId);
     }
-
 }

@@ -19,4 +19,6 @@ class ShowCompany extends Component
     {
         return view('livewire.companies.show-company');
     }
+
+    
 }

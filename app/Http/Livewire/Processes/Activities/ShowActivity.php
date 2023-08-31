@@ -11,35 +11,41 @@ class ShowActivity extends Component
 {
     use WithPagination;
 
-    public $listeners = ['ShowActivityId'];
-    public $process  = '';
-    public $activities = [];
+    public $processes, $selectedProcess, $process_id, $companyId, $activities;
 
-    // public function mount(){
-    //     dd($this->processId);
+    // public function mount($companyId)
+    // {
+    //     $this->companyId = $companyId;
+    //     $this->processesId();
+    //     $this->selectedActivity();
     // }
 
-    public function ShowActivityId($process)
+    protected $listeners = ['showActivity'];
+
+    public function showActivity($processId)
     {
+        $this->reset('selectedProcess'); // Limpiar el valor anterior
+        $this->selectedProcess = $processId;
+        $this->activities = Activity::where('process_id', $this->selectedProcess)->get();
 
-        $this->process = $process;
-        $this->activities = [];
-        $this->activities = Activity::where('process_id', $this->process)->get();
-        // dd($this->activities->count());
-        // dd($this->process);
-        // if(!is_null($this->process)){
-        //     $this->activities = Activity::where('process_id', $this->process)->get();
-        // }
-
+        $this->emit('displayActivities');
     }
-
 
     public function render()
     {
-        // if(is_null($this->process) || $this->process == ''){
-        //     $activities = [];
-        // }
-
         return view('livewire.processes.activities.show-activity');
     }
+
+
+    // public function selectedActivity()
+    // {
+    //     $this->selectedProcess = $this->process_id;
+    //     $this->activities = Activity::where('process_id', $this->selectedProcess)->get();
+    // }
+
+    // public function processesId()
+    // {
+    //     $this->processes = Process::where('company_id', $this->companyId)->get();
+
+    // }
 }

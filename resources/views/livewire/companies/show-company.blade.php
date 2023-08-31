@@ -40,24 +40,16 @@
             </div>
         </div>
         <div class="w-2/5 flex justify-center gap-4 text-gray-100 font-semibold text-md">
-            <button class="bg-green-600 rounded-lg px-4">crear proceso</button>
-            <button class="bg-green-600 rounded-lg px-4">crear actividad</button>
-            <button class="bg-green-600 rounded-lg px-4">crear tarea</button>
+            @livewire('processes.create-process', ['companyId' => $company->id, 'companyName' => $company->name ])
+            <livewire:processes.activities.create-activity />
+            <livewire:processes.tasks.create-task />
         </div>
     </div>
 
-    <div class="w-11/12 mt-12 mx-auto h-[80vh] grid grid-cols-2 gap-10">
+    <div class="w-11/12 mt-12 mx-auto h-[80vh] ">
+        {{-- grid grid-cols-2 gap-10 --}}
         @livewire('processes.show-process', ['companyId' => $company->id])
-        <livewire:processes.activities.show-activity />
+        {{-- @livewire('processes.activities.show-activity', ['companyId' => $company->id]) --}}
     </div>
-
-    {{-- <h1 class="bg-green-600 p-1 mb-2 font-semibold text-lg rounded-lg w-5/6 mx-auto text-left text-gray-100">{{$company->name}}</h1>
-        <div class="mx-3">
-            <h1>Nit: {{$company->nit}}</h1>
-            <h1>{{$company->email}}</h1>
-            <h1>Ciudad: {{$company->city->name}}</h1>
-            <h1>Direct-workers: {{$company->number_direct_workers}} </h1>
-            <h1>Indirect-workers:{{$company->number_direct_workers}}</h1>
-        </div> --}}
     <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
 </div>
