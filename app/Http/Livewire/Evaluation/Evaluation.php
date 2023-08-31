@@ -6,29 +6,41 @@ use Livewire\Component;
 
 class Evaluation extends Component
 {
-    public $currentStep = 'text'; // Estado inicial
-
-    protected $steps = [
-        'text',
-        'select',
-        'number'
+    public $step = 1;
+    public $updatedDanger, $updatedPossibleEffects;
+    protected $listeners = [
+        'updatedDanger' => 'allVariables',
+        'updatedPossibleEffects' => 'allVariables'
     ];
 
-    public function next()
-    {
-        $currentIndex = array_search($this->currentStep, $this->steps);
-        if ($currentIndex < count($this->steps) - 1) {
-            $this->currentStep = $this->steps[$currentIndex + 1];
+
+
+    public function allVariables($data){
+        if (isset($data['danger'])) {
+            $this->updatedDanger = $data['danger'];
+        }
+
+        if (isset($data['possibleEffects'])) {
+            $this->updatedPossibleEffects = $data['possibleEffects'];
         }
     }
 
-    public function back()
+
+    //buttons logic back/next
+    public function incrementStep()
     {
-        $currentIndex = array_search($this->currentStep, $this->steps);
-        if ($currentIndex > 0) {
-            $this->currentStep = $this->steps[$currentIndex - 1];
+        if ($this->step < 3) {
+            $this->step++;
         }
     }
+
+    public function decrementStep()
+    {
+        if ($this->step > 1) {
+            $this->step--;
+        }
+    }
+
 
     public function render()
     {

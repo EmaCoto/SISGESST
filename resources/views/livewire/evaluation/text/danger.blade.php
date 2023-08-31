@@ -11,6 +11,6 @@
         </svg>
     </div>
     <div class="px-4 py-2 bg-white rounded-b-lg">
-        <textarea id="" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required></textarea>
+        <textarea wire:model="danger" id="" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..." required>{{-- $danger --}}</textarea>
     </div>
 </div>

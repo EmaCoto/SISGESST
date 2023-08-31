@@ -13,7 +13,7 @@
             <p class="text-xl font-semibold text-white">{{ $selectedValue }}</p>
         </div>
     </div>
-    <div class="mt-2 text-justify h-28">
+    <div class="mt-2 text-justify h-28 w-4/6">
         <span class="text-xs">{{ $selectedMeaning }}</span>
     </div>
 </div>
