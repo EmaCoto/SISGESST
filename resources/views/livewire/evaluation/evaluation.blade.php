@@ -1,38 +1,25 @@
 <div class="w-full overflow-hidden py-8" style="height: 93vh">
     <x-content-block>
-        <form>
+        <form >
             @csrf
-            <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-gray-200 via-green-600 from-gray-200 bg-gradient-to-r ">
             {{-- TEXT --}}
-            @if ($step == 1)
-                <section>
-                    <livewire:evaluation.text>
-                </section>
-            @endif
+            <section >
+                <livewire:evaluation.text>
+            </section>
+
             {{-- OPTIONS --}}
-            @if ($step == 2)
-                <section>
-                    <div class="justify-around m-auto">
-                        <livewire:evaluation.options />
-                    </div>
-                </section>
-            @endif
+            <section>
+                    <livewire:evaluation.options />
+            </section>
+
             {{-- NUMBER --}}
-            @if ($step == 3)
-                <section>
-                    <livewire:evaluation.number />
-                </section>
-            @endif
+            <section>
+                <livewire:evaluation.number />
+            </section>
+
             {{-- BUTTONS --}}
-            <div class="flex justify-center w-[70%] 2xl:absolute bottom-20 mt-20 mx-auto">
-                @if ($step > 1)
-                    <button wire:click="decrementStep" type="button" class="cursor-pointer h-12 text-white bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600 hover:bg-gradient-to-br focus:outline-none w-28 font-medium rounded-lg text-base px-5 py-2.5 text-center mr-2 mb-2 hover:scale-90 duration-300">Volver</button>
-                @endif
-                @if ($step < 3)
-                    <button wire:click="incrementStep" type="button" class="cursor-pointer h-12 text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:outline-none w-28 font-medium rounded-lg text-base px-5 py-2.5 text-center mr-2 mb-2 hover:scale-90 duration-300">Siguiente</button>
-                @else
-                    <button type="submit" class="cursor-pointer text-white bg-gradient-to-r h-12 from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:outline-none w-28 font-medium rounded-lg text-base px-5 py-2.5 text-center mr-2 mb-2 hover:scale-90 duration-300">Enviar</button>
-                @endif
+            <div class="flex justify-center m-auto mt-10 w-full">
+                <button type="submit" class="cursor-pointer text-white bg-gradient-to-r h-12 from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:outline-none  font-medium rounded-lg text-base px-5 py-2.5 text-center mr-2 mb-2 hover:scale-90 duration-300">Enviar</button>
             </div>
         </form>
     </x-content-block>

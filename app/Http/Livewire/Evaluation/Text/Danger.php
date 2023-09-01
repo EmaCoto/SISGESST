@@ -7,10 +7,14 @@ use Livewire\Component;
 class Danger extends Component
 {
     public $danger;
+    protected $rules = [
+        'danger' => 'required|min:6'
+    ];
 
     public function updatedDanger()
     {
-        $this->emit('updatedDanger', ['danger' => $this->danger]);
+        $this->validate();
+        $this->emit('updatedDanger', $this->danger);
     }
     public function render()
     {

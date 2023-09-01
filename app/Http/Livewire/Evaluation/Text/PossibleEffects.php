@@ -7,10 +7,15 @@ use Livewire\Component;
 class PossibleEffects extends Component
 {
     public $possibleEffects;
+    protected $rules = [
+        'possibleEffects' => 'required|min:6'
+    ];
+
 
     public function updatedPossibleEffects()
     {
-        $this->emit('updatedPossibleEffects', ['possibleEffects' => $this->possibleEffects]);
+        $this->validate();
+        $this->emit('updatedPossibleEffects', $this->possibleEffects);
     }
     public function render()
     {
