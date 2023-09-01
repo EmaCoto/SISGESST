@@ -2,26 +2,23 @@
     <x-content-block>
         <form>
             @csrf
+            <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-gray-200 via-green-600 from-gray-200 bg-gradient-to-r ">
             {{-- TEXT --}}
-            @if ($step === 1)
+            @if ($step == 1)
                 <section>
                     <livewire:evaluation.text>
                 </section>
             @endif
             {{-- OPTIONS --}}
-            @if ($step === 2)
+            @if ($step == 2)
                 <section>
-                    <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-gray-200 via-green-600 from-gray-200 bg-gradient-to-r ">
-                    <div class="flex justify-center">
-                        <h1 class="text-xl font-bold mb-10 m-4">EVALUACIÓN DEL RIESGO</h1>
-                    </div>
                     <div class="justify-around m-auto">
                         <livewire:evaluation.options />
                     </div>
                 </section>
             @endif
             {{-- NUMBER --}}
-            @if ($step === 3)
+            @if ($step == 3)
                 <section>
                     <livewire:evaluation.number />
                 </section>
