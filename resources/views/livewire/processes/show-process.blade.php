@@ -81,6 +81,7 @@
             {{ $processes->links() }}
         </div>
     </div> --}}
+
     @forelse ($processes as $process)
         <div class="m-2 space-y-2">
             <div class="group flex flex-col gap-2 rounded-lg bg-green-600 p-2 text-white" tabindex="1">
@@ -99,7 +100,7 @@
                     <div
                         class="bg-gray-100 text-gray-700 p-3 rounded-lg h-auto items-center transition-all max-h-screen">
                         <div>
-                            @livewire('processes.activities.show-activity', ['processId' => $process->id])
+                            @livewire('processes.activities.show-activity', ['processId' => $process->id], key(time() . $process->id))
                         </div>
                     </div>
                 @else

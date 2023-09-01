@@ -11,7 +11,7 @@ class ShowActivity extends Component
 {
     use WithPagination;
 
-    public $processes, $selectedProcess, $process_id, $activities;
+    // public $processes, $selectedProcess, $process_id, $activities;
     public $processId;
 
     // public function mount($companyId)
@@ -33,17 +33,34 @@ class ShowActivity extends Component
     //     $this->emit('displayActivities');
     // }
 
-    public function render()
-    {
-        return view('livewire.processes.activities.show-activity');
-    }
-
     public function mount($processId)
     {
-        $this->reset('processId');
         $this->processId = $processId;
-        $this->activities = Activity::where('process_id', $this->processId)->get();
     }
+
+    public function render()
+    {
+        // Aquí puedes usar $this->processId para buscar las actividades relacionadas con el proceso.
+        // Por ejemplo:
+        $activities = Activity::where('process_id', $this->processId)->get();
+
+        return view('livewire.processes.activities.show-activity', [
+            'activities' => $activities,
+        ]);
+    }
+
+
+    // public function render()
+    // {
+    //     return view('livewire.processes.activities.show-activity');
+    // }
+
+    // public function mount($processId)
+    // {
+    //     $this->reset('processId');
+    //     $this->processId = $processId;
+    //     $this->activities = Activity::where('process_id', $this->processId)->get();
+    // }
 
     // public function selectedActivity()
     // {
