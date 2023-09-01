@@ -11,7 +11,8 @@ class ShowActivity extends Component
 {
     use WithPagination;
 
-    public $processes, $selectedProcess, $process_id, $companyId, $activities;
+    public $processes, $selectedProcess, $process_id, $activities;
+    public $processId;
 
     // public function mount($companyId)
     // {
@@ -20,22 +21,29 @@ class ShowActivity extends Component
     //     $this->selectedActivity();
     // }
 
-    protected $listeners = ['showActivity'];
+    // protected $listeners = ['showActivity'];
 
-    public function showActivity($processId)
-    {
-        $this->reset('selectedProcess'); // Limpiar el valor anterior
-        $this->selectedProcess = $processId;
-        $this->activities = Activity::where('process_id', $this->selectedProcess)->get();
 
-        $this->emit('displayActivities');
-    }
+    // public function showActivity($processId)
+    // {
+    //     $this->reset('selectedProcess'); // Limpiar el valor anterior
+    //     $this->selectedProcess = $processId;
+    //     $this->activities = Activity::where('process_id', $this->selectedProcess)->get();
+
+    //     $this->emit('displayActivities');
+    // }
 
     public function render()
     {
         return view('livewire.processes.activities.show-activity');
     }
 
+    public function mount($processId)
+    {
+        $this->reset('processId');
+        $this->processId = $processId;
+        $this->activities = Activity::where('process_id', $this->processId)->get();
+    }
 
     // public function selectedActivity()
     // {

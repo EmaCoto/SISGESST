@@ -1,15 +1,7 @@
 <div id="contentEval" class="bg-gray-200 p-4 rounded-lg overflow-y-scroll">
     <!-- component -->
-    {{-- <h1>{{$process}} </h1> --}}
     <div class="flex justify-center bg-green-600 p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-4/5 mx-auto ">
         <h1 class="text-gray-100">Actividades - </h1>
-        {{-- <select wire:model.lazy="process_id" class="">
-            <option>-- seleccione un proceso --</option>
-            @foreach ($processes as $process)
-                <option value="{{$process->id}}"> {{ $process->name}} </option>
-            @endforeach
-        </select>
-        <button wire:click="selectedActivity">buscar</button> --}}
     </div>
     <table class="w-full table-auto rounded-lg overflow-hidden">
         <thead class="rounded-t-lg">
@@ -23,7 +15,6 @@
         </thead>
         <tbody class="bg-white text-gray-600 text-sm font-light">
             @if ($activities)
-                <h1>Actividades para el proceso {{ $selectedProcess }}:</h1>
                 <ul>
                     @foreach ($activities as $activity)
                         <tr class="border-b border-gray-200 hover:bg-gray-100">

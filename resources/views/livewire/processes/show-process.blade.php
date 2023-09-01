@@ -1,6 +1,6 @@
-<div id="contentEval" class="bg-gray-200 p-4 overflow-y-scroll rounded-lg grid grid-cols-2 gap-10">
+<div class="grid grid-cols-2">
     <!-- component -->
-    <div>
+    {{-- <div>
         <h1>{{ $processId }}</h1>
         <h1 class="bg-green-600 p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-2/4 mx-auto text-center text-gray-100">
             Procesos</h1>
@@ -80,116 +80,43 @@
         <div class="px-6">
             {{ $processes->links() }}
         </div>
-    </div>
-    {{-- <div>
-        <div class="m-2 space-y-2">
-            <div class="group flex flex-col gap-2 rounded-lg bg-black p-5 text-white" tabindex="1">
-                <div class="flex cursor-pointer items-center justify-between">
-                    <span> HTML </span>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-                        class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" />
-                </div>
-                <div
-                    class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
-                    <div>
-                        <livewire:processes.activities.show-activity>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="m-2 space-y-2">
-            <div class="group flex flex-col gap-2 rounded-lg bg-black p-5 text-white" tabindex="1">
-                <div class="flex cursor-pointer items-center justify-between">
-                    <span> HTML </span>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-                        class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" />
-                </div>
-                <div
-                    class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
-                    <div>
-                        <livewire:processes.activities.show-activity>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="m-2 space-y-2">
-            <div class="group flex flex-col gap-2 rounded-lg bg-black p-5 text-white" tabindex="1">
-                <div class="flex cursor-pointer items-center justify-between">
-                    <span> HTML </span>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-                        class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" />
-                </div>
-                <div
-                    class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
-                    <div>
-                        <livewire:processes.activities.show-activity>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="m-2 space-y-2">
-            <div class="group flex flex-col gap-2 rounded-lg bg-black p-5 text-white" tabindex="1">
-                <div class="flex cursor-pointer items-center justify-between">
-                    <span> HTML </span>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-                        class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" />
-                </div>
-                <div
-                    class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
-                    <div>
-                        <livewire:processes.activities.show-activity>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="m-2 space-y-2">
-            <div class="group flex flex-col gap-2 rounded-lg bg-black p-5 text-white" tabindex="1">
-                <div class="flex cursor-pointer items-center justify-between">
-                    <span> HTML </span>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-                        class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" />
-                </div>
-                <div
-                    class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
-                    <div>
-                        <livewire:processes.activities.show-activity>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="m-2 space-y-2">
-            <div class="group flex flex-col gap-2 rounded-lg bg-black p-5 text-white" tabindex="1">
-                <div class="flex cursor-pointer items-center justify-between">
-                    <span> HTML </span>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-                        class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" />
-                </div>
-                <div
-                    class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
-                    <div>
-                        <livewire:processes.activities.show-activity>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="m-2 space-y-2">
-            <div class="group flex flex-col gap-2 rounded-lg bg-black p-5 text-white" tabindex="1">
-                <div class="flex cursor-pointer items-center justify-between">
-                    <span> HTML </span>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-                        class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" />
-                </div>
-                <div
-                    class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
-                    <div>
-                        <livewire:processes.activities.show-activity>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div> --}}
-
+    @forelse ($processes as $process)
+        <div class="m-2 space-y-2">
+            <div class="group flex flex-col gap-2 rounded-lg bg-green-600 p-2 text-white" tabindex="1">
+                <div class="flex cursor-pointer items-center justify-between">
+                    <span>{{ $process->id }} || {{ $process->name }}</span>
+                    <div>
+                        <span class="bg-green-600 text-gray-100 py-1 px-3 rounded-full text-md">Evaluar</span>
+                        @if (in_array($process->id, $openProcesses))
+                            <button wire:click="toggleProcess({{ $process->id }})">Cerrar</button>
+                        @else
+                            <button wire:click="toggleProcess({{ $process->id }})">Abrir</button>
+                        @endif
+                    </div>
+                </div>
+                @if (in_array($process->id, $openProcesses))
+                    <div
+                        class="bg-gray-100 text-gray-700 p-3 rounded-lg h-auto items-center transition-all max-h-screen">
+                        <div>
+                            @livewire('processes.activities.show-activity', ['processId' => $process->id])
+                        </div>
+                    </div>
+                @else
+                    <div
+                        class="bg-gray-100 text-gray-700 p-3 rounded-lg h-auto items-center transition-all max-h-screen">
+                        <div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. At deserunt dignissimos dolores,
+                            illum hic quas iusto pariatur temporibus fugiat commodi similique harum beatae nisi,
+                            doloremque neque quo qui praesentium nesciunt?
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </div>
+    @empty
+        <span>No hay información</span>
+    @endforelse
 
 
 </div>

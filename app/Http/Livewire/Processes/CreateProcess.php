@@ -17,6 +17,7 @@ class CreateProcess extends Component
         $this->companyName = $companyName;
     }
 
+
     public function save()
     {
         Process::create([
