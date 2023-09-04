@@ -36,7 +36,7 @@
             }
         </style>
     </head>
-    <body class="font-sans antialiased bg-container bg-cover bg-no-repeat bg-fixed overflow-hidden">
+    <body class="font-sans antialiased bg-container bg-cover bg-no-repeat bg-fixed">
         <x-banner />
 
         <div class="min-h-screen">

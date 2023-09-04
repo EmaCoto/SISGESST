@@ -1,9 +1,9 @@
-<div class="grid grid-cols-2">
+<div class="grid grid-cols-2 gap-4 w-11/12 h-[83vh] mx-auto mt-6 p-2">
     <!-- component -->
-    {{-- <div>
-        <h1>{{ $processId }}</h1>
+    <div id="contentEval" class="bg-gray-200 p-4 rounded-lg h-full overflow-hidden">
         <h1 class="bg-green-600 p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-2/4 mx-auto text-center text-gray-100">
-            Procesos</h1>
+            Procesos
+        </h1>
         <table class="w-full table-auto rounded-lg overflow-hidden">
             <thead class="rounded-t-lg">
                 <tr class="bg-green-600 text-gray-100 uppercase text-sm leading-normal">
@@ -34,7 +34,7 @@
                         </td>
                         <td class="py-3 px-6 text-center">
                             <div class="flex item-center justify-center">
-                                <button wire:click="$emit('showActivity', {{ $process->id }})"
+                                <button wire:click="processId('{{ $process->id }}', '{{$process->name}}')"
                                     class="w-4 mr-2 text-green-600 transform hover:text-purple-500 hover:scale-110">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke="currentColor">
@@ -80,9 +80,12 @@
         <div class="px-6">
             {{ $processes->links() }}
         </div>
-    </div> --}}
+    </div>
+    <div>
+        @livewire('processes.activities.show-activity', key(time() . $process->id))
+    </div>
 
-    @forelse ($processes as $process)
+    {{-- @forelse ($processes as $process)
         <div class="m-2 space-y-2">
             <div class="group flex flex-col gap-2 rounded-lg bg-green-600 p-2 text-white" tabindex="1">
                 <div class="flex cursor-pointer items-center justify-between">
@@ -117,7 +120,7 @@
         </div>
     @empty
         <span>No hay información</span>
-    @endforelse
+    @endforelse --}}
 
 
 </div>

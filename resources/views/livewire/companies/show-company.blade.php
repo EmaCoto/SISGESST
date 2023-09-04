@@ -46,29 +46,9 @@
         </div>
     </div>
 
-    {{-- <div class="w-11/12 mt-12 mx-auto h-[80vh] ">
-        grid grid-cols-2 gap-10
+    {{-- <div class="w-11/12 mt-6 mx-auto bg-blue-300 border-8 border-gray-300 rounded-lg h-[80vh] overflow-hidden"> --}}
         @livewire('processes.show-process', ['companyId' => $company->id])
-        @livewire('processes.activities.show-activity', ['companyId' => $company->id])
-    </div> --}}
-    <div id="contentEval" class="w-11/12 mt-6 mx-auto bg-gray-300 border-8 border-gray-300 rounded-lg h-[80vh] overflow-y-scroll">
-        @livewire('processes.show-process', ['companyId' => $company->id])
-        {{-- <div class="m-2 space-y-2">
-            <div class="group flex flex-col gap-2 rounded-lg bg-green-600 p-2 text-white" tabindex="1">
-                <div class="flex cursor-pointer items-center justify-between">
-                    <span> Este es el de prueba </span>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-                        class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" />
-                </div>
-                <div
-                    class="invisible bg-gray-100 group-focus:text-gray-700 group-focus:p-3 rounded-lg h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
-                    <div>
-                        texto texto texto
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-    </div>
+    {{-- </div> --}}
 
 
     <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
