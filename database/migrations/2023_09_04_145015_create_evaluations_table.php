@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
+            $table->text('danger');
+            $table->text('effects');
+            $table->text('source');
+            $table->text('means');
+            $table->text('individual');
             $table->timestamps();
         });
     }

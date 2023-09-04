@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Evaluation;
 use Illuminate\Database\Seeder;
 
 class EvaluationSeeder extends Seeder
@@ -12,6 +12,6 @@ class EvaluationSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Evaluation::factory()->count(10)->create();
     }
 }

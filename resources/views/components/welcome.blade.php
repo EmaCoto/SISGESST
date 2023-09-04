@@ -1,3 +1,3 @@
 <div>
-    <livewire:evaluation.evaluation />
+    <livewire:evaluation.evaluation-parent />
 </div>

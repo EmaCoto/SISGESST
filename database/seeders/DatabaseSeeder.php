@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             ProbabilityLevelSeeder::class,
             ConsequenceLevelSeeder::class,
             RiskLevelSeeder::class,
+            EvaluationSeeder::class,
         ]);
 
 
