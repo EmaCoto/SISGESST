@@ -3,7 +3,7 @@
 
     <x-dialog-modal wire:model="open">
         <x-slot name="content">
-            <h1 class="bg-green-600 p-1 mb-2 font-semibold text-2xl rounded-lg w-5/6 mx-auto text-center text-gray-100">Registar empresa</h1>
+            <h1 class="bg-green-600 p-1 mb-2 font-semibold text-2xl rounded-lg w-5/6 mx-auto text-center text-gray-100">Crear proceso</h1>
 
             <div class="w-4/5 mx-auto my-5">
                 <x-label>Empresa:</x-label>
@@ -18,7 +18,7 @@
 
             <div class="w-4/5 md:w-3/5 mx-auto flex justify-between mt-6 mb-1">
                 <button wire:click="$set('open', false)" class="bg-gray-300 px-5 py-1 rounded-lg font-semibold text-lg text-gray-600">Cancelar</button>
-                <button wire:click="save" class="bg-green-600 px-5 py-1 rounded-lg font-semibold text-lg text-gray-100">Registrar</button>
+                <button wire:click="save" class="bg-green-600 px-5 py-1 rounded-lg font-semibold text-lg text-gray-100">Crear</button>
             </div>
         </x-slot>
     </x-dialog-modal>

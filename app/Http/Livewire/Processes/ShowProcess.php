@@ -13,6 +13,7 @@ class ShowProcess extends Component
     public $companyId, $processId, $processName;
     public $open = false;
     public $openProcesses = [];
+    protected $listeners = ['render'];
 
     public function mount($companyId)
     {
@@ -36,7 +37,6 @@ class ShowProcess extends Component
     public function render()
     {
         $processes = Process::where('company_id', $this->companyId)->paginate(5);
-
         return view('livewire.processes.show-process', [
             'processes' => $processes,
         ]);

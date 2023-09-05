@@ -28,6 +28,7 @@ class CreateProcess extends Component
 
         $this->reset(['open', 'name', 'description']);
         $this->emit('render');
+        $this->emit('selectedProcess');
     }
 
     public function render()

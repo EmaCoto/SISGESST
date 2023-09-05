@@ -41,14 +41,14 @@
         </div>
         <div class="w-2/5 flex justify-center gap-4 text-gray-100 font-semibold text-md">
             @livewire('processes.create-process', ['companyId' => $company->id, 'companyName' => $company->name])
-            <livewire:processes.activities.create-activity />
-            <livewire:processes.tasks.create-task />
+            @livewire('processes.activities.create-activity', ['companyId' => $company->id])
+            @livewire('processes.tasks.create-task', ['companyId' => $company->id])
         </div>
     </div>
 
-    {{-- <div class="w-11/12 mt-6 mx-auto bg-blue-300 border-8 border-gray-300 rounded-lg h-[80vh] overflow-hidden"> --}}
-        @livewire('processes.show-process', ['companyId' => $company->id])
-    {{-- </div> --}}
+
+    @livewire('processes.show-process', ['companyId' => $company->id])
+
 
 
     <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
