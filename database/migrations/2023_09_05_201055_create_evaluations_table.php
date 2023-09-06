@@ -13,15 +13,18 @@ return new class extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
-            $table->text('danger');
-            $table->text('effects');
-            $table->text('source');
-            $table->text('means');
-            $table->text('individual');
+            $table->string('danger');
+            $table->string('effects');
+            $table->string('source');
+            $table->string('means');
+            $table->string('individual');
+            $table->decimal('linked', 10, 0, 1000);
+            $table->decimal('contractor', 10, 0, 1000);
+            $table->decimal('temporary', 10, 0, 1000);
+            $table->decimal('time', 10, 0, 1000);
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

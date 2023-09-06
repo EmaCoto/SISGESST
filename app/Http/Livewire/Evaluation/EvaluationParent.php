@@ -7,48 +7,54 @@ use Livewire\Component;
 
 class EvaluationParent extends Component
 {
-    public $textData;
-    public $listeners = ['textAreas'];
 
-    public function textAreas($facts)
-    {
-        $this->textData = [
-            'danger' => $facts['danger'],
-            'effects' =>$facts['effects'],
-            'source' =>$facts['source'],
-            'means' =>$facts['means'],
-            'individual' => $facts['individual']
-        ];
-    }
+    public $danger, $effects, $source, $means, $individual, $linked, $contractor, $temporary, $time;
 
-    public function submitForm()
+
+    public function save()
     {
+        // Validate the input data
         $this->validate([
-            'textData.danger' => 'required',
-            'textData.effects' => 'required',
-            'textData.source' => 'required',
-            'textData.means' => 'required',
-            'textData.individual' => 'required',
-        ]);
-        // Guarda los datos en la base de datos
-        $evaluation = new Evaluation([
-            'danger' => $this->textData['danger'],
-            'effects' => $this->textData['effects'],
-            'source' => $this->textData['source'],
-            'means' => $this->textData['means'],
-            'individual' => $this->textData['individual'],
+            'danger' => 'required',
+            'effects' => 'required',
+            'source' => 'required',
+            'means' => 'required',
+            'individual' => 'required',
+            'linked' => 'required',
+            'contractor' => 'required',
+            'temporary' => 'required',
+            'time' => 'required',
         ]);
 
-        $evaluation->save();
+        // Create a new Evaluation model instance and save the data
+        Evaluation::create([
+            'danger' => $this->danger,
+            'effects' => $this->effects,
+            'source' => $this->source,
+            'means' => $this->means,
+            'individual' => $this->individual,
+            'linked' => $this->linked,
+            'contractor' => $this->contractor,
+            'temporary' => $this->temporary,
+            'time' => $this->time,
+        ]);
 
-        // Limpia los campos después de guardar
-        $this->reset(['textData']);
+        // Reset the input fields after saving
+        $this->danger = '';
+        $this->effects = '';
+        $this->source = '';
+        $this->means = '';
+        $this->individual = '';
+        $this->linked = '';
+        $this->contractor = '';
+        $this->temporary = '';
+        $this->time = '';
     }
 
     public function render()
     {
         return view('livewire.evaluation.evaluation-parent');
     }
+
+
 }
-
-

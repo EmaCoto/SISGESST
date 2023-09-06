@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         \App\Models\user::factory(1)->create();
+        \App\Models\Evaluation::factory(10)->create();
 
         $this->call([
             DeficiencyLevelSeeder::class,
@@ -21,7 +22,6 @@ class DatabaseSeeder extends Seeder
             ProbabilityLevelSeeder::class,
             ConsequenceLevelSeeder::class,
             RiskLevelSeeder::class,
-            EvaluationSeeder::class,
         ]);
 
 
