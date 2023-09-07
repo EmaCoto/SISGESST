@@ -2,15 +2,19 @@
 
 namespace App\Http\Livewire\Evaluation;
 
+use App\Models\DeficiencyLevel;
 use App\Models\Evaluation;
 use Livewire\Component;
 
 class EvaluationParent extends Component
 {
-
+    public $deficiency;
     public $danger, $effects, $source, $means, $individual, $linked, $contractor, $temporary, $time;
 
-
+    // public function mount()
+    // {
+    //     $this->deficiency = DeficiencyLevel::all();
+    // }
     public function save()
     {
         // Validate the input data
@@ -20,10 +24,11 @@ class EvaluationParent extends Component
             'source' => 'required',
             'means' => 'required',
             'individual' => 'required',
-            'linked' => 'required',
+            'linked' => 'required|regex:/^\d{1,3}(?:\.\d{3})*(?:,\d{2})?$/',
             'contractor' => 'required',
             'temporary' => 'required',
-            'time' => 'required',
+            'time' => 'required|regex:/^\d{2}:\d{2}$/',
+
         ]);
 
         // Create a new Evaluation model instance and save the data
@@ -40,21 +45,13 @@ class EvaluationParent extends Component
         ]);
 
         // Reset the input fields after saving
-        $this->danger = '';
-        $this->effects = '';
-        $this->source = '';
-        $this->means = '';
-        $this->individual = '';
-        $this->linked = '';
-        $this->contractor = '';
-        $this->temporary = '';
-        $this->time = '';
+        $this->reset('danger','effects','source','means', 'individual', 'linked', 'contractor', 'temporary', 'time');
     }
 
     public function render()
     {
-        return view('livewire.evaluation.evaluation-parent');
+        return view('livewire.evaluation.evaluation-parent', [
+            'deficiency' => $this->deficiency,
+        ]);;
     }
-
-
 }

@@ -19,5 +19,6 @@ class Evaluation extends Model
         'contractor',
         'temporary',
         'time',
+        'selectedDeficiency',
     ];
 }

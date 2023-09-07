@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('source');
             $table->string('means');
             $table->string('individual');
-            $table->decimal('linked', 10, 0, 1000);
-            $table->decimal('contractor', 10, 0, 1000);
-            $table->decimal('temporary', 10, 0, 1000);
-            $table->decimal('time', 10, 0, 1000);
+            $table->string('linked', 10, 0);
+            $table->string('contractor', 10, 0);
+            $table->string('temporary', 10, 0);
+            $table->string('time', 10, 0);
             $table->timestamps();
         });
     }
