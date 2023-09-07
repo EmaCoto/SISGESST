@@ -9,16 +9,16 @@
 
     <x-dialog-modal wire:model="open">
         <x-slot name="content">
-            {{$processes}}
+            <h1>{{$name}}, hola {{$companyId}}</h1>
             <h1 class="bg-blue-500 p-1 mb-2 font-semibold text-2xl rounded-lg w-5/6 mx-auto text-center text-gray-100">Editar proceso</h1>
 
             <div class="w-4/5 mx-auto my-5 text-left">
                 <x-label>Seleccione un proceso:</x-label>
                 <select wire:model.defer="process_id" class="bg-gray-200 border-2 border-gray-300 rounded-md w-full h-9 py-0 px-4 mb-4 focus:ring-0 focus:border-green-600">
-                    {{-- <option>-- Seleccione --</option>
+                    <option>-- Seleccione --</option>
                     @foreach ($selectedProcess as $process)
                         <option value="{{$process->id}}">{{$process->name}}</option>
-                    @endforeach --}}
+                    @endforeach
                 </select>
                 <x-label>Nombre:</x-label>
                 <x-input type="text" wire:model.lazy="name" />

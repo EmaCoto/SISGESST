@@ -12,7 +12,7 @@ class ShowActivity extends Component
     use WithPagination;
 
     // public $processes, $selectedProcess, $process_id, $activities;
-    public $processId, $processName;
+    public $processId, $processName, $companyId;
 
     protected $listeners = ['processFact'];
 
@@ -20,6 +20,7 @@ class ShowActivity extends Component
     {
         $this->processId = $facts['processId'];
         $this->processName = $facts['processName'];
+        $this->companyId = $facts['companyId'];
 
     }
 

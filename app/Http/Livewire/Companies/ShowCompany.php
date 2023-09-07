@@ -9,6 +9,7 @@ use Livewire\Livewire;
 class ShowCompany extends Component
 {
     public $company;
+    protected $listeners = ['render'];
 
     public function mount($id)
     {

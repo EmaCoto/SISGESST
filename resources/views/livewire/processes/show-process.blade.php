@@ -35,9 +35,12 @@
                         <td class="py-3 text-center">
                             <div class="flex item-center justify-center align-middle">
                                 <div class="flex group relative">
-                                    <span class="w-32 py-1 text-gray-100 group-hover:opacity-100 -top-8 -left-14 opacity-0 absolute bg-green-600 rounded-lg px-2">Ver Actividades</span>
+                                    <span
+                                        class="w-32 py-1 text-gray-100 group-hover:opacity-100 -top-8 -left-14 opacity-0 absolute bg-green-600 rounded-lg px-2">Ver
+                                        Actividades</span>
                                     <div>
-                                        <button wire:click="processId('{{ $process->id }}', '{{$process->name}}')"
+                                        <button
+                                            wire:click="processId('{{ $process->id }}', '{{ $process->name }}', '{{ $companyId }}')"
                                             class="w-4 mr-2 text-green-600 transform hover:text-gray-400 hover:scale-110">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke="currentColor">
@@ -51,16 +54,15 @@
                                 </div>
 
                                 <div class="flex group relative">
-                                    <span class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">Editar</span>
-                                    @livewire(
-                                        'processes.edit-process',
-                                        ['process' => $process],
-                                        key(time() . $process->id)
-                                    )
+                                    <span
+                                        class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">Editar</span>
+                                    @livewire('processes.edit-process', ['process' => $process], key(time() . $process->id))
                                 </div>
                                 <div class="flex group relative">
-                                    <span class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-6 opacity-0 absolute bg-red-600 rounded-lg px-2">Eliminar</span>
-                                    <button class="w-4 mr-2 transform text-red-600 hover:text-gray-400 hover:scale-110">
+                                    <span
+                                        class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-6 opacity-0 absolute bg-red-600 rounded-lg px-2">Eliminar</span>
+                                    <button wire:click="confirmDelete({{ $process->id }})" class="w-4 mr-2 transform
+                                        text-red-600 hover:text-gray-400 hover:scale-110">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -68,6 +70,38 @@
                                         </svg>
                                     </button>
                                 </div>
+                                @if ($open)
+                                    <div class="fixed inset-0 flex items-center justify-center"
+                                        wire:click="$set('open', false)">
+                                        <div class="absolute inset-0 z-40 bg-black opacity-10 modal-overlay"></div>
+
+                                        <div
+                                            class="z-50 w-11/12 mx-auto overflow-y-auto bg-white border border-red-500 rounded-xl modal-container md:max-w-md">
+                                            <!-- Content of the modal -->
+                                            <div class="flex gap-3 py-2 bg-red-500 border border-red-500">
+                                                <h3 class="w-full text-2xl text-center text-gray-100 ">Eliminar</h3>
+
+                                            </div>
+                                            <div class="px-6 py-4 text-left modal-content">
+
+                                                <p class="text-xl text-gray-500">¿Estás seguro de que deseas eliminar
+                                                    este
+                                                    producto?
+                                                </p>
+                                                <div class="mt-4 text-center">
+                                                    <x-secondary-button wire:click="$set('open', false)"
+                                                        class="mr-4 text-gray-500 border border-gray-500 shadow-lg hover:shadow-gray-400">
+                                                        Cancelar
+                                                    </x-secondary-button>
+                                                    <x-secondary-button wire:click="deleteConfirmed"
+                                                        class="mr-4 text-red-500 border border-red-500 shadow-lg hover:shadow-red-400">
+                                                        Eliminar
+                                                    </x-secondary-button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                         </td>
                         <td class="py-3 px-6 text-center">
@@ -91,6 +125,7 @@
             {{ $processes->links() }}
         </div>
     </div>
+
     <div>
         @livewire('processes.activities.show-activity', key(time() . $process->id))
     </div>

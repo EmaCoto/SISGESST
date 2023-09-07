@@ -2,26 +2,28 @@
 
 namespace App\Http\Livewire\Processes\Activities;
 
+use App\Models\Process;
 use Livewire\Component;
 
 class EditActivity extends Component
 {
     public $open = false;
-    public $activity, $activityId, $name, $description, $processes;
+    public $activity, $activityId, $name, $description, $processId, $companyId, $selectedProcess, $process_id;
 
     protected $rules = [
         'name'              => 'required',
         'description'       => 'required',
+        'process_id'        => 'required',
     ];
 
-    public function mount($activity)
+    public function mount($activity, $companyId)
     {
-        $this->activity = $activity;
-
-        $this->activityId = $activity->id;
         $this->name = $activity->name;
         $this->description = $activity->description;
+        $this->companyId = $companyId;
+        $this->selectedProcess = Process::where('company_id', $this->companyId)->get();
     }
+
 
     public function update()
     {
@@ -30,6 +32,7 @@ class EditActivity extends Component
         $this->activity->update([
             'name'             => $this->name,
             'description'      => $this->description,
+            'process_id'       => $this->process_id,
         ]);
 
         $this->reset('open');

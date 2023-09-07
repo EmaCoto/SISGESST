@@ -27,6 +27,7 @@
                             <td class="py-3 px-6 text-left">
                                 <div class="flex items-center">
                                     <span>{{$task->name}}</span>
+                                    <x-input type="text" wire:model.lazy="name" />
                                 </div>
                             </td>
                             <td class="py-3 px-6 text-center">

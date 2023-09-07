@@ -10,7 +10,7 @@ class ShowProcess extends Component
 {
     use WithPagination;
 
-    public $companyId, $processId, $processName;
+    public $companyId, $processId, $processName, $processDelete;
     public $open = false;
     public $openProcesses = [];
     protected $listeners = ['render'];
@@ -18,6 +18,7 @@ class ShowProcess extends Component
     public function mount($companyId)
     {
         $this->companyId = $companyId;
+        $this->emitTo('activities.create-activity', 'companyId', $companyId);
     }
 
     // public function toggleProcess($processId)
@@ -42,11 +43,27 @@ class ShowProcess extends Component
         ]);
     }
 
-    public function processId($id, $name)
+    public function processId($id, $name, $companyId)
     {
         $this->emit('processFact', [
             'processId' => $id,
-            'processName' => $name
+            'processName' => $name,
+            'companyId' => $companyId
         ]);
+    }
+
+    public function confirmDelete($id)
+    {
+        $this->processDelete = Process::find($id);
+        $this->open = true; // Abre el modal de confirmación
+    }
+
+    public function deleteConfirmed()
+    {
+        if ($this->processDelete) {
+            $this->processDelete->delete();
+            $this->emitTo('companies.show-company', 'render');
+        }
+        $this->open = false; // Cierra el modal de confirmación
     }
 }

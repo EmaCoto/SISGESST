@@ -17,7 +17,7 @@
                 <x-input type="text" wire:model.defer="name"/>
 
                 <x-label>Descripcion actividad:</x-label>
-                <x-input type="email" wire:model.defer="description"/>
+                <textarea wire:model.defer="description" class="bg-gray-200 focus:bg-gray-50 border-2 border-gray-300 focus:border-green-600 focus:ring-0 rounded-md shadow-sm w-full h-36 mb-4"></textarea>
             </div>
 
             <div class="w-4/5 md:w-3/5 mx-auto flex justify-between mt-6 mb-1">

@@ -1,7 +1,7 @@
 <div id="contentEval" class="bg-gray-200 p-4 h-full rounded-lg overflow-hidden">
     <!-- component -->
     <h1 class="bg-green-600 p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-full mx-auto text-center text-gray-100">
-        Actividades - {{$processName}}
+        Actividades - {{$processName}} {{$companyId}}
     </h1>
     <table class="w-full table-auto rounded-lg overflow-hidden">
         <thead class="rounded-t-lg">
@@ -35,7 +35,7 @@
                         <div class="flex item-center justify-center">
                             <div class="flex group relative">
                                 <span class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">Editar</span>
-                                @livewire('processes.activities.edit-activity', ['activity' => $activity], key(time() . $activity->id))
+                                @livewire('processes.activities.edit-activity',['activity' => $activity,'companyId' => $companyId], key(time() . $activity->id))
                             </div>
                             <div class="flex group relative">
                                 <span class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-6 opacity-0 absolute bg-red-600 rounded-lg px-2">Eliminar</span>
