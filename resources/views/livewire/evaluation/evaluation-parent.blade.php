@@ -56,9 +56,9 @@
                     <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-4 m-auto p-2">
                         <x-measures-elimination wire:model.defer="elimination"/>
                         <x-measures-substitution wire:model.defer="substitution"/>
-                        <x-measures-engineering wire:model.defer="engineering_controls"/>
-                        <x-measures-administrative wire:model.defer="administrative_controls"/>
-                        <x-measures-protection wire:model.defer="personal_protection"/>
+                        <x-measures-engineering wire:model.defer="engineeringControls"/>
+                        <x-measures-administrative wire:model.defer="administrativeControls"/>
+                        <x-measures-protection wire:model.defer="personalProtection"/>
                         {{-- <x-measures-legal wire:model.defer=""/> --}}
                     </div>
                 </article>
