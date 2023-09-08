@@ -8,11 +8,12 @@ class Fifth extends Component
 {
     protected $listeners = ['selectedValueFour', 'valueThird'];
 
-    public $otherValue = 0;
+    public $value;
     public $selectedFourthRange = 0;
     public $intervention = 'N/A';
-    public $description;
-    public $resultado = 0;
+    public $meaning;
+    public $color;
+    public $result;
 
 
 
@@ -24,29 +25,36 @@ class Fifth extends Component
 
     public function valueThird($product)
     {
-        $this->otherValue = $product;
+        $this->value = $product;
         $this->calculateProductAndFourthRange();
     }
     private function calculateProductAndFourthRange()
     {
-        $this->resultado = $this->otherValue * $this->selectedFourthRange;
+        $this->result = $this->value * $this->selectedFourthRange;
 
-        if ($this->resultado >= 20 && $this->resultado <= 30) {
+        if ($this->result >= 20 && $this->result <= 30) {
             $this->intervention = '20';
-            $this->description='Mantener las medidas de control existentes, pero se deberían considerar soluciones o mejoras y se deben hacer comprobaciones periódicas para asegurar que el riesgo aún es aceptable.';
-        } elseif ($this->resultado >= 40 && $this->resultado <= 120) {
+            $this->meaning='Mantener las medidas de control existentes, pero se deberían considerar soluciones o mejoras y se deben hacer comprobaciones periódicas para asegurar que el riesgo aún es aceptable.';
+            $this->color = "#539165";
+        } elseif ($this->result >= 40 && $this->result <= 120) {
             $this->intervention = '120 - 40';
-            $this->description='Mejorar si es posible. Sería conveniente justificar la intervención y su rentabilidad.';
-        } elseif ($this->resultado >= 150 && $this->resultado <= 500) {
+            $this->meaning='Mejorar si es posible. Sería conveniente justificar la intervención y su rentabilidad.';
+            $this->color = "#F8DE22";
+        } elseif ($this->result >= 150 && $this->result <= 500) {
             $this->intervention = '500 - 150';
-            $this->description='Corregir y adoptar medidas de control de inmediato. Sin embargo, suspenda actividades si el nivel de riesgo está por encima o igual de 360';
-        } elseif ($this->resultado >= 600 && $this->resultado <= 4000) {
+            $this->meaning='Corregir y adoptar medidas de control de inmediato. Sin embargo, suspenda actividades si el nivel de riesgo está por encima o igual de 360';
+            $this->color = "#FD8D14";
+        } elseif ($this->result >= 600 && $this->result <= 4000) {
             $this->intervention = '4000 - 600';
-            $this->description='Situación crítica. Suspender actividades hasta que el riesgo esté bajo control. Intervención urgente';
+            $this->meaning='Situación crítica. Suspender actividades hasta que el riesgo esté bajo control. Intervención urgente';
+            $this->color = "#FE0000";
         } else {
+            $this->result = '';
             $this->intervention = 'N/A';
+            $this->meaning = '';
+            $this->color = '';
         }
-        $this->emit('resultadoUpdate', $this->resultado);
+        $this->emit('resultUpdate', $this->result);
     }
 
     public function render()

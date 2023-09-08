@@ -2,14 +2,13 @@
 
 namespace App\Http\Livewire\Evaluation;
 
-use App\Models\DeficiencyLevel;
 use App\Models\Evaluation;
 use Livewire\Component;
 
 class EvaluationParent extends Component
 {
-    public $deficiency;
-    public $danger, $effects, $source, $means, $individual, $linked, $contractor, $temporary, $time;
+    public $currentSection = 1;
+    public $danger, $effects, $source, $means, $individual, $linked, $contractor, $temporary, $time, $elimination, $substitution, $engineeringControls, $administrativeControls, $personalProtection;
 
     // public function mount()
     // {
@@ -17,21 +16,24 @@ class EvaluationParent extends Component
     // }
     public function save()
     {
-        // Validate the input data
+
         $this->validate([
             'danger' => 'required',
             'effects' => 'required',
             'source' => 'required',
             'means' => 'required',
             'individual' => 'required',
-            'linked' => 'required|regex:/^\d{1,3}(?:\.\d{3})*(?:,\d{2})?$/',
-            'contractor' => 'required',
-            'temporary' => 'required',
+            'linked' => 'required|numeric',
+            'contractor' => 'required|numeric',
+            'temporary' => 'required|numeric',
             'time' => 'required|regex:/^\d{2}:\d{2}$/',
-
+            'elimination' => 'required',
+            'substitution' => 'required',
+            'engineeringControls' => 'required',
+            'administrativeControls' => 'required',
+            'personalProtection' => 'required',
         ]);
 
-        // Create a new Evaluation model instance and save the data
         Evaluation::create([
             'danger' => $this->danger,
             'effects' => $this->effects,
@@ -42,16 +44,32 @@ class EvaluationParent extends Component
             'contractor' => $this->contractor,
             'temporary' => $this->temporary,
             'time' => $this->time,
+            'elimination' => $this->elimination,
+            'substitution' => $this->substitution,
+            'engineering_controls' => $this->engineeringControls,
+            'administrative_controls' => $this->administrativeControls,
+            'personal_protection' => $this->personalProtection,
         ]);
 
-        // Reset the input fields after saving
-        $this->reset('danger','effects','source','means', 'individual', 'linked', 'contractor', 'temporary', 'time');
+        $this->reset('danger','effects','source','means', 'individual', 'linked', 'contractor', 'temporary', 'time', 'elimination', 'substitution', 'engineeringControls', 'administrativeControls', 'personalProtection');
+    }
+    public function nextSection()
+    {
+        if ($this->currentSection < 2) {
+            $this->currentSection++;
+        }
     }
 
+    public function previousSection()
+    {
+        if ($this->currentSection > 1) {
+            $this->currentSection--;
+        }
+    }
     public function render()
     {
         return view('livewire.evaluation.evaluation-parent', [
-            'deficiency' => $this->deficiency,
-        ]);;
+            'currentSection' => $this->currentSection,
+        ]);
     }
 }

@@ -13,11 +13,7 @@ class First extends Component
     public $selectedMeaning = null;
     public $selectedColor = null;
 
-    public function render()
-    {
-        $this->deficiencyLevel = DeficiencyLevel::all();
-        return view('livewire.evaluation.options.first');
-    }
+
 
     public function updatedSelectedDeficiency()
     {
@@ -32,5 +28,11 @@ class First extends Component
             $this->selectedColor = null;
         }
         $this->emit('selectedValueFirst', $this->selectedValue);
+    }
+    
+    public function render()
+    {
+        $this->deficiencyLevel = DeficiencyLevel::all();
+        return view('livewire.evaluation.options.first');
     }
 }

@@ -19,19 +19,19 @@ class ExposureLevelSeeder extends Seeder
             'color'=> '#FE0000',
         ]);
         ExposureLevel::create([
-            'name' => 'Frecuente ',
+            'name' => 'Frecuente',
             'value' => '3',
             'meaning' => 'La situación de exposición se presenta varias veces durante la jornada laboral por tiempos cortos',
             'color'=> '#FD8D14',
         ]);
         ExposureLevel::create([
-            'name' => 'Ocasional  ',
+            'name' => 'Ocasional',
             'value' => '2',
             'meaning' => 'La situación de exposición se presenta alguna vez durante la jornada laboral y por un período de tiempo corto',
             'color'=> '#F8DE22',
         ]);
         ExposureLevel::create([
-            'name' => 'Esporádica  ',
+            'name' => 'Esporádica',
             'value' => '1',
             'meaning' => 'La situación de exposición se presenta de manera eventual',
             'color'=> '#539165',

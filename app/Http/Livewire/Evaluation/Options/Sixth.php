@@ -6,37 +6,42 @@ use Livewire\Component;
 
 class Sixth extends Component
 {
-    protected $listeners = ['resultadoUpdate' => 'updateResultado'];
+    protected $listeners = ['resultUpdate' => 'updateResultado'];
 
-    public $level = 'N/A';
-    public $of = 0;
-    public $leveldescription;
+    public $name;
+    public $result = 0;
+    public $meaning = 'N/A';
+    public $color;
 
     public function updateResultado($range)
     {
-        $this->of = $range;
+        $this->result = $range;
         $this->calculateProductAndFourthRange();
     }
 
     private function calculateProductAndFourthRange()
     {
-        $this->of;
+        $this->result;
 
-        if ($this->of >= 20 && $this->of <= 30) {
-            $this->level = 'IV';
-            $this->leveldescription = 'Aceptable';
-        } elseif ($this->of >= 40 && $this->of <= 120) {
-            $this->level = 'III';
-            $this->leveldescription = 'Aceptable';
-        } elseif ($this->of >= 150 && $this->of <= 500) {
-            $this->level = 'II';
-            $this->leveldescription = 'No aceptable o aceptable con control específico';
-        } elseif ($this->of >= 600 && $this->of <= 4000) {
-            $this->level = 'I';
-            $this->leveldescription = 'No aceptable';
+        if ($this->result >= 20 && $this->result <= 30) {
+            $this->name = 'IV';
+            $this->meaning = 'Aceptable';
+            $this->color = "#539165";
+        } elseif ($this->result >= 40 && $this->result <= 120) {
+            $this->name = 'III';
+            $this->meaning = 'Aceptable';
+            $this->color = "#F8DE22";
+        } elseif ($this->result >= 150 && $this->result <= 500) {
+            $this->name = 'II';
+            $this->meaning = 'No aceptable o aceptable con control específico';
+            $this->color = "#FD8D14";
+        } elseif ($this->result >= 600 && $this->result <= 4000) {
+            $this->name = 'I';
+            $this->meaning = 'No aceptable';
+            $this->color = "#539165";
         } else {
-            $this->level = 'N/A';
-            $this->leveldescription = '';
+            $this->name = '';
+            $this->meaning = 'N/A';
         }
     }
 

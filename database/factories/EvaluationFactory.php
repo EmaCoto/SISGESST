@@ -29,6 +29,11 @@ class EvaluationFactory extends Factory
             'contractor' => $this->faker->randomFloat(3, 0, 1000),
             'temporary' => $this->faker->randomFloat(3, 0, 1000),
             'time' => $this->faker->randomFloat(3, 0, 1000),
+            'elimination' => $this->faker->text(),
+            'substitution'  => $this->faker->text(),
+            'engineering_controls'  => $this->faker->text(),
+            'administrative_controls'  => $this->faker->text(),
+            'personal_protection'  => $this->faker->text(),
         ];
     }
 }

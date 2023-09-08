@@ -35,7 +35,7 @@ class ProbabilityLevelSeeder extends Seeder
             'name' => 'Bajo',
             'value' => '2',
             'meaning' => 'No se ha detectado consecuencia alguna, o la eficacia del conjunto de medidas preventivas existentes es alta, o ambas. El riesgo está controlado.',
-            'color'=> '#96C291',
+            'color'=> '#539165',
         ]);
 
     }

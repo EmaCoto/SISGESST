@@ -22,6 +22,11 @@ return new class extends Migration
             $table->string('contractor', 10, 0);
             $table->string('temporary', 10, 0);
             $table->string('time', 10, 0);
+            $table->string('elimination');
+            $table->string('substitution');
+            $table->string('engineering_controls');
+            $table->string('administrative_controls');
+            $table->string('personal_protection');
             $table->timestamps();
         });
     }
@@ -33,3 +38,4 @@ return new class extends Migration
         Schema::dropIfExists('evaluations');
     }
 };
+

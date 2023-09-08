@@ -19,6 +19,10 @@ class Evaluation extends Model
         'contractor',
         'temporary',
         'time',
-        'selectedDeficiency',
+        'elimination',
+        'substitution',
+        'engineering_controls',
+        'administrative_controls',
+        'personal_protection',
     ];
 }
