@@ -20,12 +20,13 @@ class EditActivity extends Component
     {
         $this->name = $activity->name;
         $this->description = $activity->description;
+        $this->process_id = $activity->process_id;
         $this->companyId = $companyId;
         $this->selectedProcess = Process::where('company_id', $this->companyId)->get();
     }
 
 
-    public function update()
+    public function updateActivity()
     {
         $this->validate();
 

@@ -7,8 +7,8 @@ use Livewire\Component;
 
 class ShowTask extends Component
 {
-    public $open = false;
-    public $activityId, $activityName;
+    public $open = false, $openDelete = false;
+    public $activityId, $activityName, $taskDelete;
 
     public function mount($activityId, $activityName)
     {
@@ -22,5 +22,20 @@ class ShowTask extends Component
         return view('livewire.processes.tasks.show-task',[
             'tasks' => $tasks,
         ]);
+    }
+
+    public function confirmDelete($id)
+    {
+        $this->taskDelete = Task::find($id);
+        $this->openDelete = true; // Abre el modal de confirmación
+    }
+
+    public function deleteConfirmed()
+    {
+        if ($this->taskDelete) {
+            $this->taskDelete->delete();
+            $this->emitTo('companies.show-company', 'render');
+        }
+        $this->openDelete = false; // Cierra el modal de confirmación
     }
 }

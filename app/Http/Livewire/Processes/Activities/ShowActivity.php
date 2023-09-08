@@ -12,7 +12,8 @@ class ShowActivity extends Component
     use WithPagination;
 
     // public $processes, $selectedProcess, $process_id, $activities;
-    public $processId, $processName, $companyId;
+    public $openDelete = false;
+    public $processId, $processName, $companyId, $activityDelete;
 
     protected $listeners = ['processFact'];
 
@@ -36,5 +37,20 @@ class ShowActivity extends Component
         return view('livewire.processes.activities.show-activity', [
             'activities' => $activities,
         ]);
+    }
+
+    public function confirmDelete($id)
+    {
+        $this->activityDelete = Activity::find($id);
+        $this->openDelete = true; // Abre el modal de confirmación
+    }
+
+    public function deleteConfirmed()
+    {
+        if ($this->activityDelete) {
+            $this->activityDelete->delete();
+            $this->emitTo('companies.show-company', 'render');
+        }
+        $this->openDelete = false; // Cierra el modal de confirmación
     }
 }

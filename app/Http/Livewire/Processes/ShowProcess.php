@@ -11,8 +11,8 @@ class ShowProcess extends Component
     use WithPagination;
 
     public $companyId, $processId, $processName, $processDelete;
-    public $open = false;
-    public $openProcesses = [];
+    public $open = false, $openDelete = false;
+
     protected $listeners = ['render'];
 
     public function mount($companyId)
@@ -21,19 +21,6 @@ class ShowProcess extends Component
         $this->emitTo('activities.create-activity', 'companyId', $companyId);
     }
 
-    // public function toggleProcess($processId)
-    // {
-    //     if (in_array($processId, $this->openProcesses)) {
-    //         // El proceso ya está abierto, ciérralo
-    //         $this->openProcesses = array_diff($this->openProcesses, [$processId]);
-    //     } else {
-    //         // Cierra cualquier proceso abierto y abre el nuevo proceso
-    //         $this->openProcesses = [$processId];
-
-    //         // Emite un evento para mostrar el componente ShowActivity con el ID del proceso.
-    //         $this->emit('showActivity', $this->openProcesses);
-    //     }
-    // }
 
     public function render()
     {
@@ -55,7 +42,7 @@ class ShowProcess extends Component
     public function confirmDelete($id)
     {
         $this->processDelete = Process::find($id);
-        $this->open = true; // Abre el modal de confirmación
+        $this->openDelete = true; // Abre el modal de confirmación
     }
 
     public function deleteConfirmed()
@@ -64,6 +51,6 @@ class ShowProcess extends Component
             $this->processDelete->delete();
             $this->emitTo('companies.show-company', 'render');
         }
-        $this->open = false; // Cierra el modal de confirmación
+        $this->openDelete = false; // Cierra el modal de confirmación
     }
 }

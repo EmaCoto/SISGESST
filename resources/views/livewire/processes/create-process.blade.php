@@ -1,5 +1,5 @@
 <div>
-    <button wire:click="$set('open', true)" class="bg-green-600 rounded-lg px-4 py-2">crear proceso</button>
+    <button wire:click="$set('open', true)" class="bg-green-600 rounded-lg px-2 md:px-4 py-2">crear proceso</button>
 
     <x-dialog-modal wire:model="open">
         <x-slot name="content">
