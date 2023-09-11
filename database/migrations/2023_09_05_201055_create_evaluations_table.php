@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('engineering_controls');
             $table->string('administrative_controls');
             $table->string('personal_protection');
+            $table->string('compliance_legal');
             $table->timestamps();
         });
     }

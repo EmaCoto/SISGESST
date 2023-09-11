@@ -8,12 +8,8 @@ use Livewire\Component;
 class EvaluationParent extends Component
 {
     public $currentSection = 1;
-    public $danger, $effects, $source, $means, $individual, $linked, $contractor, $temporary, $time, $elimination, $substitution, $engineeringControls, $administrativeControls, $personalProtection;
+    public $danger, $effects, $source, $means, $individual, $linked, $contractor, $temporary, $time, $elimination, $substitution, $engineeringControls, $administrativeControls, $personalProtection, $legal;
 
-    // public function mount()
-    // {
-    //     $this->deficiency = DeficiencyLevel::all();
-    // }
     public function save()
     {
 
@@ -32,6 +28,7 @@ class EvaluationParent extends Component
             'engineeringControls' => 'required',
             'administrativeControls' => 'required',
             'personalProtection' => 'required',
+            'legal' => 'required',
         ]);
 
         Evaluation::create([
@@ -49,9 +46,10 @@ class EvaluationParent extends Component
             'engineering_controls' => $this->engineeringControls,
             'administrative_controls' => $this->administrativeControls,
             'personal_protection' => $this->personalProtection,
+            'compliance_legal' => $this->legal,
         ]);
 
-        $this->reset('danger','effects','source','means', 'individual', 'linked', 'contractor', 'temporary', 'time', 'elimination', 'substitution', 'engineeringControls', 'administrativeControls', 'personalProtection');
+        $this->reset('danger','effects','source','means', 'individual', 'linked', 'contractor', 'temporary', 'time', 'elimination', 'substitution', 'engineeringControls', 'administrativeControls', 'personalProtection', 'legal');
     }
     public function nextSection()
     {

@@ -29,7 +29,7 @@ class First extends Component
         }
         $this->emit('selectedValueFirst', $this->selectedValue);
     }
-    
+
     public function render()
     {
         $this->deficiencyLevel = DeficiencyLevel::all();

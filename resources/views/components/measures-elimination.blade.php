@@ -2,7 +2,7 @@
     <div class="mb-2 border border-gray-100 rounded-lg bg-gray-100 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
         <div class="flex items-center justify-between px-3 py-2">
             <div class="flex items-center sm:pr-4">
-                <h1 class="font-semibold ">ELIMINACIÓN</h1>
+                <h1 class="font-semibold">ELIMINACIÓN</h1>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d0021b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>

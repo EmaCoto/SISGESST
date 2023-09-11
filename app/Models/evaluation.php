@@ -24,5 +24,6 @@ class Evaluation extends Model
         'engineering_controls',
         'administrative_controls',
         'personal_protection',
+        'compliance_legal',
     ];
 }

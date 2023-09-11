@@ -34,6 +34,7 @@ class EvaluationFactory extends Factory
             'engineering_controls'  => $this->faker->text(),
             'administrative_controls'  => $this->faker->text(),
             'personal_protection'  => $this->faker->text(),
+            'compliance_legal' => $this->faker->randomElement(['si', 'no']),
         ];
     }
 }

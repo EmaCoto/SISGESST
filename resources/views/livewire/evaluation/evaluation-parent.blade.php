@@ -1,5 +1,6 @@
 <div class="w-full overflow-hidden py-8" style="height: 93vh">
     <x-content-block>
+        <x-error-validate/>
         <form wire:submit.prevent="save">
             @csrf
             @if ($currentSection == 1)
@@ -53,13 +54,19 @@
                         <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-gray-200 via-green-600 from-gray-200 bg-gradient-to-r ">
                         <h1 class="text-2xl font-bold mb-10 m-auto">MEDIDAS DE INTERVENCIÓN</h1>
                     </div>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-4 m-auto p-2">
+                    <div class="grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4 m-auto p-3">
                         <x-measures-elimination wire:model.defer="elimination"/>
                         <x-measures-substitution wire:model.defer="substitution"/>
                         <x-measures-engineering wire:model.defer="engineeringControls"/>
+                    </div>
+                    <div  class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-4 m-auto p-2">
                         <x-measures-administrative wire:model.defer="administrativeControls"/>
                         <x-measures-protection wire:model.defer="personalProtection"/>
-                        {{-- <x-measures-legal wire:model.defer=""/> --}}
+                    </div>
+                    <div class="flex flex-col justify-center mx-auto">
+                        <hr class="mt-6 w-10/12 m-auto h-1 my-4 border-0 to-gray-200 via-green-600 from-gray-200 bg-gradient-to-r ">
+                        <h1 class="text-xl font-bold pt-4 pb-6 mx-auto">CUMPLIMIENTO REQUISITO LEGAL</h1>
+                        <x-measures-legal wire:model.defer="legal"/>
                     </div>
                 </article>
             </section>
@@ -67,21 +74,21 @@
             {{-- BUTTONS --}}
             <div class="flex justify-center m-auto mt-10 w-full">
                 @if ($currentSection >1 )
-                    <button type="button" wire:loading.remove wire:click="previousSection" class="border-b-0 relative inline-flex items-center justify-center px-10 py-3 overflow-hidden active:text-blue-300 font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group">
+                    <button type="button" wire:loading.remove wire:click="previousSection" class="border-b-0 m-4 relative inline-flex items-center justify-center px-10 py-3 overflow-hidden active:text-blue-300 font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group">
                         <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-gray-500 rounded-full group-hover:w-56 group-hover:h-56"></span>
                         <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
                         <span class="relative text-lg">Volver</span>
                     </button>
                 @endif
                 @if ($currentSection < 2)
-                    <button type="button" wire:loading.remove wire:click="nextSection" class="border-b-0 relative inline-flex items-center justify-center px-10 py-3 overflow-hidden active:text-blue-300 font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group">
-                        <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56"></span>
+                    <button type="button" wire:loading.remove wire:click="nextSection" class="border-b-0 m-4 relative inline-flex items-center justify-center px-10 py-3 overflow-hidden active:text-blue-300 font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group">
+                        <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-blue-600 rounded-full group-hover:w-56 group-hover:h-56"></span>
                         <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
                         <span class="relative text-lg">{{ $currentSection == 1 ? 'Siguiente' : 'Enviar' }}</span>
                     </button>
                 @endif
                 @if ($currentSection > 1)
-                <button type="submit" wire:loading.remove class="border-b-0 relative inline-flex items-center justify-center px-10 py-3 overflow-hidden active:text-blue-300 font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group">
+                <button type="submit" wire:loading.remove class="border-b-0 m-4 relative inline-flex items-center justify-center px-10 py-3 overflow-hidden active:text-blue-300 font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group">
                     <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56"></span>
                     <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
                     <span class="relative text-lg">Enviar</span>
@@ -94,6 +101,7 @@
         </form>
     </x-content-block>
 </div>
+
 
 
 
