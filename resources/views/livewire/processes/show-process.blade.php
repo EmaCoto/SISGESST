@@ -3,7 +3,7 @@
         <!-- component -->
         <div id="contentEval" class="bg-gray-200 p-4 rounded-lg h-full overflow-hidden">
             <h1 class="bg-green-600 p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-2/4 mx-auto text-center text-gray-100">
-                Procesos
+                Procesos procesos
             </h1>
             @if ($processes->count() > 0)
                 <table class="table-auto rounded-lg overflow-hidden">
