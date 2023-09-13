@@ -21,7 +21,7 @@
 
                 <div class="grid md:grid-cols-2 gap-4">
                     <div>
-                        <x-label>Trabajadores directos:</x-label>
+                        <x-label>Trabajadores directos: </x-label>
                         <x-input type="number" wire:model.defer="direct_workers" />
                     </div>
                     <div>
