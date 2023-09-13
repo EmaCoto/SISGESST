@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Companies\IndexCompany;
 use App\Http\Livewire\Companies\ShowCompany;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\FormWizard;
