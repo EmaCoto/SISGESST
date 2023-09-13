@@ -13,6 +13,25 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <style>
+            #contentEval{
+                overflow-y: scroll;
+                scroll-margin: 20px;
+            }
+            #contentEval::-webkit-scrollbar{
+                background: none;
+                width: 10px;
+                right: 10px;
+            }
+            #contentEval::-webkit-scrollbar-thumb {
+                background: #50A44E;
+                border-radius: 10px;
+            }
+            #contentEval::-webkit-scrollbar-track-piece{
+                margin: 20px 0;
+            }
+        </style>
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
