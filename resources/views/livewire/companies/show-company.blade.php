@@ -16,7 +16,7 @@
             <ul id="dropdown-example" class="hidden absolute w-44 py-1">
                 <div class="bg-[#16a085] text-gray-100 rounded-lg">
                     <li>
-                        @livewire('companies.edit-company')
+                        @livewire('companies.edit-company', ['company' => $company])
                     </li>
                     <li>
                         <a href="#"

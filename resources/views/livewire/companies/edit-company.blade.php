@@ -39,13 +39,13 @@
                 <div class="grid md:grid-cols-2 gap-4">
                     <div>
                         <x-label>Ciudad:</x-label>
-                        {{-- <select wire:model.defer="city"
+                        <select wire:model.defer="city"
                             class="bg-gray-200 border-2 border-gray-300 rounded-lg h-8 text-sm pt-1 w-full">
-                            <option>Seleccione una ciudad</option>
+                            <option disabled>-- Seleccione una ciudad --</option>
                             @foreach ($cities as $city)
                                 <option value="{{ $city->id }}">{{ $city->name }} </option>
                             @endforeach
-                        </select> --}}
+                        </select>
                     </div>
                     <div>
                         <x-label>Sector economico:</x-label>
@@ -57,7 +57,7 @@
             <div class="w-4/5 md:w-3/5 mx-auto flex justify-between mt-6 mb-1">
                 <button wire:click="$set('open', false)"
                     class="bg-gray-300 px-5 py-1 rounded-lg font-semibold text-lg text-gray-600">Cancelar</button>
-                <button wire:click="updateActivity"
+                <button wire:click="updateCompany"
                     class="bg-[#16a085] px-5 py-1 rounded-lg font-semibold text-lg text-gray-100">Modificar</button>
             </div>
         </x-slot>
