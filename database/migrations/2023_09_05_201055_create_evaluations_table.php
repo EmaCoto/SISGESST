@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('task_id');
             $table->string('danger');
             $table->string('effects');
             $table->string('source');
@@ -29,6 +30,11 @@ return new class extends Migration
             $table->string('personal_protection');
             $table->string('compliance_legal');
             $table->timestamps();
+
+            $table->foreign('task_id')
+                    ->references('id')
+                    ->on('tasks')
+                    ->onDelete('CASCADE');
         });
     }
     /**

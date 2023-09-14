@@ -20,6 +20,7 @@ class EvaluationFactory extends Factory
     public function definition(): array
     {
         return [
+            'task_id' => $this->faker->numberBetween(1, 20),
             'danger' => $this->faker->text(),
             'effects' => $this->faker->text(),
             'source' => $this->faker->text(),

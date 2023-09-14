@@ -14,16 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         \App\Models\user::factory(1)->create();
-        \App\Models\Evaluation::factory(3)->create();
-
-        $this->call([
-            DeficiencyLevelSeeder::class,
-            ExposureLevelSeeder::class,
-            ProbabilityLevelSeeder::class,
-            ConsequenceLevelSeeder::class,
-            RiskLevelSeeder::class,
-        ]);
-
 
         $this->call([
             ProvinceSeeder::class,
@@ -32,6 +22,16 @@ class DatabaseSeeder extends Seeder
             ProcessSeeder::class,
             ActivitySeeder::class,
             TaskSeeder::class
+        ]);
+
+        \App\Models\Evaluation::factory(20)->create();
+
+        $this->call([
+            DeficiencyLevelSeeder::class,
+            ExposureLevelSeeder::class,
+            ProbabilityLevelSeeder::class,
+            ConsequenceLevelSeeder::class,
+            RiskLevelSeeder::class,
         ]);
     }
 }
