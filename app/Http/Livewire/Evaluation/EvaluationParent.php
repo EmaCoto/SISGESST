@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Evaluation;
 
 use App\Models\Evaluation;
+use App\Models\Task;
 use Livewire\Component;
 
 class EvaluationParent extends Component
@@ -10,6 +11,7 @@ class EvaluationParent extends Component
     public $currentSection = 1;
     public $danger, $effects, $source, $means, $individual, $linked, $contractor, $temporary, $time, $elimination, $substitution, $engineeringControls, $administrativeControls, $personalProtection, $legal;
 
+    
     public function save()
     {
 

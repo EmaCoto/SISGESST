@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('meaning');
             $table->string('color');
             $table->timestamps();
-
         });
     }
 

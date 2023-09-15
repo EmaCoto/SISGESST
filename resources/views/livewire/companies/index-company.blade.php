@@ -16,16 +16,16 @@
         <div class="grid lg:grid-cols-4 gap-8 mt-10 md:grid-cols-2 ">
             @foreach ($companies as $company)
                 <a href="{{ route('show-company', ['id' => $company->id]) }}"
-                    class="block bg-white p-3 rounded-lg bg-opacity-70">
+                    class="block hover:shadow-lg hover:shadow-gray-400 active:bg-green-600 bg-white p-3 rounded-lg bg-opacity-70 hover:bg-opacity-100 duration-200 ease-out">
                     <div class=" bg-green-600 p-1 mb-2 font-semibold rounded-lg mx-auto text-center text-gray-100">
                         <p class="block text-lg mx-3">{{ $company->name }}</p>
                     </div>
-                    <div class="mx-3">
-                        <h1>Nit: {{ $company->nit }}</h1>
-                        <h1>{{ $company->email }}</h1>
-                        <h1>Ciudad: {{ $company->city->name }}</h1>
-                        <h1>Direct-workers: {{ $company->number_direct_workers }} </h1>
-                        <h1>Indirect-workers:{{ $company->number_direct_workers }}</h1>
+                    <div class="">
+                        <h1 class=""><i class="fa-solid fa-hashtag my-auto h-full px-2 text-gray-500"></i>Nit:{{ $company->nit }}</h1>
+                        <h1 class=""><i class="fa-regular fa-envelope my-auto h-full px-2 text-gray-500"></i>Email:{{ $company->email }}</h1>
+                        <h1 class=""><i class="fa-solid fa-city my-auto h-full px-2 text-gray-500"></i>City: {{ $company->city->name }}</h1>
+                        <h1 class=""><i class="fa-solid fa-users px-2 text-gray-500"></i>Direct-workers: {{ $company->number_direct_workers }} </h1>
+                        <h1 class=""><i class="fa-solid fa-users-slash px-2 text-gray-500"></i>Indirect-workers:{{ $company->number_direct_workers }}</h1>
                     </div>
                 </a>
             @endforeach

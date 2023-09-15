@@ -19,7 +19,7 @@ class Activity extends Model
         return $this->belongsTo(Process::class, 'process_id');
     }
 
-    public function tasks()
+    public function task()
     {
         return $this->hasMany(Task::class);
     }

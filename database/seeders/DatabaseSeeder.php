@@ -14,24 +14,25 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         \App\Models\user::factory(1)->create();
-        \App\Models\Evaluation::factory(3)->create();
 
         $this->call([
-            DeficiencyLevelSeeder::class,
-            ExposureLevelSeeder::class,
-            ProbabilityLevelSeeder::class,
-            ConsequenceLevelSeeder::class,
-            RiskLevelSeeder::class,
-        ]);
 
-
-        $this->call([
+            //amuna
             ProvinceSeeder::class,
             CitySeeder::class,
             CompanySeeder::class,
             ProcessSeeder::class,
             ActivitySeeder::class,
-            TaskSeeder::class
+            TaskSeeder::class,
+
+            //emanuel
+            DeficiencyLevelSeeder::class,
+            ExposureLevelSeeder::class,
+            ProbabilityLevelSeeder::class,
+            ConsequenceLevelSeeder::class,
+            RiskLevelSeeder::class,
+            EvaluationSeeder::class,
+
         ]);
     }
 }

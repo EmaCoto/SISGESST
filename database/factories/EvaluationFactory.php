@@ -20,6 +20,10 @@ class EvaluationFactory extends Factory
     public function definition(): array
     {
         return [
+            'task_id' => function () {
+                return \App\Models\Task::take(20)->get()->random()->id;
+            },
+
             'danger' => $this->faker->text(),
             'effects' => $this->faker->text(),
             'source' => $this->faker->text(),
@@ -35,6 +39,8 @@ class EvaluationFactory extends Factory
             'administrative_controls'  => $this->faker->text(),
             'personal_protection'  => $this->faker->text(),
             'compliance_legal' => $this->faker->randomElement(['si', 'no']),
+            'user_id' => '1',
+            'deficiency_level_id' => $this->faker->numberBetween(1, 4),
         ];
     }
 }

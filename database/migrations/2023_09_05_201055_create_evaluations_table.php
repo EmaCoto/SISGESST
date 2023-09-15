@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('task_id');
+
             $table->string('danger');
             $table->string('effects');
             $table->string('source');
             $table->string('means');
             $table->string('individual');
+            $table->unsignedBigInteger('deficiency_level_id');
             $table->string('linked', 10, 0);
             $table->string('contractor', 10, 0);
             $table->string('temporary', 10, 0);
@@ -28,7 +32,16 @@ return new class extends Migration
             $table->string('administrative_controls');
             $table->string('personal_protection');
             $table->string('compliance_legal');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+
+            $table->foreign('task_id')->references('id')->on('tasks');
+            $table->foreign('deficiency_level_id')->references('id')->on('deficiency_levels');
+            $table->foreign('user_id')->references('id')->on('users');
+
+
+
         });
     }
     /**

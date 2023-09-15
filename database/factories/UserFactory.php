@@ -34,6 +34,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(1),
             'profile_photo_path' => null,
             'current_team_id' => null,
+
         ];
     }
 
