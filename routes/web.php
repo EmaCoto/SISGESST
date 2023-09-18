@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Livewire\Companies\IndexCompany;
 use App\Http\Livewire\Companies\ShowCompany;
 use App\Http\Livewire\Evaluation\EvaluationParent;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\FormWizard;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +15,6 @@ use App\Http\Livewire\FormWizard;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {return view('welcome');});
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
 Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');});
@@ -24,3 +22,4 @@ Route::get('/dashboard', function () {return view('dashboard');})->name('dashboa
 Route::get('/show-company/{id}', ShowCompany::class)->name('show-company');
 Route::get('/evaluation', EvaluationParent::class)->name('evaluation');
 
+// Route::view('/index', 'index');

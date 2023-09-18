@@ -21,6 +21,7 @@ export default {
             },
             backgroundImage: {
                 'container': "url('/public/img/sisgesst.png')",
+                'nav': "url('/public/img/nav.jpg')",
 
               },
         },
