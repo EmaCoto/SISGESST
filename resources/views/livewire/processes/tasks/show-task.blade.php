@@ -99,6 +99,7 @@
                     @endforeach
                 </tbody>
             </table>
+            <button wire:click="$set('open', false)" class="bg-gray-300 rounded-md px-4 py-2 ">Cancelar</button>
         </x-slot>
     </x-dialog-task>
 </div>

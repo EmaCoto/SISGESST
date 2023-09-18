@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('deficiency_levels', function (Blueprint $table) {
+        Schema::create('consequence_levels', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('value');
-            $table->string('meaning');
-            $table->string('color');
             $table->timestamps();
-
         });
     }
 
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('deficiency_levels');
+        Schema::dropIfExists('consequence_levels');
     }
 };

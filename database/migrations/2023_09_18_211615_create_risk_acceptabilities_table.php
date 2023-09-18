@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('exposure_levels', function (Blueprint $table) {
+        Schema::create('risk_acceptabilities', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('value');
-            $table->string('meaning');
-            $table->string('color');
             $table->timestamps();
-
         });
     }
 
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('exposure_levels');
+        Schema::dropIfExists('risk_acceptabilities');
     }
 };
