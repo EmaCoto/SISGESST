@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('intervention_risk_levels', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('value');
+            $table->string('meaning');
+            $table->string('color');
             $table->timestamps();
         });
     }

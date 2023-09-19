@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('consequence_levels', function (Blueprint $table) {
             $table->id();
+            $table->string('prefix');
+            $table->string('name');
+            $table->string('value');
+            $table->string('meaning');
+            $table->string('color');
             $table->timestamps();
         });
     }
