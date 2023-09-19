@@ -1,5 +1,5 @@
-<div class="h-[720px] relative">
-    <div class="absolute h-[600px] flex flex-col justify-center px-28 w-1/2">
+<div class="min-h-screen">
+    <div class="absolute h-[600px] lg:h-[450px] flex flex-col justify-center px-28 w-1/2">
         <h5 class="font-semibold px-1">¿TÚ EMPRESA EN SST?</h5>
         <h1 class="text-5xl font-bold">¡Evalua con nosotros y obten nuestra ayuda!</h1><br>
         <p class="text-lg text-justify">La seguridad y la salud en el trabajo, incluyendo el cumplimiento de los requisitos en materia de SST con arreglo a las legislaciones nacionales, son responsabilidad y deber del empleador.</p><br>

@@ -38,5 +38,5 @@
 
         // Escucha el evento de scroll
         window.addEventListener('scroll', handleScroll);
-      </script>
+    </script>
 </div>

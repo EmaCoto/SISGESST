@@ -13,7 +13,6 @@
         <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <style>
-
             .navbar {
             background-color: #F2F2F2;
             transition: background-color 0.4s;
@@ -39,17 +38,44 @@
            <x-image-index />
 
 
-            {{-------------------------------- SECTION IMAGE ---------------------------------}}
-            <div class="flex flex-col justify-center h-[700px] mx-auto px-28">
-                <h1 class="text-center font-bold py-4 text-5xl">¿Por qué elegirnos?</h1>
-                <div class="grid grid-cols-2">
-                    <div>
-                        <h2 class="text-center font-bold py-4 text-2xl">Plataforma Intuitiva</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aliquid, modi ad ut omnis odit quasi quas corrupti mollitia est distinctio ipsum consectetur eaque eligendi possimus iusto nulla id corporis?</p>
+            {{-------------------------------- SECTION WHY CHOOSE US ---------------------------------}}
+            <div class="flex flex-col justify-center h-[700px] lg:h-[190px] mx-auto m-10">
+                <div>
+                    {{-- <hr class="-mb-7 w-10/12 m-auto h-1 my-4 border-0 to-gray-200 via-green-600 from-gray-200 bg-gradient-to-r "> --}}
+                    <h1 class="text-center font-bold mb-16 text-5xl bg-white">¿Por qué elegirnos?</h1>
+                </div>
+                <div class="grid grid-cols-4 px-28">
+                    <div class="mx-auto hover:bg-gradient-to-r from-green-300 to-teal-300 rounded-xl w-44 h-44 duration-500 border border-none hover:border-black">
+                        <div class="p-2 bg-gradient-to-r from-teal-300 to-green-300 rounded-xl rotate-45 w-44 h-44 border-2 border-black">
+                            <div class="flex flex-col mx-auto items-center text-center -rotate-45">
+                                <img src="{{ asset('img/plataform.png') }}" alt="" class="w-20">
+                                <h2 class="font-bold py-2 text-xl">Plataforma Intuitiva</h2>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h2 class="text-center font-bold py-4 text-2xl">Soluciones Eficaces</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, accusantium! Necessitatibus optio debitis magnam corporis voluptate tempora libero quisquam ab impedit, incidunt a voluptatum accusamus quod minus ullam eligendi repellat?</p>
+                    <div class="mx-auto hover:bg-gradient-to-r from-green-300 to-teal-300 rounded-xl w-44 h-44 duration-500 border border-none hover:border-black">
+                        <div class="p-2 bg-gradient-to-r from-teal-300 to-green-300 rounded-xl rotate-45 w-44 h-44 border-2 border-black">
+                            <div class="flex flex-col mx-auto items-center text-center -rotate-45">
+                                <img src="{{ asset('img/check.png') }}" alt="" class="w-20">
+                                <h2 class="font-bold py-2 text-xl">Soluciones Eficaces</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-auto hover:bg-gradient-to-r from-green-300 to-teal-300 rounded-xl w-44 h-44 duration-500 border border-none hover:border-black">
+                        <div class="p-2 bg-gradient-to-r from-teal-300 to-green-300 rounded-xl rotate-45 w-44 h-44 border-2 border-black">
+                            <div class="flex flex-col mx-auto items-center text-center -rotate-45">
+                                <img src="{{ asset('img/unido.png') }}" alt="" class="w-20">
+                                <h2 class="font-bold py-2 text-xl">Gestión<br>Integral</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-auto hover:bg-gradient-to-r from-green-300 to-teal-300 rounded-xl w-44 h-44 duration-500 border border-none hover:border-black">
+                        <div class="p-2 bg-gradient-to-r from-teal-300 to-green-300 rounded-xl rotate-45 w-44 h-44 border-2 border-black">
+                            <div class="flex flex-col mx-auto items-center text-center -rotate-45">
+                                <img src="{{ asset('img/accesible.png') }}" alt="" class="w-20">
+                                <h2 class="font-bold py-2 text-xl">Acceso<br>Rápido</h2>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
