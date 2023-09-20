@@ -21,7 +21,6 @@ class ShowProcess extends Component
         $this->emitTo('activities.create-activity', 'companyId', $companyId);
     }
 
-
     public function render()
     {
         $processes = Process::where('company_id', $this->companyId)->paginate(5);

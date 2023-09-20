@@ -24,6 +24,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_deficiency_level');
             $table->unsignedBigInteger('id_exposure_level');
             $table->unsignedBigInteger('id_probability_level');
+            $table->string('value_probability_level');
             $table->unsignedBigInteger('id_consequence_level');
             $table->unsignedBigInteger('id_intervention_risk_level');
             $table->string('risk_level_interpretation');
