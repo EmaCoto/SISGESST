@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('risk_acceptabilities', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('meaning');
+            $table->string('meaning', 500);
             $table->string('color');
             $table->timestamps();
         });

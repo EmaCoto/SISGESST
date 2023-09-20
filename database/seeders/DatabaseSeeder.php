@@ -21,17 +21,16 @@ class DatabaseSeeder extends Seeder
             CompanySeeder::class,
             ProcessSeeder::class,
             ActivitySeeder::class,
-            TaskSeeder::class
-        ]);
+            TaskSeeder::class,
 
-        \App\Models\Evaluation::factory(20)->create();
-
-        $this->call([
+            DangerDescriptionSeeder::class,
             DeficiencyLevelSeeder::class,
             ExposureLevelSeeder::class,
             ProbabilityLevelSeeder::class,
             ConsequenceLevelSeeder::class,
-            RiskLevelSeeder::class,
+            InterventionRiskLevelSeeder::class,
+            RiskAcceptabilitySeeder::class,
+            InterventionMeasureSeeder::class,
         ]);
     }
 }

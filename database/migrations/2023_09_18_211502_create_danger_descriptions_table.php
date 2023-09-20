@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('danger_descriptions', function (Blueprint $table) {
             $table->id();
             $table->string('danger');
-            $table->string('danger_description');
+            $table->string('danger_description', 500);
             $table->timestamps();
         });
     }

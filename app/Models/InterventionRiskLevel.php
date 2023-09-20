@@ -9,6 +9,13 @@ class InterventionRiskLevel extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'value',
+        'meaning',
+        'color'
+    ];
+
     public function evaluations()
     {
         return $this->hasMany(Evaluation::class);

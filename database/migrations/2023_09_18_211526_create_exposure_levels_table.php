@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('prefix');
             $table->string('name');
             $table->string('value');
-            $table->string('meaning');
+            $table->string('meaning', 500);
             $table->string('color');
             $table->timestamps();
         });

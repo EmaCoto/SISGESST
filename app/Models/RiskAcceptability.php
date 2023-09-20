@@ -9,6 +9,12 @@ class RiskAcceptability extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'meaning',
+        'color'
+    ];
+
     public function evaluations()
     {
         return $this->hasMany(Evaluation::class);

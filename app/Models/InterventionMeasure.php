@@ -10,6 +10,11 @@ class InterventionMeasure extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'description',
+    ];
+
     public function evaluations(): BelongsToMany
     {
         return $this->belongsToMany(Evaluation::class);

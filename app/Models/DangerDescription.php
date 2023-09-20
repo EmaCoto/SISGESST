@@ -9,6 +9,11 @@ class DangerDescription extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'danger',
+        'danger_description',
+    ];
+
     public function evaluations()
     {
         return $this->hasMany(Evaluation::class);
