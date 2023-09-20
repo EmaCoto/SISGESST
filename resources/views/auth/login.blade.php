@@ -1,9 +1,5 @@
 <x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
-
+    <div class=" min-h-screen m-auto flex flex-col items-center bg-gradient-to-r from-green-300 via-teal-200 to-teal-300">
         <x-validation-errors class="mb-4" />
 
         @if (session('status'))
@@ -11,38 +7,42 @@
                 {{ session('status') }}
             </div>
         @endif
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
+        <div class="grid grid-cols-2 justify-center m-auto rounded-lg overflow-hidden shadow-2xl h-[500px] w-4/6 bg-white">
+            <img src="{{ asset('img/login.jpg') }}" alt="logo" class="w-full h-full">
             <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                <form method="POST" action="{{ route('login') }}" class="p-16 h-full flex flex-col justify-between">
+                    @csrf
+                    <div>
+                        <x-authentication-card-logo />
+                    </div>
+                    <div>
+                        <div>
+                            <x-label for="email" value="{{ __('Correo') }}" />
+                            <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                        </div>
+                        <div>
+                            <x-label for="password" value="{{ __('Contraseña') }}" />
+                            <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                        </div>
+                        <div>
+                            <label for="remember_me" class="flex items-center">
+                                <x-checkbox id="remember_me" name="remember" />
+                                <span class="ml-2 text-sm text-gray-600">{{ __('Recuérdame') }}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-end mt-4">
+                        @if (Route::has('password.request'))
+                            <a class="underline text-sm text-gray-600 hover:text-teal-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                                {{ __('Olvidaste tu contraseña?') }}
+                            </a>
+                        @endif
+                        <x-button class="ml-4">
+                            {{ __('Iniciar sesión') }}
+                        </x-button>
+                    </div>
+                </form>
             </div>
-
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
+        </div>
+    </div>
 </x-guest-layout>

@@ -1,7 +1,7 @@
 <div class="z-10 grid grid-cols-3 w-full justify-between items-center h-20 px-4 py-2 sticky top-0 navbar border-none">
     <div class="flex">
         <img src="{{ asset('img/logo.png') }}" alt="logo" class="w-16">
-        <p class="py-[10px] text-teal-400 px-3 text-3xl font-extrabold">SISGESST</p>
+        <a href="#"><p class="my-4 text-teal-400 px-3 text-3xl font-extrabold cursor-pointer">SISGESST</p></a>
     </div>
     <div class="text-center font-semibold">
         <a href="#" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Inicio</a>
