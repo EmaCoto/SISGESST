@@ -13,7 +13,7 @@
                 <livewire:companies.create-company />
             </div>
         </div>
-        <div class="grid lg:grid-cols-4 gap-8 mt-10 md:grid-cols-2 ">
+        <div class="grid lg:grid-cols-3 gap-8 mt-10 md:grid-cols-2 ">
             @foreach ($companies as $company)
                 <a href="{{ route('show-company', ['id' => $company->id]) }}"
                     class="block bg-white p-3 rounded-lg bg-opacity-70">

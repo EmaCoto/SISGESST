@@ -117,8 +117,9 @@
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
-                                    <span
-                                        class="bg-green-600 text-gray-100 py-1 px-3 rounded-full text-md">Evaluar</span>
+                                    <a href="{{ route('index-evaluation', ['id' => $process->id]) }}" class="bg-green-600 text-gray-100 py-1 px-3 rounded-full text-md">
+                                        Evaluar
+                                    </a>
                                 </td>
                             </tr>
                         @empty

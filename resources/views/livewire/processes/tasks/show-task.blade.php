@@ -13,6 +13,7 @@
                         <th class="py-3 px-6 text-left">N°</th>
                         <th class="py-3 px-6 text-left">Nombre</th>
                         <th class="py-3 px-6 text-center">Descripción</th>
+                        <th class="py-3 px-6 text-center">Rutinario</th>
                         <th class="py-3 px-6 text-center">Acciones</th>
                     </tr>
                 </thead>
@@ -35,11 +36,20 @@
                                 </div>
                             </td>
                             <td class="py-3 px-6 text-center">
+                                <div class="flex items-center justify-center">
+                                    @if ($task->routine == 1)
+                                        <span>Si</span>
+                                    @else
+                                        <span>No</span>
+                                    @endif
+                                </div>
+                            </td>
+                            <td class="py-3 px-6 text-center">
                                 <div class="flex item-center justify-center">
                                     <div class="flex group relative">
                                         <span
                                             class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">Editar</span>
-                                        @livewire('processes.tasks.edit-task', key(time() . $task->id))
+                                        @livewire('processes.tasks.edit-task', ['task' => $task,'companyId' => $companyId], key(time() . $task->id))
                                     </div>
 
                                     <div class="flex group relative">

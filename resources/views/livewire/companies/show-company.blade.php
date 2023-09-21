@@ -60,6 +60,7 @@
             @livewire('processes.create-process', ['companyId' => $company->id, 'companyName' => $company->name])
             @livewire('processes.activities.create-activity', ['companyId' => $company->id])
             @livewire('processes.tasks.create-task', ['companyId' => $company->id])
+
         </div>
     </div>
 

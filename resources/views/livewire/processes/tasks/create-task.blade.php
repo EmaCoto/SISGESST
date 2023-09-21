@@ -13,11 +13,18 @@
                     @endforeach
                 </select>
 
-                <x-label>Nombre actividad:</x-label>
+                <x-label>Nombre tarea:</x-label>
                 <x-input type="text" wire:model.defer="name"/>
 
-                <x-label>Descripcion actividad:</x-label>
+                <x-label>Descripcion tarea:</x-label>
                 <textarea wire:model.defer="description" class="bg-gray-200 focus:bg-gray-50 border-2 border-gray-300 focus:border-green-600 focus:ring-0 rounded-md shadow-sm w-full h-36 mb-4"></textarea>
+
+                <x-label>Rutinario:</x-label>
+                <select wire:model.defer="routine" class="bg-gray-200 border-2 border-gray-300 rounded-md w-full h-9 py-0 px-4 mb-4 focus:ring-0 focus:border-green-600">
+                    <option>-- Seleccione una opción --</option>
+                    <option value="1">Si</option>
+                    <option value="0">No</option>
+                </select>
             </div>
 
             <div class="w-4/5 md:w-3/5 mx-auto flex justify-between mt-6 mb-1">

@@ -8,12 +8,13 @@ use Livewire\Component;
 class ShowTask extends Component
 {
     public $open = false, $openDelete = false;
-    public $activityId, $activityName, $taskDelete;
+    public $activityId, $activityName, $taskDelete, $companyId;
 
-    public function mount($activityId, $activityName)
+    public function mount($activityId, $activityName, $companyId)
     {
         $this->activityId = $activityId;
         $this->activityName = $activityName;
+        $this->companyId = $companyId;
 
     }
     public function render()
