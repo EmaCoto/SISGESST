@@ -1,7 +1,7 @@
 <div class="z-10 grid grid-cols-3 w-full justify-between items-center h-20 px-4 py-2 sticky top-0 navbar border-none">
     <div class="flex">
         <img src="{{ asset('img/logo.png') }}" alt="logo" class="w-16">
-        <a href="#"><p class="my-4 text-teal-400 px-3 text-3xl font-extrabold cursor-pointer">SISGESST</p></a>
+        <a href="#" class="hover:bg-none"><p class="my-4 text-[#ff8239] px-3 text-3xl font-extrabold cursor-pointer">SISGESST</p></a>
     </div>
     <div class="text-center font-semibold">
         <a href="#" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Inicio</a>
@@ -17,7 +17,7 @@
                     <a href="{{ route('login') }}" class="font-semibold focus:underline focus:underline-2 focus:rounded-sm active:outline-green-100 px-4 py-[31px]">Iniciar</a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="ml-4 font-semibold focus:underline focus:underline-2 focus:rounded-sm active:outline-green-100 px-4 py-[31px]">Regristrarse</a>
+                        <a href="{{ route('register') }}" class="ml-4 font-semibold focus:underline focus:underline-2 focus:rounded-sm active:outline-green-100 px-4 py-[31px]">Registrarse</a>
                     @endif
                 @endauth
             </div>

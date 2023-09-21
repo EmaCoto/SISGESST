@@ -19,8 +19,9 @@
             transition: background-color 0.4s;
             }
             .navbar a:hover {
+            top: 0;
             color: white;
-            background-color: #000000af;
+            background-color: #0000005e;
             transition: background-color 0.4s;
             }
 
@@ -46,29 +47,29 @@
             <x-cards-index/>
         </main>
 
-        <footer>
-            <div class="grid grid-cols-4 px-28 bg-[#00000064] text-center text-gray-200 py-2 h-32">
+        <footer class="z-50">
+            <div class="grid grid-cols-4 px-28 bg-[#cbcbcd] text-center text-black py-2 h-32">
                 <div class="flex items-center">
                     <img src="{{ asset('img/logo.png') }}" alt="logo" class="w-16">
-                    <p class="text-teal-400 px-3 text-3xl font-extrabold">SISGESST</p>
+                    <p class="text-[#ff8239] px-3 text-3xl font-extrabold">SISGESST</p>
                 </div>
                 <div class="">
-                    <h1 class="font-semibold text-white m-2">LEGAL</h1>
+                    <h1 class="font-semibold m-2">LEGAL</h1>
                     <div class="flex flex-col justify-center h-16 items-center">
-                        <a href="#" class="hover:text-teal-400">Terms</a>
-                        <a href="#" class="hover:text-teal-400">Privacy</a>
+                        <a href="#" class="hover:text-[#FE5E00]">Terms</a>
+                        <a href="#" class="hover:text-[#FE5E00]">Privacy</a>
                     </div>
                 </div>
                 <div class="">
-                    <h1 class="font-semibold text-white m-2">COMPANY</h1>
+                    <h1 class="font-semibold m-2">COMPANY</h1>
                     <div class="flex flex-col justify-center h-16 items-center">
-                        <a href="#" class="hover:text-teal-400">Official blog</a>
-                        <a href="#" class="hover:text-teal-400">About us</a>
-                        <a href="#" class="hover:text-teal-400">Contact</a>
+                        <a href="#" class="hover:text-[#FE5E00]">Official blog</a>
+                        <a href="#" class="hover:text-[#FE5E00]">About us</a>
+                        <a href="#" class="hover:text-[#FE5E00]">Contact</a>
                     </div>
                 </div>
                 <div class="">
-                    <h1 class="font-semibold text-white m-2">SOCIAL</h1>
+                    <h1 class="font-semibold m-2">SOCIAL</h1>
                     <div class="flex justify-center h-16 items-center">
                         <i class="fa-brands fa-facebook fa-xl px-4 w-10"></i>
                         <i class="fa-brands fa-linkedin fa-xl px-4 w-10"></i>

@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class=" min-h-screen m-auto flex flex-col items-center bg-gradient-to-r from-green-300 via-teal-200 to-teal-300">
+    <div class=" min-h-screen m-auto flex flex-col items-center bg-gradient-to-r from-[#ffbb3e9a] via-[#ffbb3e9a] to-[#fe5d009a]">
         <x-validation-errors class="mb-4" />
 
         @if (session('status'))
