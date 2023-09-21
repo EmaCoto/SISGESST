@@ -53,27 +53,27 @@
                     <img src="{{ asset('img/logo.png') }}" alt="logo" class="w-16">
                     <p class="text-[#ff8239] px-3 text-3xl font-extrabold">SISGESST</p>
                 </div>
-                <div class="">
+                <div>
                     <h1 class="font-semibold m-2">LEGAL</h1>
                     <div class="flex flex-col justify-center h-16 items-center">
-                        <a href="#" class="hover:text-[#FE5E00]">Terms</a>
-                        <a href="#" class="hover:text-[#FE5E00]">Privacy</a>
+                        <a href="#" class="hover:text-[#FE5E00]">Términos</a>
+                        <a href="#" class="hover:text-[#FE5E00]">Privacidad</a>
                     </div>
                 </div>
-                <div class="">
-                    <h1 class="font-semibold m-2">COMPANY</h1>
+                <div>
+                    <h1 class="font-semibold m-2">COMPAÑÍA</h1>
                     <div class="flex flex-col justify-center h-16 items-center">
-                        <a href="#" class="hover:text-[#FE5E00]">Official blog</a>
-                        <a href="#" class="hover:text-[#FE5E00]">About us</a>
-                        <a href="#" class="hover:text-[#FE5E00]">Contact</a>
+                        <a href="#" class="hover:text-[#FE5E00]">Blog oficial</a>
+                        <a href="#" class="hover:text-[#FE5E00]">Acerca de nosotros</a>
+                        <a href="#" class="hover:text-[#FE5E00]">Contáctanos</a>
                     </div>
                 </div>
-                <div class="">
-                    <h1 class="font-semibold m-2">SOCIAL</h1>
-                    <div class="flex justify-center h-16 items-center">
-                        <i class="fa-brands fa-facebook fa-xl px-4 w-10"></i>
-                        <i class="fa-brands fa-linkedin fa-xl px-4 w-10"></i>
-                        <i class="fa-brands fa-square-x-twitter fa-xl px-4 w-10"></i>
+                <div>
+                    <h1 class="font-semibold m-2">REDES SOCIALES</h1>
+                    <div class="h-16 m-auto w-32 flex justify-between items-center group">
+                        <a href="#" class="group-hover:bg-white rounded-sm h-5 w-5 group-hover:p-1 ease-in-out duration-500"><i class="fa-brands fa-square-facebook fa-xl group-hover:text-blue-800"></i></a>
+                        <a href="#" class="group-hover:bg-white rounded-sm h-5 w-5 group-hover:p-1 ease-in-out duration-500"><i class="fa-brands fa-linkedin fa-xl group-hover:text-cyan-600"></i></a>
+                        <a href="#" class="group-hover:bg-white rounded-sm h-5 w-5 group-hover:p-1 ease-in-out duration-500"><i class="fa-brands fa-square-x-twitter fa-xl group-hover:text-black"></i></a>
                     </div>
                 </div>
             </div>

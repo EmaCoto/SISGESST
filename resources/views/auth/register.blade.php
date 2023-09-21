@@ -60,7 +60,7 @@
 </x-guest-layout> --}}
 
 <x-guest-layout>
-    <div class=" min-h-screen m-auto flex flex-col items-center bg-gradient-to-r from-[#ffbb3e9a] via-[#ffbb3e9a] to-[#fe5d009a]">
+    <div class=" min-h-screen m-auto flex flex-col items-center bg-[#EFF0F2]">
         <x-validation-errors class="mb-4" />
 
         <div class="grid grid-cols-2 justify-center m-auto rounded-lg overflow-hidden shadow-2xl h-[500px] w-4/6 bg-white">
