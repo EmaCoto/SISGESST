@@ -19,6 +19,7 @@ class ActivityFactory extends Factory
         return [
             'name' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
+            'status' => 'sin evaluar',
             'process_id' => function () {
                 return \App\Models\Process::take(10)->get()->random()->id;
             },
