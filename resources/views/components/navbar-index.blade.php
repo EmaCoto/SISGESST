@@ -4,8 +4,8 @@
         <a href="#" class="hover:bg-none"><p class="my-4 text-[#ff8239] px-3 text-3xl font-extrabold cursor-pointer">SISGESST</p></a>
     </div>
     <div class="text-center font-semibold">
-        <a href="#" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Inicio</a>
-        <a href="#" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Ayuda</a>
+        <a href="/" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Inicio</a>
+        <a href="{{ route('help') }}" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Ayuda</a>
         <a href="#" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Contáctenos</a>
     </div>
     <div>
