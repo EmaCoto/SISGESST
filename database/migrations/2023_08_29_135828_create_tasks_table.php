@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name')->index();
             $table->text('description')->nullable();
             $table->boolean('routine')->default(false);
-            $table->text('status');
+            $table->text('status')->default('sin evaluar');
             $table->unsignedBigInteger('activity_id');
 
             $table->foreign('activity_id')

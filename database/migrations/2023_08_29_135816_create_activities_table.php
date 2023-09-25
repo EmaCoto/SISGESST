@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->index();
             $table->text('description')->nullable();
-            $table->text('status');
+            $table->text('status')->default('sin evaluar');
             $table->unsignedBigInteger('process_id');
 
             $table->foreign('process_id')
