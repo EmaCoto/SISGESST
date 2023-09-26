@@ -10,10 +10,11 @@ use Livewire\Component;
 
 class SectionOne extends Component
 {
-    public $processId, $processName, $activities, $activityId,$actiId, $tasks, $taskId, $dangers, $dangerClassification, $danger_description, $danger_descriptions;
+    public $processId, $processName, $activities, $activityId, $actiId, $tasks, $taskId, $dangers, $dangerClassification, $dangerDescription, $danger_descriptions;
+    public $previousTask, $previousDangerClassification, $previousDangerDescription;
     protected $listeners = ['nextPosition1'];
 
-    public function mount($id)
+    public function mount($id, $sectionTaskId, $sectionDangerClassification, $sectionDangerDescription)
     {
         //Process
         $this->processId = $id;
@@ -22,6 +23,9 @@ class SectionOne extends Component
 
         //Activity
         $this->activities = Activity::where('process_id', $id)->get();
+        $this->previousTask = $sectionTaskId; //tengo que arreglar esto porque los select quedan vacios porque la variable no es la misma
+        $this->previousDangerClassification = $sectionDangerClassification;//tengo que arreglar esto porque los select quedan vacios porque la variable no es la misma
+        $this->previousDangerDescription = $sectionDangerDescription;//tengo que arreglar esto porque los select quedan vacios porque la variable no es la misma
     }
 
     public function updatedDangerClassification()
@@ -44,6 +48,11 @@ class SectionOne extends Component
 
     public function nextPosition1()
     {
+        $this->emit('sectionOne', [
+            'taskId' => $this->taskId,
+            'dangerClassification' => $this->dangerClassification,
+            'dangerDescription' => $this->dangerDescription
+        ]);
         $this->emit('increasePosition');
     }
 

@@ -16,8 +16,8 @@ class SectionTwo extends Component
     public function previousPosition2()
     {
         $this->emit('decreasePosition');
-
     }
+
     public function render()
     {
         return view('livewire.evaluation.sections.section-two');

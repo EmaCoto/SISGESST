@@ -13,14 +13,16 @@ class IndexEvaluation extends Component
     public $processId;
     public $sectionPosition = 1;
 
-    protected $listeners = ['increasePosition', 'decreasePosition'];
+    public $taskId, $dangerClassification, $dangerDescription;
+
+    protected $listeners = ['increasePosition', 'decreasePosition', 'sectionOne'];
 
     public function mount($id)
     {
-        //Process
         $this->processId = $id;
     }
 
+    //metodos para cambiar de posicion en las secciones
     public function increasePosition()
     {
         $this->sectionPosition++;
@@ -28,7 +30,10 @@ class IndexEvaluation extends Component
 
     public function decreasePosition()
     {
-        $this->sectionPosition--;
+        if($this->sectionPosition > 1)
+        {
+            $this->sectionPosition--;
+        }
 
     }
 
@@ -40,6 +45,15 @@ class IndexEvaluation extends Component
     {
         $this->emit('previousPosition'.$this->sectionPosition);
     }
+
+    //metodos para recibir la informacion de las secciones
+    public function sectionOne($data)
+    {
+        $this->taskId = $data['taskId'];
+        $this->dangerClassification = $data['dangerClassification'];
+        $this->dangerDescription = $data['dangerDescription'];
+    }
+
     public function render()
     {
         return view('livewire.evaluation.index-evaluation');
