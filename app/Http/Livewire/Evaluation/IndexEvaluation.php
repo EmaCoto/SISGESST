@@ -7,12 +7,15 @@ use Livewire\Component;
 class IndexEvaluation extends Component
 {
     public $processId;
-    public $sectionPosition = 5;
+    public $sectionPosition = 1;
 
     public $activityId, $activityName, $taskId, $dangerClassification, $dangerDescription;
 
     public $danger, $effects, $source, $means, $individual;
     public $linked, $contractor, $temporary, $time;
+
+    public $removal, $removalSuggestion, $replacement, $replacementSuggestion, $engineeringControl, $engineeringControlSuggestion,
+            $administrativeControl, $administrativeControlSuggestion, $personalProtection, $personalProtectionSuggestion;
 
     protected $listeners = [
         'increasePosition',
@@ -21,6 +24,7 @@ class IndexEvaluation extends Component
         'sectionTwo',
         'sectionThree',
         'sectionFour',
+        'sectionFive',
 
     ];
 
@@ -76,6 +80,20 @@ class IndexEvaluation extends Component
         $this->contractor = $dataFour['contractor'];
         $this->temporary = $dataFour['temporary'];
         $this->time = $dataFour['time'];
+    }
+
+    public function sectionFive($dataFive)
+    {
+        $this->removal = $dataFive['removal'];
+        $this->removalSuggestion = $dataFive['removalSuggestion'];
+        $this->replacement = $dataFive['replacement'];
+        $this->replacementSuggestion = $dataFive['replacementSuggestion'];
+        $this->engineeringControl = $dataFive['engineeringControl'];
+        $this->engineeringControlSuggestion = $dataFive['engineeringControlSuggestion'];
+        $this->administrativeControl = $dataFive['administrativeControl'];
+        $this->administrativeControlSuggestion = $dataFive['administrativeControlSuggestion'];
+        $this->personalProtection = $dataFive['personalProtection'];
+        $this->personalProtectionSuggestion = $dataFive['personalProtectionSuggestion'];
     }
 
     public function render()

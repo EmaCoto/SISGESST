@@ -27,7 +27,18 @@
                 'sectionTime' => $time,
             ])
         @elseif ($sectionPosition == 5)
-            @livewire('evaluation.sections.section-five')
+            @livewire('evaluation.sections.section-five', [
+                'sectionRemoval' => $removal,
+                'sectionRemovalSuggestion' => $removalSuggestion,
+                'sectionReplacement' => $replacement,
+                'sectionReplacementSuggestion' => $replacementSuggestion,
+                'sectionEngineeringControl' => $engineeringControl,
+                'sectionEngineeringSuggestion' => $engineeringControlSuggestion,
+                'sectionAdministrativeControl' => $administrativeControl,
+                'sectionAdministrativeSuggestion' => $administrativeControlSuggestion,
+                'sectionPersonalProtection' => $personalProtection,
+                'sectionProtectionSuggestion' => $personalProtectionSuggestion,
+            ])
         @elseif ($sectionPosition == 6)
             @livewire('evaluation.sections.section-six')
         @endif
@@ -72,6 +83,16 @@
         <p>{{ $temporary }}</p>
         <p>{{ $time }}</p>
 
-
+        <h1>seccion 5</h1>
+        <p>{{ $removal }}</p>
+        <p>{{ $removalSuggestion }}</p>
+        <p>{{ $replacement }}</p>
+        <p>{{ $replacementSuggestion }}</p>
+        <p>{{ $engineeringControl }}</p>
+        <p>{{ $engineeringControlSuggestion }}</p>
+        <p>{{ $administrativeControl }}</p>
+        <p>{{ $administrativeControlSuggestion }}</p>
+        <p>{{ $personalProtection }}</p>
+        <p>{{ $personalProtectionSuggestion }}</p>
     </div>
 </div>
