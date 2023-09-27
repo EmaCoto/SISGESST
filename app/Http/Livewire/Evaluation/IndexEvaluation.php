@@ -2,20 +2,27 @@
 
 namespace App\Http\Livewire\Evaluation;
 
-use App\Models\Activity;
-use App\Models\DangerDescription;
-use App\Models\Process;
-use App\Models\Task;
 use Livewire\Component;
 
 class IndexEvaluation extends Component
 {
     public $processId;
-    public $sectionPosition = 1;
+    public $sectionPosition = 5;
 
-    public $taskId, $dangerClassification, $dangerDescription;
+    public $activityId, $activityName, $taskId, $dangerClassification, $dangerDescription;
 
-    protected $listeners = ['increasePosition', 'decreasePosition', 'sectionOne'];
+    public $danger, $effects, $source, $means, $individual;
+    public $linked, $contractor, $temporary, $time;
+
+    protected $listeners = [
+        'increasePosition',
+        'decreasePosition',
+        'sectionOne',
+        'sectionTwo',
+        'sectionThree',
+        'sectionFour',
+
+    ];
 
     public function mount($id)
     {
@@ -47,11 +54,28 @@ class IndexEvaluation extends Component
     }
 
     //metodos para recibir la informacion de las secciones
-    public function sectionOne($data)
+    public function sectionOne($dataOne)
     {
-        $this->taskId = $data['taskId'];
-        $this->dangerClassification = $data['dangerClassification'];
-        $this->dangerDescription = $data['dangerDescription'];
+        $this->activityId = $dataOne['activityId'];
+        $this->taskId = $dataOne['taskId'];
+        $this->dangerClassification = $dataOne['dangerClassification'];
+        $this->dangerDescription = $dataOne['dangerDescription'];
+    }
+
+    public function sectionTwo($dataTwo)
+    {
+        $this->danger = $dataTwo['danger'];
+        $this->effects = $dataTwo['effects'];
+        $this->source = $dataTwo['source'];
+        $this->means = $dataTwo['means'];
+        $this->individual = $dataTwo['individual'];
+    }
+    public function sectionFour($dataFour)
+    {
+        $this->linked = $dataFour['linked'];
+        $this->contractor = $dataFour['contractor'];
+        $this->temporary = $dataFour['temporary'];
+        $this->time = $dataFour['time'];
     }
 
     public function render()

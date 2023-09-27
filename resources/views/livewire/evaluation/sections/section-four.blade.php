@@ -6,10 +6,10 @@
                 <h1 class="text-xl font-bold mb-10 m-4">NÚMERO DE EXPUESTOS</h1>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-4">
-                <x-number-linked wire:model.defer="linked"/>
-                <x-number-contractors wire:model.defer="contractor"/>
-                <x-number-temporary wire:model.defer="temporary"/>
-                <x-number-time wire:model.defer="time"/>
+                <x-number-linked wire:model="linked"/>
+                <x-number-contractors wire:model="contractor"/>
+                <x-number-temporary wire:model="temporary"/>
+                <x-number-time wire:model="time"/>
             </div>
         </article>
     </section>

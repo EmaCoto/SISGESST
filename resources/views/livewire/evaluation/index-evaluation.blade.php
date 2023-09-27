@@ -4,20 +4,32 @@
         @if ($sectionPosition == 1)
             @livewire('evaluation.sections.section-one', [
                 'id' => $processId,
+                'sectionActivityId' => $activityId,
                 'sectionTaskId' => $taskId,
                 'sectionDangerClassification' => $dangerClassification,
-                'sectionDangerDescription' => $dangerDescription
+                'sectionDangerDescription' => $dangerDescription,
             ])
         @elseif ($sectionPosition == 2)
             @livewire('evaluation.sections.section-two', [
-
+                'sectionDanger' => $danger,
+                'sectionEffects' => $effects,
+                'sectionSource' => $source,
+                'sectionMeans' => $means,
+                'sectionIndividual' => $individual,
             ])
         @elseif ($sectionPosition == 3)
             @livewire('evaluation.sections.section-three')
         @elseif ($sectionPosition == 4)
-            @livewire('evaluation.sections.section-four')
+            @livewire('evaluation.sections.section-four', [
+                'sectionLinked' => $linked,
+                'sectionContractor' => $contractor,
+                'sectionTemporary' => $temporary,
+                'sectionTime' => $time,
+            ])
         @elseif ($sectionPosition == 5)
             @livewire('evaluation.sections.section-five')
+        @elseif ($sectionPosition == 6)
+            @livewire('evaluation.sections.section-six')
         @endif
 
 
@@ -34,9 +46,32 @@
 
     </x-content-block>
     <div class="absolute bg-red-500 w-56 top-10 right-4">
-        <h1>{{ $taskId }}</h1>
-        <h1>{{ $dangerClassification }}</h1>
-        <h1>{{ $dangerDescription }}</h1>
+        <h1>seccion 1</h1>
+        <p>{{ $taskId }}</p>
+        <p>{{ $dangerClassification }}</p>
+        <p>{{ $dangerDescription }}</p>
+
+        <h1>seccion 2</h1>
+        <p>{{ $danger }}</p>
+        <p>{{ $effects }}</p>
+        <p>{{ $source }}</p>
+        <p>{{ $means }}</p>
+        <p>{{ $individual }}</p>
+
+        <h1>seccion 3</h1>
+        {{-- <p>{{$individual}}</p>
+        <p>{{$individual}}</p>
+        <p>{{$individual}}</p>
+        <p>{{$individual}}</p>
+        <p>{{$individual}}</p>
+        <p>{{$individual}}</p> --}}
+
+        <h1>seccion 4</h1>
+        <p>{{ $linked }}</p>
+        <p>{{ $contractor }}</p>
+        <p>{{ $temporary }}</p>
+        <p>{{ $time }}</p>
+
 
     </div>
 </div>

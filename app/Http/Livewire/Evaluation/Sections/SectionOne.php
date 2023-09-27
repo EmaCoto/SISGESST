@@ -11,10 +11,14 @@ use Livewire\Component;
 class SectionOne extends Component
 {
     public $processId, $processName, $activities, $activityId, $actiId, $tasks, $taskId, $dangers, $dangerClassification, $dangerDescription, $danger_descriptions;
+
+    public $taskName;
+    public $activityName;
+    public $descriptionName;
     public $previousTask, $previousDangerClassification, $previousDangerDescription;
     protected $listeners = ['nextPosition1'];
 
-    public function mount($id, $sectionTaskId, $sectionDangerClassification, $sectionDangerDescription)
+    public function mount($id, $sectionActivityId, $sectionTaskId, $sectionDangerClassification, $sectionDangerDescription)
     {
         //Process
         $this->processId = $id;
@@ -23,9 +27,20 @@ class SectionOne extends Component
 
         //Activity
         $this->activities = Activity::where('process_id', $id)->get();
-        $this->previousTask = $sectionTaskId; //tengo que arreglar esto porque los select quedan vacios porque la variable no es la misma
-        $this->previousDangerClassification = $sectionDangerClassification;//tengo que arreglar esto porque los select quedan vacios porque la variable no es la misma
-        $this->previousDangerDescription = $sectionDangerDescription;//tengo que arreglar esto porque los select quedan vacios porque la variable no es la misma
+        $this->activityId = $sectionActivityId;
+        $activity = Activity::find($sectionActivityId);
+        $this->activityName = $activity ? $activity->name : '';
+
+        //Task
+        $this->taskId = $sectionTaskId;
+        $task = Task::find($sectionTaskId);
+        $this->taskName = $task ? $task->name : '';
+
+        //Danger Description
+        $this->dangerClassification = $sectionDangerClassification;
+        $this->dangerDescription = $sectionDangerDescription;
+        $description = DangerDescription::find($sectionDangerDescription);
+        $this->descriptionName = $description ? $description->danger_description : '';
     }
 
     public function updatedDangerClassification()
@@ -49,6 +64,7 @@ class SectionOne extends Component
     public function nextPosition1()
     {
         $this->emit('sectionOne', [
+            'activityId' => $this->activityId,
             'taskId' => $this->taskId,
             'dangerClassification' => $this->dangerClassification,
             'dangerDescription' => $this->dangerDescription
