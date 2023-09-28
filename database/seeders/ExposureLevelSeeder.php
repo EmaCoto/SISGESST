@@ -16,7 +16,7 @@ class ExposureLevelSeeder extends Seeder
         ExposureLevel::create([
             'id' => 1,
             'prefix' => 'EC',
-            'name' => 'Conitnuo',
+            'name' => 'Continuo',
             'value' => '4',
             'meaning' => '
                 La situación de exposición se presenta sin interrupción o varias veces con tiempo prolongado

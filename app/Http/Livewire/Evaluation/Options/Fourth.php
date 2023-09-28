@@ -7,20 +7,31 @@ use Livewire\Component;
 
 class Fourth extends Component
 {
-    public $selectedName;
+    public $consequenceLevel, $consequenceLevels, $consequenceValue, $consequenceColor, $consequenceyMeaning;
+
+    public function mount()
+    {
+        $this->consequenceLevels = ConsequenceLevel::all();
+    }
+
+    public function updatedConsequenceLevel()
+    {
+        $this->consequenceSelected();
+    }
+    public function consequenceSelected()
+    {
+        $consequenceData = ConsequenceLevel::find($this->consequenceLevel);
+        $this->consequenceValue = $consequenceData->value;
+        $this->consequenceColor = $consequenceData->color;
+        $this->consequenceyMeaning = $consequenceData->meaning;
+        $this->emit('calculateConsequence', [
+            'consequenceId' => $this->consequenceLevel,
+            'consequenceValue' => $this->consequenceValue
+        ]);
+    }
 
     public function render()
     {
-        $consequenceLevels = ConsequenceLevel::all();
-
-        $selectedConsequenceLevel = $consequenceLevels->firstWhere('name', $this->selectedName);
-
-        return view('livewire.evaluation.options.fourth', [
-            'consequenceLevels' => $consequenceLevels,
-            'selectedMeaning' => $selectedConsequenceLevel ? $selectedConsequenceLevel->meaning : '',
-            'selectedColor' => $selectedConsequenceLevel ? $selectedConsequenceLevel->color : '',
-            'selectedValue' => $selectedConsequenceLevel ? $selectedConsequenceLevel->value : '',
-
-        ]);
+        return view('livewire.evaluation.options.fourth');
     }
 }

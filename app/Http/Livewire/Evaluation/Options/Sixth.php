@@ -2,46 +2,36 @@
 
 namespace App\Http\Livewire\Evaluation\Options;
 
+use App\Models\RiskAcceptability;
 use Livewire\Component;
 
 class Sixth extends Component
 {
-    protected $listeners = ['resultUpdate' => 'updateResultado'];
+    public $riskAceptabilities,$aceptabilityColor, $aceptabilityMeaning;
+    public $interventionName;
 
-    public $name;
-    public $result = 0;
-    public $meaning = 'N/A';
-    public $color;
+    protected $listeners = ['interventionData'];
 
-    public function updateResultado($range)
+    public function mount()
     {
-        $this->result = $range;
-        $this->calculateProductAndFourthRange();
+        $this->riskAceptabilities = RiskAcceptability::all();
     }
 
-    private function calculateProductAndFourthRange()
+    public function interventionData($dataIntervention)
     {
-        $this->result;
+        $this->interventionName = $dataIntervention['interventionName'];
+        $this->aceptabilityRisk();
+    }
 
-        if ($this->result >= 20 && $this->result <= 30) {
-            $this->name = 'IV';
-            $this->meaning = 'Aceptable';
-            $this->color = "#539165";
-        } elseif ($this->result >= 40 && $this->result <= 120) {
-            $this->name = 'III';
-            $this->meaning = 'Aceptable';
-            $this->color = "#F8DE22";
-        } elseif ($this->result >= 150 && $this->result <= 500) {
-            $this->name = 'II';
-            $this->meaning = 'No aceptable o aceptable con control específico';
-            $this->color = "#FD8D14";
-        } elseif ($this->result >= 600 && $this->result <= 4000) {
-            $this->name = 'I';
-            $this->meaning = 'No aceptable';
-            $this->color = "#539165";
-        } else {
-            $this->name = '';
-            $this->meaning = 'N/A';
+    public function aceptabilityRisk()
+    {
+        foreach($this->riskAceptabilities as $aceptavility){
+            if($this->interventionName == $aceptavility->name){
+                $this->aceptabilityColor = $aceptavility->color;
+                $this->aceptabilityMeaning = $aceptavility->meaning;
+
+                $this->emit('riskPartThree', $aceptavility->id);
+            }
         }
     }
 

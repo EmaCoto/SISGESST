@@ -2,59 +2,59 @@
 
 namespace App\Http\Livewire\Evaluation\Options;
 
+use App\Models\InterventionRiskLevel;
 use Livewire\Component;
 
 class Fifth extends Component
 {
-    protected $listeners = ['selectedValueFour', 'valueThird'];
+    public $interventionRisks, $interventionName, $interventionValueResult, $interventionColor, $interventionMeaning;
+    public $probabilityConsequenceResult, $valueOne, $valueTwo;
+    public $consequenceId, $consequenceValue, $probabilityId, $probabilityValue;
 
-    public $value;
-    public $selectedFourthRange = 0;
-    public $intervention = 'N/A';
-    public $meaning;
-    public $color;
-    public $result;
+    protected $listeners = ['probabilityData', 'calculateConsequence'];
 
-
-
-    public function selectedValueFour($range)
+    public function mount()
     {
-        $this->selectedFourthRange = $range;
-        $this->calculateProductAndFourthRange();
+        $this->interventionRisks = InterventionRiskLevel::all();
     }
 
-    public function valueThird($product)
+    public function probabilityData($dataProbability)
     {
-        $this->value = $product;
-        $this->calculateProductAndFourthRange();
+        $this->probabilityId = $dataProbability['probabilityId'];
+        $this->probabilityValue = $dataProbability['probabilityValue'];
+        $this->calculateInterventionRisk();
     }
-    private function calculateProductAndFourthRange()
+    public function calculateConsequence($dataConsequence)
     {
-        $this->result = $this->value * $this->selectedFourthRange;
+        $this->consequenceId = $dataConsequence['consequenceId'];
+        $this->consequenceValue = $dataConsequence['consequenceValue'];
+        $this->calculateInterventionRisk();
+    }
 
-        if ($this->result >= 20 && $this->result <= 30) {
-            $this->intervention = '20';
-            $this->meaning='Mantener las medidas de control existentes, pero se deberían considerar soluciones o mejoras y se deben hacer comprobaciones periódicas para asegurar que el riesgo aún es aceptable.';
-            $this->color = "#539165";
-        } elseif ($this->result >= 40 && $this->result <= 120) {
-            $this->intervention = '120 - 40';
-            $this->meaning='Mejorar si es posible. Sería conveniente justificar la intervención y su rentabilidad.';
-            $this->color = "#F8DE22";
-        } elseif ($this->result >= 150 && $this->result <= 500) {
-            $this->intervention = '500 - 150';
-            $this->meaning='Corregir y adoptar medidas de control de inmediato. Sin embargo, suspenda actividades si el nivel de riesgo está por encima o igual de 360';
-            $this->color = "#FD8D14";
-        } elseif ($this->result >= 600 && $this->result <= 4000) {
-            $this->intervention = '4000 - 600';
-            $this->meaning='Situación crítica. Suspender actividades hasta que el riesgo esté bajo control. Intervención urgente';
-            $this->color = "#FE0000";
-        } else {
-            $this->result = '';
-            $this->intervention = 'N/A';
-            $this->meaning = '';
-            $this->color = '';
+    public function calculateInterventionRisk()
+    {
+        $this->probabilityConsequenceResult = $this->probabilityValue * $this->consequenceValue;
+
+        foreach ($this->interventionRisks as $intervention) {
+
+            list($this->valueOne, $this->valueTwo) = explode("-", $intervention->value);
+
+            if ($this->probabilityConsequenceResult <= $this->valueOne and $this->probabilityConsequenceResult >= $this->valueTwo) {
+                $this->interventionName = $intervention->name;
+                $this->interventionValueResult = $this->probabilityConsequenceResult;
+                $this->interventionColor = $intervention->color;
+                $this->interventionMeaning = $intervention->meaning;
+
+                $this->emit('riskPartTwo', [
+                    'consequenceId' => $this->consequenceId,
+                    'consecuenteValue' => $this->consequenceValue,
+                    'interventionId' => $intervention->id,
+                    'interventionName' => $this->interventionName,
+                    'interventionValue' => $this->interventionValueResult,
+
+                ]);
+            }
         }
-        $this->emit('resultUpdate', $this->result);
     }
 
     public function render()

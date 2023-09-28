@@ -1,6 +1,6 @@
 <div class="w-full overflow-hidden py-8" style="height: 93vh">
-    {{-- php artisan make:livewire evaluation/sections/SectionOne --}}
     <x-content-block>
+        {{-- php artisan make:livewire evaluation/sections/SectionOne --}}
         @if ($sectionPosition == 1)
             @livewire('evaluation.sections.section-one', [
                 'id' => $processId,
@@ -18,7 +18,10 @@
                 'sectionIndividual' => $individual,
             ])
         @elseif ($sectionPosition == 3)
-            @livewire('evaluation.sections.section-three')
+            @livewire('evaluation.sections.section-three',[
+                'sectionDeficiencyLevel' => $deficiencyLevel,
+                'sectionExposureLevel' => $exposureLevel,
+            ])
         @elseif ($sectionPosition == 4)
             @livewire('evaluation.sections.section-four', [
                 'sectionLinked' => $linked,
@@ -54,7 +57,6 @@
             <button wire:click="nextSection"
                 class="bg-green-600 py-2 px-4 rounded-lg text-gray-200 font-semibold absolute bottom-6 right-20 z-50">Siguiente</button>
         @endif
-
     </x-content-block>
     <div class="absolute bg-red-500 w-56 top-10 right-4">
         <h1>seccion 1</h1>
@@ -70,12 +72,12 @@
         <p>{{ $individual }}</p>
 
         <h1>seccion 3</h1>
-        {{-- <p>{{$individual}}</p>
-        <p>{{$individual}}</p>
-        <p>{{$individual}}</p>
-        <p>{{$individual}}</p>
-        <p>{{$individual}}</p>
-        <p>{{$individual}}</p> --}}
+        <p>{{$deficiencyLevel}}</p>
+        <p>{{$exposureLevel}}</p>
+        {{-- <p>{{$exposureId}}</p>
+        <p>{{$exposureValue}}</p>
+        <p>{{$probabilityId}}</p>
+        <p>{{$probabilityValue}}</p> --}}
 
         <h1>seccion 4</h1>
         <p>{{ $linked }}</p>

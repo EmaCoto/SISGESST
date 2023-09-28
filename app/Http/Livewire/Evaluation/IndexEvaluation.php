@@ -7,11 +7,12 @@ use Livewire\Component;
 class IndexEvaluation extends Component
 {
     public $processId;
-    public $sectionPosition = 1;
+    public $sectionPosition = 3;
 
     public $activityId, $activityName, $taskId, $dangerClassification, $dangerDescription;
 
     public $danger, $effects, $source, $means, $individual;
+    public $deficiencyLevel, $exposureLevel;
     public $linked, $contractor, $temporary, $time;
 
     public $removal, $removalSuggestion, $replacement, $replacementSuggestion, $engineeringControl, $engineeringControlSuggestion,
@@ -45,7 +46,6 @@ class IndexEvaluation extends Component
         {
             $this->sectionPosition--;
         }
-
     }
 
     public function nextSection()
@@ -73,6 +73,10 @@ class IndexEvaluation extends Component
         $this->source = $dataTwo['source'];
         $this->means = $dataTwo['means'];
         $this->individual = $dataTwo['individual'];
+    }
+    public function sectionThree($dataThree){
+        $this->deficiencyLevel = $dataThree['deficiencyLevel'];
+        $this->exposureLevel = $dataThree['exposureLevel'];
     }
     public function sectionFour($dataFour)
     {

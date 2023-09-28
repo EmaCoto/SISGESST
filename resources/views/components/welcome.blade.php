@@ -1,4 +1,3 @@
 <div>
-            <livewire:companies.index-company />
-            {{-- <livewire:evaluation.evaluation-parent /> --}}
+    <livewire:companies.index-company />
 </div>
