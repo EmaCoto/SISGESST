@@ -13,6 +13,9 @@ class First extends Component
     {
         $this->deficiencies = DeficiencyLevel::all();
         $this->deficiencyLevel = $deficiencyId;
+        if($this->deficiencyLevel){
+            $this->updatedDeficiencyLevel();
+        }
     }
 
     public function updatedDeficiencyLevel()
@@ -25,6 +28,7 @@ class First extends Component
         $this->deficiencyValue = $deficiencyData->value;
         $this->deficiencyColor = $deficiencyData->color;
         $this->deficiencyMeaning = $deficiencyData->meaning;
+
         $this->emit('calculateDeficiency', [
             'deficiencyId' => $this->deficiencyLevel,
             'deficiencyValue' => $this->deficiencyValue

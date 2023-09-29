@@ -1,4 +1,3 @@
-{{-- Close your eyes. Count to one. That is how long forever feels. --}}
 <div>
     <div class="p-4">
         <div class="flex items-center sm:pr-4">
@@ -19,5 +18,4 @@
             <span class="text-xs">{{ $exposureMeaning }}</span>
         </x-selectedMeaning>
     </div>
-    {{-- @error('selectedDeficiency') <span class="error text-red-500">{{ $message }}</span> @enderror --}}
 </div>

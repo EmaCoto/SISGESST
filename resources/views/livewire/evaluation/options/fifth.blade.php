@@ -4,7 +4,7 @@
     </div>
     <div class="grid grid-cols-2">
         <div class="py-2 w-full block text-center bg-gray-50 border border-gray-300 rounded-lg mt-2 border-b border-t shadow-lg">
-            <p>{{ $interventionValueResult}}</p>
+            <p>Nivel: {{ $interventionValueResult}}</p>
         </div>
         <div class="w-20 ml-2 mt-2 flex items-center rounded-lg justify-center border" style="background-color: {{ $interventionColor }};">
             <p class="text-xl font-semibold text-white">{{ $interventionName }}</p>

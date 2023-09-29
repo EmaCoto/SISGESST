@@ -9,9 +9,13 @@ class Fourth extends Component
 {
     public $consequenceLevel, $consequenceLevels, $consequenceValue, $consequenceColor, $consequenceyMeaning;
 
-    public function mount()
+    public function mount($consequenceId)
     {
         $this->consequenceLevels = ConsequenceLevel::all();
+        $this->consequenceLevel = $consequenceId;
+        if($this->consequenceLevel){
+            $this->updatedConsequenceLevel();
+        }
     }
 
     public function updatedConsequenceLevel()

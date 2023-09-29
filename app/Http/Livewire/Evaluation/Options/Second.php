@@ -9,9 +9,13 @@ class Second extends Component
 {
     public $exposures, $exposureLevel, $exposureValue, $exposureColor, $exposureMeaning;
 
-    public function mount()
+    public function mount($exposureId)
     {
         $this->exposures = ExposureLevel::all();
+        $this->exposureLevel = $exposureId;
+        if($this->exposureLevel){
+            $this->updatedExposureLevel();
+        }
     }
 
     public function updatedExposureLevel()
@@ -24,10 +28,13 @@ class Second extends Component
         $this->exposureValue = $exposureData->value;
         $this->exposureColor = $exposureData->color;
         $this->exposureMeaning = $exposureData->meaning;
-        $this->emit('calculateExposure', [
+        if($this->exposureLevel){
+            $this->emit('calculateExposure', [
             'exposureId' => $this->exposureLevel,
             'exposureValue' => $this->exposureValue
         ]);
+        }
+
     }
 
     public function render()

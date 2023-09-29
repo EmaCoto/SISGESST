@@ -12,9 +12,6 @@ class SectionOne extends Component
 {
     public $processId, $processName, $activities, $activityId, $actiId, $tasks, $taskId, $dangers, $dangerClassification, $dangerDescription, $danger_descriptions;
 
-    public $taskName;
-    public $activityName;
-    public $descriptionName;
     public $previousTask, $previousDangerClassification, $previousDangerDescription;
     protected $listeners = ['nextPosition1'];
 
@@ -28,19 +25,20 @@ class SectionOne extends Component
         //Activity
         $this->activities = Activity::where('process_id', $id)->get();
         $this->activityId = $sectionActivityId;
-        $activity = Activity::find($sectionActivityId);
-        $this->activityName = $activity ? $activity->name : '';
 
         //Task
         $this->taskId = $sectionTaskId;
-        $task = Task::find($sectionTaskId);
-        $this->taskName = $task ? $task->name : '';
 
         //Danger Description
         $this->dangerClassification = $sectionDangerClassification;
         $this->dangerDescription = $sectionDangerDescription;
-        $description = DangerDescription::find($sectionDangerDescription);
-        $this->descriptionName = $description ? $description->danger_description : '';
+
+        if($this->activityId){
+            $this->updatedActivityId();
+        }
+        if($this->dangerClassification){
+            $this->updatedDangerClassification();
+        }
     }
 
     public function updatedDangerClassification()

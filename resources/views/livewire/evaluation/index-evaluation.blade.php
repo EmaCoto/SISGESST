@@ -20,7 +20,14 @@
         @elseif ($sectionPosition == 3)
             @livewire('evaluation.sections.section-three',[
                 'sectionDeficiencyLevel' => $deficiencyLevel,
+                'sectionDeficiencyValue' => $deficiencyValue,
                 'sectionExposureLevel' => $exposureLevel,
+                'sectionExposureValue' => $exposureValue,
+                'sectionProbabilityValue' => $probabilityValue,
+                'sectionConsequenceLevel' => $consequenceLevel,
+                'sectionConsequenceValue' => $consequenceValue,
+                'sectionInterventionValue' => $interventionValue,
+                'sectionInterventionName' => $interventionName,
             ])
         @elseif ($sectionPosition == 4)
             @livewire('evaluation.sections.section-four', [
@@ -74,10 +81,10 @@
         <h1>seccion 3</h1>
         <p>{{$deficiencyLevel}}</p>
         <p>{{$exposureLevel}}</p>
-        {{-- <p>{{$exposureId}}</p>
-        <p>{{$exposureValue}}</p>
-        <p>{{$probabilityId}}</p>
-        <p>{{$probabilityValue}}</p> --}}
+        <p>{{$probabilityValue}}</p>
+        <p>{{$consequenceLevel}}</p>
+        <p>{{$interventionValue}}</p>
+        <p>{{$interventionName}}</p>
 
         <h1>seccion 4</h1>
         <p>{{ $linked }}</p>

@@ -12,7 +12,8 @@ class IndexEvaluation extends Component
     public $activityId, $activityName, $taskId, $dangerClassification, $dangerDescription;
 
     public $danger, $effects, $source, $means, $individual;
-    public $deficiencyLevel, $exposureLevel;
+    public $deficiencyLevel, $deficiencyValue, $exposureLevel, $exposureValue, $probabilityValue, $consequenceLevel, $consequenceValue,
+        $interventionValue, $interventionName;
     public $linked, $contractor, $temporary, $time;
 
     public $removal, $removalSuggestion, $replacement, $replacementSuggestion, $engineeringControl, $engineeringControlSuggestion,
@@ -76,7 +77,14 @@ class IndexEvaluation extends Component
     }
     public function sectionThree($dataThree){
         $this->deficiencyLevel = $dataThree['deficiencyLevel'];
+        $this->deficiencyValue = $dataThree['deficiencyValue'];
         $this->exposureLevel = $dataThree['exposureLevel'];
+        $this->exposureValue = $dataThree['exposureValue'];
+        $this->probabilityValue = $dataThree['probabilityValue'];
+        $this->consequenceLevel = $dataThree['consequenceLevel'];
+        $this->consequenceValue = $dataThree['consequenceValue'];
+        $this->interventionValue = $dataThree['interventionValue'];
+        $this->interventionName = $dataThree['interventionName'];
     }
     public function sectionFour($dataFour)
     {

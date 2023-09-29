@@ -12,7 +12,6 @@
                     <option value="{{ $activity->id }}">{{ $activity->name }}</option>
                 @endforeach
             </select>
-            <div class="bg-gray-300 mt-5 py-2 pl-6 rounded-lg">{{ $activityName }}</div>
         </div>
         <div class="w-2/4 bg-gray-400 rounded-lg p-8 relative">
             <h2 class="text-xl font-bold bg-gray-300 w-full pl-4 py-1 rounded-md mb-4">Tarea:</h2>
@@ -26,8 +25,6 @@
                     @endforeach
                 @endif
             </select>
-
-            <div class="bg-gray-300 mt-5 py-2 pl-6 rounded-lg ">{{ $taskName }}</div>
         </div>
     </div>
     <div class="w-4/5 mx-auto flex justify-between gap-6">
@@ -49,7 +46,6 @@
                 <option value="Saneamiento">Saneamiento</option>
                 <option value="Fenómenos naturales">Fenómenos naturales</option>
             </select>
-            <div class="bg-gray-300 mt-5 py-2 pl-6 rounded-lg ">{{ $dangerClassification }}</div>
         </div>
         <div class="w-2/4 bg-gray-400 rounded-lg p-8">
             <h2 class="text-xl font-bold bg-gray-300 w-full pl-4 py-1 rounded-md mb-4">Descripcion del peligro:</h2>
@@ -63,8 +59,6 @@
                     @endforeach
                 @endif
             </select>
-
-            <div class="bg-gray-300 mt-5 py-2 pl-6 rounded-lg ">{{ $descriptionName }}</div>
         </div>
     </div>
 </div>

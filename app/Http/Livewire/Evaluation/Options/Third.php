@@ -9,18 +9,27 @@ class Third extends Component
 {
     public $probabilityLevels, $exposureDeficiencyResult, $probabilityName, $probabilityColor, $probabilityMeaning;
     public $valueOne, $valueTwo, $probabilityValueResult;
-    public $defiencyId, $defiencyValue, $exposureId, $exposureValue;
+    public $deficiencyId, $deficiencyValue, $exposureId, $exposureValue;
 
     protected $listeners = ['calculateDeficiency', 'calculateExposure'];
 
-    public function mount(){
+    public function mount($probabilityValue, $deficiencyId, $deficiencyValue, $exposureId, $exposureValue){
         $this->probabilityLevels = ProbabilityLevel::all();
+        $this->exposureDeficiencyResult = $probabilityValue;
+        $this->deficiencyId = $deficiencyId;
+        $this->deficiencyValue = $deficiencyValue;
+        $this->exposureId = $exposureId;
+        $this->exposureValue = $exposureValue;
+
+        if($this->deficiencyId or $this->exposureId){
+            $this->calculateProbability();
+        }
     }
 
     public function calculateDeficiency($dataDeficiency)
     {
-        $this->defiencyId = $dataDeficiency['deficiencyId'];
-        $this->defiencyValue = $dataDeficiency['deficiencyValue'];
+        $this->deficiencyId = $dataDeficiency['deficiencyId'];
+        $this->deficiencyValue = $dataDeficiency['deficiencyValue'];
         $this->calculateProbability();
     }
     public function calculateExposure($dataExposure)
@@ -32,7 +41,12 @@ class Third extends Component
 
     public function calculateProbability()
     {
-        $this->exposureDeficiencyResult = $this->defiencyValue * $this->exposureValue;
+        $operation = $this->deficiencyValue * $this->exposureValue;
+        if($this->exposureDeficiencyResult and $operation === 0){
+            $this->exposureDeficiencyResult = $this->exposureDeficiencyResult;
+        }else{
+            $this->exposureDeficiencyResult = $operation;
+        }
 
         foreach($this->probabilityLevels as $probability){
 
@@ -45,8 +59,8 @@ class Third extends Component
                 $this->probabilityMeaning = $probability->meaning;
 
                 $this->emit('riskPartOne', [
-                    'defiencyId' => $this->defiencyId,
-                    'defiencyValue' => $this->defiencyValue,
+                    'defiencyId' => $this->deficiencyId,
+                    'defiencyValue' => $this->deficiencyValue,
                     'exposureId' => $this->exposureId,
                     'exposureValue' => $this->exposureValue,
                     'probabilityId' => $probability->id,

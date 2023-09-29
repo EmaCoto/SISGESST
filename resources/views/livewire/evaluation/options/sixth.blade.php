@@ -4,7 +4,7 @@
     </div>
     <div class="grid grid-cols-2">
         <div class="py-2 w-full block text-center h-auto text-white font-semibold bg-white border border-gray-300 rounded-lg mt-2 border-b border-t shadow-lg" style="background-color: {{ $aceptabilityColor }};">
-            <p>{{ $aceptabilityMeaning }}</p>
+            <p>Nivel: {{ $aceptabilityMeaning }}</p>
         </div>
     </div>
 </div>
