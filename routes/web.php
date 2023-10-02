@@ -22,6 +22,7 @@ Route::get('/dashboard', function () {return view('dashboard');})->name('dashboa
 Route::get('/show-company/{id}', ShowCompany::class)->name('show-company');
 Route::get('/evaluation', EvaluationParent::class)->name('evaluation');
 Route::get('/help', function () {return view('help');})->name('help');
+Route::get('/contact', function () {return view('contact');})->name('contact');
 
 
 // Route::view('/index', 'index');

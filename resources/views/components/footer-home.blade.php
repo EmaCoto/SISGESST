@@ -1,0 +1,29 @@
+<div class="grid grid-cols-4 px-28 bg-[#cbcbcd] text-center text-black py-2 h-full">
+    <div class="flex items-center">
+        <img src="{{ asset('img/logo.png') }}" alt="logo" class="w-16">
+        <p class="text-[#ff8239] px-3 text-3xl font-extrabold">SISGESST</p>
+    </div>
+    <div>
+        <h1 class="font-semibold text-xl m-2">LEGAL</h1>
+        <div class="flex flex-col justify-center h-16 items-center">
+            <a href="#" class="hover:text-[#ff8239] text-lg">Términos</a>
+            <a href="#" class="hover:text-[#ff8239] text-lg">Privacidad</a>
+        </div>
+    </div>
+    <div>
+        <h1 class="font-semibold text-xl m-2">COMPAÑÍA</h1>
+        <div class="flex flex-col justify-center h-16 items-center">
+            <a href="{{ route('help') }}" class="hover:text-[#ff8239] text-lg">Acerca de nosotros</a>
+            <a href="{{ route('contact') }}" class="hover:text-[#ff8239] text-lg">Contáctanos</a>
+        </div>
+    </div>
+    <div>
+        <h1 class="font-semibold text-xl m-2">REDES SOCIALES</h1>
+        <div class="h-16 m-auto w-32 flex justify-between items-center">
+            <a href="https://web.facebook.com/" class="hover:bg-white rounded-sm h-5 w-5 hover:p-1 ease-in-out duration-500"><i class="fa-brands fa-square-facebook fa-xl hover:text-blue-800"></i></a>
+            <a href="https://co.linkedin.com" class="hover:bg-white rounded-sm h-5 w-5 hover:p-1 ease-in-out duration-500"><i class="fa-brands fa-linkedin fa-xl hover:text-cyan-600"></i></a>
+            <a href="https://twitter.com/" class="hover:bg-white rounded-sm h-5 w-5 hover:p-1 ease-in-out duration-500"><i class="fa-brands fa-square-x-twitter fa-xl hover:text-black"></i></a>
+        </div>
+    </div>
+</div>
+

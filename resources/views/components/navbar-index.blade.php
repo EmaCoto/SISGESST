@@ -6,7 +6,7 @@
     <div class="text-center font-semibold">
         <a href="/" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Inicio</a>
         <a href="{{ route('help') }}" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Ayuda</a>
-        <a href="#" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Contáctenos</a>
+        <a href="{{ route('contact') }}" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Contáctenos</a>
     </div>
     <div>
         @if (Route::has('login'))
