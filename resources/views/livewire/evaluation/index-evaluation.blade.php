@@ -18,7 +18,7 @@
                 'sectionIndividual' => $individual,
             ])
         @elseif ($sectionPosition == 3)
-            @livewire('evaluation.sections.section-three',[
+            @livewire('evaluation.sections.section-three', [
                 'sectionDeficiencyLevel' => $deficiencyLevel,
                 'sectionDeficiencyValue' => $deficiencyValue,
                 'sectionExposureLevel' => $exposureLevel,
@@ -57,6 +57,12 @@
         @if ($sectionPosition == 1)
             <button wire:click="nextSection"
                 class="bg-green-600 py-2 px-4 rounded-lg text-gray-200 font-semibold absolute bottom-6 right-20 z-50">Siguiente</button>
+        @elseif($sectionPosition == 6)
+            <button wire:click="previousSection"
+                class="bg-gray-600 py-2 px-4 rounded-lg text-gray-200 font-semibold absolute bottom-6 left-20 z-50">Atras</button>
+            {{-- <progress class="absolute bottom-10 left-56 w-4/6 rounded-full" value="{{$sectionPosition}}" max="5"></progress> --}}
+            <button wire:click="save"
+                class="bg-green-600 py-2 px-4 rounded-lg text-gray-200 font-semibold absolute bottom-6 right-20 z-50">Finalizar Evaluacion</button>
         @else
             <button wire:click="previousSection"
                 class="bg-gray-600 py-2 px-4 rounded-lg text-gray-200 font-semibold absolute bottom-6 left-20 z-50">Atras</button>
@@ -79,12 +85,12 @@
         <p>{{ $individual }}</p>
 
         <h1>seccion 3</h1>
-        <p>{{$deficiencyLevel}}</p>
-        <p>{{$exposureLevel}}</p>
-        <p>{{$probabilityValue}}</p>
-        <p>{{$consequenceLevel}}</p>
-        <p>{{$interventionValue}}</p>
-        <p>{{$interventionName}}</p>
+        <p>{{ $deficiencyLevel }}</p>
+        <p>{{ $exposureLevel }}</p>
+        <p>{{ $probabilityValue }}</p>
+        <p>{{ $consequenceLevel }}</p>
+        <p>{{ $interventionValue }}</p>
+        <p>{{ $interventionName }}</p>
 
         <h1>seccion 4</h1>
         <p>{{ $linked }}</p>

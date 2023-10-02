@@ -11,6 +11,32 @@ class Evaluation extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'id_task',
+        'danger_classification',
+        'id_danger_description',
+        'danger',
+        'possible_effects',
+        'source',
+        'means',
+        'individual',
+        'id_deficiency_level',
+        'id_exposure_level',
+        'id_probability_level',
+        'value_probability_level',
+        'id_consequence_level',
+        'id_intervention_risk_level',
+        'risk_level_interpretation',
+        'id_risk_acceptability',
+        'linked',
+        'contractors',
+        'temporary',
+        'exposure_time',
+        'verification_result',
+        'legal_requirement',
+        'id_user',
+    ];
+
     public function task(): BelongsTo
     {
         return $this->belongsTo(task::class);
@@ -53,7 +79,9 @@ class Evaluation extends Model
 
     public function interventionMeasures(): BelongsToMany
     {
-        return $this->belongsToMany(InterventionMeasure::class);
+        return $this->belongsToMany(InterventionMeasure::class, 'evaluation_intervention_measures', 'id_evaluation', 'id_intervention_measure')
+        ->withPivot('suggestion')
+        ->withTimestamps();
     }
 
     public function user(): BelongsTo

@@ -33,11 +33,14 @@ class SectionThree extends Component
             'deficiencyValue' => $this->deficiencyValue,
             'exposureLevel' => $this->exposureId,
             'exposureValue' => $this->exposureValue,
+            'probabilityLevel' => $this->probabilityId,
             'probabilityValue' => $this->probabilityValue,
             'consequenceLevel' => $this->consequenceId,
             'consequenceValue' => $this->consequenceValue,
+            'interventionLevel' => $this->interventionId,
             'interventionValue' => $this->interventionValue,
             'interventionName' => $this->interventionName,
+            'riskAceptavility' => $this->aceptavilityId,
         ]);
         $this->emit('increasePosition');
     }

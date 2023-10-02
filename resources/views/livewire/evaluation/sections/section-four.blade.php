@@ -5,7 +5,7 @@
             <div class="flex justify-center">
                 <h1 class="text-xl font-bold mb-10 m-4">NÚMERO DE EXPUESTOS</h1>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-4">
+            <div class="grid grid-cols-2 gap-x-10 gap-y-20 p-6">
                 <x-number-linked wire:model="linked"/>
                 <x-number-contractors wire:model="contractor"/>
                 <x-number-temporary wire:model="temporary"/>

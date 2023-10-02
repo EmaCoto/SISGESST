@@ -2,22 +2,23 @@
 
 namespace App\Http\Livewire\Evaluation;
 
+use App\Models\Evaluation;
 use Livewire\Component;
 
 class IndexEvaluation extends Component
 {
     public $processId;
-    public $sectionPosition = 3;
+    public $sectionPosition = 1;
 
     public $activityId, $activityName, $taskId, $dangerClassification, $dangerDescription;
 
     public $danger, $effects, $source, $means, $individual;
-    public $deficiencyLevel, $deficiencyValue, $exposureLevel, $exposureValue, $probabilityValue, $consequenceLevel, $consequenceValue,
-        $interventionValue, $interventionName;
+    public $deficiencyLevel, $deficiencyValue, $exposureLevel, $exposureValue, $probabilityLevel, $probabilityValue, $consequenceLevel, $consequenceValue,
+        $interventionLevel, $interventionValue, $interventionName, $riskAceptavility;
     public $linked, $contractor, $temporary, $time;
 
     public $removal, $removalSuggestion, $replacement, $replacementSuggestion, $engineeringControl, $engineeringControlSuggestion,
-            $administrativeControl, $administrativeControlSuggestion, $personalProtection, $personalProtectionSuggestion;
+        $administrativeControl, $administrativeControlSuggestion, $personalProtection, $personalProtectionSuggestion;
 
     protected $listeners = [
         'increasePosition',
@@ -38,24 +39,25 @@ class IndexEvaluation extends Component
     //metodos para cambiar de posicion en las secciones
     public function increasePosition()
     {
-        $this->sectionPosition++;
+        if ($this->sectionPosition < 6) {
+            $this->sectionPosition++;
+        }
     }
 
     public function decreasePosition()
     {
-        if($this->sectionPosition > 1)
-        {
+        if ($this->sectionPosition > 1) {
             $this->sectionPosition--;
         }
     }
 
     public function nextSection()
     {
-        $this->emit('nextPosition'.$this->sectionPosition);
+        $this->emit('nextPosition' . $this->sectionPosition);
     }
     public function previousSection()
     {
-        $this->emit('previousPosition'.$this->sectionPosition);
+        $this->emit('previousPosition' . $this->sectionPosition);
     }
 
     //metodos para recibir la informacion de las secciones
@@ -75,16 +77,20 @@ class IndexEvaluation extends Component
         $this->means = $dataTwo['means'];
         $this->individual = $dataTwo['individual'];
     }
-    public function sectionThree($dataThree){
+    public function sectionThree($dataThree)
+    {
         $this->deficiencyLevel = $dataThree['deficiencyLevel'];
         $this->deficiencyValue = $dataThree['deficiencyValue'];
         $this->exposureLevel = $dataThree['exposureLevel'];
         $this->exposureValue = $dataThree['exposureValue'];
+        $this->probabilityLevel = $dataThree['probabilityLevel'];
         $this->probabilityValue = $dataThree['probabilityValue'];
         $this->consequenceLevel = $dataThree['consequenceLevel'];
         $this->consequenceValue = $dataThree['consequenceValue'];
+        $this->interventionLevel = $dataThree['interventionLevel'];
         $this->interventionValue = $dataThree['interventionValue'];
         $this->interventionName = $dataThree['interventionName'];
+        $this->riskAceptavility = $dataThree['riskAceptavility'];
     }
     public function sectionFour($dataFour)
     {
@@ -106,6 +112,40 @@ class IndexEvaluation extends Component
         $this->administrativeControlSuggestion = $dataFive['administrativeControlSuggestion'];
         $this->personalProtection = $dataFive['personalProtection'];
         $this->personalProtectionSuggestion = $dataFive['personalProtectionSuggestion'];
+    }
+
+    public function save()
+    {
+        $evaluation = Evaluation::create([
+            'id_task' => $this->taskId,
+            'danger_classification' => $this->dangerClassification,
+            'id_danger_description' => $this->dangerDescription,
+            'danger' => $this->danger,
+            'possible_effects' => $this->effects,
+            'source' => $this->source,
+            'means' => $this->means,
+            'individual' => $this->individual,
+            'id_deficiency_level' => $this->deficiencyLevel,
+            'id_exposure_level' => $this->exposureLevel,
+            'id_probability_level' => $this->probabilityLevel,
+            'value_probability_level' => $this->probabilityValue,
+            'id_consequence_level' => $this->consequenceLevel,
+            'id_intervention_risk_level' => $this->interventionLevel,
+            'risk_level_interpretation' => $this->interventionName,
+            'id_risk_acceptability' => $this->riskAceptavility,
+            'linked' => $this->linked,
+            'contractors' => $this->contractor,
+            'temporary' => $this->temporary,
+            'exposure_time' => $this->time,
+            'verification_result' => "vacio",
+            'legal_requirement' => "vacio",
+            'id_user' => "1",
+        ]);
+        $evaluation->interventionMeasures()->attach($this->removal, ['suggestion' => $this->removalSuggestion]);
+        $evaluation->interventionMeasures()->attach($this->replacement, ['suggestion' => $this->replacementSuggestion]);
+        $evaluation->interventionMeasures()->attach($this->engineeringControl, ['suggestion' => $this->engineeringControlSuggestion]);
+        $evaluation->interventionMeasures()->attach($this->administrativeControl, ['suggestion' => $this->administrativeControlSuggestion]);
+        $evaluation->interventionMeasures()->attach($this->personalProtection, ['suggestion' => $this->personalProtectionSuggestion]);
     }
 
     public function render()

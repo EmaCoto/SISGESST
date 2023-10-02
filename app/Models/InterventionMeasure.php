@@ -17,6 +17,8 @@ class InterventionMeasure extends Model
 
     public function evaluations(): BelongsToMany
     {
-        return $this->belongsToMany(Evaluation::class);
+        return $this->belongsToMany(Evaluation::class, 'evaluation_intervention_measures', 'id_intervention_measure', 'id_evaluation')
+        ->withPivot('suggestion')
+        ->withTimestamps();
     }
 }
