@@ -39,9 +39,12 @@
             </div>
         </div>
         <div class="md:right-10 top-40 md:top-36 absolute lg:relative lg:top-0 lg:w-2/5 flex justify-center gap-4 text-gray-100 font-semibold text-md">
-            @livewire('processes.create-process', ['companyId' => $company->id, 'companyName' => $company->name])
-            @livewire('processes.activities.create-activity', ['companyId' => $company->id])
-            @livewire('processes.tasks.create-task', ['companyId' => $company->id])
+            @can('process.activity.task.create')
+                @livewire('processes.create-process', ['companyId' => $company->id, 'companyName' => $company->name])
+                @livewire('processes.activities.create-activity', ['companyId' => $company->id])
+                @livewire('processes.tasks.create-task', ['companyId' => $company->id])
+            @endcan
+
         </div>
     </div>
 

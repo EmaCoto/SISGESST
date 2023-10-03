@@ -1,0 +1,32 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
+
+class RoleSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $role1 = Role::create(['name' => 'admin']);
+        $role2 = Role::create(['name' => 'evaluator']);
+
+        // PERMISSIONS OF BOTH
+        Permission::create(['name' => 'dashboard'])->syncRoles([$role1, $role2]);
+
+
+        // ADMIN PERMISSIONS
+        Permission::create(['name' => 'create.companies'])->assignRole([$role1]);
+        Permission::create(['name' => 'edit.delete.procceses'])->assignRole([$role1]);
+        Permission::create(['name' => 'process.activity.task.create'])->assignRole([$role1]);
+        Permission::create(['name' => 'edit.delete.activities'])->assignRole([$role1]);
+
+
+    }
+}

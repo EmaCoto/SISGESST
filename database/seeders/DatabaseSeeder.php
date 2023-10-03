@@ -13,10 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\user::factory(1)->create();
+        $this->call([RoleSeeder::class, UserSeeder::class, ]);
 
         $this->call([
-
             //amuna
             ProvinceSeeder::class,
             CitySeeder::class,
@@ -32,7 +31,6 @@ class DatabaseSeeder extends Seeder
             ConsequenceLevelSeeder::class,
             RiskLevelSeeder::class,
             EvaluationSeeder::class,
-
         ]);
     }
 }

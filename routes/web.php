@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Livewire\Companies\ShowCompany;
 use App\Http\Livewire\Evaluation\EvaluationParent;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,9 @@ Route::get('/dashboard', function () {return view('dashboard');})->name('dashboa
 Route::get('/show-company/{id}', ShowCompany::class)->name('show-company');
 Route::get('/evaluation', EvaluationParent::class)->name('evaluation');
 Route::get('/help', function () {return view('help');})->name('help');
-Route::get('/contact', function () {return view('contact');})->name('contact');
+// Route::get('/contact', function () {return view('contact');})->name('contact');
+
+Route::resource('/contact', ContactController::class)->names('contact');
 
 
 // Route::view('/index', 'index');

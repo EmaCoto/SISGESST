@@ -14,7 +14,7 @@
         <h1 class="font-semibold text-xl m-2">COMPAÑÍA</h1>
         <div class="flex flex-col justify-center h-16 items-center">
             <a href="{{ route('help') }}" class="hover:text-[#ff8239] text-lg">Acerca de nosotros</a>
-            <a href="{{ route('contact') }}" class="hover:text-[#ff8239] text-lg">Contáctanos</a>
+            <a href="{{ route('contact.index') }}" class="hover:text-[#ff8239] text-lg">Contáctanos</a>
         </div>
     </div>
     <div>

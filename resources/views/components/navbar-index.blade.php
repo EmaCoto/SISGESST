@@ -4,9 +4,9 @@
         <a href="#" class="hover:bg-none"><p class="my-4 text-[#ff8239] px-3 text-3xl font-extrabold cursor-pointer">SISGESST</p></a>
     </div>
     <div class="text-center font-semibold">
-        <a href="/" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Inicio</a>
-        <a href="{{ route('help') }}" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Ayuda</a>
-        <a href="{{ route('contact') }}" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">Contáctenos</a>
+        <a href="/" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">INICIO</a>
+        <a href="{{ route('help') }}" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">AYUDA</a>
+        <a href="{{ route('contact.index') }}" class="px-10 py-[31px] focus:underline focus:underline-2 focus:rounded-sm active:outline-green-200">CONTÁCTENOS</a>
     </div>
     <div>
         @if (Route::has('login'))
@@ -14,10 +14,10 @@
                 @auth
                     <a href="{{ url('/dashboard') }}" class="font-semibold focus:underline focus:underline-2 focus:rounded-sm active:outline-green-100 px-4 py-[31px]">Dashboard</a>
                 @else
-                    <a href="{{ route('login') }}" class="font-semibold focus:underline focus:underline-2 focus:rounded-sm active:outline-green-100 px-4 py-[31px]">Iniciar</a>
+                    <a href="{{ route('login') }}" class="font-semibold focus:underline focus:underline-2 focus:rounded-sm active:outline-green-100 px-4 py-[31px]">INICIAR</a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="ml-4 font-semibold focus:underline focus:underline-2 focus:rounded-sm active:outline-green-100 px-4 py-[31px]">Registrarse</a>
+                        <a href="{{ route('register') }}" class="ml-4 font-semibold focus:underline focus:underline-2 focus:rounded-sm active:outline-green-100 px-4 py-[31px]">REGISTRARSE</a>
                     @endif
                 @endauth
             </div>

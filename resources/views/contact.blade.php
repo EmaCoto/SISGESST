@@ -38,9 +38,26 @@
 
         <main class="flex-grow flex text-xl">
             {{-------------------------------- SECTION IMAGE ---------------------------------}}
-            <form class="w-3/4 h-full flex flex-col">
+            <form class="w-3/4 h-full flex flex-col" method="POST" action="{{ route('contact.store') }}">
+                @csrf {{-- Agrega el token CSRF --}}
                 <div class="w-1/2 p-4 m-auto rounded-lg bg-white shadow-lg border border-black border-opacity-5">
                     <h1 class="text-center font-bold text-4xl m-4 mb-7">Contáctenos</h1>
+
+                    {{-- Mensaje de éxito o error --}}
+                    @if(session('success'))
+                        <div>
+                            {{ session('success') }}
+                        </div>
+                    @elseif($errors->any())
+                        <div>
+                            <ul class="grid grid-cols-2">
+                                @foreach($errors->all() as $error)
+                                    <li class="text-red-500 mx-4">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="flex">
                         <div class="flex flex-col m-4 w-1/2">
                             <label for="name">Nombre completo</label>
@@ -76,7 +93,7 @@
                     </div>
                     <div>
                         <h1 class="text-2xl font-bold text-[#ff8239]">SISGESST</h1>
-                        <p class="h-16 text-lg">proteger la vida y el bienestar de los trabajadores es una cultura de todas las organizaciones
+                        <p class="h-16 text-lg">Proteger la vida y el bienestar de los trabajadores es una cultura de todas las organizaciones
 
                         </p>
                     </div>
@@ -85,7 +102,7 @@
                     <h1 class="font-semibold text-[#ff8239]">COMPAÑÍA</h1>
                     <div class="flex flex-col h-16">
                         <a href="{{ route('help') }}" class="hover:text-[#ff8239] text-lg">Acerca de nosotros</a>
-                        <a href="{{ route('contact') }}" class="hover:text-[#ff8239] text-lg">Contáctanos</a>
+                        <a href="#" class="hover:text-[#ff8239] text-lg">Contáctanos</a>
                     </div>
                 </div>
                 <div>
