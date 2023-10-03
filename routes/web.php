@@ -24,5 +24,4 @@ Route::get('/dashboard', function () {return view('dashboard');})->name('dashboa
 
 Route::get('/show-company/{id}', ShowCompany::class)->name('show-company');
 Route::get('/index-evaluation/{id}', IndexEvaluation::class)->name('index-evaluation');
-Route::get('/evaluation', EvaluationParent::class)->name('evaluation');
 

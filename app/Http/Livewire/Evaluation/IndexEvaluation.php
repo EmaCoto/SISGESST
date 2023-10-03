@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Evaluation;
 
 use App\Models\Evaluation;
+use App\Models\Task;
 use Livewire\Component;
 
 class IndexEvaluation extends Component
@@ -10,15 +11,25 @@ class IndexEvaluation extends Component
     public $processId;
     public $sectionPosition = 1;
 
+    //Variables de la seccion 1
     public $activityId, $activityName, $taskId, $dangerClassification, $dangerDescription;
 
+    //Variables de la seccion 2
     public $danger, $effects, $source, $means, $individual;
+
+    //Variables de la seccion 3
     public $deficiencyLevel, $deficiencyValue, $exposureLevel, $exposureValue, $probabilityLevel, $probabilityValue, $consequenceLevel, $consequenceValue,
         $interventionLevel, $interventionValue, $interventionName, $riskAceptavility;
+
+    //Variables de la seccion 4
     public $linked, $contractor, $temporary, $time;
 
+    //Variables de la seccion 5
     public $removal, $removalSuggestion, $replacement, $replacementSuggestion, $engineeringControl, $engineeringControlSuggestion,
         $administrativeControl, $administrativeControlSuggestion, $personalProtection, $personalProtectionSuggestion;
+
+    //Variables de la seccion 6
+    public $legal;
 
     protected $listeners = [
         'increasePosition',
@@ -28,6 +39,8 @@ class IndexEvaluation extends Component
         'sectionThree',
         'sectionFour',
         'sectionFive',
+        'sectionSix',
+        'save',
 
     ];
 
@@ -113,6 +126,10 @@ class IndexEvaluation extends Component
         $this->personalProtection = $dataFive['personalProtection'];
         $this->personalProtectionSuggestion = $dataFive['personalProtectionSuggestion'];
     }
+    public function sectionSix($dataSix)
+    {
+        $this->legal = $dataSix;
+    }
 
     public function save()
     {
@@ -137,8 +154,7 @@ class IndexEvaluation extends Component
             'contractors' => $this->contractor,
             'temporary' => $this->temporary,
             'exposure_time' => $this->time,
-            'verification_result' => "vacio",
-            'legal_requirement' => "vacio",
+            'legal_requirement' => $this->legal,
             'id_user' => "1",
         ]);
         $evaluation->interventionMeasures()->attach($this->removal, ['suggestion' => $this->removalSuggestion]);
@@ -146,6 +162,10 @@ class IndexEvaluation extends Component
         $evaluation->interventionMeasures()->attach($this->engineeringControl, ['suggestion' => $this->engineeringControlSuggestion]);
         $evaluation->interventionMeasures()->attach($this->administrativeControl, ['suggestion' => $this->administrativeControlSuggestion]);
         $evaluation->interventionMeasures()->attach($this->personalProtection, ['suggestion' => $this->personalProtectionSuggestion]);
+
+        Task::where('id', $this->taskId)->update([
+            'status' => 'Evaluado',
+        ]);
     }
 
     public function render()

@@ -33,7 +33,6 @@ return new class extends Migration
             $table->string('contractors');
             $table->string('temporary');
             $table->string('exposure_time');
-            $table->string('verification_result');
             $table->string('legal_requirement');
             $table->unsignedBigInteger('id_user');
             $table->timestamps();

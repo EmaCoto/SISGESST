@@ -61,7 +61,7 @@
             <button wire:click="previousSection"
                 class="bg-gray-600 py-2 px-4 rounded-lg text-gray-200 font-semibold absolute bottom-6 left-20 z-50">Atras</button>
             {{-- <progress class="absolute bottom-10 left-56 w-4/6 rounded-full" value="{{$sectionPosition}}" max="5"></progress> --}}
-            <button wire:click="save"
+            <button wire:click="nextSection"
                 class="bg-green-600 py-2 px-4 rounded-lg text-gray-200 font-semibold absolute bottom-6 right-20 z-50">Finalizar Evaluacion</button>
         @else
             <button wire:click="previousSection"

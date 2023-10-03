@@ -56,7 +56,9 @@ class SectionOne extends Component
     }
     public function activityTask()
     {
-        $this->tasks = Task::where('activity_id', $this->activityId)->get();
+        $this->tasks = Task::where('activity_id', $this->activityId)
+                            ->where('status', 'sin evaluar')
+                            ->get();
     }
 
     public function nextPosition1()
