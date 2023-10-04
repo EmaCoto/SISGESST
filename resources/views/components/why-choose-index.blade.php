@@ -1,6 +1,6 @@
-<div class="flex flex-col justify-center h-[700px] lg:h-[190px] mx-auto m-10">
+<div class="flex flex-col justify-center h-[800px] sm:h-[190px] lg:h-[190px] mx-auto m-10">
     <div>
-        <h1 class="text-center font-bold mb-32 text-4xl">¿POR QUÉ ELEGIRNOS?</h1>
+        <h1 class="text-center font-bold mb-32 sm:text-4xl">¿POR QUÉ ELEGIRNOS?</h1>
     </div>
     <div class="grid grid-cols-4 px-28">
         <div class="mx-auto hover:bg-gradient-to-r to-[#fe5d00ba] from-[#ffbb3eca] rounded-xl w-44 h-44 duration-500 border border-none hover:border-black">
