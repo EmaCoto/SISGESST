@@ -6,7 +6,7 @@
                 <h1 class="w-4/6 mx-auto mb-10 rounded-lg py-2 text-xl font-bold text-center bg-gray-300">CUMPLIMIENTO
                     REQUISITO LEGAL</h1>
                 <div class="flex justify-around mb-12 p-4" x-data="{ selectedCheckbox: null }">
-                    <div class="rounded-lg bg-gray-300 cursor-pointer hover:bg-[#336699]"
+                    <div class="rounded-lg border-4 border-[#336699] cursor-pointer hover:bg-[#336699]"
                         :class="{ 'bg-[#336699]': selectedCheckbox === 'yes' }">
                         <input type="checkbox" id="yes" wire:model="legal" value="Si" class="hidden"
                             @click="selectedCheckbox = 'yes'" :checked="selectedCheckbox === 'yes'">
@@ -15,7 +15,7 @@
                             <p class="text-center text-2xl font-semibold">Si</p>
                         </label>
                     </div>
-                    <div class="rounded-lg bg-gray-300 cursor-pointer hover:bg-[#336699]"
+                    <div class="rounded-lg border-4 border-[#336699] cursor-pointer hover:bg-[#336699]"
                         :class="{ 'bg-[#336699]': selectedCheckbox === 'not' }">
                         <input type="checkbox" id="not" wire:model="legal" value="No" class="hidden"
                             @click="selectedCheckbox = 'not'" :checked="selectedCheckbox === 'not'">

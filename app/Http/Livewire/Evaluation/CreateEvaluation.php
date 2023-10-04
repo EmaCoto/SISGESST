@@ -1,12 +1,11 @@
 <?php
-
 namespace App\Http\Livewire\Evaluation;
 
 use App\Models\Evaluation;
 use App\Models\Task;
 use Livewire\Component;
 
-class IndexEvaluation extends Component
+class CreateEvaluation extends Component
 {
     public $processId;
     public $sectionPosition = 1;
@@ -166,10 +165,11 @@ class IndexEvaluation extends Component
         Task::where('id', $this->taskId)->update([
             'status' => 'Evaluado',
         ]);
-    }
 
+        return redirect()->route('create-evaluation', ['id' => $this->processId]);
+    }
     public function render()
     {
-        return view('livewire.evaluation.index-evaluation');
+        return view('livewire.evaluation.create-evaluation');
     }
 }

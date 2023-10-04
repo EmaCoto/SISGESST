@@ -19,7 +19,7 @@
                         @livewire('companies.edit-company', ['company' => $company])
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="{{route('show-evaluation', ['id' => $company->id])}}"
                             class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Procesos evaluados</a>
                     </li>
                     <li>
@@ -64,8 +64,8 @@
         </div>
     </div>
 
-
     @livewire('processes.show-process', ['companyId' => $company->id])
+    @livewire('evaluation.show-evaluation')
 
 
 

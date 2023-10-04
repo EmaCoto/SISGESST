@@ -1,6 +1,5 @@
 <div class="w-full overflow-hidden py-8" style="height: 93vh">
     <x-content-block>
-        {{-- php artisan make:livewire evaluation/sections/SectionOne --}}
         @if ($sectionPosition == 1)
             @livewire('evaluation.sections.section-one', [
                 'id' => $processId,
@@ -71,43 +70,4 @@
                 class="bg-green-600 py-2 px-4 rounded-lg text-gray-200 font-semibold absolute bottom-6 right-20 z-50">Siguiente</button>
         @endif
     </x-content-block>
-    <div class="absolute bg-red-500 w-56 top-10 right-4">
-        <h1>seccion 1</h1>
-        <p>{{ $taskId }}</p>
-        <p>{{ $dangerClassification }}</p>
-        <p>{{ $dangerDescription }}</p>
-
-        <h1>seccion 2</h1>
-        <p>{{ $danger }}</p>
-        <p>{{ $effects }}</p>
-        <p>{{ $source }}</p>
-        <p>{{ $means }}</p>
-        <p>{{ $individual }}</p>
-
-        <h1>seccion 3</h1>
-        <p>{{ $deficiencyLevel }}</p>
-        <p>{{ $exposureLevel }}</p>
-        <p>{{ $probabilityValue }}</p>
-        <p>{{ $consequenceLevel }}</p>
-        <p>{{ $interventionValue }}</p>
-        <p>{{ $interventionName }}</p>
-
-        <h1>seccion 4</h1>
-        <p>{{ $linked }}</p>
-        <p>{{ $contractor }}</p>
-        <p>{{ $temporary }}</p>
-        <p>{{ $time }}</p>
-
-        <h1>seccion 5</h1>
-        <p>{{ $removal }}</p>
-        <p>{{ $removalSuggestion }}</p>
-        <p>{{ $replacement }}</p>
-        <p>{{ $replacementSuggestion }}</p>
-        <p>{{ $engineeringControl }}</p>
-        <p>{{ $engineeringControlSuggestion }}</p>
-        <p>{{ $administrativeControl }}</p>
-        <p>{{ $administrativeControlSuggestion }}</p>
-        <p>{{ $personalProtection }}</p>
-        <p>{{ $personalProtectionSuggestion }}</p>
-    </div>
 </div>
