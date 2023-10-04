@@ -6,6 +6,5 @@
         <div class=" text-sm text-gray-600">
             {{ $content }}
         </div>
-
     </div>
 </x-modal>

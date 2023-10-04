@@ -7,26 +7,38 @@ use Livewire\Component;
 
 class Second extends Component
 {
-    public $selectedName;
+    public $exposures, $exposureLevel, $exposureValue, $exposureColor, $exposureMeaning;
 
-    protected $rules = [
-        'meaning',
-        'color',
-        'value',
-    ];
+    public function mount($exposureId)
+    {
+        $this->exposures = ExposureLevel::all();
+        $this->exposureLevel = $exposureId;
+        if($this->exposureLevel){
+            $this->updatedExposureLevel();
+        }
+    }
+
+    public function updatedExposureLevel()
+    {
+        $this->exposureSelected();
+    }
+    public function exposureSelected()
+    {
+        $exposureData = ExposureLevel::find($this->exposureLevel);
+        $this->exposureValue = $exposureData->value;
+        $this->exposureColor = $exposureData->color;
+        $this->exposureMeaning = $exposureData->meaning;
+        if($this->exposureLevel){
+            $this->emit('calculateExposure', [
+            'exposureId' => $this->exposureLevel,
+            'exposureValue' => $this->exposureValue
+        ]);
+        }
+
+    }
 
     public function render()
     {
-        $exposureLevels = ExposureLevel::all();
-
-        $selectedExposureLevel = $exposureLevels->firstWhere('name', $this->selectedName);
-
-        return view('livewire.evaluation.options.second', [
-            'exposureLevels' => $exposureLevels,
-            'selectedMeaning' => $selectedExposureLevel ? $selectedExposureLevel->meaning : '',
-            'selectedColor' => $selectedExposureLevel ? $selectedExposureLevel->color : '',
-            'selectedValue' => $selectedExposureLevel ? $selectedExposureLevel->value : '',
-
-        ]);
+        return view('livewire.evaluation.options.second');
     }
 }

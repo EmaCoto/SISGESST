@@ -20,8 +20,9 @@ class TaskFactory extends Factory
             'name' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
             'routine' => $this->faker->randomElement([1, 0]),
+            'status' => 'sin evaluar',
             'activity_id' => function () {
-                return \App\Models\Activity::take(10)->get()->random()->id;
+                return \App\Models\Activity::take(20)->get()->random()->id;
             },
         ];
     }

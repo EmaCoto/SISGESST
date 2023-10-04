@@ -21,8 +21,8 @@ class Task extends Model
         return $this->belongsTo(Activity::class, 'activity_id');
     }
 
-    public function evaluation(): HasOne
+    public function evaluations()
     {
-        return $this->hasOne(Evaluation::class);
+        return $this->hasMany(Evaluation::class);
     }
 }

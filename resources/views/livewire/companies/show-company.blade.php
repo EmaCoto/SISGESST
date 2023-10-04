@@ -13,15 +13,33 @@
                 <span class="flex-1 mx-3 text-left whitespace-nowrap">Gestionar Empresa</span>
 
             </button>
-            <ul id="dropdown-example" class="hidden absolute w-44 py-1">
+            <ul id="dropdown-example" class="hidden absolute w-48 py-1">
                 <div class="bg-[#16a085] text-gray-100 rounded-lg">
                     <li>
                         @livewire('companies.edit-company', ['company' => $company])
                     </li>
                     <li>
-                        <a href="#"
-                            class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Desactivar</a>
+                        <a href="{{route('show-evaluation', ['id' => $company->id])}}"
+                            class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Procesos evaluados</a>
                     </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Procesos sin evaluar</a>
+                    </li>
+                    @php
+                        $status = "active";
+                    @endphp
+                    @if ($status == "disable")
+                        <li>
+                            <a href="#"
+                                class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Activar</a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="#"
+                                class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Desactivar</a>
+                        </li>
+                    @endif
                     <li>
                         <a href="#"
                             class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Eliminar</a>
@@ -48,10 +66,7 @@
         </div>
     </div>
 
-
     @livewire('processes.show-process', ['companyId' => $company->id])
-
-
 
     <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
 </div>

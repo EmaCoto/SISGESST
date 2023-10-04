@@ -14,29 +14,53 @@ class ProbabilityLevelSeeder extends Seeder
     public function run(): void
     {
         ProbabilityLevel::create([
+            'id' => 1,
+            'prefix' => 'MA',
             'name' => 'Muy Alto',
-            'value' => '24',
-            'meaning' => 'Se ha (n) detectado peligro (s) que determina(n) como posible la generación de incidentes  o consecuencias muy significativas, o la eficacia del conjunto de medidas preventivas existentes respecto al riesgo es nula o no existe, o ambas.',
-            'color'=> '#FE0000',
-        ]);
-        ProbabilityLevel::create([
-            'name' => 'Alto',
-            'value' => '10',
-            'meaning' => 'Se ha (n) detectada algún (os) peligro (s) que pueden dar lugar a consecuencias significativa (s), o la eficacia del conjunto de medidas preventivas existentes es baja, o ambas.',
-            'color'=> '#FD8D14',
-        ]);
-        ProbabilityLevel::create([
-            'name' => 'Medio',
-            'value' => '6',
-            'meaning' => 'Se han detectado peligros que pueden dar lugar a consecuencias poco significativas o de menor importancia, o la eficacia del conjunto de medidas preventivas existentes es moderada, o ambas.',
-            'color'=> '#F8DE22',
-        ]);
-        ProbabilityLevel::create([
-            'name' => 'Bajo',
-            'value' => '2',
-            'meaning' => 'No se ha detectado consecuencia alguna, o la eficacia del conjunto de medidas preventivas existentes es alta, o ambas. El riesgo está controlado.',
-            'color'=> '#539165',
+            'value' => '40-24',
+            'meaning' => '
+                Situación deficiente con exposición continua o muy deficiente con exposición frecuente. Normalmente
+                la materialización del riesgo ocurre con frecuencia.
+            ',
+            'color' => '#FE0000'
         ]);
 
+        ProbabilityLevel::create([
+            'id' => 2,
+            'prefix' => 'A',
+            'name' => 'Alto',
+            'value' => '20-10',
+            'meaning' => '
+                situación deficiente con exposición frecuente u ocasioanal, o bien situación muy deficiente con
+                exposición ocasional o esporádica.  La materialización del riesgo es posible que suceda varias
+                veces en la vida laboral.
+            ',
+            'color' => '#FD8D14'
+        ]);
+
+        ProbabilityLevel::create([
+            'id' => 3,
+            'prefix' => 'M',
+            'name' => 'Medio',
+            'value' => '8-6',
+            'meaning' => '
+                Situación deficiente con exposición esporádica o bien situación mejorada con exposición
+                continuada o frecuente.  Es posible que suceda el daño alguna vez.
+            ',
+            'color' => '#F8DE22'
+        ]);
+
+        ProbabilityLevel::create([
+            'id' => 4,
+            'prefix' => 'B',
+            'name' => 'Bajo',
+            'value' => '4-2',
+            'meaning' => '
+                Situación mejorable con exposición ocasional o esporádica, o situación sin anomalía
+                destacable con cualquier nivel de exposición.  No es esperable que se materialice el
+                riesgo, aunque puede ser concebible.
+            ',
+            'color' => '#539165'
+        ]);
     }
 }

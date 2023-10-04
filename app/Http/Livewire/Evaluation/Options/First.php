@@ -7,19 +7,36 @@ use Livewire\Component;
 
 class First extends Component
 {
-    public $selectedName;
+    public $deficiencies, $deficiencyLevel, $deficiencyValue, $deficiencyColor, $deficiencyMeaning;
+
+    public function mount($deficiencyId)
+    {
+        $this->deficiencies = DeficiencyLevel::all();
+        $this->deficiencyLevel = $deficiencyId;
+        if($this->deficiencyLevel){
+            $this->updatedDeficiencyLevel();
+        }
+    }
+
+    public function updatedDeficiencyLevel()
+    {
+        $this->deficiencySelected();
+    }
+    public function deficiencySelected()
+    {
+        $deficiencyData = DeficiencyLevel::find($this->deficiencyLevel);
+        $this->deficiencyValue = $deficiencyData->value;
+        $this->deficiencyColor = $deficiencyData->color;
+        $this->deficiencyMeaning = $deficiencyData->meaning;
+
+        $this->emit('calculateDeficiency', [
+            'deficiencyId' => $this->deficiencyLevel,
+            'deficiencyValue' => $this->deficiencyValue
+        ]);
+    }
 
     public function render()
     {
-        $deficiencyLevels = DeficiencyLevel::all();
-        $selectedDeficiencyLevel = $deficiencyLevels->firstWhere('name', $this->selectedName);
-
-        return view('livewire.evaluation.options.first', [
-            'deficiencyLevels' => $deficiencyLevels,
-            'selectedMeaning' => $selectedDeficiencyLevel ? $selectedDeficiencyLevel->meaning : '',
-            'selectedColor' => $selectedDeficiencyLevel ? $selectedDeficiencyLevel->color : '',
-            'selectedValue' => $selectedDeficiencyLevel ? $selectedDeficiencyLevel->value : '',
-
-        ]);
+        return view('livewire.evaluation.options.first');
     }
 }

@@ -89,7 +89,7 @@
                             </div>
                         </td>
                         <td class="text-center">
-                            @livewire('processes.tasks.show-task', ['activityId' => $activity->id, 'activityName' => $activity->name], key(time() . $activity->id))
+                            @livewire('processes.tasks.show-task', ['activityId' => $activity->id, 'activityName' => $activity->name, 'companyId' => $companyId], key(time() . $activity->id))
                         </td>
                     </tr>
                 @endforeach

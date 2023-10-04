@@ -2,9 +2,11 @@
     <div class="hidden lg:grid grid-cols-2 gap-4 w-11/12 h-[83vh] mx-auto mt-6 p-2">
         <!-- component -->
         <div id="contentEval" class="bg-gray-200 p-4 rounded-lg h-full overflow-hidden">
-            <h1 class="bg-green-600 p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-2/4 mx-auto text-center text-gray-100">
+            <h1
+                class="bg-green-600 p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-2/4 mx-auto text-center text-gray-100">
                 Procesos
             </h1>
+
             @if ($processes->count() > 0)
                 <table class="table-auto rounded-lg overflow-hidden">
                     <thead class="rounded-t-lg">
@@ -85,13 +87,16 @@
 
                                         @if ($openDelete)
                                             <div class="fixed z-50 inset-0 flex items-center justify-center">
-                                                <div wire:click="$set('openDelete', true)" class="absolute inset-0 z-40 bg-black opacity-10 modal-overlay"></div>
+                                                <div wire:click="$set('openDelete', true)"
+                                                    class="absolute inset-0 z-40 bg-black opacity-10 modal-overlay">
+                                                </div>
 
                                                 <div
                                                     class="z-50 w-11/12 mx-auto overflow-y-auto bg-white border border-red-500 rounded-xl modal-container md:max-w-md">
                                                     <!-- Content of the modal -->
                                                     <div class="flex gap-3 py-2 bg-red-500 border border-red-500">
-                                                        <h3 class="w-full text-2xl text-center text-gray-100 ">Eliminar</h3>
+                                                        <h3 class="w-full text-2xl text-center text-gray-100 ">Eliminar
+                                                        </h3>
                                                     </div>
                                                     <div class="px-6 py-4 text-left modal-content">
 
@@ -115,7 +120,9 @@
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
-                                    <span class="bg-green-600 text-gray-100 py-1 px-3 rounded-full text-md">Evaluar</span>
+                                    <a href="{{ route('create-evaluation', ['id' => $process->id]) }}" class="bg-green-600 text-gray-100 py-1 px-3 rounded-full text-md">
+                                        Evaluar
+                                    </a>
                                 </td>
                             </tr>
                         @empty
@@ -159,21 +166,21 @@
                         </div>
                     </div>
                     {{-- @if (in_array($process->id, $openProcesses)) --}}
-                        {{-- <div
+                    {{-- <div
                             class="bg-gray-100 text-gray-700 p-3 rounded-lg h-auto items-center transition-all max-h-screen">
                             <div>
                                 @livewire('processes.activities.show-activity', ['processId' => $process->id], key(time() . $process->id))
                             </div>
                         </div> --}}
                     {{-- @else --}}
-                        <div
-                            class="bg-gray-100 text-gray-700 p-3 rounded-lg h-auto items-center transition-all max-h-screen">
-                            <div>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. At deserunt dignissimos dolores,
-                                illum hic quas iusto pariatur temporibus fugiat commodi similique harum beatae nisi,
-                                doloremque neque quo qui praesentium nesciunt?
-                            </div>
+                    <div
+                        class="bg-gray-100 text-gray-700 p-3 rounded-lg h-auto items-center transition-all max-h-screen">
+                        <div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. At deserunt dignissimos dolores,
+                            illum hic quas iusto pariatur temporibus fugiat commodi similique harum beatae nisi,
+                            doloremque neque quo qui praesentium nesciunt?
                         </div>
+                    </div>
                     {{-- @endif --}}
                 </div>
             </div>
@@ -182,4 +189,3 @@
         @endforelse
     </div>
 </div>
-

@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call([RoleSeeder::class, UserSeeder::class, ]);
 
         $this->call([
-            //amuna
             ProvinceSeeder::class,
             CitySeeder::class,
             CompanySeeder::class,
@@ -24,13 +23,14 @@ class DatabaseSeeder extends Seeder
             ActivitySeeder::class,
             TaskSeeder::class,
 
-            //emanuel
+            DangerDescriptionSeeder::class,
             DeficiencyLevelSeeder::class,
             ExposureLevelSeeder::class,
             ProbabilityLevelSeeder::class,
             ConsequenceLevelSeeder::class,
-            RiskLevelSeeder::class,
-            EvaluationSeeder::class,
+            InterventionRiskLevelSeeder::class,
+            RiskAcceptabilitySeeder::class,
+            InterventionMeasureSeeder::class,
         ]);
     }
 }

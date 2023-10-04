@@ -13,14 +13,14 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="/" :active="request()->routeIs('dashboard')">
-                        {{ __('INICIO') }}
+                        {{ __('Inicio') }}
                     </x-nav-link>
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('EMPRESAS') }}
+                        {{ __('Empresas') }}
                     </x-nav-link>
                     @can('administrator')
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('ADMINISTRADOR') }}
+                        {{ __('Panel administrativo') }}
                     </x-nav-link>
                     @endcan
 

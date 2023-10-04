@@ -61,8 +61,8 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function evaluation():BelongsTo
+    public function evaluations()
     {
-        return $this->belongsTo(Evaluation::class);
+        return $this->hasMany(Evaluation::class);
     }
 }

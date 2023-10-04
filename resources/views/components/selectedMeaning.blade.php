@@ -1,3 +1,3 @@
-<div class="mt-2 text-justify h-28 w-4/6 xl:w-5/6 p-1">
+<div class="bg-gray-400 bg-opacity-60 h-36 text-justify rounded-md text-md p-4 mt-2 w-full">
     {{ $slot }}
 </div>

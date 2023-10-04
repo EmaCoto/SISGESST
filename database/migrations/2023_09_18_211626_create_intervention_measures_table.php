@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('probability_levels', function (Blueprint $table) {
+        Schema::create('intervention_measures', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('value');
-            $table->string('meaning');
-            $table->string('color');
+            $table->string('description', 500);
             $table->timestamps();
-
         });
     }
 
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('probability_levels');
+        Schema::dropIfExists('intervention_measures');
     }
 };

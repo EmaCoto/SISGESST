@@ -10,7 +10,7 @@ use Livewire\Component;
 class CreateTask extends Component
 {
     public $open = false;
-    public $name, $description, $activity_id;
+    public $name, $description, $routine, $activity_id;
     public $companyProcessId, $processes, $selectedActivity;
 
     protected $listeners = ['selectedActivity'];
@@ -22,7 +22,7 @@ class CreateTask extends Component
 
         $this->selectedActivity();
     }
-    
+
     public function selectedActivity()
     {
         $this->selectedActivity = Activity::whereIn('process_id', $this->processes->pluck('id'))->get();
@@ -33,10 +33,11 @@ class CreateTask extends Component
         Task::create([
             'name' => $this->name,
             'description' => $this->description,
+            'routine' => $this->routine,
             'activity_id' => $this->activity_id,
         ]);
 
-        $this->reset(['open', 'name', 'description', 'activity_id']);
+        $this->reset(['open', 'name', 'description', 'routine', 'activity_id']);
     }
 
 
