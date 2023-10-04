@@ -12,12 +12,18 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="/" :active="request()->routeIs('dashboard')">
+                        {{ __('INICIO') }}
+                    </x-nav-link>
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Empresas') }}
+                        {{ __('EMPRESAS') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('evaluation') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('evaluacion temp') }}
+                    @can('administrator')
+                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('ADMINISTRADOR') }}
                     </x-nav-link>
+                    @endcan
+
                 </div>
             </div>
 

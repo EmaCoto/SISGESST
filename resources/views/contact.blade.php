@@ -45,7 +45,7 @@
 
                     {{-- Mensaje de éxito o error --}}
                     @if(session('success'))
-                        <div>
+                        <div class="text-green-500 text-center">
                             {{ session('success') }}
                         </div>
                     @elseif($errors->any())
@@ -61,21 +61,21 @@
                     <div class="flex">
                         <div class="flex flex-col m-4 w-1/2">
                             <label for="name">Nombre completo</label>
-                            <input type="text" name="name" class="border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">
+                            <input type="text" name="name" value="{{ old('name') }}" class="border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">
                         </div>
                         <div class="flex flex-col m-4 w-1/2">
                             <label for="email">Correo</label>
-                            <input type="email" name="email" class="border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">
+                            <input type="email" name="email" value="{{ old('email') }}" class="border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">
                         </div>
                     </div>
                     <div>
                         <div class="flex flex-col m-4">
                             <label for="affair">Asunto</label>
-                            <input type="text" name="affair" class="border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">
+                            <input type="text" name="affair" value="{{ old('affair') }}" class="border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">
                         </div>
                         <div class="flex flex-col m-4">
                             <label for="description">Descripción</label>
-                            <textarea name="description" class="h-44 resize-none border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white"></textarea>
+                            <textarea name="description" class="h-44 resize-none border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">{{ old('description') }}</textarea>
                         </div>
                     </div>
                     <div class="w-full flex justify-center">

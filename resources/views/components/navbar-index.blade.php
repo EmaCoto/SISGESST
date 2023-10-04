@@ -12,7 +12,7 @@
         @if (Route::has('login'))
             <div class="sm:sticky sm:top-0 sm:right-0 text-right">
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="font-semibold focus:underline focus:underline-2 focus:rounded-sm active:outline-green-100 px-4 py-[31px]">Dashboard</a>
+                    <a href="{{ url('/dashboard') }}" class="font-semibold focus:underline focus:underline-2 focus:rounded-sm active:outline-green-100 px-4 py-[31px]">EVALUAR</a>
                 @else
                     <a href="{{ route('login') }}" class="font-semibold focus:underline focus:underline-2 focus:rounded-sm active:outline-green-100 px-4 py-[31px]">INICIAR</a>
 
