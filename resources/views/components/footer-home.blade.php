@@ -1,6 +1,6 @@
-<div class="grid grid-cols-4 px-28 bg-[#cbcbcd] text-center text-black py-2 h-full">
-    <div class="flex items-center">
-        <img src="{{ asset('img/logo.png') }}" alt="logo" class="w-16">
+<div class="sm:flex justify-around px-1 sm:px-4 lg:px-28 bg-[#cbcbcd] text-center text-black py-2 h-full">
+    <div class="lg:flex items-center">
+        <img src="{{ asset('img/logo.png') }}" alt="logo" class="w-16 mx-auto">
         <p class="text-[#ff8239] px-3 text-3xl font-extrabold">SISGESST</p>
     </div>
     <div>
@@ -26,4 +26,3 @@
         </div>
     </div>
 </div>
-

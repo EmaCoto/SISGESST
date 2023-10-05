@@ -1,5 +1,5 @@
 <div>
-    <div class="absolute mt-4 lg:mt-12 2xl:mt-36  flex flex-col justify-center px-2 md:px-4 md:w-2/3 lg:px-28 lg:w-3/5 2xl:w-1/2">
+    <div class="md:absolute mt-4 lg:mt-12 2xl:mt-36  flex flex-col justify-center px-4 md:px-4 md:w-2/3 lg:px-28 lg:w-3/5 2xl:w-1/2">
         <h5 class="font-semibold px-1 text-xs lg:text-xl">¿TÚ EMPRESA EN SST?</h5>
         <h1 class="lg:text-5xl font-bold text-xs sm:text-lg ">¡Evalua con nosotros y obtén nuestra ayuda!</h1><br>
         <p class="lg:text-xl text-justify text-xs sm:text-base lg:w-11/12">La seguridad y la salud en el trabajo, incluyendo el cumplimiento de los requisitos en materia de SST con arreglo a las legislaciones nacionales, son responsabilidad y deber del empleador.</p><br>

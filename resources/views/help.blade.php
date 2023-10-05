@@ -38,7 +38,7 @@
 
         <main>
             <div class="flex my-6 w-full">
-                <div class="flex-col p-10 px-32">
+                <div class="flex-col sm:p-10 2xl:px-32">
                     {{--------------------------- SECTION ABOUT THE SYSTEM ----------------------------}}
                     <x-about-system />
 
