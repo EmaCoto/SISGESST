@@ -1,4 +1,4 @@
-<div class="h-40 md:h-28 w-[95%] 2xl:w-11/12 mx-auto mt-4 lg:flex lg:h-auto gap-4">
+<div class="h-40 md:h-28 w-[95%] 2xl:w-11/12 mx-auto mt-4 lg:flex lg:h-auto gap-4 mb-6">
     <div class="my-auto absolute lg:relative top-52 md:top-36 lg:top-0">
         <button type="button"
             class="text-gray-100 font-bold text-md bg-[#16a085] flex items-center w-full p-2 transition duration-75 rounded-lg group"
@@ -12,7 +12,7 @@
             <span class="flex-1 mx-3 text-left whitespace-nowrap">Gestionar Empresa</span>
 
         </button>
-        <ul id="dropdown-example" class="hidden absolute w-48 py-1">
+        <ul id="dropdown-example" class="hidden absolute w-48 py-1 z-30">
             <div class="bg-[#16a085] text-gray-100 rounded-lg">
                 <li>
                     @livewire('companies.edit-company', ['company' => $company])
