@@ -27,3 +27,5 @@ Route::get('/create-evaluation/{id}', CreateEvaluation::class)->name('create-eva
 
 Route::get('/help', function () {return view('help');})->name('help');
 Route::resource('/contact', ContactController::class)->names('contact');
+Route::view('/admin', 'admin')->name('admin');
+

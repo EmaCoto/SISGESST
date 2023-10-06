@@ -1,7 +1,7 @@
 <div class="px-4 2xl:px-28 mx-auto my-10 lg:my-20">
         <div>
-            <h1 class="text-center font-bold text-4xl">OBJETIVO</h1>
-            <p class="sm:text-xl text-justify sm:text-center m-4 md:m-10 ">Determinar las actividades para el diseño e implementación de sistema de gestión en seguridad y saluden el trabajo basado en los estándares mínimos de acuerdo con la resolución 0312 de 2019.</p>
+            <h1 class="text-center font-bold sm:text-4xl mt-10 md:mt-0">OBJETIVO</h1>
+            <p class="sm:text-center m-4 md:m-10 lg:text-xl text-justify text-xs sm:text-base ">Determinar las actividades para el diseño e implementación de sistema de gestión en seguridad y saluden el trabajo basado en los estándares mínimos de acuerdo con la resolución 0312 de 2019.</p>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 lg:gap-8">
             {{-- imagen 1 --}}
