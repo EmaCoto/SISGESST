@@ -8,7 +8,7 @@
             </h1>
 
             @if ($processes->count() > 0)
-                <table class="table-auto rounded-lg overflow-hidden">
+                <table class="w-full rounded-lg overflow-hidden">
                     <thead class="rounded-t-lg">
                         <tr class=" bg-green-600 text-gray-100 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">N°</th>

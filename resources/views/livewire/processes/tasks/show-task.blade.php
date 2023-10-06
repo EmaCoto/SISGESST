@@ -7,7 +7,7 @@
             <h1
                 class="bg-[#f5b041] p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-5/6 mx-auto text-center text-gray-100">
                 Tareas - {{ $activityName }}</h1>
-            <table class="w-full table-auto rounded-lg overflow-hidden">
+            <table class="w-full rounded-lg overflow-hidden">
                 <thead class="rounded-t-lg">
                     <tr class="bg-[#f5b041] text-gray-100 uppercase text-sm leading-normal">
                         <th class="py-3 px-6 text-left">N°</th>

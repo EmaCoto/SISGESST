@@ -4,7 +4,7 @@
         Actividades - {{ $processName }}
     </h1>
     @if ($activities->count() > 0)
-        <table class="w-full table-auto rounded-lg overflow-hidden">
+        <table class="w-full rounded-lg overflow-hidden">
             <thead class="rounded-t-lg">
                 <tr class="bg-[#3498db] text-gray-100 uppercase text-sm leading-normal">
                     <th class="py-3 px-6 text-left">N°</th>
