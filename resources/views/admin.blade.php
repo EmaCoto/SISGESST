@@ -1,63 +1,38 @@
-<x-guest-layout>
-    <div class="flex flex-col h-screen">
-        {{-------------------------------- NAVEGATION BAR ---------------------------------}}
-        <x-navbar-index/>
-
+<x-app-layout>
+    <div class="flex flex-col">
         <main class="flex-grow flex">
-            <aside class="w-[15vw]">
-                <div class="px-3 h-[91.8vh] py-4 overflow-y-auto bg-[#EEEFF1]">
-                    <ul class="space-y-2 font-medium">
-                        <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
-                                <i class="fa-solid fa-user-group group-hover:text-white"></i>
-                                <span class="group-hover:text-white ml-3">Evaluadores</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
-                                <i class="fa-solid fa-user-group"></i>
-                                <span class="group-hover:text-white ml-3">Users</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
-                                <i class="fa-solid fa-user-group"></i>
-                                <span class="group-hover:text-white ml-3">Users</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
-                                <i class="fa-solid fa-user-group"></i>
-                                <span class="group-hover:text-white ml-3">Users</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
-                                <i class="fa-solid fa-user-group"></i>
-                                <span class="group-hover:text-white ml-3">Users</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
-                                <i class="fa-solid fa-user-group"></i>
-                                <span class="group-hover:text-white ml-3">Users</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
-                                <i class="fa-solid fa-user-group"></i>
-                                <span class="group-hover:text-white ml-3">Users</span>
-                            </a>
-                        </li>
-                    </ul>
+            <x-aside-admin />
+
+            <div id="contentEval" class="relative px-4 py-2 w-[85vw] h-[93.3vh] overflow-y-scroll bg-gray-200 ">
+                <div class="grid grid-cols-4 my-8 mx-auto">
+                    <a href="#" class="w-80 h-52 rounded-lg shadow-lg mx-auto bg-green-700 cursor-pointer text-3xl">
+                        <div class="w-full h-full bg-white border-dashed border-2 border-green-500 hover:rotate-6 origin-bottom-right duration-500 rounded-lg flex flex-col text-center justify-center">
+                            <i class="fa-regular fa-id-card fa-xl"></i>
+                            <h1 class="font-semibold pt-10">Evaluadores</h1>
+                        </div>
+                    </a>
+                    <a href="{{ route('users') }}" class="w-80 h-52 rounded-lg shadow-lg mx-auto bg-yellow-400 cursor-pointer text-3xl">
+                        <div class="w-full h-full bg-white border-dashed border-2 border-yellow-400 hover:rotate-6 origin-bottom-right duration-500 rounded-lg flex flex-col text-center justify-center">
+                            <i class="fa-solid fa-users fa-xl"></i>
+                            <h1 class="font-semibold pt-10">Usuarios</h1>
+                        </div>
+                    </a>
+                    <a href="#" class="w-80 h-52 rounded-lg shadow-lg mx-auto bg-green-700 cursor-pointer text-3xl">
+                        <div class="w-full h-full bg-white border-dashed border-2 border-green-500 hover:rotate-6 origin-bottom-right duration-500 rounded-lg flex flex-col text-center justify-center">
+                            <i class="fa-solid fa-user-group fa-xl"></i>
+                            <h1 class="font-semibold pt-10">USUARIOS</h1>
+                        </div>
+                    </a>
+                    <a href="#" class="w-80 h-52 rounded-lg shadow-lg mx-auto bg-green-700 cursor-pointer text-3xl">
+                        <div class="w-full h-full bg-white border-dashed border-2 border-green-500 hover:rotate-6 origin-bottom-right duration-500 rounded-lg flex flex-col text-center justify-center">
+                            <i class="fa-solid fa-user-group fa-xl"></i>
+                            <h1 class="font-semibold pt-10">USUARIOS</h1>
+                        </div>
+                    </a>
                 </div>
-            </aside>
-
-            <div id="contentEval" class="relative px-4 py-2 w-[85vw] h-[91.8vh] overflow-y-scroll">
-
             </div>
         </main>
     </div>
-</x-guest-layout>
+</x-app-layout>
 
 

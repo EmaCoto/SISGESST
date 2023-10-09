@@ -20,12 +20,15 @@ class RoleSeeder extends Seeder
         // PERMISSIONS OF BOTH
         Permission::create(['name' => 'dashboard'])->syncRoles([$role1, $role2]);
 
+
         // ADMIN PERMISSIONS
         Permission::create(['name' => 'create.companies'])->assignRole([$role1]);
         Permission::create(['name' => 'edit.delete.procceses'])->assignRole([$role1]);
         Permission::create(['name' => 'process.activity.task.create'])->assignRole([$role1]);
         Permission::create(['name' => 'edit.delete.activities'])->assignRole([$role1]);
         Permission::create(['name' => 'administrator'])->assignRole([$role1]);
+        Permission::create(['name' => 'admin'])->assignRole([$role1]);
+
 
     }
 }

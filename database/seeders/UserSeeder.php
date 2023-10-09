@@ -12,7 +12,6 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(1)->create();
 
         User::create([
             'name' => 'Emanuel',
@@ -37,5 +36,7 @@ class UserSeeder extends Seeder
             'current_team_id' => null,
         ])->assignRole('admin');
 
+        
+        User::factory(100)->create();
     }
 }

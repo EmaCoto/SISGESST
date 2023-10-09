@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Livewire\Admin\Users;
+use App\Http\Livewire\Admin\Users\UserIndex;
 use App\Http\Livewire\Companies\ShowCompany;
 use App\Http\Livewire\Evaluation\CreateEvaluation;
 use App\Http\Livewire\Evaluation\ShowEvaluation;
@@ -25,7 +27,13 @@ Route::get('/show-company/{id}', ShowCompany::class)->name('show-company');
 Route::get('/show-evaluation/{id}', ShowEvaluation::class)->name('show-evaluation');
 Route::get('/create-evaluation/{id}', CreateEvaluation::class)->name('create-evaluation');
 
-Route::get('/help', function () {return view('help');})->name('help');
+
+// HOME
+Route::view('/help', 'help')->name('help');
 Route::resource('/contact', ContactController::class)->names('contact');
-Route::view('/admin', 'admin')->name('admin');
+
+Route::view('/admin', 'admin')->middleware('can:admin')->name('admin');
+
+// ADMIN
+Route::get('/users', UserIndex::class)->middleware('can:admin')->name('users');
 
