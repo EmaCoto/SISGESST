@@ -12,7 +12,7 @@ class Evaluation extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_task',
+        'task_id',
         'danger_classification',
         'id_danger_description',
         'danger',

@@ -133,7 +133,7 @@ class CreateEvaluation extends Component
     public function save()
     {
         $evaluation = Evaluation::create([
-            'id_task' => $this->taskId,
+            'task_id' => $this->taskId,
             'danger_classification' => $this->dangerClassification,
             'id_danger_description' => $this->dangerDescription,
             'danger' => $this->danger,
@@ -154,7 +154,7 @@ class CreateEvaluation extends Component
             'temporary' => $this->temporary,
             'exposure_time' => $this->time,
             'legal_requirement' => $this->legal,
-            'id_user' => "1",
+            'id_user' => auth()->user()->id,
         ]);
         $evaluation->interventionMeasures()->attach($this->removal, ['suggestion' => $this->removalSuggestion]);
         $evaluation->interventionMeasures()->attach($this->replacement, ['suggestion' => $this->replacementSuggestion]);
