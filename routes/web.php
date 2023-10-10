@@ -1,7 +1,13 @@
 <?php
 
 use App\Http\Controllers\ContactController;
-use App\Http\Livewire\Admin\Users;
+use App\Http\Livewire\Admin\Administrators\AdministratorsIndex;
+use App\Http\Livewire\Admin\Dangers\DangersIndex;
+use App\Http\Livewire\Admin\Evaluators\EvaluatorsIndex;
+use App\Http\Livewire\Admin\Intervention\InterventionIndex;
+use App\Http\Livewire\Admin\Managers\ManagersIndex;
+use App\Http\Livewire\Admin\Parameter\ParameterIndex;
+use App\Http\Livewire\Admin\Register\RegisterIndex;
 use App\Http\Livewire\Admin\Users\UserIndex;
 use App\Http\Livewire\Companies\ShowCompany;
 use App\Http\Livewire\Evaluation\CreateEvaluation;
@@ -35,5 +41,14 @@ Route::resource('/contact', ContactController::class)->names('contact');
 Route::view('/admin', 'admin')->middleware('can:admin')->name('admin');
 
 // ADMIN
-Route::get('/users', UserIndex::class)->middleware('can:admin')->name('users');
+Route::get('/evaluators', EvaluatorsIndex::class)->middleware('can:admin')->name('evaluators');
+Route::get('/register', RegisterIndex::class)->middleware('can:admin')->name('register');
+Route::get('/administrators', AdministratorsIndex::class)->middleware('can:admin')->name('administrators');
+Route::get('/managers', ManagersIndex::class)->middleware('can:admin')->name('managers');
+Route::get('/parameter', ParameterIndex::class)->middleware('can:admin')->name('parameter');
+Route::get('/dangers', DangersIndex::class)->middleware('can:admin')->name('dangers');
+Route::get('/intervention', InterventionIndex::class)->middleware('can:admin')->name('intervention');
+
+
+
 
