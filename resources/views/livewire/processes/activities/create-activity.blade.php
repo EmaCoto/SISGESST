@@ -3,7 +3,7 @@
 
     <x-dialog-modal wire:model="open">
         <x-slot name="content">
-            <h1 class="bg-[#3498db] p-1 mb-2 font-semibold text-2xl rounded-lg w-5/6 mx-auto text-center text-gray-100">Crear actividad</h1>
+            <h2 class="bg-[#3498db] p-1 mb-2 font-semibold text-2xl rounded-lg w-5/6 mx-auto text-center text-gray-100">Crear actividad</h2>
             <div class="w-4/5 mx-auto my-5">
                 <x-label>Seleccione un proceso:</x-label>
                 <select wire:model.defer="process_id" class="bg-gray-200 border-2 border-gray-300 rounded-md w-full h-9 py-0 px-4 mb-4 focus:ring-0 focus:border-green-600">

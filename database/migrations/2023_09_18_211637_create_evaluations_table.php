@@ -34,7 +34,7 @@ return new class extends Migration
             $table->string('temporary');
             $table->string('exposure_time');
             $table->string('legal_requirement');
-            $table->unsignedBigInteger('id_user');
+            $table->string('evaluator');
             $table->timestamps();
 
             $table->foreign('task_id')->references('id')->on('tasks');
@@ -45,7 +45,6 @@ return new class extends Migration
             $table->foreign('id_consequence_level')->references('id')->on('consequence_levels');
             $table->foreign('id_intervention_risk_level')->references('id')->on('intervention_risk_levels');
             $table->foreign('id_risk_acceptability')->references('id')->on('risk_acceptabilities');
-            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 

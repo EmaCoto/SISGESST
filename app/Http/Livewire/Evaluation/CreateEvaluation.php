@@ -154,7 +154,7 @@ class CreateEvaluation extends Component
             'temporary' => $this->temporary,
             'exposure_time' => $this->time,
             'legal_requirement' => $this->legal,
-            'id_user' => auth()->user()->id,
+            'evaluator' => auth()->user()->name,
         ]);
         $evaluation->interventionMeasures()->attach($this->removal, ['suggestion' => $this->removalSuggestion]);
         $evaluation->interventionMeasures()->attach($this->replacement, ['suggestion' => $this->replacementSuggestion]);
