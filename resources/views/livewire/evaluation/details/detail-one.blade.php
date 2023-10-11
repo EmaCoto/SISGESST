@@ -4,10 +4,10 @@
             PROCESO
         </div>
         <div class="text-center w-full grid grid-cols-2">
-            <div class="w-full bg-gray-300 border-r-2 p-2 border-b-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-r-2 p-2 border-b-2 border-gray-500">
                 Nombre
             </div>
-            <div class="w-full bg-gray-300 border-b-2 p-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-b-2 p-2 border-gray-500">
                 Descripcion
             </div>
         </div>
@@ -26,10 +26,10 @@
             ACTIVIDAD
         </div>
         <div class="text-center w-full grid grid-cols-2">
-            <div class="w-full bg-gray-300 border-r-2 p-2 border-b-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-r-2 p-2 border-b-2 border-gray-500">
                 Nombre
             </div>
-            <div class="w-full bg-gray-300 border-b-2 p-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-b-2 p-2 border-gray-500">
                 Descripcion
             </div>
         </div>
@@ -48,10 +48,10 @@
             TAREA
         </div>
         <div class="text-center w-full grid grid-cols-2">
-            <div class="w-full bg-gray-300 border-r-2 p-2 border-b-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-r-2 p-2 border-b-2 border-gray-500">
                 Nombre
             </div>
-            <div class="w-full bg-gray-300 border-b-2 p-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-b-2 p-2 border-gray-500">
                 Descripcion
             </div>
         </div>

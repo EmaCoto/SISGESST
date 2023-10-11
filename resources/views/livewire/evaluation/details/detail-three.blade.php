@@ -5,7 +5,7 @@
         </div>
         <div class="text-left w-full grid grid-cols-12">
             <div
-                class="col-span-3 w-full bg-gray-300 border-r-2 border-b-2 p-2 border-gray-500 flex items-center">
+                class="col-span-3 w-full bg-gray-300 font-bold border-r-2 border-b-2 p-2 border-gray-500 flex items-center">
                 Nivel de deficiencia(ND)
             </div>
             <div class="col-span-2 w-full border-r-2 border-b-2 border-gray-500 p-2 flex items-center">
@@ -21,7 +21,7 @@
         </div>
         <div class="text-left w-full grid grid-cols-12">
             <div
-                class="col-span-3 w-full bg-gray-300 border-r-2 border-b-2 p-2 border-gray-500 flex items-center">
+                class="col-span-3 w-full bg-gray-300 font-bold border-r-2 border-b-2 p-2 border-gray-500 flex items-center">
                 Nivel de exposicion(NE)
             </div>
             <div class="col-span-2 w-full border-r-2 border-b-2 border-gray-500 p-2 flex items-center">
@@ -37,7 +37,7 @@
         </div>
         <div class="text-left w-full grid grid-cols-12">
             <div
-                class="col-span-3 w-full bg-gray-300 border-r-2 border-b-2 p-2 border-gray-500 flex items-center">
+                class="col-span-3 w-full bg-gray-300 font-bold border-r-2 border-b-2 p-2 border-gray-500 flex items-center">
                 Nivel de probabilidad(ND * NE)
             </div>
 
@@ -54,7 +54,7 @@
         </div>
         <div class="text-left w-full grid grid-cols-12">
             <div
-                class="col-span-3 w-full bg-gray-300 border-r-2 border-b-2 p-2 border-gray-500 flex items-center">
+                class="col-span-3 w-full bg-gray-300 font-bold border-r-2 border-b-2 p-2 border-gray-500 flex items-center">
                 Nivel de consecuencia
             </div>
 
@@ -71,7 +71,7 @@
         </div>
         <div class="text-left w-full grid grid-cols-12">
             <div
-                class="col-span-3 w-full bg-gray-300 border-r-2 border-b-2 p-2 border-gray-500 flex items-center">
+                class="col-span-3 w-full bg-gray-300 font-bold border-r-2 border-b-2 p-2 border-gray-500 flex items-center">
                 Nivel de riesgo intervencion(NR)
             </div>
 
@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="text-left w-full grid grid-cols-12">
-            <div class="col-span-3 w-full bg-gray-300 border-r-2 p-2 border-gray-500 flex items-center">
+            <div class="col-span-3 w-full bg-gray-300 font-bold border-r-2 p-2 border-gray-500 flex items-center">
                 Aceptabilidad del riesgo
             </div>
 

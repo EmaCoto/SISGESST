@@ -4,16 +4,16 @@
             NUMERO DE EXPUESTOS
         </div>
         <div class="text-center font-bold w-full grid grid-cols-4">
-            <div class="w-full bg-gray-300 border-r-2 p-2 border-b-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-r-2 p-2 border-b-2 border-gray-500">
                 Vinculados
             </div>
-            <div class="w-full bg-gray-300 border-r-2 border-b-2 p-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-r-2 border-b-2 p-2 border-gray-500">
                 Contratistas
             </div>
-            <div class="w-full bg-gray-300 border-r-2 border-b-2 p-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-r-2 border-b-2 p-2 border-gray-500">
                 Temporales
             </div>
-            <div class="w-full bg-gray-300 border-b-2 p-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-b-2 p-2 border-gray-500">
                 Tiempo de exposicion
             </div>
         </div>

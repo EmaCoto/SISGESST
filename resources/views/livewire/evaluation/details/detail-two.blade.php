@@ -4,10 +4,10 @@
             CLASIFICACION DE PELIGRO
         </div>
         <div class="text-center w-full grid grid-cols-2">
-            <div class="w-full bg-gray-300 border-r-2 p-2 border-b-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-r-2 p-2 border-b-2 border-gray-500">
                 Nombre
             </div>
-            <div class="w-full bg-gray-300 border-b-2 p-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-b-2 p-2 border-gray-500">
                 Descripcion
             </div>
         </div>
@@ -47,13 +47,13 @@
             CONTROLES EXISTENTES
         </div>
         <div class="text-center w-full grid grid-cols-3">
-            <div class="w-full bg-gray-300 border-r-2 p-2 border-b-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-r-2 p-2 border-b-2 border-gray-500">
                 Fuente
             </div>
-            <div class="w-full bg-gray-300 border-r-2 border-b-2 p-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-r-2 border-b-2 p-2 border-gray-500">
                 Medio
             </div>
-            <div class="w-full bg-gray-300 border-b-2 p-2 border-gray-500">
+            <div class="w-full bg-gray-300 font-bold border-b-2 p-2 border-gray-500">
                 Individuo
             </div>
         </div>
