@@ -16,7 +16,7 @@
                 <hr class="w-full items-center">
             </div>
             <li>
-                <a href="{{ route('register') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                <a href="{{ route('registerperson') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
                     <i class="fa-solid fa-arrow-right-to-bracket group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Registrar</span>
                 </a>
@@ -65,9 +65,13 @@
                 </a>
             </li>
         </ul>
-        <div class="bottom-0 h-20">
-            <i class="fa-solid fa-house"></i>
-            <i class="fa-solid fa-gear"></i>
+        <div class="absolute bottom-0 w-72 flex justify-end p-5 text-xl">
+            <a href="{{ route('admin') }}" class="px-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                <i class="fa-solid fa-house group-hover:text-white"></i>
+            </a>
+            <a href="#" class="px-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                <i class="fa-solid fa-gear group-hover:text-white"></i>
+            </a>
         </div>
     </div>
 </aside>

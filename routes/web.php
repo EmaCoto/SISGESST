@@ -42,7 +42,7 @@ Route::view('/admin', 'admin')->middleware('can:admin')->name('admin');
 
 // ADMIN
 Route::get('/evaluators', EvaluatorsIndex::class)->middleware('can:admin')->name('evaluators');
-Route::get('/register', RegisterIndex::class)->middleware('can:admin')->name('register');
+Route::get('/registerperson', RegisterIndex::class)->middleware('can:admin')->name('registerperson');
 Route::get('/administrators', AdministratorsIndex::class)->middleware('can:admin')->name('administrators');
 Route::get('/managers', ManagersIndex::class)->middleware('can:admin')->name('managers');
 Route::get('/parameter', ParameterIndex::class)->middleware('can:admin')->name('parameter');

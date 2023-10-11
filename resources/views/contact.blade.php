@@ -2,9 +2,9 @@
  {{-------------------------------- NAVEGATION BAR ---------------------------------}}
         <x-navbar-index/>
 
-        <main class="flex">
+        <main class="flex h-[91.8vh]">
             {{-------------------------------- SECTION IMAGE ---------------------------------}}
-            <form class="sm:w-3/4 w-full h-full flex flex-col" method="POST" action="{{ route('contact.store') }}">
+            <form class="sm:w-3/4 w-full flex flex-col h-full" method="POST" action="{{ route('contact.store') }}">
                 @csrf {{-- Agrega el token CSRF --}}
                 <div class="lg:w-1/2 p-4 md:m-auto md:rounded-lg bg-white md:shadow-lg md:border border-black border-opacity-5 ">
                     <h1 class="text-center font-bold text-4xl m-4 mb-7">Contáctenos</h1>

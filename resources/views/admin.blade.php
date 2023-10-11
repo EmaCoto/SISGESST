@@ -5,7 +5,7 @@
 
             <div id="contentEval" class="relative px-4 py-2 w-[85vw] h-[93.3vh] overflow-y-scroll overflow-x-hidden bg-gray-200 ">
                 <div class="grid grid-cols-4 my-8">
-                    <a href="{{ route('register') }}" class="w-[349px] h-52 rounded-lg shadow-lg mx-auto bg-gray-700 cursor-pointer text-3xl">
+                    <a href="{{ route('registerperson') }}" class="w-[349px] h-52 rounded-lg shadow-lg mx-auto bg-gray-700 cursor-pointer text-3xl">
                         <div class="w-full h-full p-6 bg-white border-2 border-gray-500 hover:rotate-6 origin-bottom-right duration-500 rounded-lg flex flex-col text-center justify-center">
                             <i class="fa-solid fa-arrow-right-to-bracket fa-xl"></i>
                             <h1 class="font-semibold pt-10">Registrar</h1>

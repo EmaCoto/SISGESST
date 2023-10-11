@@ -23,7 +23,8 @@ class UserSeeder extends Seeder
             'remember_token' => 2,
             'profile_photo_path' => null,
             'current_team_id' => null,
-        ])->assignRole('admin');
+        ])->assignRole('Administrador');
+
         User::create([
             'name' => 'Saulv Amuna',
             'email' => 'amuna@gmail.com',
@@ -34,9 +35,11 @@ class UserSeeder extends Seeder
             'remember_token' => 1,
             'profile_photo_path' => null,
             'current_team_id' => null,
-        ])->assignRole('admin');
+        ])->assignRole('Administrador');
 
-        
-        User::factory(100)->create();
+
+        User::factory(100)->create()->each(function ($user) {
+            $user->assignRole('Evaluador');
+        });
     }
 }
