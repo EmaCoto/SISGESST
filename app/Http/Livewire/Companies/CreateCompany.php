@@ -13,8 +13,21 @@ class CreateCompany extends Component
     public $cities;
     public  $nit, $name ,$email ,$direct_workers ,$indirect_workers ,$made_by ,$position ,$city ,$economic_sector;
 
+    protected $rules = [
+        'nit'               => 'required',
+        'name'              => 'required',
+        'email'             => 'required|email',
+        'direct_workers'    => 'required',
+        'indirect_workers'  => 'required',
+        'made_by'           => 'required',
+        'position'          => 'required',
+        'city'              => 'required',
+        'economic_sector'   => 'required',
+    ];
+
     public function save()
     {
+        $this->validate();
         Company::create([
             'nit' => $this->nit,
             'name' => $this->name,

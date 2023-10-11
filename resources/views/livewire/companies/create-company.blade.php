@@ -8,29 +8,37 @@
             <div class="w-4/5 mx-auto my-5">
                 <x-label>Nit:</x-label>
                 <x-input type="text" wire:model.defer="nit" />
+                <x-input-error for="nit" />
 
                 <x-label>Nombre:</x-label>
                 <x-input type="text" wire:model.defer="name" />
+                <x-input-error for="name" />
 
                 <x-label>Email:</x-label>
                 <x-input type="email" wire:model.defer="email" />
+                <x-input-error for="email" />
 
                 <div class="grid md:grid-cols-2 gap-4">
                     <div>
                         <x-label>Trabajadores directos:</x-label>
                         <x-input type="number" wire:model.defer="direct_workers" />
+                        <x-input-error for="direct_workers" />
                     </div>
                     <div>
                         <x-label>Trabajadores indirectos:</x-label>
                         <x-input type="number" wire:model.defer="indirect_workers" />
+                        <x-input-error for="indirect_workers" />
+
                     </div>
                 </div>
 
                 <x-label>Elaborado por:</x-label>
                 <x-input type="text" wire:model.defer="made_by" />
+                <x-input-error for="made_by" />
 
                 <x-label>Cargo:</x-label>
                 <x-input type="text" wire:model.defer="position" />
+                <x-input-error for="position" />
 
                 <div class="grid md:grid-cols-2 gap-4">
                     <div>
@@ -42,11 +50,13 @@
                                 <option value="{{ $city->id }}">{{ $city->name }} </option>
                             @endforeach
                         </select>
+                        <x-input-error for="city" />
 
                     </div>
                     <div>
                         <x-label>Sector economico:</x-label>
                         <x-input type="text" wire:model.defer="economic_sector" />
+                        <x-input-error for="economic_sector" />
                     </div>
                 </div>
             </div>

@@ -1,21 +1,18 @@
 <?php
 
-namespace App\Http\Livewire\Evaluation;
+namespace App\Http\Livewire\Evaluation\Details;
 
 use Livewire\Component;
 
-class DetailEvaluation extends Component
+class DetailOne extends Component
 {
     public $evaluations;
-    public $openDetail = false;
-
     public function mount($evaluations)
     {
         $this->evaluations = $evaluations;
     }
-
     public function render()
     {
-        return view('livewire.evaluation.detail-evaluation');
+        return view('livewire.evaluation.details.detail-one');
     }
 }
