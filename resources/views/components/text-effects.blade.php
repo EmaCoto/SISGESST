@@ -1,5 +1,3 @@
-{{-- POSSIBLE-EFFECTS --}}
-
 <div>
     <div class="mb-2 border h-fit border-gray-100 rounded-lg bg-gray-100 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
         <div class="flex items-center justify-between px-3 py-2">
@@ -15,5 +13,4 @@
             <textarea wire:model.defer="effects" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="Ej: Stress, heridas , atrapamiento, afeccciones respiratorias, dermatitis..."></textarea>
         </div>
     </div>
-    @error('effects') <span class="error text-red-500">{{ $message }}</span> @enderror
 </div>

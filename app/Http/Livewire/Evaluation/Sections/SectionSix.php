@@ -9,8 +9,13 @@ class SectionSix extends Component
     public $legal;
     protected $listeners = ['nextPosition6','previousPosition6'];
 
+    protected $rules = [
+        'legal' => 'required',
+    ];
     public function nextPosition6()
     {
+        $this->validate();
+
         $this->emit('sectionSix', $this->legal);
         $this->emit('save');
     }

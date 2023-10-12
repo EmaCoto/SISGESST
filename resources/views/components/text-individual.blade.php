@@ -1,4 +1,3 @@
-{{-- INDIVIDUAL --}}
 <div>
     <div class="m-2 md:col-span-2 lg:col-span-1 xl:col-span-1 2xl:col-span-1 box-border border border-gray-100 rounded-lg bg-gray-100 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
         <div class="flex items-center justify-between px-3 py-2">
@@ -14,5 +13,4 @@
             <textarea wire:model.defer="individual" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="Ej: No hay control..."></textarea>
         </div>
     </div>
-    @error('individual') <span class="error text-red-500">{{ $message }}</span> @enderror
 </div>

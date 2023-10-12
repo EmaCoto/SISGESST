@@ -24,7 +24,9 @@
                             <option value="{{ $removal->id }}">{{ $removal->description }}</option>
                         @endforeach
                     </select>
+                    <x-input-error for="removal"/>
                     <x-measures-elimination wire:model="removalSuggestion" />
+                    <x-input-error for="removalSuggestion"/>
                 </div>
 
                 <div>
@@ -41,7 +43,9 @@
                             <option value="{{ $replacement->id }}">{{ $replacement->description }}</option>
                         @endforeach
                     </select>
+                    <x-input-error for="replacement"/>
                     <x-measures-substitution wire:model="replacementSuggestion" />
+                    <x-input-error for="replacementSuggestion"/>
                 </div>
                 <div>
                     <h2 class="text-lg font-bold bg-gray-300 w-full pl-4 pr-2 pt-1 rounded-t-md flex justify-between">
@@ -57,7 +61,9 @@
                             <option value="{{ $engineering->id }}">{{ $engineering->description }}</option>
                         @endforeach
                     </select>
+                    <x-input-error for="engineeringControl"/>
                     <x-measures-engineering wire:model="engineeringControlSuggestion" />
+                    <x-input-error for="engineeringControlSuggestion"/>
                 </div>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-4 m-auto p-2">
@@ -75,7 +81,9 @@
                             <option value="{{ $administrative->id }}">{{ $administrative->description }}</option>
                         @endforeach
                     </select>
+                    <x-input-error for="administrativeControl"/>
                     <x-measures-administrative wire:model="administrativeControlSuggestion" />
+                    <x-input-error for="administrativeControlSuggestion"/>
                 </div>
                 <div>
                     <h2 class="text-lg font-bold bg-gray-300 w-full pl-4 pr-2 pt-1 rounded-t-md flex justify-between">
@@ -91,7 +99,9 @@
                             <option value="{{ $protection->id }}">{{ $protection->description }}</option>
                         @endforeach
                     </select>
+                    <x-input-error for="personalProtection"/>
                     <x-measures-protection wire:model="personalProtectionSuggestion" />
+                    <x-input-error for="personalProtectionSuggestion"/>
                 </div>
             </div>
 

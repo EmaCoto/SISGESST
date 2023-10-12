@@ -14,6 +14,12 @@ class CreateTask extends Component
     public $companyProcessId, $processes, $selectedActivity;
 
     protected $listeners = ['selectedActivity'];
+    protected $rules = [
+        'activity_id'   => 'required',
+        'name'          => 'required',
+        'description'   => 'required',
+        'routine'       => 'required',
+    ];
 
     public function mount($companyId)
     {
@@ -30,6 +36,8 @@ class CreateTask extends Component
 
     public function save()
     {
+        $this->validate();
+
         Task::create([
             'name' => $this->name,
             'description' => $this->description,

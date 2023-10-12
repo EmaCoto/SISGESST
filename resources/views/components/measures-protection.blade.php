@@ -9,5 +9,4 @@
             <textarea wire:model.defer="personalProtectionSuggestion" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="write your thoughts here..."></textarea>
         </div>
     </div>
-    @error('personalProtection') <span class="error text-red-500">{{ $message }}</span> @enderror
 </div>

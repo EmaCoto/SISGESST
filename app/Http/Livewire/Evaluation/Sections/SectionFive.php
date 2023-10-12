@@ -16,6 +16,19 @@ class SectionFive extends Component
 
     protected $listeners = ['nextPosition5','previousPosition5'];
 
+    protected $rules = [
+        'removal'                           => 'required',
+        'removalSuggestion'                 => 'required',
+        'replacement'                       => 'required',
+        'replacementSuggestion'             => 'required',
+        'engineeringControl'                => 'required',
+        'engineeringControlSuggestion'      => 'required',
+        'administrativeControl'             => 'required',
+        'administrativeControlSuggestion'   => 'required',
+        'personalProtection'                => 'required',
+        'personalProtectionSuggestion'      => 'required',
+    ];
+
     public function mount($sectionRemoval, $sectionRemovalSuggestion, $sectionReplacement, $sectionReplacementSuggestion, $sectionEngineeringControl,
         $sectionEngineeringSuggestion, $sectionAdministrativeControl, $sectionAdministrativeSuggestion, $sectionPersonalProtection, $sectionProtectionSuggestion)
     {
@@ -41,6 +54,8 @@ class SectionFive extends Component
     }
     public function nextPosition5()
     {
+        $this->validate();
+
         $this->emit('sectionFive', [
             'removal' => $this->removal,
             'removalSuggestion' => $this->removalSuggestion,

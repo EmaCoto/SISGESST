@@ -12,6 +12,15 @@ class SectionThree extends Component
 
     protected $listeners = ['nextPosition3','previousPosition3','riskPartOne','riskPartTwo', 'riskPartThree'];
 
+    protected $rules = [
+        'deficiencyId' => 'required',
+        'exposureId' => 'required',
+        'probabilityValue' => 'required',
+        'consequenceId' => 'required',
+        'interventionValue' => 'required',
+        'interventionName' => 'required',
+    ];
+
     public function mount($sectionDeficiencyLevel, $sectionDeficiencyValue, $sectionExposureLevel, $sectionExposureValue, $sectionProbabilityValue,
         $sectionConsequenceLevel, $sectionConsequenceValue, $sectionInterventionValue, $sectionInterventionName)
     {
@@ -28,6 +37,8 @@ class SectionThree extends Component
 
     public function nextPosition3()
     {
+        $this->validate();
+
         $this->emit('sectionThree',[
             'deficiencyLevel' => $this->deficiencyId,
             'deficiencyValue' => $this->deficiencyValue,

@@ -15,6 +15,13 @@ class SectionOne extends Component
     public $previousTask, $previousDangerClassification, $previousDangerDescription;
     protected $listeners = ['nextPosition1'];
 
+    protected $rules = [
+        'activityId'            => 'required',
+        'taskId'                => 'required',
+        'dangerClassification'  => 'required',
+        'dangerDescription'     => 'required',
+    ];
+
     public function mount($id, $sectionActivityId, $sectionTaskId, $sectionDangerClassification, $sectionDangerDescription)
     {
         //Process
@@ -63,6 +70,8 @@ class SectionOne extends Component
 
     public function nextPosition1()
     {
+        $this->validate();
+
         $this->emit('sectionOne', [
             'activityId' => $this->activityId,
             'taskId' => $this->taskId,

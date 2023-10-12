@@ -23,7 +23,7 @@
                     </thead>
                     <tbody class="bg-white text-gray-600 text-sm font-light">
                         @forelse ($evaluations as $key => $evaluation)
-                            <tr class="text-left">
+                            <tr class="text-left border-b-2 border-gray-200">
                                 <td class="py-4 px-6">{{ $key + 1 }}</td>
                                 <td class="py-4 px-6">{{ $evaluation->task->name }}</td>
                                 <td class="py-4 px-6">{{ $evaluation->task->description }}</td>

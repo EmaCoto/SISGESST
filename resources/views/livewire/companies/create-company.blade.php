@@ -14,7 +14,7 @@
                 <x-input type="text" wire:model.defer="name" />
                 <x-input-error for="name" />
 
-                <x-label>Email:</x-label>
+                <x-label>Correo electronico:</x-label>
                 <x-input type="email" wire:model.defer="email" />
                 <x-input-error for="email" />
 

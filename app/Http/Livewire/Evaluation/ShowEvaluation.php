@@ -19,6 +19,7 @@ class ShowEvaluation extends Component
         $this->tasks = $this->activities->flatMap->tasks;
         $this->evaluations = $this->tasks->flatMap->evaluations;
     }
+
     public function render()
     {
         return view('livewire.evaluation.show-evaluation');
