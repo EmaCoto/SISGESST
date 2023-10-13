@@ -58,21 +58,21 @@
                         <a href="https://twitter.com/" class="hover:bg-white rounded-sm h-5 w-5 hover:p-1 ease-in-out duration-500"><i class="fa-brands fa-square-x-twitter fa-xl text-gray-600 hover:text-black"></i></a>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-bold text-[#ff8239]">SISGESST</h1>
+                        <h1 class="text-2xl font-bold text-[#FFAD19]">SISGESST</h1>
                         <p class="h-16 text-lg">Proteger la vida y el bienestar de los trabajadores es una cultura de todas las organizaciones
 
                         </p>
                     </div>
                 </div>
                 <div>
-                    <h1 class="font-semibold text-[#ff8239]">COMPAÑÍA</h1>
+                    <h1 class="font-semibold text-[#FFAD19]">COMPAÑÍA</h1>
                     <div class="flex flex-col h-16">
-                        <a href="{{ route('help') }}" class="hover:text-[#ff8239] text-lg">Acerca de nosotros</a>
-                        <a href="#" class="hover:text-[#ff8239] text-lg">Contáctanos</a>
+                        <a href="{{ route('help') }}" class="hover:text-[#FFAD19] text-lg">Acerca de nosotros</a>
+                        <a href="#" class="hover:text-[#FFAD19] text-lg">Contáctanos</a>
                     </div>
                 </div>
                 <div>
-                    <h2 class="font-semibold text-[#ff8239]">CONTACTO DIRECTO</h2>
+                    <h2 class="font-semibold text-[#FFAD19]">CONTACTO DIRECTO</h2>
                     <div class="flex flex-col h-16">
                         <P class="text-lg">Correo: support@gmail.com</P>
                         <p class="text-lg">314 4334726</p>

@@ -4,7 +4,7 @@
         <h1 class="lg:text-5xl font-bold text-xs sm:text-lg ">¡Evalua con nosotros y obtén nuestra ayuda!</h1><br>
         <p class="lg:text-xl text-justify text-xs sm:text-base lg:w-11/12">La seguridad y la salud en el trabajo, incluyendo el cumplimiento de los requisitos en materia de SST con arreglo a las legislaciones nacionales, son responsabilidad y deber del empleador.</p><br>
         <a href="{{ route('login') }}" class="cursor-pointer border-b-0 relative inline-flex items-center justify-center px-4 py-1 lg:px-10 lg:py-3 overflow-hidden active:text-blue-300 font-medium  text-white bg-gray-800 rounded-lg group w-44 lg:w-72">
-            <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#ff8239] rounded-full group-hover:w-80 group-hover:h-56"></span>
+            <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#FFAD19] rounded-full group-hover:w-80 group-hover:h-56"></span>
             <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
             <span class="relative text-xs lg:text-xl">Comenzar a evaluar</span>
         </a>

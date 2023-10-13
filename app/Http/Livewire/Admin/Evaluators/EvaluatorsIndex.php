@@ -7,12 +7,35 @@ use Livewire\Component;
 
 class EvaluatorsIndex extends Component
 {
-    public $search;
-    protected $listeners = ['render' => 'render'];
+    public $openDelete = false;
+    public $search, $user, $deleteuser;
+    protected $listeners = ['render' => 'render', 'userUpdated'];
+
+    public function userUpdated()
+    {
+        if ($this->user) {
+            $this->user = $this->user->fresh();
+        }
+    }
+
+    public function confirmDelete($id)
+    {
+        $this->deleteuser = User::find($id);
+        $this->openDelete = true; // Abre el modal de confirmación
+    }
+
+    public function deleteConfirmed()
+    {
+        if ($this->deleteuser) {
+            $this->deleteuser->delete();
+            $this->emitTo('companies.show-company', 'render');
+        }
+        $this->openDelete = false; // Cierra el modal de confirmación
+    }
 
     public function render()
     {
-         // Realiza una consulta para obtener solo los usuarios con el rol de administrador
+
          $evaluators = User::whereHas('roles', function ($query) {
             $query->where('name', 'Evaluador');
             })
@@ -21,7 +44,7 @@ class EvaluatorsIndex extends Component
                 ->orWhere('id', 'like', '%'.$this->search.'%')
                 ->orWhere('email', 'like', '%'.$this->search.'%');
             })
-            ->paginate(18);
+            ->paginate(15);
         return view('livewire.admin.evaluators.evaluators-index', compact('evaluators'));
     }
 }
