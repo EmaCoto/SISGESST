@@ -25,9 +25,9 @@
                         <p class="block text-lg mx-3">{{ $company->name }}</p>
                     </div>
                     <div class="">
-                        <h1 class=""><i class="fa-solid fa-hashtag my-auto h-full text-gray-500 w-10"></i>Nit: {{ $company->nit }}</h1>
-                        <h1 class=""><i class="fa-regular fa-envelope my-auto h-full text-gray-500 w-10"></i>Email: {{ $company->email }}</h1>
-                        <h1 class=""><i class="fa-solid fa-city my-auto h-full text-gray-500 w-10"></i>City: {{ $company->city->name }}</h1>
+                        <h1 class=""><i class="fa-solid fa-hashtag my-auto text-gray-500 w-10"></i>Nit: {{ $company->nit }}</h1>
+                        <h1 class=""><i class="fa-regular fa-envelope my-auto text-gray-500 w-10"></i>Email: {{ $company->email }}</h1>
+                        <h1 class=""><i class="fa-solid fa-city my-auto text-gray-500 w-10"></i>City: {{ $company->city->name }}</h1>
                         <h1 class=""><i class="fa-solid fa-users text-gray-500 w-10"></i>Direct-workers: {{ $company->number_direct_workers }} </h1>
                         <h1 class=""><i class="fa-solid fa-users-slash text-gray-500 w-10"></i>Indirect-workers: {{ $company->number_direct_workers }}</h1>
                     </div>
