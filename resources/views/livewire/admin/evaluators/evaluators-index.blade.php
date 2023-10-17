@@ -2,7 +2,7 @@
     <main class="flex-grow flex">
         <x-aside-admin />
 
-        <div id="contentEval" class="relative px-20 py-6 w-[85vw] h-[93.9vh] overflow-y-scroll overflow-x-hidden bg-gray-200 ">
+        <x-content-admin>
             <h1 class="text-center mb-10 text-3xl font-semibold text-gray-400 w-48 mx-auto">Evaluadores</h1>
             <input wire:model="search" class="shadow-lg shadow-gray-500 focus:ring-[#001B9E] focus:bg-white  rounded-lg border-none w-1/2" placeholder="Example: Walter     or     Example: 45740" type="text" id="buscarEmp">
 
@@ -78,6 +78,8 @@
                 </tbody>
             </table>
             {{ $evaluators->links() }}
-        </div>
+        </x-content-admin>
+
+
     </main>
 </div>

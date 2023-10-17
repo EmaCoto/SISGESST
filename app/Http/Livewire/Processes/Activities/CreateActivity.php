@@ -41,6 +41,7 @@ class CreateActivity extends Component
 
         $this->reset(['open', 'name', 'description', 'process_id']);
         $this->emit('selectedActivity');
+        $this->emit('alert');
     }
 
     public function render()

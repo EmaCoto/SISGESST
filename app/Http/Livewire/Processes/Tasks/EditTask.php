@@ -48,6 +48,7 @@ class EditTask extends Component
 
         $this->reset('openEditTask');
         $this->emit('render');
+        $this->emit('alert');
     }
 
 

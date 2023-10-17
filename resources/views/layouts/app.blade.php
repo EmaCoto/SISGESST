@@ -64,7 +64,7 @@
         <script>
             livewire.on('alert', function(message){
                 Swal.fire(
-                    'Good job!',
+                    '¡Se ha guardado la información correctamente!',
                     message,
                     'success')
             })

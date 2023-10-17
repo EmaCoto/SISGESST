@@ -35,6 +35,7 @@ class EditProcess extends Component
 
         $this->reset('open');
         $this->emit('render');
+        $this->emit('alert');
     }
 
     public function render()

@@ -31,7 +31,7 @@ class RegisterIndex extends Component
         $user->assignRole($this->selectedRole);
 
         session()->flash('success', '¡Usuario registrado y rol asignado correctamente!');
-
+        $this->emit('alert');
         $this->reset();
     }
 

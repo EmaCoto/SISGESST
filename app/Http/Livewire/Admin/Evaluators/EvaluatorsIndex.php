@@ -44,7 +44,7 @@ class EvaluatorsIndex extends Component
                 ->orWhere('id', 'like', '%'.$this->search.'%')
                 ->orWhere('email', 'like', '%'.$this->search.'%');
             })
-            ->paginate(15);
+            ->paginate(14);
         return view('livewire.admin.evaluators.evaluators-index', compact('evaluators'));
     }
 }

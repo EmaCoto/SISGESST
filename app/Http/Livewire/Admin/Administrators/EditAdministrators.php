@@ -34,5 +34,6 @@ class EditAdministrators extends Component
 
         $this->emit('userUpdated');
         $this->reset('open');
+        $this->emit('alert');
     }
 }

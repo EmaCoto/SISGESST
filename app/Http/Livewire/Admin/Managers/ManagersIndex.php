@@ -43,7 +43,7 @@ class ManagersIndex extends Component
                 ->orWhere('id', 'like', '%'.$this->search.'%')
                 ->orWhere('email', 'like', '%'.$this->search.'%');
             })
-            ->paginate(15);
+            ->paginate(14);
         return view('livewire.admin.managers.managers-index', compact('managers'));
     }
 }

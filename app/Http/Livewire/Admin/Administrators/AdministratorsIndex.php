@@ -45,7 +45,7 @@ class AdministratorsIndex extends Component
                 ->orWhere('id', 'like', '%'.$this->search.'%')
                 ->orWhere('email', 'like', '%'.$this->search.'%');
             })
-            ->paginate(15);
+            ->paginate(14);
         return view('livewire.admin.administrators.administrators-index', compact('administrators'));
     }
 }

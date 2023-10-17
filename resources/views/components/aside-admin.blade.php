@@ -1,4 +1,4 @@
-<aside class="2xl:w-[15vw] border-r hidden lg:block ">
+<aside class="2xl:w-[15vw] border-r hidden lg:block">
     {{-- CARD ADMIN --}}
     <div class="relative  group overflow-hidden h-44 p-5 flex flex-col items-start">
         <div class="flex items-center text-center h-full">
@@ -9,7 +9,7 @@
     </div>
 
     {{-- NAV --}}
-    <div class="px-3 h-[75.2vh] py-4 overflow-y-auto">
+    <div class="px-3 h-[75vh] py-4 overflow-y-auto">
         <ul class="space-y-2 font-medium">
             <div class="flex justify-center items-center text-gray-300 text-sm">
                 <h1 class="mr-4">Usuarios</h1>
@@ -65,7 +65,7 @@
                 </a>
             </li>
         </ul>
-        <div class="absolute bottom-0 2xl:w-72 lg:w-56 flex justify-end p-5 text-xl">
+        <div class="absolute bottom-0 2xl:w-64 lg:w-56 flex justify-end p-5 text-xl">
             <a href="{{ route('admin') }}" class="px-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
                 <i class="fa-solid fa-house group-hover:text-white"></i>
             </a>

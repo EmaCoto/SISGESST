@@ -42,6 +42,7 @@ class CreateCompany extends Component
 
         $this->reset(['open', 'nit', 'name', 'email', 'direct_workers', 'indirect_workers', 'made_by', 'position', 'city', 'economic_sector']);
         $this->emit('render');
+        $this->emit('alert');
     }
 
 

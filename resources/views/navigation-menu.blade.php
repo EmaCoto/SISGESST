@@ -23,7 +23,6 @@
                         {{ __('Panel administrativo') }}
                     </x-nav-link>
                     @endcan
-
                 </div>
             </div>
 
