@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -19,7 +19,7 @@
                         {{ __('Empresas') }}
                     </x-nav-link>
                     @can('administrator')
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('admin') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Panel administrativo') }}
                     </x-nav-link>
                     @endcan

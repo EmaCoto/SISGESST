@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class=" min-h-screen m-auto flex flex-col items-center bg-[#EFF0F2]">
+    <div class="min-h-screen mx-auto flex flex-col items-center bg-[#EFF0F2] p-2 sm:p-10 lg:p-0">
         <x-validation-errors class="mb-4" />
 
 
@@ -8,10 +8,10 @@
                 {{ session('status') }}
             </div>
         @endif
-        <div class="grid grid-cols-2 justify-center m-auto rounded-lg overflow-hidden shadow-2xl h-[500px] w-4/6 bg-white">
+        <div class="grid lg:grid-cols-2 justify-center m-auto rounded-lg overflow-hidden shadow-2xl lg:h-[500px] lg:w-4/6 bg-white">
             <img src="{{ asset('img/password.jpg') }}" alt="logo" class="w-full h-full">
             <div>
-                <form method="POST" action="{{ route('password.email') }}" class="p-16 h-full flex flex-col justify-between">
+                <form method="POST" action="{{ route('password.email') }}" class="p-1 md:p-10 lg:p-16 h-full flex flex-col justify-between">
                     @csrf
                     <div>
                         <x-authentication-card-logo />
