@@ -1,4 +1,4 @@
-<aside class="w-[15vw] border-r">
+<aside class="2xl:w-[15vw] border-r hidden lg:block ">
     {{-- CARD ADMIN --}}
     <div class="relative  group overflow-hidden h-44 p-5 flex flex-col items-start">
         <div class="flex items-center text-center h-full">
@@ -65,12 +65,9 @@
                 </a>
             </li>
         </ul>
-        <div class="absolute bottom-0 w-72 flex justify-end p-5 text-xl">
+        <div class="absolute bottom-0 2xl:w-72 lg:w-56 flex justify-end p-5 text-xl">
             <a href="{{ route('admin') }}" class="px-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
                 <i class="fa-solid fa-house group-hover:text-white"></i>
-            </a>
-            <a href="#" class="px-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
-                <i class="fa-solid fa-gear group-hover:text-white"></i>
             </a>
         </div>
     </div>

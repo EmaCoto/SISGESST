@@ -3,7 +3,7 @@
         <x-aside-admin />
 
         <div id="contentEval" class="relative px-20 py-6 w-[85vw] h-[93.9vh] overflow-y-scroll overflow-x-hidden bg-gray-200 ">
-            <h1 class="text-center mb-10 text-3xl font-semibold text-gray-400 border-b-2 border-gray-400 w-60 mx-auto">Administradores</h1>
+            <h1 class="text-center mb-10 text-3xl font-semibold text-gray-400 w-60 mx-auto">Administradores</h1>
             <input wire:model="search" class="w-1/2 shadow-lg shadow-gray-500 focus:ring-blue-500 focus:bg-white  rounded-lg border-none"placeholder="Example: Walter or Example: 45740" type="text" id="buscarEmp">
 
             <table class="w-full table-auto rounded-lg overflow-hidden mt-4">
@@ -33,12 +33,12 @@
                                     <span>{{ $administrator->email }}</span>
                                 </div>
                             </td>
-                            <td class="py-3 px-6 text-center">
+                            <td class="px-6 text-center">
                                 <div class="flex item-center justify-center">
 
                                     @livewire('admin.administrators.edit-administrators', ['user' => $administrator], key($administrator->id))
                                     <button wire:click="confirmDelete({{ $administrator->id }})"
-                                        class="w-4 mr-2 transform
+                                        class="w-4
                                     text-red-600 hover:text-gray-400 hover:scale-110">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke="currentColor">
