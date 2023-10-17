@@ -14,7 +14,7 @@
                             <th class="py-3 px-6 text-left">N°</th>
                             <th class="py-3 px-6 text-left">Nombre</th>
                             <th class="py-3 px-6 text-center">Descripción</th>
-                            <th class="py-3 px-6 text-center">Acciones</th>
+                            <th class="py-3 px-6 text-center">Acciones </th>
                             <th class="py-3 px-6 text-center"></th>
                         </tr>
                     </thead>
