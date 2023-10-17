@@ -38,7 +38,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css ">
 
     </head>
-    <body class="font-sans antialiased bg-container bg-cover bg-no-repeat bg-fixed">
+     <body> {{-- class="font-sans antialiased bg-container bg-cover bg-no-repeat bg-fixed" --}}
         <x-banner />
         <div class="min-h-screen">
             @livewire('navigation-menu')

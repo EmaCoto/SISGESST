@@ -1,20 +1,20 @@
-<div class="grid grid-cols-4 px-28 bg-[#cbcbcd] text-center text-black py-2 h-full">
-    <div class="flex items-center">
-        <img src="{{ asset('img/logo.png') }}" alt="logo" class="w-16">
-        <p class="text-[#ff8239] px-3 text-3xl font-extrabold">SISGESST</p>
+<div class="sm:flex justify-around px-1 sm:px-4 lg:px-28 bg-[#EEEFF1] text-center text-black py-2 h-full">
+    <div class="lg:flex items-center">
+        <img src="{{ asset('img/logo.png') }}" alt="logo" class="w-16 mx-auto">
+        <p class="text-[#FFAD19] px-3 text-3xl font-extrabold">SISGESST</p>
     </div>
     <div>
         <h1 class="font-semibold text-xl m-2">LEGAL</h1>
         <div class="flex flex-col justify-center h-16 items-center">
-            <a href="#" class="hover:text-[#ff8239] text-lg">Términos</a>
-            <a href="#" class="hover:text-[#ff8239] text-lg">Privacidad</a>
+            <a href="#" class="hover:text-[#FFAD19] text-lg">Términos</a>
+            <a href="#" class="hover:text-[#FFAD19] text-lg">Privacidad</a>
         </div>
     </div>
     <div>
         <h1 class="font-semibold text-xl m-2">COMPAÑÍA</h1>
         <div class="flex flex-col justify-center h-16 items-center">
-            <a href="{{ route('help') }}" class="hover:text-[#ff8239] text-lg">Acerca de nosotros</a>
-            <a href="{{ route('contact.index') }}" class="hover:text-[#ff8239] text-lg">Contáctanos</a>
+            <a href="{{ route('help') }}" class="hover:text-[#FFAD19] text-lg">Acerca de nosotros</a>
+            <a href="{{ route('contact.index') }}" class="hover:text-[#FFAD19] text-lg">Contáctanos</a>
         </div>
     </div>
     <div>
@@ -26,4 +26,3 @@
         </div>
     </div>
 </div>
-
