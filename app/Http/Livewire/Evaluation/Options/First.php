@@ -9,6 +9,10 @@ class First extends Component
 {
     public $deficiencies, $deficiencyLevel, $deficiencyValue, $deficiencyColor, $deficiencyMeaning;
 
+    protected $rules = [
+        'deficiencyLevel' => 'required',
+    ];
+
     public function mount($deficiencyId)
     {
         $this->deficiencies = DeficiencyLevel::all();

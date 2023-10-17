@@ -5,7 +5,7 @@
     <div class="grid grid-cols-4">
         <select wire:model="deficiencyLevel"
             class="col-span-3 cursor-pointer bg-gray-50 focus:text-black border focus:bg-white border-gray-300 rounded-lg mt-2 border-b border-t focus:border-t focus:border-b focus:border-0 shadow-lg focus:border-green-500 focus:ring-0 focus:outline-none">
-            <option value="" hidden>-- Selecciona una opción --</option>
+            <option hidden>-- Selecciona una opción --</option>
             @foreach ($deficiencies as $deficiency)
                 <option value="{{ $deficiency->id }}">{{ $deficiency->name }}</option>
             @endforeach

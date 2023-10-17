@@ -11,15 +11,21 @@ class CreateProcess extends Component
     public $companyId, $companyName;
     public $name, $description;
 
+    protected $rules = [
+        'name'          => 'required',
+        'description'   => 'required',
+    ];
+
     public function mount($companyId, $companyName)
     {
         $this->companyId = $companyId;
         $this->companyName = $companyName;
     }
 
-
     public function save()
     {
+        $this->validate();
+
         Process::create([
             'name' => $this->name,
             'description' => $this->description,

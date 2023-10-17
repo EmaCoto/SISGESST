@@ -12,6 +12,7 @@
                     <option value="{{ $activity->id }}">{{ $activity->name }}</option>
                 @endforeach
             </select>
+            <x-input-error for="activityId"/>
         </div>
         <div class="w-2/4 bg-gray-400 rounded-lg p-8 relative">
             <h2 class="text-xl font-bold bg-gray-300 w-full pl-4 py-1 rounded-md mb-4">Tarea:</h2>
@@ -25,6 +26,7 @@
                     @endforeach
                 @endif
             </select>
+            <x-input-error for="taskId"/>
         </div>
     </div>
     <div class="w-4/5 mx-auto flex justify-between gap-6">
@@ -46,6 +48,7 @@
                 <option value="Saneamiento">Saneamiento</option>
                 <option value="Fenómenos naturales">Fenómenos naturales</option>
             </select>
+            <x-input-error for="dangerClassification"/>
         </div>
         <div class="w-2/4 bg-gray-400 rounded-lg p-8">
             <h2 class="text-xl font-bold bg-gray-300 w-full pl-4 py-1 rounded-md mb-4">Descripcion del peligro:</h2>
@@ -59,6 +62,7 @@
                     @endforeach
                 @endif
             </select>
+            <x-input-error for="dangerDescription"/>
         </div>
     </div>
 </div>

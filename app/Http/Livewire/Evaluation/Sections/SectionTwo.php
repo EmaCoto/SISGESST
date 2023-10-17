@@ -10,6 +10,13 @@ class SectionTwo extends Component
     public $danger, $effects, $source, $means, $individual;
 
     protected $listeners = ['nextPosition2','previousPosition2'];
+    protected $rules = [
+        'danger'        => 'required',
+        'effects'       => 'required',
+        'source'        => 'required',
+        'means'         => 'required',
+        'individual'    => 'required',
+    ];
 
     public function mount($sectionDanger, $sectionEffects, $sectionSource, $sectionMeans, $sectionIndividual)
     {
@@ -22,6 +29,8 @@ class SectionTwo extends Component
 
     public function nextPosition2()
     {
+        $this->validate();
+
         $this->emit('sectionTwo',[
             'danger' => $this->danger,
             'effects' => $this->effects,

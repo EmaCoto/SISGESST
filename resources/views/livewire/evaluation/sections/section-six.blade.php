@@ -24,7 +24,9 @@
                             <p class="text-center text-2xl font-semibold">No</p>
                         </label>
                     </div>
+
                 </div>
+                <x-input-error for="legal"/>
             </div>
         </article>
     </section>

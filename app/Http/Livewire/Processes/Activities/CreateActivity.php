@@ -13,6 +13,12 @@ class CreateActivity extends Component
     public $name, $description, $process_id;
     public $listeners = ['process', 'selectedProcess'];
 
+    protected $rules = [
+        'process_id'    => 'required',
+        'name'          => 'required',
+        'description'   => 'required',
+    ];
+
     public function mount($companyId)
     {
         $this->companyProcessId = $companyId;
@@ -25,6 +31,8 @@ class CreateActivity extends Component
 
     public function save()
     {
+        $this->validate();
+
         Activity::create([
             'name' => $this->name,
             'description' => $this->description,

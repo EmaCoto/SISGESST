@@ -12,7 +12,7 @@ class Evaluation extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_task',
+        'task_id',
         'danger_classification',
         'id_danger_description',
         'danger',
@@ -34,7 +34,7 @@ class Evaluation extends Model
         'exposure_time',
         'verification_result',
         'legal_requirement',
-        'id_user',
+        'evaluator',
     ];
 
     public function task(): BelongsTo
@@ -82,10 +82,5 @@ class Evaluation extends Model
         return $this->belongsToMany(InterventionMeasure::class, 'evaluation_intervention_measures', 'id_evaluation', 'id_intervention_measure')
         ->withPivot('suggestion')
         ->withTimestamps();
-    }
-
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
     }
 }

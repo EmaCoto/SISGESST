@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_task');
+            $table->unsignedBigInteger('task_id');
             $table->string('danger_classification');
             $table->unsignedBigInteger('id_danger_description');
             $table->string('danger');
@@ -34,10 +34,10 @@ return new class extends Migration
             $table->string('temporary');
             $table->string('exposure_time');
             $table->string('legal_requirement');
-            $table->unsignedBigInteger('id_user');
+            $table->string('evaluator');
             $table->timestamps();
 
-            $table->foreign('id_task')->references('id')->on('tasks');
+            $table->foreign('task_id')->references('id')->on('tasks');
             $table->foreign('id_danger_description')->references('id')->on('danger_descriptions');
             $table->foreign('id_deficiency_level')->references('id')->on('deficiency_levels');
             $table->foreign('id_exposure_level')->references('id')->on('exposure_levels');
@@ -45,7 +45,6 @@ return new class extends Migration
             $table->foreign('id_consequence_level')->references('id')->on('consequence_levels');
             $table->foreign('id_intervention_risk_level')->references('id')->on('intervention_risk_levels');
             $table->foreign('id_risk_acceptability')->references('id')->on('risk_acceptabilities');
-            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 

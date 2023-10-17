@@ -1,4 +1,3 @@
-{{-- SOURCE --}}
 <div>
     <div class="m-2 border border-gray-100 rounded-lg bg-gray-100 focus-within:bg-green-500 focus-within:border-green-500 ease-in duration-300">
         <div class="flex items-center justify-between px-3 py-2">
@@ -13,5 +12,4 @@
             <textarea wire:model.defer="source" rows="5" class="resize-none block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="Ej: No hay control..."></textarea>
         </div>
     </div>
-    @error('source') <span class="error text-red-500">{{ $message }}</span> @enderror
 </div>

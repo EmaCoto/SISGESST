@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->index();
             $table->text('description')->nullable();
-            $table->text('status')->default('sin evaluar');
+            $table->string('status', 12)->default('sin evaluar');
             $table->unsignedBigInteger('company_id');
 
             $table->foreign('company_id')

@@ -1,6 +1,6 @@
 <div>
     <div class="flex items-center sm:pr-4">
-        <h1 class="text-sm lg:text-base xl:text-base 2xl:text-base font-semibold">NIVEL DE RIESGO INTERVENCIÓN (NR)</h1>
+        <h1 class="text-sm lg:text-base xl:text-base 2xl:text-base font-semibold">NIVEL RIESGO DE INTERVENCIÓN (NR)</h1>
     </div>
     <div class="grid grid-cols-4">
         <div
