@@ -8,7 +8,7 @@
                 <div class="w-full text-center">
                     <div class="relative bg-gray-500 rounded-t-md font-bold text-lg text-gray-100 py-2">
                         <div>NIVEL DE DEFICIENCIA</div>
-                        @livewire('admin.parameter.edit-parameter')
+                        @livewire('admin.parameter.edit-parameter', ['parameter' => 'deficiency'])
                     </div>
                     <div class="grid grid-cols-12 font-semibold">
                         <div class="col-span-2 bg-gray-400 text-gray-100 p-1">Nivel de deficiencia</div>
@@ -26,7 +26,7 @@
                 <div class="w-full text-center">
                     <div class="relative bg-gray-500 rounded-t-md font-bold text-lg text-gray-100 py-2">
                         <div>NIVEL DE EXPOSICION</div>
-                        @livewire('admin.parameter.edit-parameter')
+                        @livewire('admin.parameter.edit-parameter', ['parameter' => 'exposure'])
                     </div>
                     <div class="grid grid-cols-12 font-semibold">
                         <div class="col-span-3 bg-gray-400 text-gray-100 p-1">Nivel de exposicion</div>
@@ -46,7 +46,7 @@
                 <div class="w-full text-center">
                     <div class="relative bg-gray-500 rounded-t-md font-bold text-lg text-gray-100 py-2">
                         <div>NIVEL DE PROBABILIDAD</div>
-                        @livewire('admin.parameter.edit-parameter')
+                        @livewire('admin.parameter.edit-parameter', ['parameter' => 'probability'])
                     </div>
                     <div class="grid grid-cols-12 font-semibold">
                         <div class="col-span-2 bg-gray-400 text-gray-100 p-1">Nivel de deficiencia</div>
@@ -64,7 +64,7 @@
                 <div class="w-full text-center">
                     <div class="relative bg-gray-500 rounded-t-md font-bold text-lg text-gray-100 py-2">
                         <div>NIVEL DE CONSECUENCIA</div>
-                        @livewire('admin.parameter.edit-parameter')
+                        @livewire('admin.parameter.edit-parameter', ['parameter' => 'consequence'])
                     </div>
                     <div class="grid grid-cols-12 font-semibold">
                         <div class="col-span-4 bg-gray-400 text-gray-100 p-1">Nivel de exposicion</div>
@@ -84,7 +84,7 @@
                 <div class="w-full text-center">
                     <div class="relative bg-gray-500 rounded-t-md font-bold text-lg text-gray-100 py-2">
                         <div>NIVEL DE RIESGO</div>
-                        @livewire('admin.parameter.edit-parameter')
+                        @livewire('admin.parameter.edit-parameter', ['parameter' => 'risk'])
                     </div>
                     <div class="grid grid-cols-12 font-semibold">
                         <div class="col-span-2 bg-gray-400 text-gray-100 p-1">Nivel de deficiencia</div>
@@ -102,7 +102,7 @@
                 <div class="w-full text-center">
                     <div class="relative bg-gray-500 rounded-t-md font-bold text-lg text-gray-100 py-2">
                         <div>ACEPTABILIDAD DEL RIESGO</div>
-                        @livewire('admin.parameter.edit-parameter')
+                        @livewire('admin.parameter.edit-parameter', ['parameter' => 'acceptability'])
                     </div>
                     <div class="grid grid-cols-12 font-semibold">
                         <div class="col-span-4 bg-gray-400 text-gray-100 p-1">Nivel de exposicion</div>

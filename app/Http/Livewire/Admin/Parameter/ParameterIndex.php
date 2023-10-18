@@ -14,6 +14,8 @@ class ParameterIndex extends Component
 {
     public $deficiencies, $exposures, $probabilities, $consequences, $risks, $acceptabilities;
 
+    protected $listeners  = ['render'];
+
     public function mount()
     {
         $this->deficiencies = DeficiencyLevel::get();
