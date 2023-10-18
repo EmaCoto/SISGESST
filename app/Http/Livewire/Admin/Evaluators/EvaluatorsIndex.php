@@ -9,14 +9,8 @@ class EvaluatorsIndex extends Component
 {
     public $openDelete = false;
     public $search, $user, $deleteuser;
-    protected $listeners = ['render' => 'render', 'userUpdated'];
+    protected $listeners = ['render'];
 
-    public function userUpdated()
-    {
-        if ($this->user) {
-            $this->user = $this->user->fresh();
-        }
-    }
 
     public function confirmDelete($id)
     {

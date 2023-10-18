@@ -27,7 +27,7 @@ class EditManagers extends Component
             'email' => $this->email,
         ]);
 
-        $this->emit('userUpdated');
+        $this->emit('render');
         $this->reset('open');
         $this->emit('alert');
     }

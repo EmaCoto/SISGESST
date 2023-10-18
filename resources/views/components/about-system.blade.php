@@ -1,4 +1,4 @@
-<div class="mb-24">
+<div class="mb-24" id="about">
     <h1 class="text-center font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl m-4 mb-3 sm:mb-7">Acerca del sistema</h1>
     <div class="rounded-lg overflow-hidden">
         <div class="sm:grid grid-cols-2 mx-auto">

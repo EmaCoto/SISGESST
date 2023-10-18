@@ -9,7 +9,7 @@ class ManagersIndex extends Component
 {
     public $openDelete = false;
     public $search, $user, $deleteuser;
-    protected $listeners = ['render' => 'render', 'userUpdated'];
+    protected $listeners = ['render'];
 
     public function userUpdated()
     {
