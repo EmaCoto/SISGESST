@@ -34,6 +34,6 @@ class EditAdministrators extends Component
 
         $this->emit('render');
         $this->reset('open');
-        $this->emit('alert');
+        $this->emit('alertEdit');
     }
 }

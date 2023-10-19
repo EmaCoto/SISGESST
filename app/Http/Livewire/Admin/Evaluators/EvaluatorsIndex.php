@@ -25,6 +25,8 @@ class EvaluatorsIndex extends Component
             $this->emitTo('companies.show-company', 'render');
         }
         $this->openDelete = false; // Cierra el modal de confirmación
+        $this->emit('alertDelete');
+
     }
 
     public function render()

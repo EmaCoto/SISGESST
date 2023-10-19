@@ -55,7 +55,7 @@ class EditCompany extends Component
 
         $this->reset('open');
         $this->emit('render');
-        $this->emit('alert');
+        $this->emit('alertEdit');
     }
 
     public function render()

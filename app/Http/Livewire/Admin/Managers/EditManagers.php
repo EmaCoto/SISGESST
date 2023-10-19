@@ -29,7 +29,7 @@ class EditManagers extends Component
 
         $this->emit('render');
         $this->reset('open');
-        $this->emit('alert');
+        $this->emit('alertEdit');
     }
     public function render()
     {

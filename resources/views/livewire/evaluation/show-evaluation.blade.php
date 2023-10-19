@@ -39,7 +39,7 @@
                                                 Ver
                                                 evaluacion
                                             </span>
-                                            @livewire('evaluation.detail-evaluation', ['evaluations' => $evaluation], key(time() . $evaluation->id))
+                                            @livewire('evaluation.detail-evaluation', ['evaluations' => $evaluation, 'companyId' => $companyId], key(time() . $evaluation->id))
                                         </div>
                                     </div>
                                 </td>

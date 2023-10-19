@@ -3,15 +3,15 @@
 namespace App\Http\Livewire\Admin\Administrators;
 
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Livewire\Component;
+
 
 class AdministratorsIndex extends Component
 {
     public $openDelete = false;
     public $search, $user, $deleteuser;
     protected $listeners = ['render'];
-
-
 
 
     public function confirmDelete($id)
@@ -26,8 +26,12 @@ class AdministratorsIndex extends Component
             $this->deleteuser->delete();
             $this->emitTo('companies.show-company', 'render');
         }
-        $this->openDelete = false; // Cierra el modal de confirmación
+        $this->openDelete = false;
+        $this->emit('alertDelete');
+
     }
+
+
 
     public function render()
     {

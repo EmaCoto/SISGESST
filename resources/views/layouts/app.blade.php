@@ -68,6 +68,24 @@
                     message,
                     'success')
             })
+            livewire.on('alertResgisterRol', function(message){
+                Swal.fire(
+                    'La información y el rol se han guardado de manera correcta.',
+                    message,
+                    'success')
+            })
+            livewire.on('alertEdit', function(message){
+                Swal.fire(
+                    'La información ha sido editada de manera adecuada.',
+                    message,
+                    'success')
+            })
+            livewire.on('alertDelete', function(message){
+                Swal.fire(
+                    'La información ha sido eliminada de forma apropiada.',
+                    message,
+                    'success')
+            })
         </script>
     </body>
 </html>
