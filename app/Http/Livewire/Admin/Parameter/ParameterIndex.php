@@ -13,12 +13,16 @@ use Livewire\Component;
 class ParameterIndex extends Component
 {
     public $deficiencies, $exposures, $probabilities, $consequences, $risks, $acceptabilities;
+    public $data = [];
 
     protected $listeners  = ['render'];
 
     public function mount()
     {
         $this->deficiencies = DeficiencyLevel::get();
+        foreach ($this->deficiencies as $deficiency) {
+            $this->data[] = $deficiency->value;
+        }
         $this->exposures = ExposureLevel::get();
         $this->probabilities = ProbabilityLevel::get();
         $this->consequences = ConsequenceLevel::get();

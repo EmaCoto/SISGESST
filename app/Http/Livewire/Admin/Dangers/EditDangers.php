@@ -10,6 +10,10 @@ class EditDangers extends Component
     public $openDanger = false;
     public $danger, $descriptions, $dangerDescription = [];
 
+    protected $rules = [
+        'dangerDescription.*' => 'required',
+    ];
+
     public function mount($danger)
     {
         $this->danger = $danger;
@@ -22,6 +26,8 @@ class EditDangers extends Component
 
     public function saveDanger()
     {
+        $this->validate();
+
         foreach ($this->descriptions as $index => $query) {
             $query->danger_description = $this->dangerDescription[$index];
             $query->save();

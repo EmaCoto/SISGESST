@@ -6,12 +6,15 @@
         <x-slot name="content">
             <div class="bg-green-600 p-1 mb-2 font-semibold text-2xl rounded-lg w-5/6 mx-auto text-center text-gray-100">
                 Editar peligros {{ $danger }}</div>
-            @foreach ($dangerDescription as $index => $name)
-                <div>
-                    <x-label>Peligro</x-label>
-                    <x-input wire:model="dangerDescription.{{ $index }}" />
-                </div>
-            @endforeach
+            <div id="contentEval" class="w-full h-[74vh] overflow-y-scroll pr-4">
+                @foreach ($dangerDescription as $index => $name)
+                    <div>
+                        <x-label>Peligro</x-label>
+                        <x-input wire:model="dangerDescription.{{ $index }}" />
+                        <x-input-error for="dangerDescription.{{ $index }}"/>
+                    </div>
+                @endforeach
+            </div>
 
             <div class="flex justify-between px-10">
                 <button wire:click="$set('openDanger', false)"

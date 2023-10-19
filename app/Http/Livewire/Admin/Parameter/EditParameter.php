@@ -12,8 +12,15 @@ use Livewire\Component;
 
 class EditParameter extends Component
 {
-    public $parameter, $dataQueries = [], $parameterName = [], $parameterPrefix = [], $parameterValue = [], $parameterMeaning = [];
+    public $parameter, $dataQueries = [], $parameterId = [], $parameterName = [], $parameterPrefix = [], $parameterValue = [], $parameterMeaning = [];
     public $openParameter = false;
+
+    protected $rules = [
+        'parameterName.*'       => 'required',
+        'parameterPrefix.*'     => 'required',
+        'parameterValue.*'      => 'required',
+        'parameterMeaning.*'    => 'required',
+    ];
 
     public function mount($parameter)
     {
@@ -32,8 +39,9 @@ class EditParameter extends Component
         } elseif ($this->parameter === "acceptability") {
             $this->dataQueries = RiskAcceptability::get();
         }
-        
+
         foreach ($this->dataQueries as $query) {
+            $this->parameterId[] = $query->id;
             $this->parameterName[] = $query->name;
             $this->parameterPrefix[] = $query->prefix;
             $this->parameterValue[] = $query->value;
@@ -43,6 +51,7 @@ class EditParameter extends Component
 
     public function saveParameter()
     {
+        $this->validate();
         foreach ($this->dataQueries as $index => $query) {
             $query->name = $this->parameterName[$index];
             if(!empty($parameterPrefix[$index])){
@@ -52,6 +61,7 @@ class EditParameter extends Component
                 $query->value = $this->parameterValue[$index];
             }
             $query->meaning = $this->parameterMeaning[$index];
+
             $query->save();
         }
         $this->reset('openParameter');

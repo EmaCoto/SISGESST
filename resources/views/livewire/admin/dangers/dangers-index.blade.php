@@ -1,7 +1,12 @@
 <div class="flex flex-col">
     <main class="flex-grow flex">
         <x-aside-admin />
-        <div id="contentEval" class="relative px-4 py-2 lg:w-[85vw] lg:h-[93.1vh] w-[100vw] h-[100vh] overflow-y-scroll overflow-x-hidden bg-gray-200 ">
+        <div id="contentEval"
+            class="relative px-4 py-2 lg:w-[85vw] lg:h-[93.1vh] w-[100vw] h-[100vh] overflow-y-scroll overflow-x-hidden bg-gray-200 ">
+            <div
+                class="bg-green-600 p-1 mt-6 mb-10 font-semibold text-3xl rounded-lg w-7/12 mx-auto text-center text-gray-100">
+                Peligros
+            </div>
             <x-danger-table>
                 <x-slot name="titleOne">
                     <div>Biologico</div>
@@ -9,8 +14,9 @@
                 </x-slot>
                 <x-slot name="contentOne">
                     @foreach ($dangerDescriptions as $danger)
-                        @if ($danger->danger === "Biológico")
-                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">{{$danger->danger_description}}</div>
+                        @if ($danger->danger === 'Biológico')
+                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">
+                                {{ $danger->danger_description }}</div>
                         @endif
                     @endforeach
                 </x-slot>
@@ -20,8 +26,9 @@
                 </x-slot>
                 <x-slot name="contentTwo">
                     @foreach ($dangerDescriptions as $danger)
-                        @if ($danger->danger === "Físico")
-                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">{{$danger->danger_description}}</div>
+                        @if ($danger->danger === 'Físico')
+                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">
+                                {{ $danger->danger_description }}</div>
                         @endif
                     @endforeach
                 </x-slot>
@@ -34,8 +41,9 @@
                 </x-slot>
                 <x-slot name="contentOne">
                     @foreach ($dangerDescriptions as $danger)
-                        @if ($danger->danger === "Químico")
-                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">{{$danger->danger_description}}</div>
+                        @if ($danger->danger === 'Químico')
+                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">
+                                {{ $danger->danger_description }}</div>
                         @endif
                     @endforeach
                 </x-slot>
@@ -45,8 +53,9 @@
                 </x-slot>
                 <x-slot name="contentTwo">
                     @foreach ($dangerDescriptions as $danger)
-                        @if ($danger->danger === "Físico-Químico")
-                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">{{$danger->danger_description}}</div>
+                        @if ($danger->danger === 'Físico-Químico')
+                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">
+                                {{ $danger->danger_description }}</div>
                         @endif
                     @endforeach
                 </x-slot>
@@ -59,8 +68,9 @@
                 </x-slot>
                 <x-slot name="contentOne">
                     @foreach ($dangerDescriptions as $danger)
-                        @if ($danger->danger === "Biomecánico")
-                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">{{$danger->danger_description}}</div>
+                        @if ($danger->danger === 'Biomecánico')
+                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">
+                                {{ $danger->danger_description }}</div>
                         @endif
                     @endforeach
                 </x-slot>
@@ -70,8 +80,9 @@
                 </x-slot>
                 <x-slot name="contentTwo">
                     @foreach ($dangerDescriptions as $danger)
-                        @if ($danger->danger === "Mecánico")
-                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">{{$danger->danger_description}}</div>
+                        @if ($danger->danger === 'Mecánico')
+                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">
+                                {{ $danger->danger_description }}</div>
                         @endif
                     @endforeach
                 </x-slot>
@@ -84,8 +95,9 @@
                 </x-slot>
                 <x-slot name="contentOne">
                     @foreach ($dangerDescriptions as $danger)
-                        @if ($danger->danger === "Eléctrico")
-                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">{{$danger->danger_description}}</div>
+                        @if ($danger->danger === 'Eléctrico')
+                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">
+                                {{ $danger->danger_description }}</div>
                         @endif
                     @endforeach
                 </x-slot>
@@ -95,8 +107,9 @@
                 </x-slot>
                 <x-slot name="contentTwo">
                     @foreach ($dangerDescriptions as $danger)
-                        @if ($danger->danger === "Locativo")
-                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">{{$danger->danger_description}}</div>
+                        @if ($danger->danger === 'Locativo')
+                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">
+                                {{ $danger->danger_description }}</div>
                         @endif
                     @endforeach
                 </x-slot>
@@ -109,8 +122,9 @@
                 </x-slot>
                 <x-slot name="contentOne">
                     @foreach ($dangerDescriptions as $danger)
-                        @if ($danger->danger === "Psicosocial")
-                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">{{$danger->danger_description}}</div>
+                        @if ($danger->danger === 'Psicosocial')
+                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">
+                                {{ $danger->danger_description }}</div>
                         @endif
                     @endforeach
                 </x-slot>
@@ -120,8 +134,9 @@
                 </x-slot>
                 <x-slot name="contentTwo">
                     @foreach ($dangerDescriptions as $danger)
-                        @if ($danger->danger === "Público")
-                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">{{$danger->danger_description}}</div>
+                        @if ($danger->danger === 'Público')
+                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">
+                                {{ $danger->danger_description }}</div>
                         @endif
                     @endforeach
                 </x-slot>
@@ -134,8 +149,9 @@
                 </x-slot>
                 <x-slot name="contentOne">
                     @foreach ($dangerDescriptions as $danger)
-                        @if ($danger->danger === "Saneamiento")
-                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">{{$danger->danger_description}}</div>
+                        @if ($danger->danger === 'Saneamiento')
+                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">
+                                {{ $danger->danger_description }}</div>
                         @endif
                     @endforeach
                 </x-slot>
@@ -145,10 +161,11 @@
                 </x-slot>
                 <x-slot name="contentTwo">
                     @foreach ($dangerDescriptions as $danger)
-                    @if ($danger->danger === "Fenómenos naturales")
-                        <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">{{$danger->danger_description}}</div>
-                    @endif
-                @endforeach
+                        @if ($danger->danger === 'Fenómenos naturales')
+                            <div class="bg-gray-50 px-2 border-2 border-t-0 border-gray-400">
+                                {{ $danger->danger_description }}</div>
+                        @endif
+                    @endforeach
                 </x-slot>
             </x-danger-table>
         </div>
