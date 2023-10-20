@@ -195,6 +195,13 @@ return [
         'parameterMeaning.*'                => 'significado',
         'dangerDescription.*'               => 'peligro',
         'interventionDescription.*'         => 'intervencion',
+        'parameterName'                     => 'nombre',
+        'parameterPrefix'                   => 'prefijo',
+        'parameterValue'                    => 'valor',
+        'parameterMeaning'                  => 'significado',
+        'parameterColor'                    => 'color',
+        'dangerDescription'                 => 'peligro',
+        'interventionDescription'           => 'intervencion',
     ],
 
 ];

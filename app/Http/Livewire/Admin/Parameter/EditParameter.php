@@ -13,7 +13,11 @@ use Livewire\Component;
 class EditParameter extends Component
 {
     public $parameter, $dataQueries = [], $parameterId = [], $parameterName = [], $parameterPrefix = [], $parameterValue = [], $parameterMeaning = [];
+    public $deleteParameter;
     public $openParameter = false;
+    public $openDeleteParameter = false;
+
+    protected $listeners = ['deleteConfirmeParameter'];
 
     protected $rules = [
         'parameterName.*'       => 'required',
@@ -25,7 +29,11 @@ class EditParameter extends Component
     public function mount($parameter)
     {
         $this->parameter = $parameter;
+        $this->dataParameter();
+    }
 
+    public function dataParameter()
+    {
         if ($this->parameter === "deficiency") {
             $this->dataQueries = DeficiencyLevel::get();
         } elseif ($this->parameter === "exposure") {
@@ -54,10 +62,10 @@ class EditParameter extends Component
         $this->validate();
         foreach ($this->dataQueries as $index => $query) {
             $query->name = $this->parameterName[$index];
-            if(!empty($parameterPrefix[$index])){
+            if (!empty($parameterPrefix[$index])) {
                 $query->prefix = $this->parameterPrefix[$index];
             }
-            if(!empty($parameterValue[$index])){
+            if (!empty($parameterValue[$index])) {
                 $query->value = $this->parameterValue[$index];
             }
             $query->meaning = $this->parameterMeaning[$index];
@@ -66,6 +74,36 @@ class EditParameter extends Component
         }
         $this->reset('openParameter');
         $this->emit('render');
+    }
+
+    public function confirmDelete($position)
+    {
+        $this->deleteParameter = $position;
+        $this->openDeleteParameter = true;
+    }
+
+    public function deleteConfirmeParameter()
+    {
+        if ($this->deleteParameter) {
+            foreach ($this->dataQueries as $index => $query) {
+                if ($this->deleteParameter == $index) {
+                    $query->id = $this->parameterId[$index];
+                    $query->delete();
+                }
+            }
+        }
+
+        $this->emit('render');
+        $this->openDeleteParameter = false;
+        $this->openParameter = false;
+
+        $this->parameterId = [];
+        $this->parameterName = [];
+        $this->parameterPrefix = [];
+        $this->parameterValue = [];
+        $this->parameterMeaning = [];
+
+        $this->dataParameter();
     }
 
     public function render()

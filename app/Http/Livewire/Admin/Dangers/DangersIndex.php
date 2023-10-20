@@ -8,7 +8,7 @@ use Livewire\Component;
 class DangersIndex extends Component
 {
     public $dangerDescriptions;
-    protected $listeners = ['renderDanger' => 'render'];
+    protected $listeners = ['renderDanger' => 'render', 'mountDanger' => 'mount'];
 
     public function mount()
     {

@@ -8,7 +8,8 @@ use Livewire\Component;
 class EditDangers extends Component
 {
     public $openDanger = false;
-    public $danger, $descriptions, $dangerDescription = [];
+    public $openDeleteDanger = false;
+    public $danger, $descriptions, $dangerId = [], $dangerDescription = [], $deleteDanger;
 
     protected $rules = [
         'dangerDescription.*' => 'required',
@@ -20,6 +21,7 @@ class EditDangers extends Component
 
         $this->descriptions = DangerDescription::where('danger', $this->danger)->get();
         foreach($this->descriptions as $description){
+            $this->dangerId[] = $description->id;
             $this->dangerDescription[] = $description->danger_description;
         }
     }
@@ -34,6 +36,36 @@ class EditDangers extends Component
         }
         $this->reset('openDanger');
         $this->emit('renderDanger');
+    }
+
+    public function confirmDeleteDanger($position)
+    {
+        $this->deleteDanger = $position;
+        $this->openDeleteDanger = true;
+    }
+
+    public function deleteConfirmeDanger()
+    {
+        if ($this->deleteDanger) {
+            foreach ($this->descriptions as $index => $query) {
+                if ($this->deleteDanger == $index) {
+                    $query->id = $this->dangerId[$index];
+                    $query->delete();
+                }
+            }
+        }
+
+        $this->emit('render');
+        $this->openDeleteDanger = false;
+        $this->openDanger = false;
+
+        // $this->parameterId = [];
+        // $this->parameterName = [];
+        // $this->parameterPrefix = [];
+        // $this->parameterValue = [];
+        // $this->parameterMeaning = [];
+
+        // $this->dataParameter();
     }
 
     public function render()
