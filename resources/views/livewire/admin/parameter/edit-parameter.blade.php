@@ -1,18 +1,18 @@
 <div>
     <button wire:click="$set('openParameter', true)"
-        class="absolute top-2 right-10 bg-blue-500 rounded-lg px-4">Editar</button>
+        class="absolute top-2 right-4 md:right-10 bg-blue-500 rounded-lg px-4">Editar</button>
     <x-dialog-modal wire:model="openParameter" maxWidth="5xl">
         <x-slot name="content">
-            <div class="flex">
+            <div class="md:flex">
                 <div class="bg-green-600 p-1 font-semibold text-2xl rounded-lg w-5/6 mx-auto text-center text-gray-100">
                     Editar {{ $parameter }}
                 </div>
                 @livewire('admin.parameter.create-parameter', ['parameter' => $parameter])
             </div>
-            <div id="contentEval" class="w-full h-[74vh] overflow-y-scroll pr-4">
+            <div id="contentEval" class="w-full h-[70vh] md:h-[74vh] overflow-y-scroll px-6 md:pr-4">
                 @foreach ($this->parameterName as $index => $name)
-                    <div class="bg-gray-400 mt-6 px-4 rounded-lg">
-                        <div class="grid grid-cols-12 gap-6 items-center">
+                    <div class="py-1 bg-gray-400 mt-6 px-4 rounded-lg">
+                        <div class="md:grid grid-cols-12 gap-6 items-center">
                             <div class="col-span-2">
                                 <x-input type="text" wire:model="parameterId.{{ $index }}" hidden />
                                 <x-label>Nombre</x-label>

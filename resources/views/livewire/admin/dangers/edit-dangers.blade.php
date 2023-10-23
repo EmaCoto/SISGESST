@@ -1,16 +1,16 @@
 <div>
     <button wire:click="$set('openDanger', true)"
-        class="absolute top-2 right-10 bg-blue-500 rounded-lg px-4">Editar</button>
+        class="absolute top-2 right-6 md:right-10 bg-blue-500 rounded-lg px-4">Editar</button>
 
     <x-dialog-modal wire:model="openDanger" maxWidth="5xl">
         <x-slot name="content">
-            <div class="flex">
+            <div class="md:flex">
                 <div class="bg-green-600 p-1 font-semibold text-2xl rounded-lg w-5/6 mx-auto text-center text-gray-100">
                     Editar {{ $danger }}
                 </div>
                 @livewire('admin.dangers.create-dangers', ['danger' => $danger])
             </div>
-            <div id="contentEval" class="w-full h-[74vh] overflow-y-scroll pr-4">
+            <div id="contentEval" class="w-full h-[64vh] md:h-[74vh] overflow-y-scroll px-6 md:pr-4">
                 @foreach ($dangerDescription as $index => $name)
                     <div class="bg-gray-400 rounded-lg px-6 py-1 mt-6">
                         <div>
