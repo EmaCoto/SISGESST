@@ -2,7 +2,7 @@
  {{-------------------------------- NAVEGATION BAR ---------------------------------}}
         <x-navbar-index/>
 
-        <main class="flex h-[91.8vh]">
+        <main class="flex h-[91.7vh]">
             {{-------------------------------- SECTION IMAGE ---------------------------------}}
             <form class="sm:w-3/4 w-full flex flex-col h-full" method="POST" action="{{ route('contact.store') }}">
                 @csrf {{-- Agrega el token CSRF --}}

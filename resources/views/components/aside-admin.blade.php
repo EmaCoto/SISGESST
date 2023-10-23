@@ -59,15 +59,15 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                <a href="{{ route('deactivated') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
                     <i class="fa-solid fa-building-circle-xmark group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Empresas desactivadas</span>
                 </a>
             </li>
         </ul>
         <div class="absolute bottom-0 2xl:w-64 lg:w-56 flex justify-end p-5 text-xl">
-            <a href="{{ route('admin') }}" class="px-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
-                <i class="fa-solid fa-house group-hover:text-white"></i>
+            <a href="{{ route('admin') }}" class="px-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50 duration-300">
+                <i class="fa-solid fa-house group-hover:text-white duration-300"></i>
             </a>
         </div>
     </div>

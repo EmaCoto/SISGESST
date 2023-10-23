@@ -3,7 +3,7 @@
         <x-aside-admin />
 
         <x-content-admin>
-            <h1 class="text-center mb-10 text-3xl font-semibold text-gray-400 w-48 mx-auto">Evaluadores</h1>
+            <h1 class="text-center mb-10 text-3xl font-semibold text-white w-72 mx-auto bg-[#001B9E] rounded-lg px-5 py-2">Evaluadores</h1>
             <input wire:model="search" class="shadow-lg shadow-gray-500 focus:ring-[#001B9E] focus:bg-white  rounded-lg border-none w-1/2" placeholder="Example: Walter     or     Example: 45740" type="text" id="buscarEmp">
 
             <table class="w-full table-auto rounded-lg overflow-hidden mt-4">

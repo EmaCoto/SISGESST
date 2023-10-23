@@ -5,6 +5,7 @@ use App\Http\Controllers\ProofController;
 use App\Http\Livewire\Admin\Administrators\AdministratorsIndex;
 use App\Http\Livewire\Admin\Administrators\ReportAdministrators;
 use App\Http\Livewire\Admin\Dangers\DangersIndex;
+use App\Http\Livewire\Admin\Deactivated\DeactivatedIndex;
 use App\Http\Livewire\Admin\Evaluators\EvaluatorsIndex;
 use App\Http\Livewire\Admin\Intervention\InterventionIndex;
 use App\Http\Livewire\Admin\Managers\ManagersIndex;
@@ -52,6 +53,8 @@ Route::get('/managers', ManagersIndex::class)->middleware('can:admin')->name('ma
 Route::get('/parameter', ParameterIndex::class)->middleware('can:admin')->name('parameter');
 Route::get('/dangers', DangersIndex::class)->middleware('can:admin')->name('dangers');
 Route::get('/intervention', InterventionIndex::class)->middleware('can:admin')->name('intervention');
+Route::get('/deactivated', DeactivatedIndex::class)->middleware('can:admin')->name('deactivated');
+
 
 
 
