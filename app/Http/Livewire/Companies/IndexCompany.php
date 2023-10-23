@@ -13,9 +13,12 @@ class IndexCompany extends Component
 
     public function render()
     {
-        $companies = Company::where('name', 'like', '%'. $this->search .'%')
-                            ->orWhere('nit', 'like', '%'. $this->search .'%')
-                            ->orderBy('id', 'desc')->get();
+        $companies = Company::query()->with([
+            'city'
+        ])
+        ->where('name', 'like', '%'. $this->search .'%')
+        ->orWhere('nit', 'like', '%'. $this->search .'%')
+        ->orderBy('id', 'desc')->get();
 
         return view('livewire.companies.index-company', compact('companies'));
     }

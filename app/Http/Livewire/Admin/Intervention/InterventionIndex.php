@@ -9,7 +9,7 @@ class InterventionIndex extends Component
 {
     public $interventions;
 
-    protected $listeners = ['renderIntervention' => 'render'];
+    protected $listeners = ['renderIntervention' => 'render', 'mountIntervention' => 'mount'];
 
     public function mount()
     {

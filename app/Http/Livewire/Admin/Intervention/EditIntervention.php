@@ -8,7 +8,10 @@ use Livewire\Component;
 class EditIntervention extends Component
 {
     public $openIntervention = false;
-    public $intervention, $interventions, $interventionDescription = [];
+    public $openDeleteIntervention = false;
+    public $intervention, $deleteIntervention, $interventions, $interventionId = [], $interventionDescription = [];
+
+    protected $listeners = ['deleteConfirmeIntervention'];
 
     protected $rules = [
         'interventionDescription.*' => 'required',
@@ -17,9 +20,14 @@ class EditIntervention extends Component
     public function mount($intervention)
     {
         $this->intervention = $intervention;
+        $this->dataIntervention();
+    }
 
+    public function dataIntervention()
+    {
         $this->interventions = InterventionMeasure::where('name', $this->intervention)->get();
         foreach($this->interventions as $intervention){
+            $this->interventionId[] = $intervention->id;
             $this->interventionDescription[] = $intervention->description;
         }
     }
@@ -34,6 +42,30 @@ class EditIntervention extends Component
         }
         $this->reset('openIntervention');
         $this->emit('renderIntervention');
+    }
+
+    public function confirmDeleteIntervention($position)
+    {
+        $this->deleteIntervention = $position;
+        $this->openDeleteIntervention = true;
+    }
+
+    public function deleteConfirmeIntervention()
+    {
+        if ($this->deleteIntervention) {
+            foreach ($this->interventions as $index => $query) {
+                if ($this->deleteIntervention == $index) {
+                    $query->id = $this->interventionId[$index];
+                    $query->delete();
+                }
+            }
+        }
+
+        $this->emit('renderIntervention');
+        $this->openDeleteIntervention = false;
+        $this->openIntervention = false;
+        $this->interventionDescription = [];
+        $this->dataIntervention();
     }
     public function render()
     {

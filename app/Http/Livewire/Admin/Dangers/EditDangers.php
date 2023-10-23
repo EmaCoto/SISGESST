@@ -11,6 +11,8 @@ class EditDangers extends Component
     public $openDeleteDanger = false;
     public $danger, $descriptions, $dangerId = [], $dangerDescription = [], $deleteDanger;
 
+    protected $listeners = ['deleteConfirmeDanger'];
+
     protected $rules = [
         'dangerDescription.*' => 'required',
     ];
@@ -18,7 +20,11 @@ class EditDangers extends Component
     public function mount($danger)
     {
         $this->danger = $danger;
+        $this->dataDanger();
+    }
 
+    public function dataDanger()
+    {
         $this->descriptions = DangerDescription::where('danger', $this->danger)->get();
         foreach($this->descriptions as $description){
             $this->dangerId[] = $description->id;
@@ -55,17 +61,11 @@ class EditDangers extends Component
             }
         }
 
-        $this->emit('render');
+        $this->emit('renderDanger');
         $this->openDeleteDanger = false;
         $this->openDanger = false;
-
-        // $this->parameterId = [];
-        // $this->parameterName = [];
-        // $this->parameterPrefix = [];
-        // $this->parameterValue = [];
-        // $this->parameterMeaning = [];
-
-        // $this->dataParameter();
+        $this->dangerDescription = [];
+        $this->dataDanger();
     }
 
     public function render()

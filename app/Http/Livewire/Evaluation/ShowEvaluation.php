@@ -14,6 +14,12 @@ class ShowEvaluation extends Component
     {
         $this->companyId = $id;
         $this->companies = Company::find($this->companyId);
+        // $this->companies = Company::query()->with([
+        //     'processes',
+        //     'processes.activities',
+        //     'processes.activities.tasks',
+        //     'processes.activities.tasks.evaluations',
+        // ])->find($this->companyId);
         $this->processes = $this->companies->processes;
         $this->activities = $this->processes->flatMap->activities;
         $this->tasks = $this->activities->flatMap->tasks;
