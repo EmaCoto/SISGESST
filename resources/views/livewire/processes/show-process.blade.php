@@ -156,50 +156,52 @@
     <div class="lg:hidden mx-auto">
         <div class="grid grid-cols-1">
         @forelse ($processes as $process)
-                <div class="flex-col rounded-lg bg-green-600 p-2 text-white m-4" >
-                    <div class=" cursor-pointer items-center justify-between">
-                        <div class="flex  justify-between">
+                <div class="" >
+                    <div class="flex-col rounded-lg bg-green-600 p-2 text-white m-4 items-center justify-between">
+                        <div class="flex justify-between">
                             <span>{{ $process->id }}</span>
                             <div class="flex">
-                                <button class="bg-green-600 text-gray-100 py-1 px-3 rounded-full text-md hover:text-gray-400">Abrir</button>
+                                @if (in_array($process->id, $openProcesses))
+                                    <button class="bg-green-600 text-gray-100 py-1 px-3 rounded-full text-md hover:text-gray-400" wire:click="toggleContent({{ $process->id }})">Cerrar</button>
+                                @else
+                                    <button class="bg-green-600 text-gray-100 py-1 px-3 rounded-full text-md hover:text-gray-400" wire:click="toggleContent({{ $process->id }})">Abrir</button>
+                                @endif
                                 <span class="bg-green-600 text-gray-100 py-1 px-3 rounded-full text-md hover:text-gray-400">Evaluar</span>
-                                    {{-- @if (in_array($process->id, $openProcesses))
-                                        <button wire:click="toggleProcess({{ $process->id }})">Cerrar</button>
-                                    @else
-                                        <button wire:click="toggleProcess({{ $process->id }})">Abrir</button>
-                                    @endif --}}
                             </div>
                         </div>
-                        <span class="font-semibold">{{ $process->name }}</span>
-                        <div class="bg-gray-100 text-gray-700 p-3 rounded-lg h-auto items-center transition-all max-h-screen">
+                        <span class="font-semibold">Proceso: {{ $process->name }}</span>
+                        @if (in_array($process->id, $openProcesses))
+                            <div class="bg-gray-100 text-gray-700 p-3 rounded-lg h-auto items-center transition-all max-h-screen">
                                 @livewire('processes.activities.show-activity', ['processId' => $process->id], key(time() . $process->id))
-                        </div>
-                        <div class="flex m-2 items-center  justify-between">
-                            <span>Acciones: </span>
-                            <div class="flex">
-                                @can('edit.delete.procceses')
-                                    <div class="flex group relative">
-                                        <span
-                                            class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">
-                                            Editar
-                                        </span>
-                                        @livewire('processes.edit-process', ['process' => $process], key(time() . $process->id))
-                                    </div>
-                                    <div class="flex group relative">
-                                        <span
-                                            class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-6 opacity-0 absolute bg-red-600 rounded-lg px-2">
-                                            Eliminar
-                                        </span>
-                                        <div>
-                                            <button wire:click="confirmDelete({{ $process->id }})" class="w-4 mr-2 transform text-red-600 hover:text-gray-400 hover:scale-110 h-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                @endcan
                             </div>
+                        @endif
+
+
+                        <div class="flex m-2 items-center  justify-end">
+                            <span class="font-semibold">Acciones:</span>
+                            @can('edit.delete.procceses')
+                                <div class="flex group relative ml-4">
+                                    <span
+                                        class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">
+                                        Editar
+                                    </span>
+                                    @livewire('processes.edit-process', ['process' => $process], key(time() . $process->id))
+                                </div>
+                                <div class="flex group relative">
+                                    <span
+                                        class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-6 opacity-0 absolute bg-red-600 rounded-lg px-2">
+                                        Eliminar
+                                    </span>
+                                    <div>
+                                        <button wire:click="confirmDelete({{ $process->id }})" class="w-4 mr-2 transform text-red-600 hover:text-gray-400 hover:scale-110 h-full">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            @endcan
+
                         </div>
                         @if ($openDelete)
                                     <div class="fixed z-50 inset-0 flex items-center justify-center">
@@ -235,12 +237,6 @@
                             <textarea id="contentEval" disabled class="resize-none bg-gray-100 text-gray-700 p-3 rounded-lg h-40 w-full items-center transition-all">{{ $process->description }}</textarea>
 
                     </div>
-                    {{-- @if (in_array($process->id, $openProcesses)) --}}
-                        {{-- <div class="bg-gray-100 text-gray-700 p-3 rounded-lg h-auto items-center transition-all max-h-screen">
-                                @livewire('processes.activities.show-activity', ['processId' => $process->id], key(time() . $process->id))
-                        </div> --}}
-                    {{-- @else --}}
-                    {{-- @endif --}}
                 </div>
         @empty
             <span>No hay información</span>

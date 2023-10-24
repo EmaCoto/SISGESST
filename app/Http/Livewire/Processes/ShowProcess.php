@@ -15,6 +15,17 @@ class ShowProcess extends Component
 
     protected $listeners = ['render'];
 
+    public $openProcesses = [];
+
+    public function toggleContent($processId)
+    {
+        if (in_array($processId, $this->openProcesses)) {
+            $this->openProcesses = array_diff($this->openProcesses, [$processId]);
+        } else {
+            $this->openProcesses[] = $processId;
+        }
+    }
+
     public function mount($companyId)
     {
         $this->companyId = $companyId;
