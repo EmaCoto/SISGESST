@@ -67,8 +67,8 @@
                     </a>
                 </div>
 
-                <div class="grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 my-8">
-                    <a href="{{ route('deactivated') }}" class="w-[752px] h-[130px] my-2 2xl:my-0 rounded-lg shadow-lg mx-auto cursor-pointer text-3xl col-span-2">
+                <div class="grid my-8">
+                    <a href="{{ route('deactivated') }}" class="2xl:w-[752px] w-full h-[130px] my-2 2xl:my-0 rounded-lg shadow-lg mx-auto cursor-pointer text-3xl col-span-2">
                         <div class="w-full h-full p-6 bg-white border-2 border-gray-500 duration-500 rounded-lg flex flex-col text-center justify-center">
                             <i class="fa-solid fa-building  fa-xl mt-4"></i>
                             <h1 class="font-semibold pt-10">Empresas desactivadas</h1>
