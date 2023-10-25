@@ -5,25 +5,25 @@
 
             <x-content-admin>
                 <div class="grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 my-8">
-                    <a href="{{ route('registerperson') }}" class="2xl:w-[348px] 2xl:h-52 lg:w-[330px] lg:h-52 md:w-[300px] md:h-52 w-[300px] h-52 my-2 2xl:my-0 rounded-lg shadow-lg mx-auto bg-green-600 cursor-pointer text-3xl">
+                    <a href="{{ route('registerperson') }}" class="2xl:w-[348px] 2xl:h-52 lg:w-[330px] lg:h-52 md:w-[300px] md:h-52 w-[300px] h-52 my-2 2xl:my-0 rounded-lg shadow-lg mx-auto bg-gray-700 cursor-pointer text-3xl">
                         <div class="w-full h-full p-6 bg-white border-2 border-gray-500 hover:rotate-3 origin-bottom-right duration-500 rounded-lg flex flex-col text-center justify-center">
                             <i class="fa-solid fa-arrow-right-to-bracket fa-xl"></i>
                             <h1 class="font-semibold pt-10">Registrar</h1>
                         </div>
                     </a>
-                    <a href="{{ route('evaluators') }}" class="2xl:w-[348px] 2xl:h-52 lg:w-[330px] lg:h-52 md:w-[300px] md:h-52 w-[300px] h-52 my-2 2xl:my-0  rounded-lg shadow-lg mx-auto bg-[#001B9E] cursor-pointer text-3xl">
+                    <a href="{{ route('evaluators') }}" class="2xl:w-[348px] 2xl:h-52 lg:w-[330px] lg:h-52 md:w-[300px] md:h-52 w-[300px] h-52 my-2 2xl:my-0  rounded-lg shadow-lg mx-auto bg-gray-700 cursor-pointer text-3xl">
                         <div class="w-full h-full p-6 bg-white border-2 border-gray-500 hover:rotate-3 origin-bottom-right duration-500 rounded-lg flex flex-col text-center justify-center">
                             <i class="fa-regular fa-id-card fa-xl"></i>
                             <h1 class="font-semibold pt-10">Evaluadores</h1>
                         </div>
                     </a>
-                    <a href="{{ route('administrators') }}" class="2xl:w-[348px] 2xl:h-52 lg:w-[330px] lg:h-52 md:w-[300px] md:h-52 w-[300px] h-52 my-2 2xl:my-0  rounded-lg shadow-lg mx-auto bg-[#001B9E] cursor-pointer text-3xl">
+                    <a href="{{ route('administrators') }}" class="2xl:w-[348px] 2xl:h-52 lg:w-[330px] lg:h-52 md:w-[300px] md:h-52 w-[300px] h-52 my-2 2xl:my-0  rounded-lg shadow-lg mx-auto bg-gray-700 cursor-pointer text-3xl">
                         <div class="w-full h-full p-6 bg-white border-2 border-gray-500 hover:rotate-3 origin-bottom-right duration-500 rounded-lg flex flex-col text-center justify-center">
                             <i class="fa-solid fa-user-tie fa-xl"></i>
                             <h1 class="font-semibold pt-10">Administradores</h1>
                         </div>
                     </a>
-                    <a href="{{ route('managers') }}" class="2xl:w-[348px] 2xl:h-52 lg:w-[330px] lg:h-52 md:w-[300px] md:h-52 w-[300px] h-52 my-2 2xl:my-0  rounded-lg shadow-lg mx-auto bg-[#001B9E] cursor-pointer text-3xl">
+                    <a href="{{ route('managers') }}" class="2xl:w-[348px] 2xl:h-52 lg:w-[330px] lg:h-52 md:w-[300px] md:h-52 w-[300px] h-52 my-2 2xl:my-0  rounded-lg shadow-lg mx-auto bg-gray-700 cursor-pointer text-3xl">
                         <div class="w-full h-full p-6 bg-white border-2 border-gray-500 hover:rotate-3 origin-bottom-right duration-500 rounded-lg flex flex-col text-center justify-center">
                             <i class="fa-solid fa-clipboard-list fa-xl mt-7"></i>
                             <h1 class="font-semibold pt-10">Gestores de empresas</h1>

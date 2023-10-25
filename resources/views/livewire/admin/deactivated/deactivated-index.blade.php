@@ -3,8 +3,8 @@
         <x-aside-admin />
 
         <x-content-admin>
-            <h1 class="text-center mb-10 text-3xl font-semibold text-white w-96 mx-auto bg-[#001B9E] rounded-lg px-5 py-2">Empresas desactivadas</h1>
-            
+            <input wire:model="search" class="w-1/2 mt-10 shadow-lg shadow-gray-500 focus:ring-blue-500 focus:bg-white  rounded-lg border-none"placeholder="Example: Walter or Example: 45740" type="text" id="buscarEmp">
+
         </x-content-admin>
     </main>
 </div>

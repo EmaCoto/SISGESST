@@ -104,7 +104,7 @@
 
 
     {{---------------------  RESPONSIVE -----------------------}}
-    <div  id="contentEval" class="lg:hidden grid grid-cols-1 mx-auto text-base">
+    <div id="contentEval" class="lg:hidden grid grid-cols-1 mx-auto text-base">
         @if ($activities->count() > 0)
             <table class="w-full overflow-hidden rounded-lg">
                 <thead>

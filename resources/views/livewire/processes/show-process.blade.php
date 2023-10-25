@@ -157,26 +157,27 @@
         @forelse ($processes as $process)
             <div class="flex-col rounded-lg bg-green-600 p-2 text-white m-4 items-center justify-between">
                 <div class="flex justify-between">
-                    <span>{{ $process->id }}</span>
-                    <div class="flex">
+                    {{-- <span>{{ $process->id }}</span> --}}
+                    <div class="w-[48vw] font-semibold text-lg flex items-center">{{ $process->name }}</div>
+                    <div class="flex items-center">
                         @if (in_array($process->id, $openProcesses))
-                            <button class="bg-white m-2 text-black py-1 px-3 rounded-full text-sm hover:text-gray-400" wire:click="toggleContent({{ $process->id }})">Cerrar</button>
+                            <button class="bg-white m-2 mr-0 text-black py-1 px-3 rounded-l-lg text-sm hover:text-gray-400" wire:click="toggleContent({{ $process->id }})">Cerrar</button>
                         @else
-                            <button class="bg-white m-2 text-black py-1 px-3 rounded-full text-sm hover:text-gray-400" wire:click="toggleContent({{ $process->id }})">Ver actividades</button>
+                            <button class="bg-white m-2 mr-0 text-black py-1 px-3 rounded-l-lg text-sm hover:text-gray-400" wire:click="toggleContent({{ $process->id }})">Ver actividades</button>
                         @endif
-                        <span class="bg-white m-2 text-black py-1 px-3 rounded-full text-sm hover:text-gray-400">Evaluar</span>
+                        <span class="bg-white m-2 text-black py-1 px-3 rounded-r-lg text-sm hover:text-gray-400">Evaluar</span>
                     </div>
                 </div>
 
-                <span class="font-semibold text-lg flex items-center">Proceso: <span class="text-base ml-2">{{ $process->name }}</span></span>
+
                 @if (in_array($process->id, $openProcesses))
-                    <div class="bg-gray-100 text-gray-700 p-3 rounded-lg h-auto items-center transition-all max-h-screen">
+                    <div class="bg-gray-100 text-gray-700 py-1 pl-3 rounded-lg h-auto items-center transition-all max-h-screen">
                         @livewire('processes.activities.show-activity', ['processId' => $process->id], key(time() . $process->id))
                     </div>
                 @endif
 
 
-                <div class="flex m-2 items-center  justify-end">
+                <div class="flex items-center  justify-end">
                     <span class="font-semibold">Acciones:</span>
                     @can('edit.delete.procceses')
                         <div class="flex group relative ml-4">
@@ -232,7 +233,7 @@
                         </div>
                     </div>
                 @endif
-                <textarea id="contentEval" disabled class="resize-none bg-gray-100 text-gray-700 p-3 rounded-lg h-40 w-full items-center transition-all">{{ $process->description }}</textarea>
+                <textarea id="contentEval" disabled class="resize-none bg-gray-100 text-gray-700 p-3 rounded-lg h-28 w-full items-center transition-all">{{ $process->description }}</textarea>
             </div>
 
         @empty
