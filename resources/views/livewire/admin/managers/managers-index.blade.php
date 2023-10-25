@@ -3,14 +3,15 @@
         <x-aside-admin />
 
         <x-content-admin>
-            <input wire:model="search" class="w-1/2 mt-10 shadow-lg shadow-gray-500 focus:ring-blue-500 focus:bg-white  rounded-lg border-none"placeholder="Example: Walter or Example: 45740" type="text" id="buscarEmp">
+            <h1 class="text-center mb-10 text-3xl font-semibold text-gray-400 w-80 mx-auto">Gestores de empresa</h1>
+            <input wire:model="search" class="w-full md:w-1/2 shadow-lg shadow-gray-500 focus:ring-green-500 focus:bg-white  rounded-lg border-none"placeholder="Example: Walter or Example: 45740" type="text" id="buscarEmp">
 
             <table class="w-full table-auto rounded-lg overflow-hidden mt-4">
                 <thead class="rounded-t-lg">
                     <tr class="bg-[#001B9E] text-gray-100 uppercase text-sm leading-normal">
                         <th class="py-3 px-6 text-left">N°</th>
                         <th class="py-3 px-6 text-left">Nombre</th>
-                        <th class="py-3 px-6 text-center">Correo</th>
+                        <th class="hidden md:block py-3 px-6 text-center">Correo</th>
                         <th class="py-3 px-6 text-center">Acciones</th>
                     </tr>
                 </thead>
@@ -27,7 +28,7 @@
                                     <span>{{ $manager->name }}</span>
                                 </div>
                             </td>
-                            <td class="py-3 px-6 text-justify">
+                            <td class="hidden md:block py-3 px-6 text-justify">
                                 <div class="flex items-center justify-center">
                                     <span>{{ $manager->email }}</span>
                                 </div>

@@ -17,10 +17,7 @@ class InterventionRiskLevelSeeder extends Seeder
             'id' => 1,
             'name' => 'I',
             'value' => '4000-600',
-            'meaning' => '
-                Situación crítica. Suspender actividades hasta que el riesgo esté bajo control.
-                Intervención urgente
-            ',
+            'meaning' => 'Situación crítica. Suspender actividades hasta que el riesgo esté bajo control. Intervención urgente',
             'color' => '#FE0000'
         ]);
 
@@ -28,10 +25,7 @@ class InterventionRiskLevelSeeder extends Seeder
             'id' => 2,
             'name' => 'II',
             'value' => '500-150',
-            'meaning' => '
-                Corregir y adoptar medidas de control de inmediato. Sin embargo, suspenda
-                actividades si el nivel de riesgo está por encima o igual de 360.
-            ',
+            'meaning' => 'Corregir y adoptar medidas de control de inmediato. Sin embargo, suspenda actividades si el nivel de riesgo está por encima o igual de 360.',
             'color' => '#FD8D14'
         ]);
 
@@ -39,9 +33,7 @@ class InterventionRiskLevelSeeder extends Seeder
             'id' => 3,
             'name' => 'III',
             'value' => '120-40',
-            'meaning' => '
-                Mejorar si es posible. Sería conveniente justificar la intervención y su rentabilidad.
-            ',
+            'meaning' => 'Mejorar si es posible. Sería conveniente justificar la intervención y su rentabilidad.',
             'color' => '#F8DE22'
         ]);
 
@@ -49,10 +41,7 @@ class InterventionRiskLevelSeeder extends Seeder
             'id' => 4,
             'name' => 'IV',
             'value' => '20-0',
-            'meaning' => '
-                Situación deficiente con exposición continua o muy deficiente con exposición frecuente.
-                Normalmente la materialización del riesgo ocurre con frecuencia.
-            ',
+            'meaning' => 'Situación deficiente con exposición continua o muy deficiente con exposición frecuente. Normalmente la materialización del riesgo ocurre con frecuencia.',
             'color' => '#539165'
         ]);
     }

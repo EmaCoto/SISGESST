@@ -9,7 +9,6 @@
     </button>
 
     <x-dialog-modal wire:model="openDetail" maxWidth="4xl">
-
         <x-slot name="content">
             <div id="contentEval" class="relative pr-2 h-[83vh] overflow-y-scroll">
                 {{-- @livewire('evaluation.details.detail-one', ['evaluations' => $evaluations]) --}}

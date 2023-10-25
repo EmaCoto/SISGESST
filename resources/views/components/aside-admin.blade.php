@@ -9,7 +9,9 @@
     </div>
 
     {{-- NAV --}}
-    <div class="px-3 h-[75vh] py-4 overflow-y-auto">
+
+    <div class="px-3 h-[74vh] py-4 overflow-y-auto">
+
         <ul class="space-y-2 font-medium">
             <div class="flex justify-center items-center text-gray-300 text-sm">
                 <h1 class="mr-4">Usuarios</h1>
@@ -66,8 +68,10 @@
             </li>
         </ul>
         <div class="absolute bottom-0 2xl:w-64 lg:w-56 flex justify-end p-5 text-xl">
+
             <a href="{{ route('admin') }}" class="px-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50 duration-300">
                 <i class="fa-solid fa-house group-hover:text-white duration-300"></i>
+
             </a>
         </div>
     </div>

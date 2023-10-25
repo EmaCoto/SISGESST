@@ -11,11 +11,16 @@ use App\Http\Livewire\Admin\Intervention\InterventionIndex;
 use App\Http\Livewire\Admin\Managers\ManagersIndex;
 use App\Http\Livewire\Admin\Parameter\ParameterIndex;
 use App\Http\Livewire\Admin\Register\RegisterIndex;
-use App\Http\Livewire\Admin\Users\UserIndex;
 use App\Http\Livewire\Companies\ShowCompany;
 use App\Http\Livewire\Evaluation\CreateEvaluation;
 use App\Http\Livewire\Evaluation\ShowEvaluation;
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\DB;
+
+// DB::listen(function ($query){
+//     echo "<pre style='font-size: 10px'>{$query->sql}</pre>";
+//     echo "<pre>{$query->time}</pre>";
+// });
 
 
 /*

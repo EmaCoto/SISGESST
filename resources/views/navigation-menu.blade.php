@@ -156,28 +156,22 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Empresas') }}
+
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('admin') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Panel administrativo') }}
+
             </x-responsive-nav-link>
+            @can('administrator')
+            <x-responsive-nav-link href="{{ route('admin') }}" :active="request()->routeIs('dashboard')">
+                {{ __('Panel administrativo') }}
+            </x-responsive-nav-link>
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="flex items-center px-4">
-                @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                    <div class="shrink-0 mr-3">
-                        <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                    </div>
-                @endif
-
-                <div>
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-                </div>
-            </div>
-
-            <div class="mt-3 space-y-1">
+            <div class="space-y-1">
                 <!-- Account Management -->
                 <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
@@ -231,6 +225,68 @@
                         @endforeach
                     @endif
                 @endif
+            </div>
+            <div class="px-3 h-[54vh] overflow-y-auto">
+                <ul class="space-y-1 font-medium">
+                    <div class="flex justify-center items-center text-gray-300 text-sm">
+                        <h1 class="mr-4">Usuarios</h1>
+                        <hr class="w-full items-center">
+                    </div>
+                    <li>
+                        <a href="{{ route('registerperson') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-arrow-right-to-bracket group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Registrar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('evaluators') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-regular fa-id-card group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Evaluadores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('administrators') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-user-tie group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Administradores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('managers') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-clipboard-list group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Gestores de empresas</span>
+                        </a>
+                    </li>
+                    <hr class="w-full items-center">
+                    <li>
+                        <a href="{{ route('parameter') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-list-check group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Criterios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('dangers') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-triangle-exclamation group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Peligros</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('intervention') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-scale-balanced group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Medidas de intervención</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-building-circle-xmark group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Empresas desactivadas</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="2xl:w-64 lg:w-56 flex justify-end p-5 text-xl">
+                    <a href="{{ route('admin') }}" class="px-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                        <i class="fa-solid fa-house group-hover:text-white"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

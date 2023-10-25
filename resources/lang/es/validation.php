@@ -188,8 +188,20 @@ return [
         'administrativeControlSuggestion'   => 'sugerencia señalizacion, advertencias o controles administrativos',
         'personalProtection'                => 'equipo / elementos de proteccion personal',
         'personalProtectionSuggestion'      => 'sugerencia equipo / elementos de proteccion personal',
-        'legal'                             => 'cumplimiento requisito legal'
-
+        'legal'                             => 'cumplimiento requisito legal',
+        'parameterName.*'                   => 'nombre',
+        'parameterPrefix.*'                 => 'prefijo',
+        'parameterValue.*'                  => 'valor',
+        'parameterMeaning.*'                => 'significado',
+        'dangerDescription.*'               => 'peligro',
+        'interventionDescription.*'         => 'intervencion',
+        'parameterName'                     => 'nombre',
+        'parameterPrefix'                   => 'prefijo',
+        'parameterValue'                    => 'valor',
+        'parameterMeaning'                  => 'significado',
+        'parameterColor'                    => 'color',
+        'dangerDescription'                 => 'peligro',
+        'interventionDescription'           => 'intervencion',
     ],
 
 ];
