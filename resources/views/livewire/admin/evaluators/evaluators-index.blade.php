@@ -4,8 +4,7 @@
 
 
         <x-content-admin>
-            <h1 class="text-center mb-10 text-3xl font-semibold text-gray-400 w-48 mx-auto">Evaluadores</h1>
-            <input wire:model="search" class="shadow-lg shadow-gray-500 focus:ring-[#001B9E] focus:bg-white rounded-lg border-none w-full md:w-1/2" placeholder="Ejemplo: Walter  o  example@example.com" type="text" id="buscarEmp">
+            <input wire:model="search" class="w-full md:w-1/2 mt-4 shadow-lg shadow-gray-500 focus:ring-blue-500 focus:bg-white  rounded-lg border-none"placeholder="Ejemplo: Walter  o  example@example.com" type="text" id="buscarEmp">
 
             <table class="w-full table-auto rounded-lg overflow-hidden mt-4">
                 <thead class="rounded-t-lg">

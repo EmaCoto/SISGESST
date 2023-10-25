@@ -36,7 +36,7 @@
                         <div class="flex flex-col m-4 sm:w-1/2">
                             <label>Rol</label>
                             <select wire:model="selectedRole" class="border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">
-                                <option value="">Seleccionar Rol</option>
+                                <option value="" hidden>-- Seleccionar Rol --</option>
                                 @foreach ($roles as $role)
                                     <option>{{ $role->name }}</option>
                                 @endforeach

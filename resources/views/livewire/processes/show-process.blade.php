@@ -155,17 +155,17 @@
 {{---------------------  RESPONSIVE -----------------------}}
     <div class="lg:hidden grid grid-cols-1 mx-auto">
         @forelse ($processes as $process)
-            <div class="flex-col rounded-lg bg-green-600 p-2 text-white m-4 items-center justify-between">
+            <div class="flex-col rounded-lg border-2 border-green-600 p-2 m-4 items-center justify-between shadow-lg">
                 <div class="flex justify-between">
                     {{-- <span>{{ $process->id }}</span> --}}
-                    <div class="w-[48vw] font-semibold text-lg flex items-center">{{ $process->name }}</div>
+                    <div class="w-[48vw] font-bold text-lg flex items-center">{{ $process->name }}</div>
                     <div class="flex items-center">
                         @if (in_array($process->id, $openProcesses))
-                            <button class="bg-white m-2 mr-0 text-black py-1 px-3 rounded-l-lg text-sm hover:text-gray-400" wire:click="toggleContent({{ $process->id }})">Cerrar</button>
+                            <button class="bg-green-600 m-2 mr-0 text-white py-1 px-3 rounded-lg text-sm hover:text-gray-200" wire:click="toggleContent({{ $process->id }})">Cerrar</button>
                         @else
-                            <button class="bg-white m-2 mr-0 text-black py-1 px-3 rounded-l-lg text-sm hover:text-gray-400" wire:click="toggleContent({{ $process->id }})">Ver actividades</button>
+                            <button class="bg-green-600 m-2 mr-0 text-white py-1 px-3 rounded-lg text-sm hover:text-gray-200" wire:click="toggleContent({{ $process->id }})">Ver actividades</button>
                         @endif
-                        <span class="bg-white m-2 text-black py-1 px-3 rounded-r-lg text-sm hover:text-gray-400">Evaluar</span>
+                        <span class="bg-green-600 m-2 text-white py-1 px-3 rounded-lg text-sm hover:text-gray-200">Evaluar</span>
                     </div>
                 </div>
 
@@ -177,21 +177,13 @@
                 @endif
 
 
-                <div class="flex items-center  justify-end">
-                    <span class="font-semibold">Acciones:</span>
+                <div class="flex items-center  justify-end mb-1 mt-4">
+                    <span class="font-medium">Acciones:</span>
                     @can('edit.delete.procceses')
                         <div class="flex group relative ml-4">
-                            <span
-                                class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">
-                                Editar
-                            </span>
                             @livewire('processes.edit-process', ['process' => $process], key(time() . $process->id))
                         </div>
                         <div class="flex group relative">
-                            <span
-                                class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-6 opacity-0 absolute bg-red-600 rounded-lg px-2">
-                                Eliminar
-                            </span>
                             <div>
                                 <button wire:click="confirmDelete({{ $process->id }})" class="w-4 mr-2 transform text-red-600 hover:text-gray-400 hover:scale-110 h-full">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -233,7 +225,7 @@
                         </div>
                     </div>
                 @endif
-                <textarea id="contentEval" disabled class="resize-none bg-gray-100 text-gray-700 p-3 rounded-lg h-28 w-full items-center transition-all">{{ $process->description }}</textarea>
+                <textarea id="contentEval" disabled class="resize-none bg-gray-100 text-gray-700 p-3 rounded-lg h-28 w-full items-center transition-all border-none">{{ $process->description }}</textarea>
             </div>
 
         @empty

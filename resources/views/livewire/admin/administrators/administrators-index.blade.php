@@ -3,8 +3,7 @@
         <x-aside-admin />
 
           <x-content-admin>
-            <h1 class="text-center mb-10 text-3xl font-semibold text-gray-400 w-60 mx-auto">Administradores</h1>
-            <input wire:model="search" class="w-full md:w-1/2 shadow-lg shadow-gray-500 focus:ring-blue-500 focus:bg-white  rounded-lg border-none"placeholder="Ejemplo: Walter  o  example@example.com" type="text" id="buscarEmp">
+            <input wire:model="search" class="w-full md:w-1/2 mt-4 shadow-lg shadow-gray-500 focus:ring-blue-500 focus:bg-white  rounded-lg border-none"placeholder="Ejemplo: Walter  o  example@example.com" type="text" id="buscarEmp">
 
 
             <table class="w-full table-auto rounded-lg overflow-hidden mt-4">
