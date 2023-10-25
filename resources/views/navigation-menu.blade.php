@@ -158,10 +158,6 @@
                 {{ __('Empresas') }}
 
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('admin') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Panel administrativo') }}
-
-            </x-responsive-nav-link>
             @can('administrator')
             <x-responsive-nav-link href="{{ route('admin') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Panel administrativo') }}
