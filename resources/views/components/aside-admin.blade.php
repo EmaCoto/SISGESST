@@ -16,50 +16,50 @@
                 <hr class="w-full items-center">
             </div>
             <li>
-                <a href="{{ route('registerperson') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('registerperson') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-30' }}">
+                <a href="{{ route('registerperson') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('registerperson') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-arrow-right-to-bracket group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Registrar</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('evaluators') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('evaluators') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-30' }}">
+                <a href="{{ route('evaluators') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('evaluators') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-regular fa-id-card group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Evaluadores</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('administrators') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('administrators') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-30' }}">
+                <a href="{{ route('administrators') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('administrators') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-user-tie group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Administradores</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('managers') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('managers') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-30' }}">
+                <a href="{{ route('managers') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('managers') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-clipboard-list group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Gestores de empresas</span>
                 </a>
             </li>
             <hr class="w-full items-center">
             <li>
-                <a href="{{ route('parameter') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('parameter') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-30' }}">
+                <a href="{{ route('parameter') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('parameter') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-list-check group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Criterios</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('dangers') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('dangers') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-30' }}">
+                <a href="{{ route('dangers') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('dangers') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-triangle-exclamation group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Peligros</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('intervention') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('intervention') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-30' }}">
+                <a href="{{ route('intervention') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('intervention') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-scale-balanced group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Medidas de intervención</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('deactivated') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('deactivated') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-30' }}">
+                <a href="{{ route('deactivated') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('deactivated') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-building-circle-xmark group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Empresas desactivadas</span>
                 </a>
