@@ -1,4 +1,4 @@
-<div class="mb-24 text-lg m-2">
+<div class="mb-24 text-lg m-2" id="resolution">
     <h1 class="text-center font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl m-4 mb-3 sm:mb-7">¿Conoces la resolución 0312 de 2019?</h1>
     <div class="text-justify">
         <p class="text-justify text-sm sm:text-lg">La Resolución 0312 de 2019, emitida por el Ministerio del Trabajo de Colombia, establece los estándares mínimos del Sistema de Gestión de Seguridad y Salud en el Trabajo (SG-SST) y deroga la Resolución 1111 de 2017. Esta resolución se aplica a las personas naturales y jurídicas señaladas en el artículo 2.</p><br>

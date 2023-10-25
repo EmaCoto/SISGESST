@@ -46,6 +46,7 @@ class CreateTask extends Component
         ]);
 
         $this->reset(['open', 'name', 'description', 'routine', 'activity_id']);
+        $this->emit('alert');
     }
 
 

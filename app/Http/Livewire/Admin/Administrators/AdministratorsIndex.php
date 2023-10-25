@@ -3,21 +3,16 @@
 namespace App\Http\Livewire\Admin\Administrators;
 
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Livewire\Component;
+
 
 class AdministratorsIndex extends Component
 {
     public $openDelete = false;
     public $search, $user, $deleteuser;
-    protected $listeners = ['render' => 'render', 'userUpdated'];
+    protected $listeners = ['render'];
 
-
-    public function userUpdated()
-    {
-        if ($this->user) {
-            $this->user = $this->user->fresh();
-        }
-    }
 
     public function confirmDelete($id)
     {
@@ -31,8 +26,12 @@ class AdministratorsIndex extends Component
             $this->deleteuser->delete();
             $this->emitTo('companies.show-company', 'render');
         }
-        $this->openDelete = false; // Cierra el modal de confirmación
+        $this->openDelete = false;
+        $this->emit('alertDelete');
+
     }
+
+
 
     public function render()
     {
@@ -45,7 +44,7 @@ class AdministratorsIndex extends Component
                 ->orWhere('id', 'like', '%'.$this->search.'%')
                 ->orWhere('email', 'like', '%'.$this->search.'%');
             })
-            ->paginate(15);
+            ->paginate(14);
         return view('livewire.admin.administrators.administrators-index', compact('administrators'));
     }
 }

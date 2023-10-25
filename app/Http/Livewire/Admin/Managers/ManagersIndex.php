@@ -9,7 +9,7 @@ class ManagersIndex extends Component
 {
     public $openDelete = false;
     public $search, $user, $deleteuser;
-    protected $listeners = ['render' => 'render', 'userUpdated'];
+    protected $listeners = ['render'];
 
     public function userUpdated()
     {
@@ -31,6 +31,8 @@ class ManagersIndex extends Component
             $this->emitTo('companies.show-company', 'render');
         }
         $this->openDelete = false; // Cierra el modal de confirmación
+        $this->emit('alertDelete');
+
     }
     public function render()
     {
@@ -43,7 +45,7 @@ class ManagersIndex extends Component
                 ->orWhere('id', 'like', '%'.$this->search.'%')
                 ->orWhere('email', 'like', '%'.$this->search.'%');
             })
-            ->paginate(15);
+            ->paginate(14);
         return view('livewire.admin.managers.managers-index', compact('managers'));
     }
 }

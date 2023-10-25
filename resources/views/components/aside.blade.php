@@ -1,4 +1,4 @@
-<div class="hidden pt-4 mt-5 lg:block m-auto text-xl w-full">
+<div class="hidden pt-4 mt-5 lg:block m-auto text-xl w-full h-[250vh]">
     <aside class="sticky top-32">
         <h1 class="font-semibold">Contenido</h1>
         <nav class="flex flex-col">

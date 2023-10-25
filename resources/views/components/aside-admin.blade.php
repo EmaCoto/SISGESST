@@ -1,4 +1,4 @@
-<aside class="2xl:w-[15vw] border-r hidden lg:block ">
+<aside class="2xl:w-[15vw] border-r hidden lg:block">
     {{-- CARD ADMIN --}}
     <div class="relative  group overflow-hidden h-44 p-5 flex flex-col items-start">
         <div class="flex items-center text-center h-full">
@@ -9,65 +9,69 @@
     </div>
 
     {{-- NAV --}}
+
     <div class="px-3 h-[74vh] py-4 overflow-y-auto">
+
         <ul class="space-y-2 font-medium">
             <div class="flex justify-center items-center text-gray-300 text-sm">
                 <h1 class="mr-4">Usuarios</h1>
                 <hr class="w-full items-center">
             </div>
             <li>
-                <a href="{{ route('registerperson') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                <a href="{{ route('registerperson') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('registerperson') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-arrow-right-to-bracket group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Registrar</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('evaluators') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                <a href="{{ route('evaluators') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('evaluators') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-regular fa-id-card group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Evaluadores</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('administrators') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                <a href="{{ route('administrators') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('administrators') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-user-tie group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Administradores</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('managers') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                <a href="{{ route('managers') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('managers') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-clipboard-list group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Gestores de empresas</span>
                 </a>
             </li>
             <hr class="w-full items-center">
             <li>
-                <a href="{{ route('parameter') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                <a href="{{ route('parameter') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('parameter') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-list-check group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Criterios</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('dangers') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                <a href="{{ route('dangers') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('dangers') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-triangle-exclamation group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Peligros</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('intervention') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                <a href="{{ route('intervention') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('intervention') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-scale-balanced group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Medidas de intervención</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                <a href="{{ route('deactivated') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('deactivated') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-building-circle-xmark group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Empresas desactivadas</span>
                 </a>
             </li>
         </ul>
         <div class="absolute bottom-0 2xl:w-64 lg:w-56 flex justify-end p-5 text-xl">
-            <a href="{{ route('admin') }}" class="px-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
-                <i class="fa-solid fa-house group-hover:text-white"></i>
+
+            <a href="{{ route('admin') }}" class="px-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50 duration-300">
+                <i class="fa-solid fa-house group-hover:text-white duration-300"></i>
+
             </a>
         </div>
     </div>

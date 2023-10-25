@@ -2,9 +2,10 @@
     <main class="flex-grow flex">
         <x-aside-admin />
 
-        <div id="contentEval" class="relative px-4 md:px-20 py-6 w-full md:w-[85vw] h-[93.9vh] overflow-y-scroll overflow-x-hidden bg-gray-200 ">
+          <x-content-admin>
             <h1 class="text-center mb-10 text-3xl font-semibold text-gray-400 w-60 mx-auto">Administradores</h1>
             <input wire:model="search" class="w-full md:w-1/2 shadow-lg shadow-gray-500 focus:ring-blue-500 focus:bg-white  rounded-lg border-none"placeholder="Ejemplo: Walter  o  example@example.com" type="text" id="buscarEmp">
+
 
             <table class="w-full table-auto rounded-lg overflow-hidden mt-4">
                 <thead class="rounded-t-lg">
@@ -84,6 +85,8 @@
                 </tbody>
             </table>
             {{ $administrators->links() }}
-        </div>
+
+        </x-content-admin>
+
     </main>
 </div>

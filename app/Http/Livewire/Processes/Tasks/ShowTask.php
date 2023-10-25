@@ -28,7 +28,7 @@ class ShowTask extends Component
     public function confirmDelete($id)
     {
         $this->taskDelete = Task::find($id);
-        $this->openDelete = true; // Abre el modal de confirmación
+        $this->openDelete = true;
     }
 
     public function deleteConfirmed()
@@ -37,6 +37,8 @@ class ShowTask extends Component
             $this->taskDelete->delete();
             $this->emitTo('companies.show-company', 'render');
         }
-        $this->openDelete = false; // Cierra el modal de confirmación
+        $this->openDelete = false;
+        $this->emit('alertDelete');
+
     }
 }

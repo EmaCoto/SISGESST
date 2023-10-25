@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProofController;
 use App\Http\Livewire\Admin\Administrators\AdministratorsIndex;
+use App\Http\Livewire\Admin\Administrators\ReportAdministrators;
 use App\Http\Livewire\Admin\Dangers\DangersIndex;
+use App\Http\Livewire\Admin\Deactivated\DeactivatedIndex;
 use App\Http\Livewire\Admin\Evaluators\EvaluatorsIndex;
 use App\Http\Livewire\Admin\Intervention\InterventionIndex;
 use App\Http\Livewire\Admin\Managers\ManagersIndex;
@@ -49,10 +52,14 @@ Route::view('/admin', 'admin')->middleware('can:admin')->name('admin');
 Route::get('/evaluators', EvaluatorsIndex::class)->middleware('can:admin')->name('evaluators');
 Route::get('/registerperson', RegisterIndex::class)->middleware('can:admin')->name('registerperson');
 Route::get('/administrators', AdministratorsIndex::class)->middleware('can:admin')->name('administrators');
+Route::get('/administrators/report/{id}', [ProofController::class, 'report'])->middleware('can:admin')->name('administrators.report');
+
 Route::get('/managers', ManagersIndex::class)->middleware('can:admin')->name('managers');
 Route::get('/parameter', ParameterIndex::class)->middleware('can:admin')->name('parameter');
 Route::get('/dangers', DangersIndex::class)->middleware('can:admin')->name('dangers');
 Route::get('/intervention', InterventionIndex::class)->middleware('can:admin')->name('intervention');
+Route::get('/deactivated', DeactivatedIndex::class)->middleware('can:admin')->name('deactivated');
+
 
 
 

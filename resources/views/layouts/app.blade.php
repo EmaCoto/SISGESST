@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>SISGESST</title>
+        <link rel="icon" href="{{ asset('img/logo_ico.ico') }}" type="image/x-icon">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -64,7 +65,25 @@
         <script>
             livewire.on('alert', function(message){
                 Swal.fire(
-                    'Good job!',
+                    '¡Se ha guardado la información correctamente!',
+                    message,
+                    'success')
+            })
+            livewire.on('alertResgisterRol', function(message){
+                Swal.fire(
+                    'La información y el rol se han guardado de manera correcta.',
+                    message,
+                    'success')
+            })
+            livewire.on('alertEdit', function(message){
+                Swal.fire(
+                    'La información ha sido editada de manera adecuada.',
+                    message,
+                    'success')
+            })
+            livewire.on('alertDelete', function(message){
+                Swal.fire(
+                    'La información ha sido eliminada de forma apropiada.',
                     message,
                     'success')
             })

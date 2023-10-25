@@ -11,14 +11,17 @@
     <x-dialog-modal wire:model="openDetail" maxWidth="4xl">
         <x-slot name="content">
             <div id="contentEval" class="relative pr-2 h-[83vh] overflow-y-scroll">
-                @livewire('evaluation.details.detail-one', ['evaluations' => $evaluations])
-                @livewire('evaluation.details.detail-two', ['evaluations' => $evaluations])
-                @livewire('evaluation.details.detail-three', ['evaluations' => $evaluations])
+                {{-- @livewire('evaluation.details.detail-one', ['evaluations' => $evaluations]) --}}
+                {{-- @livewire('evaluation.details.detail-two', ['evaluations' => $evaluations]) --}}
+                {{-- @livewire('evaluation.details.detail-three', ['evaluations' => $evaluations]) --}}
                 @livewire('evaluation.details.detail-four', ['evaluations' => $evaluations])
                 @livewire('evaluation.details.detail-five', ['evaluations' => $evaluations])
             </div>
             <button wire:click="$set('openDetail', false)"
                 class="mt-6 bg-gray-300 px-5 py-1 rounded-lg font-semibold text-lg text-gray-600">Cerrar</button>
+                <a href="{{ route('administrators.report', ['id' => $companyId]) }}">imprimir</a>
+                {{-- <button wire:click="report"
+                class="mt-6 bg-gray-300 px-5 py-1 rounded-lg font-semibold text-lg text-gray-600">IMPRIMIR</button> --}}
         </x-slot>
     </x-dialog-modal>
 </div>

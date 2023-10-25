@@ -9,14 +9,8 @@ class EvaluatorsIndex extends Component
 {
     public $openDelete = false;
     public $search, $user, $deleteuser;
-    protected $listeners = ['render' => 'render', 'userUpdated'];
+    protected $listeners = ['render'];
 
-    public function userUpdated()
-    {
-        if ($this->user) {
-            $this->user = $this->user->fresh();
-        }
-    }
 
     public function confirmDelete($id)
     {
@@ -31,6 +25,8 @@ class EvaluatorsIndex extends Component
             $this->emitTo('companies.show-company', 'render');
         }
         $this->openDelete = false; // Cierra el modal de confirmación
+        $this->emit('alertDelete');
+
     }
 
     public function render()
@@ -44,7 +40,7 @@ class EvaluatorsIndex extends Component
                 ->orWhere('id', 'like', '%'.$this->search.'%')
                 ->orWhere('email', 'like', '%'.$this->search.'%');
             })
-            ->paginate(15);
+            ->paginate(14);
         return view('livewire.admin.evaluators.evaluators-index', compact('evaluators'));
     }
 }

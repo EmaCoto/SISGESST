@@ -1,4 +1,4 @@
-<div class="mb-24">
+<div class="mb-24" id="guide">
     <h1 class="text-center font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl m-4 mb-3 sm:mb-7">Guía de uso</h1>
     <div class="border rounded-lg overflow-hidden">
         <div class="flex h-36 bg-gray-200 group hover:h-72 ease-in-out overflow-hidden duration-700">

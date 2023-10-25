@@ -165,8 +165,8 @@ class CreateEvaluation extends Component
         Task::where('id', $this->taskId)->update([
             'status' => 'Evaluado',
         ]);
-
-        return redirect()->route('create-evaluation', ['id' => $this->processId]);
+        $this->emit('alert');
+        return redirect()->route('show-company', ['id' => $this->processId]);
     }
     public function render()
     {

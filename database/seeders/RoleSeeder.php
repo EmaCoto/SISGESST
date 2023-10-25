@@ -28,8 +28,10 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'edit.delete.procceses'])->assignRole([$role1]);
         Permission::create(['name' => 'process.activity.task.create'])->assignRole([$role1]);
         Permission::create(['name' => 'edit.delete.activities'])->assignRole([$role1]);
+        Permission::create(['name' => 'edit.delete.task'])->assignRole([$role1]);
         Permission::create(['name' => 'administrator'])->assignRole([$role1]);
         Permission::create(['name' => 'admin'])->assignRole([$role1]);
+
 
 
     }

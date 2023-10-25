@@ -1,5 +1,5 @@
 <div>
-    <button wire:click="$set('open', true)" class="w-4 mr-2 transform text-blue-600 hover:text-gray-400 hover:scale-110">
+    <button wire:click="$set('open', true)" class="w-4 mr-2 transform text-blue-600 hover:text-gray-400 hover:scale-110 h-full">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
