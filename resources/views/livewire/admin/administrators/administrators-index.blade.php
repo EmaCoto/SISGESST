@@ -49,7 +49,7 @@
                                     @if ($openDelete)
                                         <div class="fixed z-50 inset-0 flex items-center justify-center"
                                             wire:click="$set('openDelete', false)">
-                                            <div class="absolute inset-0 z-40 bg-black opacity-80 modal-overlay"></div>
+                                            <div class="absolute inset-0 z-40 bg-black opacity-40 modal-overlay"></div>
 
                                             <div
                                                 class="z-50 w-11/12 mx-auto overflow-y-auto bg-white border border-red-500 rounded-xl modal-container md:max-w-md">

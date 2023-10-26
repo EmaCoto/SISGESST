@@ -3,7 +3,7 @@
         <!-- component -->
         <div id="contentEval" class="bg-gray-200 p-4 rounded-lg h-full overflow-hidden">
             <h1
-                class="bg-green-600 p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-2/4 mx-auto text-center text-gray-100 py-3">
+                class="bg-green-600 p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-2/4 mx-auto text-center text-gray-100">
                 Procesos
             </h1>
 
@@ -165,7 +165,7 @@
                         @else
                             <button class="bg-green-600 m-2 mr-0 text-white py-1 px-3 rounded-lg text-sm hover:text-gray-200" wire:click="toggleContent({{ $process->id }})">Ver actividades</button>
                         @endif
-                        <span class="bg-green-600 m-2 text-white py-1 px-3 rounded-lg text-sm hover:text-gray-200">Evaluar</span>
+                        <a href="{{ route('create-evaluation', ['id' => $process->id]) }}" class="bg-green-600 m-2 text-white py-1 px-3 rounded-lg text-sm hover:text-gray-200">Evaluar</a>
                     </div>
                 </div>
 

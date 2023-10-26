@@ -11,6 +11,11 @@ class EditAdministrators extends Component
     public $name;
     public $email;
 
+    protected $rules = [
+        'name'        => 'required',
+        'email'       => 'required|email',
+    ];
+
     public function mount($user)
     {
         if ($user) {
@@ -27,6 +32,7 @@ class EditAdministrators extends Component
 
     public function updateAdministrator()
     {
+        $this->validate();
         $this->user->update([
             'name' => $this->name,
             'email' => $this->email,

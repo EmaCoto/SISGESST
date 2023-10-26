@@ -14,10 +14,12 @@
             <div class="flex flex-col m-4 ">
                 <label class="text-left">Nombre:</label>
                 <input wire:model="name" type="text" class="border-gray-300 rounded-md focus:ring-1 focus:ring-blue-600 focus:border-blue-600 bg-[#EEEFF1] focus:bg-white">
+                <x-input-error for="name" />
             </div>
             <div class="flex flex-col m-4">
                 <label class="text-left">Correo:</label>
                 <input wire:model="email" type="email" class="border-gray-300 rounded-md focus:ring-1 focus:ring-blue-600 focus:border-blue-600 bg-[#EEEFF1] focus:bg-white">
+                <x-input-error for="email" />
             </div>
 
 

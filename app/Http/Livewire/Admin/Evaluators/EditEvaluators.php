@@ -11,6 +11,11 @@ class EditEvaluators extends Component
     public $name;
     public $email;
 
+    protected $rules = [
+        'name'        => 'required',
+        'email'       => 'required|email',
+    ];
+
     public function mount($user)
     {
         if ($user) {
@@ -22,6 +27,8 @@ class EditEvaluators extends Component
 
     public function updateEvaluator()
     {
+        $this->validate();
+
         $this->user->update([
             'name' => $this->name,
             'email' => $this->email,

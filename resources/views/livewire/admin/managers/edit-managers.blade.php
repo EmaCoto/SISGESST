@@ -14,12 +14,14 @@
             <div class="flex flex-col m-4 ">
                 <label class="text-left">Nombre:</label>
                 <input wire:model="name" type="text" class="border-gray-300 rounded-md focus:ring-1 focus:ring-blue-600 focus:border-blue-600 bg-[#EEEFF1] focus:bg-white">
+                <x-input-error for="name" />
             </div>
+
             <div class="flex flex-col m-4">
                 <label class="text-left">Correo:</label>
                 <input wire:model="email" type="email" class="border-gray-300 rounded-md focus:ring-1 focus:ring-blue-600 focus:border-blue-600 bg-[#EEEFF1] focus:bg-white">
+                <x-input-error for="email" />
             </div>
-
 
             <div class="w-4/5 md:w-3/5 mx-auto flex justify-between mt-6 mb-1">
                 <button wire:click="$set('open', false)" class="bg-gray-300 px-5 py-1 rounded-lg font-semibold text-lg text-gray-600">Cancelar</button>
