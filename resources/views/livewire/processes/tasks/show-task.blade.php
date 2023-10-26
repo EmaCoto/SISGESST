@@ -46,11 +46,11 @@
                             </td>
                             <td class="py-3 px-6 text-center">
                                 <div class="flex item-center justify-center">
-                                    @can('edit.delete.task')
+
                                     <div class="flex group relative">
                                         <span
                                             class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">Editar</span>
-                                        @livewire('processes.tasks.edit-task', ['task' => $task,'companyId' => $companyId], key(time() . $task->id))
+                                        @livewire('processes.tasks.edit-task', ['task' => $task, 'companyId' => $companyId], key(time() . $task->id))
                                     </div>
 
                                     <div class="flex group relative">
@@ -65,7 +65,7 @@
                                             </svg>
                                         </button>
                                     </div>
-                                    @endcan
+
 
                                     @if ($openDelete)
                                         <div class="fixed z-50 inset-0 flex items-center justify-center"

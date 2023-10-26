@@ -30,7 +30,9 @@ class SectionOne extends Component
         $this->processName = $process->name;
 
         //Activity
-        $this->activities = Activity::where('process_id', $id)->get();
+        $this->activities = Activity::where('process_id', $id)
+                                        ->where('status', 'sin evaluar')
+                                        ->get();
         $this->activityId = $sectionActivityId;
 
         //Task

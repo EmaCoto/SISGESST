@@ -39,8 +39,15 @@ class CreateActivity extends Component
             'process_id' => $this->process_id,
         ]);
 
+        Process::where('id', $this->process_id)
+            ->where('status', 'Evaluado')
+            ->update([
+                'status' => 'sin evaluar',
+            ]);;
+
         $this->reset(['open', 'name', 'description', 'process_id']);
         $this->emit('selectedActivity');
+        $this->emit('render');
         $this->emit('alert');
     }
 

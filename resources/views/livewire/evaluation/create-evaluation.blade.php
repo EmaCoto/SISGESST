@@ -1,5 +1,6 @@
 <div class="w-full overflow-hidden py-8" style="height: 93vh">
     <x-content-block>
+
         @if ($sectionPosition == 1)
             @livewire('evaluation.sections.section-one', [
                 'id' => $processId,

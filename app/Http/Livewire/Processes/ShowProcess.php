@@ -13,9 +13,15 @@ class ShowProcess extends Component
     public $companyId, $processId, $processName, $processDelete;
     public $open = false, $openDelete = false;
 
-    protected $listeners = ['render'];
+    protected $listeners = ['render', 'renderProcess' => 'render'];
 
     public $openProcesses = [];
+
+    public function mount($companyId)
+    {
+        $this->companyId = $companyId;
+        $this->emitTo('activities.create-activity', 'companyId', $companyId);
+    }
 
     public function toggleContent($processId)
     {
@@ -26,15 +32,12 @@ class ShowProcess extends Component
         }
     }
 
-    public function mount($companyId)
-    {
-        $this->companyId = $companyId;
-        $this->emitTo('activities.create-activity', 'companyId', $companyId);
-    }
+
 
     public function render()
     {
-        $processes = Process::where('company_id', $this->companyId)->paginate(5);
+        $processes = Process::where('company_id', $this->companyId)
+            ->where('status', 'sin evaluar')->paginate(5);
         return view('livewire.processes.show-process', [
             'processes' => $processes,
         ]);

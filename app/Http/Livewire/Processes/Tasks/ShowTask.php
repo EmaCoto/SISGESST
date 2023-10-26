@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Processes\Tasks;
 
+use App\Models\Activity;
 use App\Models\Task;
 use Livewire\Component;
 
@@ -37,8 +38,25 @@ class ShowTask extends Component
             $this->taskDelete->delete();
             $this->emitTo('companies.show-company', 'render');
         }
+        $this->changeStatusActivity();
         $this->openDelete = false;
         $this->emit('alertDelete');
+
+    }
+
+    public function changeStatusActivity()
+    {
+        $queryTask = new Task;
+
+        $taskStatus = $queryTask::where('status', 'sin evaluar')
+            ->where('activity_id', $this->activityId)
+            ->get();
+        if (count($taskStatus) == 0) {
+            Activity::where('id', $this->activityId)->update([
+                'status' => 'Evaluado',
+            ]);
+            $this->emit('changeStatusProcess');
+        }
 
     }
 }

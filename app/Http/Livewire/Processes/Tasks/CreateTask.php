@@ -45,7 +45,23 @@ class CreateTask extends Component
             'activity_id' => $this->activity_id,
         ]);
 
+        Activity::where('id', $this->activity_id)
+            ->where('status', 'Evaluado')
+            ->update([
+                'status' => 'sin evaluar',
+            ]);
+
+        $activity = Activity::where('id', $this->activity_id)->first();
+        $processId = $activity->process_id;
+
+        Process::where('id', $processId)
+            ->where('status', 'Evaluado')
+            ->update([
+                'status' => 'sin evaluar',
+            ]);
+
         $this->reset(['open', 'name', 'description', 'routine', 'activity_id']);
+        $this->emit('renderProcess');
         $this->emit('alert');
     }
 
