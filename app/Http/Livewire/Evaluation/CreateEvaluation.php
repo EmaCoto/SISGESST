@@ -193,7 +193,7 @@ class CreateEvaluation extends Component
 
         $this->emit('alert');
         return redirect()->route('show-company', ['id' => $this->processId]);
-    }
+    }   
     public function render()
     {
         return view('livewire.evaluation.create-evaluation');
