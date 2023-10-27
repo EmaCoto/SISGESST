@@ -8,8 +8,13 @@ use Livewire\Component;
 
 class ShowCompany extends Component
 {
-    public $company, $idCompany;
+    public $company, $idCompany, $nitDeactive;
+    public $openDeactive = false;
     protected $listeners = ['render'];
+
+    protected $rules = [
+        'nitDeactive' => 'required',
+    ];
 
     public function mount($id)
     {
@@ -19,10 +24,18 @@ class ShowCompany extends Component
 
     public function deactivateCompany()
     {
-        Company::where('id', $this->idCompany)->update([
-            'is_active' => 0,
-        ]);
-        return redirect()->route('dashboard');
+        $this->openDeactive = true;
+    }
+
+    public function deactiveConfirmed()
+    {
+        $this->validate();
+        if ($this->nitDeactive == $this->company->nit) {
+            Company::where('id', $this->idCompany)->update([
+                'is_active' => 0,
+            ]);
+            return redirect()->route('dashboard');
+        }
     }
 
 

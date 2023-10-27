@@ -202,6 +202,7 @@ return [
         'parameterColor'                    => 'color',
         'dangerDescription'                 => 'peligro',
         'interventionDescription'           => 'intervencion',
+        'nitDeactive'                       => 'nit'
     ],
 
 ];

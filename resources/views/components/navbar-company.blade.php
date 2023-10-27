@@ -29,10 +29,6 @@
                     <button wire:click="deactivateCompany"
                         class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Desactivar</button>
                 </li>
-                <li>
-                    <a href="#"
-                        class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Eliminar</a>
-                </li>
             </div>
         </ul>
     </div>
