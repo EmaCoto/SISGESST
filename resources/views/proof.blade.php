@@ -1,36 +1,68 @@
-<div class="border-2 border-gray-500 mb-8">
-    <div class="bg-gray-500 text-gray-100 w-full p-1 font-bold text-lg text-center">
-        NUMERO DE EXPUESTOS
-    </div>
-    <div class="text-center font-bold w-full grid grid-cols-4">
-        <div class="w-full bg-gray-300 font-bold border-r-2 p-2 border-b-2 border-gray-500">
-            Vinculados
-        </div>
-        <div class="w-full bg-gray-300 font-bold border-r-2 border-b-2 p-2 border-gray-500">
-            Contratistas
-        </div>
-        <div class="w-full bg-gray-300 font-bold border-r-2 border-b-2 p-2 border-gray-500">
-            Temporales
-        </div>
-        <div class="w-full bg-gray-300 font-bold border-b-2 p-2 border-gray-500">
-            Tiempo de exposicion
-        </div>
-    </div>
-    <div class="text-center w-full grid grid-cols-4">
-        @foreach ($evaluations as $evaluation)
-            <div class="w-full border-r-2 border-gray-500 p-2">
-                {{ $evaluation->linked }}
+<div>
+        <div class="border-2 border-gray-500 mb-8">
+            <div class="bg-gray-500 text-gray-100 w-full p-1 font-bold text-lg text-center">
+                PROCESO
             </div>
-            <div class="w-full border-r-2 border-gray-500 p-2">
-                {{ $evaluation->contractors }}
+            <div class="text-center w-full grid grid-cols-2">
+                <div class="w-full bg-gray-300 font-bold border-r-2 p-2 border-b-2 border-gray-500">
+                    Nombre
+                </div>
+                <div class="w-full bg-gray-300 font-bold border-b-2 p-2 border-gray-500">
+                    Descripcion
+                </div>
             </div>
-            <div class="w-full border-r-2 border-gray-500 p-2">
-                {{ $evaluation->temporary }}
+            <div class="text-center w-full grid grid-cols-2">
+                <div class="w-full border-r-2 border-gray-500 text-left p-2">
+                    {{$evaluation->task->activity->process->name }}
+                </div>
+                <div class="w-full text-left p-2">
+                    {{ $evaluation->task->activity->process->description }}
+                </div>
             </div>
-            <div class="w-full p-2">
-                {{ $evaluation->exposure_time }}
-            </div>
-        @endforeach
+        </div>
 
-    </div>
+        <div class="border-2 border-gray-500 mb-8">
+            <div class="bg-gray-500 text-gray-100 w-full p-1 font-bold text-lg text-center">
+                ACTIVIDAD
+            </div>
+            <div class="text-center w-full grid grid-cols-2">
+                <div class="w-full bg-gray-300 font-bold border-r-2 p-2 border-b-2 border-gray-500">
+                    Nombre
+                </div>
+                <div class="w-full bg-gray-300 font-bold border-b-2 p-2 border-gray-500">
+                    Descripcion
+                </div>
+            </div>
+            <div class="text-center w-full grid grid-cols-2">
+                <div class="w-full border-r-2 border-gray-500 text-left p-2">
+                    {{ $evaluation->task->activity->name }}
+                </div>
+                <div class="w-full text-left p-2">
+                    {{ $evaluation->task->activity->description }}
+                </div>
+            </div>
+        </div>
+
+        <div class="border-2 border-gray-500 mb-8">
+            <div class="bg-gray-500 text-gray-100 w-full p-1 font-bold text-lg text-center">
+                TAREA
+            </div>
+            <div class="text-center w-full grid grid-cols-2">
+                <div class="w-full bg-gray-300 font-bold border-r-2 p-2 border-b-2 border-gray-500">
+                    Nombre
+                </div>
+                <div class="w-full bg-gray-300 font-bold border-b-2 p-2 border-gray-500">
+                    Descripcion
+                </div>
+            </div>
+            <div class="text-center w-full grid grid-cols-2">
+                <div class="w-full border-r-2 border-gray-500 text-left p-2">
+                    {{ $evaluation->task->name }}
+                </div>
+                <div class="w-full text-left p-2">
+                    {{ $evaluation->task->description }}
+                </div>
+            </div>
+        </div>
+
 </div>

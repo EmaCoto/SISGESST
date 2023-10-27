@@ -3,7 +3,6 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProofController;
 use App\Http\Livewire\Admin\Administrators\AdministratorsIndex;
-use App\Http\Livewire\Admin\Administrators\ReportAdministrators;
 use App\Http\Livewire\Admin\Dangers\DangersIndex;
 use App\Http\Livewire\Admin\Deactivated\DeactivatedIndex;
 use App\Http\Livewire\Admin\Evaluators\EvaluatorsIndex;
@@ -41,6 +40,8 @@ Route::get('/show-company/{id}', ShowCompany::class)->name('show-company');
 Route::get('/show-evaluation/{id}', ShowEvaluation::class)->name('show-evaluation');
 Route::get('/create-evaluation/{id}', CreateEvaluation::class)->name('create-evaluation');
 
+Route::get('/proof', [ProofController::class, 'index'])->name('proof');
+
 
 // HOME
 Route::view('/help', 'help')->name('help');
@@ -59,6 +60,7 @@ Route::get('/parameter', ParameterIndex::class)->middleware('can:admin')->name('
 Route::get('/dangers', DangersIndex::class)->middleware('can:admin')->name('dangers');
 Route::get('/intervention', InterventionIndex::class)->middleware('can:admin')->name('intervention');
 Route::get('/deactivated', DeactivatedIndex::class)->middleware('can:admin')->name('deactivated');
+
 
 
 
