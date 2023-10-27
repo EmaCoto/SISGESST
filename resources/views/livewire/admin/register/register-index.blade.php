@@ -19,29 +19,29 @@
                         <div class="flex flex-col m-4 sm:w-1/2">
                             <label>Nombre completo</label>
                             <input wire:model="name" type="text" class="border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">
-                            @error('name') <span class="text-red-500">{{ $message }}</span> @enderror
+                            <x-input-error for="name" />
                         </div>
                         <div class="flex flex-col m-4 sm:w-1/2">
                             <label>Correo</label>
                             <input wire:model="email" type="email" class="border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">
-                            @error('email') <span class="text-red-500">{{ $message }}</span> @enderror
+                            <x-input-error for="email" />
                         </div>
                     </div>
                     <div class="sm:flex">
                         <div class="flex flex-col m-4 sm:w-1/2">
                             <label>Contraseña</label>
                             <input wire:model="password" type="password" class="border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">
-                            @error('password') <span class="text-red-500">{{ $message }}</span> @enderror
+                            <x-input-error for="password" />
                         </div>
                         <div class="flex flex-col m-4 sm:w-1/2">
                             <label>Rol</label>
                             <select wire:model="selectedRole" class="border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">
-                                <option value="">Seleccionar Rol</option>
+                                <option value="" hidden>-- Seleccionar Rol --</option>
                                 @foreach ($roles as $role)
                                     <option>{{ $role->name }}</option>
                                 @endforeach
                             </select>
-                            @error('selectedRole') <span class="text-red-500">{{ $message }}</span> @enderror
+                            <x-input-error for="selectedRole" />
                         </div>
                     </div>
                     <div class="w-full flex justify-center">

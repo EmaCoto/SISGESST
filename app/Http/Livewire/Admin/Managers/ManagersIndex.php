@@ -38,7 +38,7 @@ class ManagersIndex extends Component
     {
 
          $managers = User::whereHas('roles', function ($query) {
-            $query->where('name', 'Gestor');
+            $query->where('name', 'Gestor de empresas');
             })
             ->where(function ($query) {
             $query->where('name', 'like', '%'.$this->search.'%')

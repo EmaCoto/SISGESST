@@ -37,11 +37,11 @@
                 </div>
                 <div class="w-full text-center mt-4 md:mt-0">
                     <div class="relative md:block flex justify-between bg-gray-500 rounded-t-md font-bold text-lg text-gray-100 py-2">
-                        <div class="ml-6 md:ml-0">NIVEL DE EXPOSICION</div>
+                        <div class="ml-6 md:ml-0">NIVEL DE EXPOSICIÓN</div>
                         @livewire('admin.parameter.edit-parameter', ['parameter' => 'exposure'])
                     </div>
                     <div class="grid grid-cols-12 font-semibold">
-                        <div class="col-span-3 bg-gray-400 text-gray-100 p-1">Nivel de exposicion</div>
+                        <div class="col-span-3 bg-gray-400 text-gray-100 p-1">Nivel de exposición</div>
                         <div class="col-span-2 flex items-center justify-center bg-gray-400 text-gray-100 p-1">Valor de
                             ND</div>
                         <div class="col-span-7 flex items-center justify-center bg-gray-400 text-gray-100 p-1">
@@ -95,7 +95,7 @@
                         @livewire('admin.parameter.edit-parameter', ['parameter' => 'consequence'])
                     </div>
                     <div class="grid grid-cols-12 font-semibold">
-                        <div class="col-span-4 bg-gray-400 text-gray-100 p-1">Nivel de exposicion</div>
+                        <div class="col-span-4 bg-gray-400 text-gray-100 p-1">Nivel de exposición</div>
                         <div class="col-span-2 flex items-center justify-center bg-gray-400 text-gray-100 p-1">Valor de
                             ND</div>
                         <div class="col-span-6 flex items-center justify-center bg-gray-400 text-gray-100 p-1">
@@ -147,7 +147,7 @@
                         @livewire('admin.parameter.edit-parameter', ['parameter' => 'acceptability'])
                     </div>
                     <div class="grid grid-cols-12 font-semibold">
-                        <div class="col-span-4 bg-gray-400 text-gray-100 p-1">Nivel de exposicion</div>
+                        <div class="col-span-4 bg-gray-400 text-gray-100 p-1">Nivel de exposición</div>
                         <div class="col-span-8 flex items-center justify-center bg-gray-400 text-gray-100 p-1">
                             Significado</div>
                     </div>

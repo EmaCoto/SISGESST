@@ -9,7 +9,7 @@
             </div>
             <x-danger-table>
                 <x-slot name="titleOne">
-                    <div class="ml-4 md:mr-0">Biologico</div>
+                    <div class="ml-4 md:mr-0">Biológico</div>
                     @livewire('admin.dangers.edit-dangers', ['danger' => 'Biológico'])
                 </x-slot>
                 <x-slot name="contentOne">
@@ -21,7 +21,7 @@
                     @endforeach
                 </x-slot>
                 <x-slot name="titleTwo">
-                    <div class="ml-4 md:mr-0">Fisico</div>
+                    <div class="ml-4 md:mr-0">Físico</div>
                     @livewire('admin.dangers.edit-dangers', ['danger' => 'Físico'])
                 </x-slot>
                 <x-slot name="contentTwo">
@@ -36,7 +36,7 @@
 
             <x-danger-table>
                 <x-slot name="titleOne">
-                    <div class="ml-4 md:mr-0">Quimicos</div>
+                    <div class="ml-4 md:mr-0">Químicos</div>
                     @livewire('admin.dangers.edit-dangers', ['danger' => 'Químico'])
                 </x-slot>
                 <x-slot name="contentOne">
@@ -48,7 +48,7 @@
                     @endforeach
                 </x-slot>
                 <x-slot name="titleTwo">
-                    <div class="ml-4 md:mr-0">Fisico - Quimico</div>
+                    <div class="ml-4 md:mr-0">Físico - Químico</div>
                     @livewire('admin.dangers.edit-dangers', ['danger' => 'Físico-Químico'])
                 </x-slot>
                 <x-slot name="contentTwo">
@@ -63,7 +63,7 @@
 
             <x-danger-table>
                 <x-slot name="titleOne">
-                    <div class="ml-4 md:mr-0">Biomecanicos</div>
+                    <div class="ml-4 md:mr-0">Biomecánicos</div>
                     @livewire('admin.dangers.edit-dangers', ['danger' => 'Biomecánico'])
                 </x-slot>
                 <x-slot name="contentOne">
@@ -75,7 +75,7 @@
                     @endforeach
                 </x-slot>
                 <x-slot name="titleTwo">
-                    <div class="ml-4 md:mr-0">Mecanico</div>
+                    <div class="ml-4 md:mr-0">Mecánico</div>
                     @livewire('admin.dangers.edit-dangers', ['danger' => 'Mecánico'])
                 </x-slot>
                 <x-slot name="contentTwo">
@@ -90,7 +90,7 @@
 
             <x-danger-table>
                 <x-slot name="titleOne">
-                    <div class="ml-4 md:mr-0">Electrico</div>
+                    <div class="ml-4 md:mr-0">Eléctrico</div>
                     @livewire('admin.dangers.edit-dangers', ['danger' => 'Eléctrico'])
                 </x-slot>
                 <x-slot name="contentOne">
@@ -129,7 +129,7 @@
                     @endforeach
                 </x-slot>
                 <x-slot name="titleTwo">
-                    <div class="ml-4 md:mr-0">Publico</div>
+                    <div class="ml-4 md:mr-0">Público</div>
                     @livewire('admin.dangers.edit-dangers', ['danger' => 'Público'])
                 </x-slot>
                 <x-slot name="contentTwo">
@@ -156,7 +156,7 @@
                     @endforeach
                 </x-slot>
                 <x-slot name="titleTwo">
-                    <div class="ml-4 md:mr-0">Fenomenos Naturales</div>
+                    <div class="ml-4 md:mr-0">Fenómenos Naturales</div>
                     @livewire('admin.dangers.edit-dangers', ['danger' => 'Fenómenos naturales'])
                 </x-slot>
                 <x-slot name="contentTwo">

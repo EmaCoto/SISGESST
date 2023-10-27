@@ -13,7 +13,7 @@ class ShowActivity extends Component
 
     // public $processes, $selectedProcess, $process_id, $activities;
     public $openDelete = false;
-    public $processId, $processName, $companyId, $activityDelete;
+    public $processId, $processName, $companyId, $activityDelete, $search;
 
     protected $listeners = ['processFact', 'changeStatusProcess', 'changeStatus'];
 
@@ -33,7 +33,12 @@ class ShowActivity extends Component
     public function render()
     {
         $activities = Activity::where('process_id', $this->processId)
-                                ->where('status', 'sin evaluar')->paginate(5);
+          ->where('status', 'sin evaluar')
+          ->where(function ($query) {
+              $query->where('name', 'like', '%'.$this->search.'%')
+                  ->orWhere('id', 'like', '%'.$this->search.'%')
+                  ->orWhere('description', 'like', '%'.$this->search.'%');
+              })->paginate(5);
 
         return view('livewire.processes.activities.show-activity', [
             'activities' => $activities,
