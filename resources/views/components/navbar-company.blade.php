@@ -25,23 +25,9 @@
                     <a href="{{route('show-company', ['id' => $company->id])}}"
                         class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Procesos sin evaluar</a>
                 </li>
-                @php
-                    $status = "active";
-                @endphp
-                @if ($status == "disable")
-                    <li>
-                        <a href="#"
-                            class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Activar</a>
-                    </li>
-                @else
-                    <li>
-                        <a href="#"
-                            class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Desactivar</a>
-                    </li>
-                @endif
                 <li>
-                    <a href="#"
-                        class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Eliminar</a>
+                    <button wire:click="deactivateCompany"
+                        class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Desactivar</button>
                 </li>
             </div>
         </ul>

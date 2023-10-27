@@ -2,45 +2,45 @@
 
 namespace App\Http\Livewire\Companies;
 
-use App\Models\Activity;
 use App\Models\Company;
-use App\Models\Process;
-use App\Models\Task;
 use Livewire\Component;
-use Livewire\Livewire;
+
 
 class ShowCompany extends Component
 {
-    public $company, $activity, $task;
-    public $openProcesses = [];
+    public $company, $idCompany, $nitDeactive;
+    public $openDeactive = false;
     protected $listeners = ['render'];
+
+    protected $rules = [
+        'nitDeactive' => 'required',
+    ];
 
     public function mount($id)
     {
+        $this->idCompany = $id;
         $this->company = Company::find($id);
-        // $process = Process::where('company_id', $this->company->id)->get();
-        // $this->activity = Activity::whereIn('process_id', $process->pluck('id'))->get();
-        // $this->task = Task::whereIn('process_id', $this->activity->pluck('id'))->get();
     }
 
-    // public function toggleProcess($processId)
-    // {
-    //     if (in_array($processId, $this->openProcesses)) {
-    //         // El proceso ya está abierto, ciérralo
-    //         $this->openProcesses = array_diff($this->openProcesses, [$processId]);
-    //     } else {
-    //         // Cierra cualquier proceso abierto y abre el nuevo proceso
-    //         $this->openProcesses = [$processId];
+    public function deactivateCompany()
+    {
+        $this->openDeactive = true;
+    }
 
-    //         // Emite un evento para mostrar el componente ShowActivity con el ID del proceso.
-    //         $this->emit('showActivity', $this->openProcesses);
-    //     }
-    // }
+    public function deactiveConfirmed()
+    {
+        $this->validate();
+        if ($this->nitDeactive == $this->company->nit) {
+            Company::where('id', $this->idCompany)->update([
+                'is_active' => 0,
+            ]);
+            return redirect()->route('dashboard');
+        }
+    }
+
 
     public function render()
     {
         return view('livewire.companies.show-company');
     }
-
-
 }

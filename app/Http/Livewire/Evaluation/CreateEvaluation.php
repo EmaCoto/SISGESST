@@ -1,7 +1,10 @@
 <?php
+
 namespace App\Http\Livewire\Evaluation;
 
+use App\Models\Activity;
 use App\Models\Evaluation;
+use App\Models\Process;
 use App\Models\Task;
 use Livewire\Component;
 
@@ -162,12 +165,35 @@ class CreateEvaluation extends Component
         $evaluation->interventionMeasures()->attach($this->administrativeControl, ['suggestion' => $this->administrativeControlSuggestion]);
         $evaluation->interventionMeasures()->attach($this->personalProtection, ['suggestion' => $this->personalProtectionSuggestion]);
 
-        Task::where('id', $this->taskId)->update([
+        $queryTask = new Task;
+        $queryActicity = new Activity;
+
+        $queryTask::where('id', $this->taskId)->update([
             'status' => 'Evaluado',
         ]);
+
+        $taskStatus = $queryTask::where('status', 'sin evaluar')
+            ->where('activity_id', $this->activityId)
+            ->get();
+        if (count($taskStatus) == 0) {
+            $queryActicity::where('id', $this->activityId)->update([
+                'status' => 'Evaluado',
+            ]);
+        }
+
+        $activityStatus = $queryActicity::where('status', 'sin evaluar')
+            ->where('process_id', $this->processId)
+            ->get();
+
+        if (count($activityStatus) == 0) {
+            Process::where('id', $this->processId)->update([
+                'status' => 'Evaluado',
+            ]);
+        }
+
         $this->emit('alert');
         return redirect()->route('show-company', ['id' => $this->processId]);
-    }
+    }   
     public function render()
     {
         return view('livewire.evaluation.create-evaluation');

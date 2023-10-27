@@ -11,9 +11,9 @@
     <x-dialog-modal wire:model="openDetail" maxWidth="4xl">
         <x-slot name="content">
             <div id="contentEval" class="relative pr-2 h-[83vh] overflow-y-scroll">
-                {{-- @livewire('evaluation.details.detail-one', ['evaluations' => $evaluations]) --}}
-                {{-- @livewire('evaluation.details.detail-two', ['evaluations' => $evaluations]) --}}
-                {{-- @livewire('evaluation.details.detail-three', ['evaluations' => $evaluations]) --}}
+                @livewire('evaluation.details.detail-one', ['evaluations' => $evaluations])
+                @livewire('evaluation.details.detail-two', ['evaluations' => $evaluations])
+                @livewire('evaluation.details.detail-three', ['evaluations' => $evaluations])
                 @livewire('evaluation.details.detail-four', ['evaluations' => $evaluations])
                 @livewire('evaluation.details.detail-five', ['evaluations' => $evaluations])
             </div>

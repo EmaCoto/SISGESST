@@ -7,7 +7,7 @@ use Livewire\Component;
 class DetailOne extends Component
 {
     public $evaluations;
-    public function mount($evaluations, $tasks)
+    public function mount($evaluations)
     {
         $this->evaluations = $evaluations;
     }
