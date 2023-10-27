@@ -4,9 +4,9 @@
             <label for="buscarEmp"
                 class="shadow-lg shadow-gray-500 bg-gray-100 col-span-3 md:col-span-2 rounded-lg flex items-center justify-center w-full px-3">Buscar
                 empresa</label>
-            <input wire:model="search" class="shadow-lg bg-gray-100 shadow-gray-500 focus:ring-green-500 focus:bg-white col-span-7 rounded-lg border-none"
+            <input wire:model.lazy="search" class="shadow-lg bg-gray-100 shadow-gray-500 focus:ring-green-500 focus:bg-white col-span-7 rounded-lg border-none"
                 placeholder="Example: Walter o Example: 45740" type="text" id="buscarEmp">
-            <div class="shadow-lg shadow-gray-500 bg-gray-100 col-span-2 md:col-span-1 rounded-lg flex align-middle justify-center">
+            <div class="shadow-lg shadow-gray-500 bg-gray-100 hover:bg-white active:bg-gray-100 col-span-2 md:col-span-1 rounded-lg flex align-middle justify-center">
                 <button class="px-3">Buscar</button>
             </div>
 

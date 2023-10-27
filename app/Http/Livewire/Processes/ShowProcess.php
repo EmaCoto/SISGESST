@@ -10,7 +10,7 @@ class ShowProcess extends Component
 {
     use WithPagination;
 
-    public $companyId, $processId, $processName, $processDelete;
+    public $companyId, $processId, $processName, $processDelete, $search;
     public $open = false, $openDelete = false;
 
     protected $listeners = ['render'];
@@ -32,13 +32,6 @@ class ShowProcess extends Component
         $this->emitTo('activities.create-activity', 'companyId', $companyId);
     }
 
-    public function render()
-    {
-        $processes = Process::where('company_id', $this->companyId)->paginate(5);
-        return view('livewire.processes.show-process', [
-            'processes' => $processes,
-        ]);
-    }
 
     public function processId($id, $name, $companyId)
     {
@@ -64,4 +57,19 @@ class ShowProcess extends Component
         $this->openDelete = false;
         $this->emit('alertDelete');
     }
+
+    public function render()
+    {
+        $processes = Process::where('company_id', $this->companyId)
+        ->where(function ($query) {
+            $query->where('name', 'like', '%'.$this->search.'%')
+                ->orWhere('id', 'like', '%'.$this->search.'%')
+                ->orWhere('description', 'like', '%'.$this->search.'%');
+            })
+        ->paginate(5);
+        return view('livewire.processes.show-process', [
+            'processes' => $processes,
+        ]);
+    }
+
 }

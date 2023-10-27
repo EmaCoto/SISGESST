@@ -6,7 +6,12 @@
                 class="bg-green-600 p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-2/4 mx-auto text-center text-gray-100">
                 Procesos
             </h1>
-
+            <div class="flex w-full items-center text-lg">
+                <input wire:model.lazy="search" class="w-full md:w-1/2 my-4 focus:ring-green-500 focus:bg-white  rounded-lg border-none" placeholder="Ejemplo: desarrollar mecanismos..." type="text" id="buscarEmp">
+                <div class="ml-5 text-gray-600 py-1 bg-gray-100 hover:bg-white active:bg-gray-100 col-span-2 md:col-span-1 rounded-lg flex align-middle justify-center">
+                    <button class="px-3">Buscar</button>
+                </div>
+            </div>
             @if ($processes->count() > 0)
                 <table class="w-full rounded-lg overflow-hidden">
                     <thead class="rounded-t-lg">
@@ -41,7 +46,8 @@
                                         <div class="flex group relative">
                                             <span
                                                 class="w-32 py-1 text-gray-100 group-hover:opacity-100 -top-8 -left-14 opacity-0 absolute bg-green-600 rounded-lg px-2">Ver
-                                                Actividades</span>
+                                                Actividades
+                                            </span>
                                             <div>
                                                 <button
                                                     wire:click="processId('{{ $process->id }}', '{{ $process->name }}', '{{ $companyId }}')"
@@ -64,7 +70,9 @@
                                                     class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">
                                                     Editar
                                                 </span>
-                                                @livewire('processes.edit-process', ['process' => $process], key(time() . $process->id))
+                                                <div>
+                                                    @livewire('processes.edit-process', ['process' => $process], key(time() . $process->id))
+                                                </div>
                                             </div>
                                             <div class="flex group relative">
                                                 <span

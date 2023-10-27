@@ -4,6 +4,13 @@
         <h1 class="bg-[#3498db] p-1 mt-2 mb-4 font-semibold text-2xl rounded-lg w-full mx-auto text-center text-gray-100">
             Actividades - {{ $processName }}
         </h1>
+        <div class="flex w-full items-center text-lg">
+            <input wire:model.lazy="search" class="w-full md:w-1/2 my-4 focus:ring-blue-500 focus:bg-white  rounded-lg border-none" placeholder="Ejemplo: desarrollar mecanismos..." type="text" id="buscarEmp">
+            <div class="ml-5 text-gray-600 py-1 bg-gray-100 hover:bg-white active:bg-gray-100 col-span-2 md:col-span-1 rounded-lg flex align-middle justify-center">
+                <button class="px-3">Buscar</button>
+            </div>
+        </div>
+
         @if ($activities->count() > 0)
             <table class="w-full rounded-lg overflow-hidden">
                 <thead class="rounded-t-lg">
@@ -37,22 +44,23 @@
                                 <div class="flex item-center justify-center">
                                     @can('edit.delete.activities')
                                         <div class="flex group relative">
-                                            <span
-                                                class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">Editar</span>
-                                            @livewire('processes.activities.edit-activity', ['activity' => $activity, 'companyId' => $companyId], key(time() . $activity->id))
+                                            <span class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">Editar</span>
+                                            <div>@livewire('processes.activities.edit-activity', ['activity' => $activity, 'companyId' => $companyId], key(time() . $activity->id))</div>
                                         </div>
                                         <div class="flex group relative">
                                             <span
                                                 class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-6 opacity-0 absolute bg-red-600 rounded-lg px-2">Eliminar</span>
-                                            <button wire:click="confirmDelete({{ $activity->id }})"
-                                                class="w-4 mr-2 transform
-                                            text-red-600 hover:text-gray-400 hover:scale-110">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
-                                            </button>
+                                            <div>
+                                                <button wire:click="confirmDelete({{ $activity->id }})"
+                                                    class="w-4 mr-2 transform
+                                                text-red-600 hover:text-gray-400 hover:scale-110">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                    </svg>
+                                                </button>
+                                            </div>
                                         </div>
                                     @endcan
                                     @if ($openDelete)
