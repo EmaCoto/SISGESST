@@ -23,13 +23,33 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'dashboard'])->syncRoles([$role1, $role2, $role3]);
 
 
-        // ADMIN PERMISSIONS
-        Permission::create(['name' => 'create.companies'])->assignRole([$role1]);
-        Permission::create(['name' => 'edit.delete.procceses'])->assignRole([$role1]);
-        Permission::create(['name' => 'process.activity.task.create'])->assignRole([$role1]);
-        Permission::create(['name' => 'edit.delete.activities'])->assignRole([$role1]);
-        Permission::create(['name' => 'edit.delete.task'])->assignRole([$role1]);
-        Permission::create(['name' => 'administrator'])->assignRole([$role1]);
-        Permission::create(['name' => 'admin'])->assignRole([$role1]);
+        // COMPAÑIAS
+        Permission::create(['name' => 'Crear Compañías'])->syncRoles([$role1]);
+        Permission::create(['name' => 'Editar Compañías'])->syncRoles([$role1, $role3]);
+
+
+
+        // PROCESOS
+        Permission::create(['name' => 'Crear Procesos'])->syncRoles([$role1]);
+        Permission::create(['name' => 'Editar Procesos'])->syncRoles([$role1]);
+        Permission::create(['name' => 'Eliminar Procesos'])->syncRoles([$role1]);
+
+
+        // ACTIVIDADES
+        Permission::create(['name' => 'Crear Actividades'])->syncRoles([$role1]);
+        Permission::create(['name' => 'Editar Actividades'])->syncRoles([$role1]);
+        Permission::create(['name' => 'Eliminar Actividades'])->syncRoles([$role1]);
+
+
+        // TAREAS
+        Permission::create(['name' => 'Crear Tareas'])->syncRoles([$role1]);
+        Permission::create(['name' => 'Editar Tareas'])->syncRoles([$role1]);
+        Permission::create(['name' => 'Eliminar Tareas'])->syncRoles([$role1]);
+
+
+        // ADMINISTRADOR
+        Permission::create(['name' => 'Administrador'])->syncRoles([$role1]);
+        Permission::create(['name' => 'Desactivar Empresa'])->syncRoles([$role1]);
+
     }
 }

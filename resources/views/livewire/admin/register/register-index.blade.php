@@ -44,6 +44,7 @@
                             <x-input-error for="selectedRole" />
                         </div>
                     </div>
+                    
                     <div class="w-full flex justify-center">
                         <button type="submit" class="bg-green-600 rounded-lg  p-2 text-white m-4 2xl:w-1/4 w-2/3 text-xl mt-20">Registrar Usuario</button>
                     </div>

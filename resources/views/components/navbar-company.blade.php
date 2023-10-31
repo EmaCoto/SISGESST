@@ -14,9 +14,12 @@
         </button>
         <ul id="dropdown-example" class="hidden absolute w-48 py-1 z-30">
             <div class="bg-[#16a085] text-gray-100 rounded-lg">
+                @can('Editar Compañías')
                 <li>
                     @livewire('companies.edit-company', ['company' => $company])
                 </li>
+                @endcan
+
                 <li>
                     <a href="{{route('show-evaluation', ['id' => $company->id])}}"
                         class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Procesos evaluados</a>
@@ -25,10 +28,12 @@
                     <a href="{{route('show-company', ['id' => $company->id])}}"
                         class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Procesos sin evaluar</a>
                 </li>
-                <li>
-                    <button wire:click="deactivateCompany"
-                        class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Desactivar</button>
-                </li>
+                @can ('Desactivar Empresa')
+                    <li>
+                        <button wire:click="deactivateCompany"
+                            class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-5 hover:bg-gray-100 hover:text-gray-600">Desactivar</button>
+                    </li>
+                @endcan
             </div>
         </ul>
     </div>
@@ -42,9 +47,15 @@
         </div>
     </div>
     <div class="md:right-10 top-40 md:top-36 absolute lg:relative lg:top-0 lg:w-2/5 flex justify-center gap-4 text-gray-100 font-semibold text-md">
-        @can('process.activity.task.create')
+        @can('Crear Procesos')
             @livewire('processes.create-process', ['companyId' => $company->id, 'companyName' => $company->name])
+        @endcan
+
+        @can('Crear Actividades')
             @livewire('processes.activities.create-activity', ['companyId' => $company->id])
+        @endcan
+
+        @can('Crear Tareas')
             @livewire('processes.tasks.create-task', ['companyId' => $company->id])
         @endcan
 
