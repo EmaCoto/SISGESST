@@ -41,8 +41,8 @@
                                 <h1 class="font-semibold ">Criterios</h1>
                                 <i class="fa-solid fa-list-check text-2xl"></i>
                             </div>
-                            <div class="h-full bg-gray-50 p-2">
-                                *IMAGENES*
+                            <div class="h-full bg-gray-50">
+                                <img src="{{ asset('img/criterios.png') }}" alt="" class="h-full">
                             </div>
                         </div>
                     </a>
@@ -52,8 +52,8 @@
                                 <h1 class="font-semibold ">Peligros</h1>
                                 <i class="fa-solid fa-triangle-exclamation text-2xl"></i>
                             </div>
-                            <div class="h-full bg-gray-50 p-2">
-                                *IMAGENES*
+                            <div class="h-full bg-gray-50">
+                                <img src="{{ asset('img/peligros.png') }}" alt="" class="h-full">
                             </div>
                         </div>
                     </a>
@@ -63,8 +63,8 @@
                                 <h1 class="font-semibold ">Medidas de intervención</h1>
                                 <i class="fa-solid fa-scale-balanced text-2xl"></i>
                             </div>
-                            <div class="h-full bg-gray-50 p-2">
-                                *IMAGENES*
+                            <div class="h-full bg-gray-50">
+                                <img src="{{ asset('img/medidas.png') }}" alt="" class="h-full">
                             </div>
                         </div>
                     </a>

@@ -18,6 +18,12 @@
                 <hr class="w-full items-center">
             </div>
             <li>
+                <a href="{{ route('rol') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('rol') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
+                    <i class="fa-solid fa-square-plus group-hover:text-white"></i>
+                    <span class="group-hover:text-white ml-3">Crear roles y permisos</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('registerperson') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('registerperson') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-arrow-right-to-bracket group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Registrar</span>
@@ -39,12 +45,6 @@
                 <a href="{{ route('managers') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('managers') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-clipboard-list group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Gestores de empresas</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('rol') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('rol') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
-                    <i class="fa-solid fa-square-plus group-hover:text-white"></i>
-                    <span class="group-hover:text-white ml-3">Crear roles y permisos</span>
                 </a>
             </li>
             <hr class="w-full items-center">

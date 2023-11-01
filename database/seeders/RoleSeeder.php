@@ -25,7 +25,7 @@ class RoleSeeder extends Seeder
 
         // COMPAÑIAS
         Permission::create(['name' => 'Crear Compañías'])->syncRoles([$role1]);
-        Permission::create(['name' => 'Editar Compañías'])->syncRoles([$role1, $role3]);
+        Permission::create(['name' => 'Editar Compañías'])->syncRoles([$role1]);
 
 
 

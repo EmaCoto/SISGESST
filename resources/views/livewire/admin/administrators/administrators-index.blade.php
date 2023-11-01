@@ -11,7 +11,7 @@
             </div>
             <table class="w-full table-auto rounded-lg overflow-hidden mt-4">
                 <thead class="rounded-t-lg">
-                    <tr class="bg-[#001B9E] text-gray-100 uppercase text-sm leading-normal">
+                    <tr class="bg-[#db9616] text-gray-100 uppercase text-sm leading-normal">
                         <th class="py-3 px-6 text-left">N°</th>
                         <th class="py-3 px-6 text-left">Nombre</th>
                         <th class="hidden md:block py-3 px-6 text-center">Correo</th>
