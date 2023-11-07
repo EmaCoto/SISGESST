@@ -19,7 +19,7 @@
             </div>
             <button wire:click="$set('openDetail', false)"
                 class="mt-6 bg-gray-300 px-5 py-1 rounded-lg font-semibold text-lg text-gray-600">Cerrar</button>
-                <a href="{{ route('administrators.report', ['id' => $companyId]) }}">imprimir</a>
+                <a href="{{ route('administrators.report', ['id' => $evaluations->id]) }}">imprimir</a>
                 {{-- <button wire:click="report"
                 class="mt-6 bg-gray-300 px-5 py-1 rounded-lg font-semibold text-lg text-gray-600">IMPRIMIR</button> --}}
         </x-slot>
