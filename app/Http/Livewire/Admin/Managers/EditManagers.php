@@ -9,14 +9,15 @@ use Spatie\Permission\Models\Role;
 class EditManagers extends Component
 {
     public $open = false;
-    public $user, $name, $email, $permissions;
+    public $user, $name, $email, $password, $permissions;
     public $selectedRole;
     public $selectedPermissions = [];
     public $roles;
 
     protected $rules = [
-        'name' => 'required',
+        'name' => 'required|regex:/^[a-zA-ZáéíóúüÜÁÉÍÓÚ\s]+$/|max:255',
         'email' => 'required|email',
+        'password' => 'sometimes|min:8'
     ];
 
     public function mount($user)
@@ -25,6 +26,8 @@ class EditManagers extends Component
             $this->user = $user;
             $this->name = $user->name;
             $this->email = $user->email;
+            $this->password = $user->password;
+
 
             $this->roles = Role::all();
 
@@ -40,11 +43,17 @@ class EditManagers extends Component
     {
         $this->validate();
 
-        $this->user->update([
+        $data = [
             'name' => $this->name,
             'email' => $this->email,
-        ]);
+        ];
 
+        // Verifica si se proporcionó una nueva contraseña
+        if ($this->password) {
+            $data['password'] = bcrypt($this->password);
+        }
+
+        $this->user->update($data);
 
         $this->user->syncRoles([$this->selectedRole]);
         $this->user->syncPermissions($this->selectedPermissions);

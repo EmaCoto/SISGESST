@@ -24,13 +24,12 @@ class CreateTask extends Component
     public function mount($companyId)
     {
         $this->companyProcessId = $companyId;
-        $this->processes = Process::where('company_id', $this->companyProcessId)->get();
-
         $this->selectedActivity();
     }
 
     public function selectedActivity()
     {
+        $this->processes = Process::where('company_id', $this->companyProcessId)->get();
         $this->selectedActivity = Activity::whereIn('process_id', $this->processes->pluck('id'))->get();
     }
 

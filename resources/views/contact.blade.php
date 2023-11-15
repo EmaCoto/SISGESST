@@ -59,9 +59,7 @@
                     </div>
                     <div>
                         <h1 class="text-2xl font-bold text-[#FFAD19]">SISGESST</h1>
-                        <p class="h-16 text-lg">Proteger la vida y el bienestar de los trabajadores es una cultura de todas las organizaciones
-
-                        </p>
+                        <p class="h-16 text-lg">Proteger la vida y el bienestar de los trabajadores es cultura de nuestra organización/p>
                     </div>
                 </div>
                 <div>

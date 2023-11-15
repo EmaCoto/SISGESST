@@ -3,8 +3,9 @@
         <x-aside-admin />
 
         <x-content-admin>
+
             <div class="flex w-full items-center text-lg">
-                <input wire:model.lazy="search" class="w-full md:w-1/2 my-4 focus:ring-green-500 focus:bg-white  rounded-lg border-none" placeholder="Ejemplo: Alexis Sierra" type="text" id="buscarEmp">
+                <input wire:model.lazy="search" class="w-full md:w-1/2 my-4 focus:ring-blue-600 focus:bg-white  rounded-lg border-none" placeholder="Ejemplo: Alexis Sierra" type="text" id="buscarEmp">
                 <div class="ml-5 text-gray-600 py-1 bg-gray-100 hover:bg-white active:bg-gray-100 col-span-2 md:col-span-1 rounded-lg flex align-middle justify-center">
                     <button class="px-3">Buscar</button>
                 </div>
@@ -15,33 +16,42 @@
                     <tr class="bg-[#db9616] text-gray-100 uppercase text-sm leading-normal">
                         <th class="py-3 px-6 text-left">N°</th>
                         <th class="py-3 px-6 text-left">Nombre</th>
+                        <th class="py-3 px-6 text-left">Rol</th>
                         <th class="hidden md:block py-3 px-6 text-center">Correo</th>
                         <th class="py-3 px-6 text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white text-gray-600 text-sm font-light">
-                    @foreach ($managers as $manager)
+                    @foreach ($users as $user)
                         <tr class="border-b border-gray-200 hover:bg-gray-100">
                             <td class="py-3 px-6 text-left">
                                 <div class="flex items-center">
-                                    <span class="font-medium ">{{ $manager->id }}</span>
+                                    <span class="font-medium ">{{ $user->id }}</span>
                                 </div>
                             </td>
                             <td class="py-3 px-6 text-left">
                                 <div class="flex items-center">
-                                    <span>{{ $manager->name }}</span>
+                                    <span>{{ $user->name }}</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-6 text-left">
+                                <div class="flex items-center">
+                                    @foreach ($user->roles as $role)
+                                        {{ $role->name }}
+                                    @endforeach
                                 </div>
                             </td>
                             <td class="hidden md:block py-3 px-6 text-justify">
                                 <div class="flex items-center justify-center">
-                                    <span>{{ $manager->email }}</span>
+                                    <span>{{ $user->email }}</span>
                                 </div>
                             </td>
                             <td class="px-6 text-center">
                                 <div class="flex item-center justify-center">
-                                    @livewire('admin.managers.edit-managers', ['user' => $manager], key($manager->id))
+                                    {{-- @livewire('admin.user.edit-user') --}}
+
                                     <div>
-                                        <button wire:click="confirmDelete({{ $manager->id }})"
+                                        <button wire:click="confirmDelete({{ $user->id }})"
                                             class="w-4 text-red-600 hover:text-gray-400 hover:scale-110">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -50,7 +60,7 @@
                                     </div>
                                     @if ($openDelete)
                                         <div class="fixed z-50 inset-0 flex items-center justify-center" wire:click="$set('openDelete', false)">
-                                            <div class="absolute inset-0 z-40 bg-black opacity-40 modal-overlay"></div>
+                                            <div class="absolute inset-0 z-40 bg-black opacity-10 modal-overlay"></div>
                                             <div class="z-50 w-11/12 mx-auto overflow-y-auto bg-white border border-red-500 rounded-xl modal-container md:max-w-md">
                                                 <!-- Content of the modal -->
                                                 <div class="flex gap-3 py-2 bg-red-500 border border-red-500">
@@ -81,7 +91,7 @@
                     @endforeach
                 </tbody>
             </table>
-            {{ $managers->links() }}
+            {{ $users->links() }}
         </x-content-admin>
     </main>
 </div>

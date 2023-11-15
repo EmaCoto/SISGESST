@@ -24,6 +24,11 @@
                         <x-input-error for="email" />
                     </div>
                     <div class="flex flex-col m-4">
+                        <label class="text-left font-bold">Contraseña:</label>
+                        <input wire:model="password" type="password" class="border-gray-300 rounded-md focus:ring-1 focus:ring-blue-600 focus:border-blue-600 bg-[#EEEFF1] focus:bg-white">
+                        <x-input-error for="password" />
+                    </div>
+                    <div class="flex flex-col m-4">
                         <label class="text-left font-bold">Rol:</label>
                         <select wire:model="selectedRole" class="border-gray-300 rounded-md focus:ring-1 focus:ring-blue-600 focus:border-blue-600 bg-[#EEEFF1] focus:bg-white">
                             @foreach ($roles as $role)
@@ -48,7 +53,7 @@
 
             <div class="w-4/5 md:w-3/5 mx-auto flex justify-between mt-6 mb-3">
                 <button wire:click="$set('open', false)" class="bg-gray-300 px-5 py-1 rounded-lg font-semibold text-lg text-gray-600">Cancelar</button>
-                <button wire:click="updateManager" class="bg-blue-500 px-5 py-1 rounded-lg font-semibold text-lg text-gray-100">Editar</button>
+                <button wire:click="updateManager" class="bg-blue-500 px-5 py-1 rounded-lg font-semibold text-lg text-gray-100">Confirmar</button>
             </div>
         </x-slot>
     </x-dialog-modal>

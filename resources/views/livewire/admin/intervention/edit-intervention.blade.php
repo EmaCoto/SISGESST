@@ -6,7 +6,7 @@
         <x-slot name="content">
             <div class="md:flex">
                 <div class="bg-green-600 p-1 font-semibold text-2xl rounded-lg w-5/6 mx-auto text-center text-gray-100">
-                    Editar Medida de intervencion: {{ $intervention }}
+                    Editar Medida de intervención: {{ $intervention }}
                 </div>
                 @livewire('admin.intervention.create-intervention', ['intervention' => $intervention])
             </div>
@@ -16,7 +16,7 @@
                     @foreach ($interventionDescription as $index => $name)
                         <div class="bg-gray-400 py-1 px-4 rounded-lg mt-6">
                             <x-input wire:model="interventionId.{{ $index }}" hidden/>
-                            <x-label>Intervencion</x-label>
+                            <x-label>Intervención</x-label>
                             <textarea wire:model="interventionDescription.{{ $index }}"
                                 class="bg-gray-200 focus:bg-gray-50 border-2 border-gray-300 focus:border-green-600 focus:ring-0 rounded-md shadow-sm w-full h-24"></textarea>
                             <x-input-error for="interventionDescription.{{ $index }}" />

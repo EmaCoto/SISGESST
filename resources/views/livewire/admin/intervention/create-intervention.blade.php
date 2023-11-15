@@ -8,7 +8,7 @@
             </div>
 
             <div class="px-6">
-                <x-label>Medida intervencion:</x-label>
+                <x-label>Medida intervención:</x-label>
                 <textarea wire:model="interventionDescription"
                     class="bg-gray-200 focus:bg-gray-50 border-2 border-gray-300 focus:border-green-600 focus:ring-0 rounded-md shadow-sm w-full h-24"></textarea>
                 <x-input-error for="interventionDescription" />

@@ -11,6 +11,7 @@ use App\Http\Livewire\Admin\Managers\ManagersIndex;
 use App\Http\Livewire\Admin\Parameter\ParameterIndex;
 use App\Http\Livewire\Admin\Register\RegisterIndex;
 use App\Http\Livewire\Admin\Roles\CreateRol;
+use App\Http\Livewire\Admin\User\UserIndex;
 use App\Http\Livewire\Companies\ShowCompany;
 use App\Http\Livewire\Evaluation\CreateEvaluation;
 use App\Http\Livewire\Evaluation\ShowEvaluation;
@@ -58,6 +59,8 @@ Route::get('/dangers', DangersIndex::class)->middleware('can:Administrador')->na
 Route::get('/intervention', InterventionIndex::class)->middleware('can:Administrador')->name('intervention');
 Route::get('/deactivated', DeactivatedIndex::class)->middleware('can:Administrador')->name('deactivated');
 Route::get('/rol', CreateRol::class)->middleware('can:Administrador')->name('rol');
+Route::get('/user', UserIndex::class)->middleware('can:Administrador')->name('user.index');
+
 
 
 

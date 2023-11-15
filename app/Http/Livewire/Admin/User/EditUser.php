@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Evaluators;
+namespace App\Http\Livewire\Admin\User;
 
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
-class EditEvaluators extends Component
+class EditUser extends Component
 {
     public $open = false;
     public $user, $name, $email, $password, $permissions;
@@ -33,7 +33,7 @@ class EditEvaluators extends Component
 
             $this->permissions = Permission::all();
 
-            $this->selectedRole = $user->getRoleNames()->first();
+            $this->selectedRole = $user->getRoleNames();
             $role = Role::findByName($this->selectedRole);
             $this->selectedPermissions = $role->permissions->pluck('id')->toArray();
         }
@@ -65,6 +65,6 @@ class EditEvaluators extends Component
 
     public function render()
     {
-        return view('livewire.admin.evaluators.edit-evaluators');
+        return view('livewire.admin.user.edit-user');
     }
 }

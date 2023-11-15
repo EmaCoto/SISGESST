@@ -24,6 +24,11 @@
                         <x-input-error for="email" />
                     </div>
                     <div class="flex flex-col m-4">
+                        <label class="text-left font-bold">Contraseña:</label>
+                        <input wire:model="password" type="password" class="border-gray-300 rounded-md focus:ring-1 focus:ring-blue-600 focus:border-blue-600 bg-[#EEEFF1] focus:bg-white">
+                        <x-input-error for="password" />
+                    </div>
+                    <div class="flex flex-col m-4">
                         <label class="text-left font-bold">Rol:</label>
                         <select wire:model="selectedRole" class="border-gray-300 rounded-md focus:ring-1 focus:ring-blue-600 focus:border-blue-600 bg-[#EEEFF1] focus:bg-white">
                             @foreach ($roles as $role)
