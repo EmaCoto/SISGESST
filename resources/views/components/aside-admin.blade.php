@@ -18,11 +18,27 @@
                 <hr class="w-full items-center">
             </div>
             <li>
+                <a href="{{ route('rol') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('rol') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
+                    <i class="fa-solid fa-square-plus group-hover:text-white"></i>
+                    <span class="group-hover:text-white ml-3">Crear roles y permisos</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('registerperson') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('registerperson') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-solid fa-arrow-right-to-bracket group-hover:text-white"></i>
                     <span class="group-hover:text-white ml-3">Registrar</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('user.index') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('user.index') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
+                    <i class="fa-solid fa-users group-hover:text-white"></i>
+                    <span class="group-hover:text-white ml-3">Usuarios</span>
+                </a>
+            </li>
+            <div class="flex justify-center items-center text-gray-300 text-sm">
+                <h1 class="mr-4 w-48">Accesos rápidos</h1>
+                <hr class="w-full items-center">
+            </div>
             <li>
                 <a href="{{ route('evaluators') }}" class="flex items-center p-2 rounded-lg group {{ request()->routeIs('evaluators') ? 'text-white bg-black bg-opacity-50 hover:bg-black hover:bg-opacity-50' : 'bg-opacity-50 hover:bg-black hover:bg-opacity-40' }}">
                     <i class="fa-regular fa-id-card group-hover:text-white"></i>

@@ -3,10 +3,7 @@
         <x-aside-admin />
         <div id="contentEval"
             class="relative px-4 py-2 lg:w-[85vw] lg:h-[93.1vh] w-[100vw] h-[100vh] overflow-y-scroll overflow-x-hidden bg-gray-200 ">
-            <div
-                class="bg-green-600 p-1 mt-6 mb-10 font-semibold text-3xl rounded-lg w-7/12 mx-auto text-center text-gray-100">
-                Peligros
-            </div>
+            <div class="text-[#FFAD19] p-1 mt-6 mb-10 font-bold text-5xl rounded-lg w-7/12 mx-auto text-center">Peligros</div>
             <x-danger-table>
                 <x-slot name="titleOne">
                     <div class="ml-4 md:mr-0">Biológico</div>

@@ -10,6 +10,8 @@ use App\Http\Livewire\Admin\Intervention\InterventionIndex;
 use App\Http\Livewire\Admin\Managers\ManagersIndex;
 use App\Http\Livewire\Admin\Parameter\ParameterIndex;
 use App\Http\Livewire\Admin\Register\RegisterIndex;
+use App\Http\Livewire\Admin\Roles\CreateRol;
+use App\Http\Livewire\Admin\User\UserIndex;
 use App\Http\Livewire\Companies\ShowCompany;
 use App\Http\Livewire\Evaluation\CreateEvaluation;
 use App\Http\Livewire\Evaluation\ShowEvaluation;
@@ -43,20 +45,21 @@ Route::get('/create-evaluation/{id}', CreateEvaluation::class)->name('create-eva
 // HOME
 Route::view('/help', 'help')->name('help');
 Route::resource('/contact', ContactController::class)->names('contact');
+Route::view('/admin', 'admin')->middleware('can:Administrador')->name('admin');
 
-Route::view('/admin', 'admin')->middleware('can:admin')->name('admin');
-
-// ADMIN
-Route::get('/evaluators', EvaluatorsIndex::class)->middleware('can:admin')->name('evaluators');
-Route::get('/registerperson', RegisterIndex::class)->middleware('can:admin')->name('registerperson');
-Route::get('/administrators', AdministratorsIndex::class)->middleware('can:admin')->name('administrators');
+Route::get('/evaluators', EvaluatorsIndex::class)->middleware('can:Administrador')->name('evaluators');
+Route::get('/registerperson', RegisterIndex::class)->middleware('can:Administrador')->name('registerperson');
+Route::get('/administrators', AdministratorsIndex::class)->middleware('can:Administrador')->name('administrators');
 Route::get('/administrators/report/{id}', [PdfController::class, 'report'])->middleware('can:admin')->name('administrators.report');
+Route::get('/managers', ManagersIndex::class)->middleware('can:Administrador')->name('managers');
+Route::get('/parameter', ParameterIndex::class)->middleware('can:Administrador')->name('parameter');
+Route::get('/dangers', DangersIndex::class)->middleware('can:Administrador')->name('dangers');
+Route::get('/intervention', InterventionIndex::class)->middleware('can:Administrador')->name('intervention');
+Route::get('/deactivated', DeactivatedIndex::class)->middleware('can:Administrador')->name('deactivated');
+Route::get('/rol', CreateRol::class)->middleware('can:Administrador')->name('rol');
+Route::get('/user', UserIndex::class)->middleware('can:Administrador')->name('user.index');
 
-Route::get('/managers', ManagersIndex::class)->middleware('can:admin')->name('managers');
-Route::get('/parameter', ParameterIndex::class)->middleware('can:admin')->name('parameter');
-Route::get('/dangers', DangersIndex::class)->middleware('can:admin')->name('dangers');
-Route::get('/intervention', InterventionIndex::class)->middleware('can:admin')->name('intervention');
-Route::get('/deactivated', DeactivatedIndex::class)->middleware('can:admin')->name('deactivated');
+
 
 
 

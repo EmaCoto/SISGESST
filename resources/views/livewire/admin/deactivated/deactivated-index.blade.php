@@ -3,9 +3,9 @@
         <x-aside-admin />
 
         <x-content-admin>
-            <input wire:model="search"
-                class="w-1/2 mt-10 shadow-lg shadow-gray-500 focus:ring-blue-500 focus:bg-white  rounded-lg border-none"placeholder="Example: Walter or Example: 45740"
-                type="text" id="buscarEmp">
+            <div class="text-[#FFAD19] p-1 mt-6 mb-5 font-bold text-5xl rounded-lg w-7/12 mx-auto text-center">Empresas desactivadas</div>
+
+            <x-search-admin />
 
             <div class="grid lg:grid-cols-3 gap-8 mt-10 md:grid-cols-2 ">
                 @foreach ($companies as $company)

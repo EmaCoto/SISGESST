@@ -64,7 +64,7 @@
                                             </div>
                                         </div>
 
-                                        @can('edit.delete.procceses')
+                                        @can('Editar Procesos')
                                             <div class="flex group relative">
                                                 <span
                                                     class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">
@@ -74,6 +74,8 @@
                                                     @livewire('processes.edit-process', ['process' => $process], key(time() . $process->id))
                                                 </div>
                                             </div>
+                                        @endcan
+                                        @can('Eliminar Procesos')
                                             <div class="flex group relative">
                                                 <span
                                                     class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-6 opacity-0 absolute bg-red-600 rounded-lg px-2">
@@ -187,10 +189,12 @@
 
                 <div class="flex items-center  justify-end mb-1 mt-4">
                     <span class="font-medium">Acciones:</span>
-                    @can('edit.delete.procceses')
+                    @can('Editar Procesos')
                         <div class="flex group relative ml-4">
                             @livewire('processes.edit-process', ['process' => $process], key(time() . $process->id))
                         </div>
+                    @endcan
+                    @can('Eliminar Procesos')
                         <div class="flex group relative">
                             <div>
                                 <button wire:click="confirmDelete({{ $process->id }})" class="w-4 mr-2 transform text-red-600 hover:text-gray-400 hover:scale-110 h-full">

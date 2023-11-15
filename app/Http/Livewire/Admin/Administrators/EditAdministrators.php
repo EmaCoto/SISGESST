@@ -3,17 +3,21 @@
 namespace App\Http\Livewire\Admin\Administrators;
 
 use Livewire\Component;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class EditAdministrators extends Component
 {
     public $open = false;
-    public $user;
-    public $name;
-    public $email;
+    public $user, $name, $email, $password, $permissions;
+    public $selectedRole;
+    public $selectedPermissions = [];
+    public $roles;
 
     protected $rules = [
-        'name'        => 'required',
-        'email'       => 'required|email',
+        'name' => 'required|regex:/^[a-zA-ZáéíóúüÜÁÉÍÓÚ\s]+$/|max:255',
+        'email' => 'required|email',
+        'password' => 'sometimes|min:8'
     ];
 
     public function mount($user)
@@ -22,24 +26,45 @@ class EditAdministrators extends Component
             $this->user = $user;
             $this->name = $user->name;
             $this->email = $user->email;
+            $this->password = $user->password;
+
+            $this->roles = Role::all();
+
+            $this->permissions = Permission::all();
+
+            $this->selectedRole = $user->getRoleNames()->first();
+            $role = Role::findByName($this->selectedRole);
+            $this->selectedPermissions = $role->permissions->pluck('id')->toArray();
         }
     }
 
-    public function render()
-    {
-        return view('livewire.admin.administrators.edit-administrators');
-    }
-
-    public function updateAdministrator()
+    public function updateManager()
     {
         $this->validate();
-        $this->user->update([
+
+        $data = [
             'name' => $this->name,
             'email' => $this->email,
-        ]);
+        ];
+
+        // Verifica si se proporcionó una nueva contraseña
+        if ($this->password) {
+            $data['password'] = bcrypt($this->password);
+        }
+
+        $this->user->update($data);
+
+        $this->user->syncRoles([$this->selectedRole]);
+        $this->user->syncPermissions($this->selectedPermissions);
 
         $this->emit('render');
         $this->reset('open');
         $this->emit('alertEdit');
+    }
+
+
+        public function render()
+    {
+        return view('livewire.admin.administrators.edit-administrators');
     }
 }

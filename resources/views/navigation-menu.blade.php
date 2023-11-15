@@ -18,7 +18,7 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Empresas') }}
                     </x-nav-link>
-                    @can('administrator')
+                    @can('Administrador')
                     <x-nav-link href="{{ route('admin') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Panel administrativo') }}
                     </x-nav-link>
@@ -156,9 +156,8 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Empresas') }}
-
             </x-responsive-nav-link>
-            @can('administrator')
+            @can('Administrador')
             <x-responsive-nav-link href="{{ route('admin') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Panel administrativo') }}
             </x-responsive-nav-link>

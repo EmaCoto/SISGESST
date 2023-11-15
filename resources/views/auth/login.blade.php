@@ -1,6 +1,5 @@
 <x-guest-layout>
     <div class="min-h-screen mx-auto flex flex-col items-center bg-[#EFF0F2] p-2 sm:p-10 lg:p-0">
-        <x-validation-errors class="mb-4" />
 
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
@@ -24,7 +23,9 @@
                             <x-label for="password" value="{{ __('Contraseña') }}" />
                             <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
                         </div>
-                        <div>
+                        <x-validation-errors class="mb-4" />
+
+                        <div class="mt-4">
                             <label for="remember_me" class="flex items-center">
                                 <x-checkbox id="remember_me" name="remember" />
                                 <span class="ml-2 text-sm text-gray-600">{{ __('Recuérdame') }}</span>

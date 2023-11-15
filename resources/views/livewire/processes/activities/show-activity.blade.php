@@ -42,11 +42,14 @@
                             </td>
                             <td class="py-3 px-6 text-center">
                                 <div class="flex item-center justify-center">
-                                    @can('edit.delete.activities')
+                                    @can('Editar Actividades')
                                         <div class="flex group relative">
                                             <span class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-4 opacity-0 absolute bg-blue-600 rounded-lg px-2">Editar</span>
                                             <div>@livewire('processes.activities.edit-activity', ['activity' => $activity, 'companyId' => $companyId], key(time() . $activity->id))</div>
                                         </div>
+                                    @endcan
+
+                                    @can('Eliminar Actividades')
                                         <div class="flex group relative">
                                             <span
                                                 class="w-26 py-1 text-gray-100 group-hover:opacity-100 group-hover:bg-opacity-80 -top-8 -left-6 opacity-0 absolute bg-red-600 rounded-lg px-2">Eliminar</span>

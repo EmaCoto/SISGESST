@@ -12,7 +12,7 @@
                 <button class="px-3">Buscar</button>
             </div>
 
-            @can('create.companies')
+            @can('Crear Compañías')
                 <div class="shadow-lg shadow-gray-500 bg-green-600 col-span-2 rounded-lg flex items-center justify-center">
                     <livewire:companies.create-company />
                 </div>

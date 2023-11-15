@@ -3,6 +3,41 @@
         <x-aside-admin />
 
         <x-content-admin>
+            <form class="flex h-full items-center">
+                <div class="2xl:w-1/2 md:w-4/5 md:m-auto md:rounded-lg bg-white md:shadow-lg p-2 px-10">
+                    <div class="flex flex-col m-4">
+                        <label for="name" class="text-center text-2xl font-bold mb-5">Nombre del rol</label>
+                        <input type="text" wire:model="name" class="border-gray-300 rounded-md focus:ring-1 focus:ring-green-600 focus:border-green-600 bg-[#EEEFF1] focus:bg-white">
+                        @error('name') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                    <h1 class="text-center text-2xl font-bold mt-10 mb-5">Permisos</h1>
+                    <div>
+                        <ul class="grid grid-cols-3 text-left m-4">
+                            @foreach($this->permissionValue as $index => $permission)
+                                <li class="my-2 flex text-black items-center">
+                                    <input id="" type="checkbox" wire:model.defer="permissionValue.{{ $index }}" class="mr-1 rounded-xl focus:ring-transparent ring-0 text-teal-600 active:scale-125 duration-700 cursor-pointer w-5 h-5">
+                                    <input for="" class="text-lg bg-inherit border-none p-0 m-0 pointer-events-none" type="text" wire:model.defer="permissionName.{{ $index }}" readonly>
+                                </li>
+                            @endforeach
+                        </ul>
+                        @error('permissions') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="w-full flex justify-center">
+                        <button class="bg-green-600 rounded-lg  p-2 text-white m-4 2xl:w-1/2 w-2/3 text-xl mt-10"  wire:click='createRole' type="submit">Crear</button>
+                    </div>
+                </div>
+            </form>
+
+        </x-content-admin>
+    </main>
+</div>
+
+
+{{-- <div class="flex flex-col">
+    <main class="flex-grow flex">
+        <x-aside-admin />
+
+        <x-content-admin>
             <form wire:submit.prevent="registerUser" class="flex h-full items-center">
                 <div class="2xl:w-1/2 md:w-4/5 md:m-auto md:rounded-lg bg-white md:shadow-lg">
                     <h1 class="text-center font-bold text-4xl m-4 mb-7">¿Quiéres registrar un usuario?</h1>
@@ -53,4 +88,4 @@
 
 
     </main>
-</div>
+</div> --}}
