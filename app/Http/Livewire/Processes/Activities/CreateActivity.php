@@ -11,7 +11,7 @@ class CreateActivity extends Component
     public $open = false;
     public $selectedProcess, $companyProcessId;
     public $name, $description, $process_id;
-    public $listeners = ['process', 'selectedProcess'];
+    public $listeners = ['process','selectedProcess'];
 
     protected $rules = [
         'process_id'    => 'required',

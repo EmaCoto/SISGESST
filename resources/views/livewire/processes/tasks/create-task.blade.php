@@ -3,7 +3,6 @@
 
     <x-dialog-modal wire:model="open">
         <x-slot name="content">
-            {{$this->processes->pluck('id')}}
             <h1 class="bg-[#f5b041] p-1 mb-2 font-semibold text-2xl rounded-lg w-5/6 mx-auto text-center text-gray-100">Crear tarea</h1>
             <div class="w-4/5 mx-auto my-5">
                 <x-label>Seleccione la actividad:</x-label>

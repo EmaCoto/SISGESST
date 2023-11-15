@@ -10,6 +10,16 @@
 
     <x-dialog-modal wire:model="openDetail" maxWidth="4xl">
         <x-slot name="content">
+            <div class="flex items-center justify-between">
+                <div class="flex">
+                    <img src="{{ asset('img/logo.png') }}" alt="logo" class="w-16">
+                    <p class="my-4 text-[#FFAD19] px-3 text-3xl font-extrabold">SISGESST</p>
+                </div>
+                <div class="text-right">
+                    <h1 class="font-bold">Proteger la vida y el bienestar de los trabajadores es cultura de nuestra organización</h1>
+                    <p class="text-gray-600">Esto esta basado en la Resolución 0312 de 2019</p>
+                </div>
+            </div>
             <div id="contentEval" class="relative pr-2 h-[83vh] overflow-y-scroll">
                 @livewire('evaluation.details.detail-one', ['evaluations' => $evaluations])
                 @livewire('evaluation.details.detail-two', ['evaluations' => $evaluations])
@@ -17,11 +27,16 @@
                 @livewire('evaluation.details.detail-four', ['evaluations' => $evaluations])
                 @livewire('evaluation.details.detail-five', ['evaluations' => $evaluations])
             </div>
-            <button wire:click="$set('openDetail', false)"
-                class="mt-6 bg-gray-300 px-5 py-1 rounded-lg font-semibold text-lg text-gray-600">Cerrar</button>
-                <a href="{{ route('administrators.report', ['id' => $companyId]) }}">imprimir</a>
-                {{-- <button wire:click="report"
-                class="mt-6 bg-gray-300 px-5 py-1 rounded-lg font-semibold text-lg text-gray-600">IMPRIMIR</button> --}}
+            <div class="flex justify-between my-4">
+                <button wire:click="$set('openDetail', false)"
+                    class="mt-6 bg-gray-300 px-5 rounded-lg font-semibold text-lg text-gray-600">
+                    Cerrar
+                </button>
+                <a class="mt-6 bg-green-600 text-gray-100 px-5 py-1 rounded-lg font-semibold text-lg"
+                    href="{{ route('administrators.report', ['id' => $evaluations->id]) }}" target="_BLANK">
+                    imprimir
+                </a>
+            </div>
         </x-slot>
     </x-dialog-modal>
 </div>

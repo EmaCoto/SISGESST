@@ -79,5 +79,4 @@ class ShowActivity extends Component
             $this->emit('renderProcess');
         }
     }
-
 }

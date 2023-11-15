@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ProofController;
+use App\Http\Controllers\PdfController;
 use App\Http\Livewire\Admin\Administrators\AdministratorsIndex;
 use App\Http\Livewire\Admin\Dangers\DangersIndex;
 use App\Http\Livewire\Admin\Deactivated\DeactivatedIndex;
@@ -42,17 +42,15 @@ Route::get('/show-company/{id}', ShowCompany::class)->name('show-company');
 Route::get('/show-evaluation/{id}', ShowEvaluation::class)->name('show-evaluation');
 Route::get('/create-evaluation/{id}', CreateEvaluation::class)->name('create-evaluation');
 
-
 // HOME
 Route::view('/help', 'help')->name('help');
 Route::resource('/contact', ContactController::class)->names('contact');
 Route::view('/admin', 'admin')->middleware('can:Administrador')->name('admin');
 
-// ADMIN
 Route::get('/evaluators', EvaluatorsIndex::class)->middleware('can:Administrador')->name('evaluators');
 Route::get('/registerperson', RegisterIndex::class)->middleware('can:Administrador')->name('registerperson');
 Route::get('/administrators', AdministratorsIndex::class)->middleware('can:Administrador')->name('administrators');
-Route::get('/administrators/report/{id}', [ProofController::class, 'report'])->middleware('can:Administrador')->name('administrators.report');
+Route::get('/administrators/report/{id}', [PdfController::class, 'report'])->middleware('can:admin')->name('administrators.report');
 Route::get('/managers', ManagersIndex::class)->middleware('can:Administrador')->name('managers');
 Route::get('/parameter', ParameterIndex::class)->middleware('can:Administrador')->name('parameter');
 Route::get('/dangers', DangersIndex::class)->middleware('can:Administrador')->name('dangers');
@@ -60,6 +58,7 @@ Route::get('/intervention', InterventionIndex::class)->middleware('can:Administr
 Route::get('/deactivated', DeactivatedIndex::class)->middleware('can:Administrador')->name('deactivated');
 Route::get('/rol', CreateRol::class)->middleware('can:Administrador')->name('rol');
 Route::get('/user', UserIndex::class)->middleware('can:Administrador')->name('user.index');
+
 
 
 
