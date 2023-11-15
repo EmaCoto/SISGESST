@@ -4,10 +4,7 @@
 
         <div id="contentEval"
             class="relative px-4 py-2 lg:w-[85vw] lg:h-[93.1vh] w-[100vw] h-[100vh] overflow-y-scroll overflow-x-hidden bg-gray-200 ">
-            <div
-                class="bg-green-600 p-1 mt-6 mb-10 font-semibold text-3xl rounded-lg w-7/12 mx-auto text-center text-gray-100">
-                Criterios
-            </div>
+            <div class="text-[#FFAD19] p-1 mt-6 mb-10 font-bold text-5xl rounded-lg w-7/12 mx-auto text-center">Criterios</div>
             <div class="md:w-[78vw] mx-auto md:flex md:gap-6 my-10">
                 <div class="w-full text-center">
                     <div class="relative md:block flex justify-between bg-gray-500 rounded-t-md font-bold text-lg text-gray-100 py-2">
