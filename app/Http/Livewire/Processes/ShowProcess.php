@@ -33,8 +33,6 @@ class ShowProcess extends Component
     }
 
 
-
-
     public function processId($id, $name, $companyId)
     {
         $this->emit('processFact', [

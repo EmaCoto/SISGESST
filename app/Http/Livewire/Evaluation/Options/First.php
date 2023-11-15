@@ -26,6 +26,7 @@ class First extends Component
     {
         $this->deficiencySelected();
     }
+
     public function deficiencySelected()
     {
         $deficiencyData = DeficiencyLevel::find($this->deficiencyLevel);

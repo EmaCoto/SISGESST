@@ -12,7 +12,7 @@ use App\Models\ProbabilityLevel;
 use App\Models\RiskAcceptability;
 use Barryvdh\DomPDF\Facade\Pdf;
 
-class ProofController extends Controller
+class PdfController extends Controller
 {
     public  $evaluations;
     public function report($id)
@@ -53,12 +53,12 @@ class ProofController extends Controller
             }
         }
 
-        $pdf = Pdf::loadView('proof', compact('evaluation', 'dangerDescription', 'deficiencyLevel', 'exposureLevel', 'probabilityLevel',
+        $pdf = Pdf::loadView('create-pdf', compact('evaluation', 'dangerDescription', 'deficiencyLevel', 'exposureLevel', 'probabilityLevel',
             'consequenceLevel', 'interventionLevel', 'riskAcceptability', 'elimination', 'eliminationSuggestion', 'substitution',
             'substitutionSuggestion', 'controlEngineering', 'engineeringSuggestion', 'administrativeControls', 'administrativeSuggestion',
             'personalProtection', 'protectionSuggestion'));
 
-        return $pdf->download($evaluation->task->activity->process->company->name.'-'.$evaluation->task->name.'.pdf');
+        return $pdf->stream($evaluation->task->activity->process->company->name.'-'.$evaluation->task->name.'.pdf');
     }
 
     public function index()
@@ -99,7 +99,7 @@ class ProofController extends Controller
             }
         }
 
-        return view('proof', compact('evaluation', 'dangerDescription', 'deficiencyLevel', 'exposureLevel', 'probabilityLevel',
+        return view('create-pdf', compact('evaluation', 'dangerDescription', 'deficiencyLevel', 'exposureLevel', 'probabilityLevel',
             'consequenceLevel', 'interventionLevel', 'riskAcceptability', 'elimination', 'eliminationSuggestion', 'substitution',
             'substitutionSuggestion', 'controlEngineering', 'engineeringSuggestion', 'administrativeControls', 'administrativeSuggestion',
             'personalProtection', 'protectionSuggestion'));

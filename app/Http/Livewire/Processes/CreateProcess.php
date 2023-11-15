@@ -33,8 +33,8 @@ class CreateProcess extends Component
         ]);
 
         $this->reset(['open', 'name', 'description']);
-        $this->emit('render');
         $this->emit('selectedProcess');
+        $this->emit('render');
         $this->emit('alert');
     }
 
