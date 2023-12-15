@@ -1,4 +1,3 @@
 <div>
-            <livewire:three />
-            {{-- <livewire:four/> --}}
+    <livewire:companies.index-company />
 </div>

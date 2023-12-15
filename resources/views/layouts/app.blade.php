@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>SISGESST</title>
+        <link rel="icon" href="{{ asset('img/logo_ico.ico') }}" type="image/x-icon">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -17,10 +18,29 @@
         <!-- Styles -->
         @livewireStyles
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    </head>
-    <body class="font-sans antialiased bg-container bg-cover bg-no-repeat bg-fixed">
-        <x-banner />
+        <style>
+            #contentEval{
+                overflow-y: scroll;
+                scroll-margin: 20px;
+            }
+            #contentEval::-webkit-scrollbar{
+                background: none;
+                width: 10px;
+                right: 10px;
+            }
+            #contentEval::-webkit-scrollbar-thumb {
+                background: #50A44E;
+                border-radius: 10px;
+            }
+            #contentEval::-webkit-scrollbar-track-piece{
+                margin: 20px 0;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css ">
 
+    </head>
+     <body> {{-- class="font-sans antialiased bg-container bg-cover bg-no-repeat bg-fixed" --}}
+        <x-banner />
         <div class="min-h-screen">
             @livewire('navigation-menu')
 
@@ -45,7 +65,25 @@
         <script>
             livewire.on('alert', function(message){
                 Swal.fire(
-                    'Good job!',
+                    '¡Se ha guardado la información correctamente!',
+                    message,
+                    'success')
+            })
+            livewire.on('alertResgisterRol', function(message){
+                Swal.fire(
+                    'La información y el rol se han guardado de manera correcta.',
+                    message,
+                    'success')
+            })
+            livewire.on('alertEdit', function(message){
+                Swal.fire(
+                    'La información ha sido editada de manera adecuada.',
+                    message,
+                    'success')
+            })
+            livewire.on('alertDelete', function(message){
+                Swal.fire(
+                    'La información ha sido eliminada de forma apropiada.',
                     message,
                     'success')
             })

@@ -12,6 +12,6 @@ class ProcessSeeder extends Seeder
      */
     public function run(): void
     {
-        
+        \App\Models\Process::factory(100)->create();
     }
 }

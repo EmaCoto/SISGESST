@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,13 +13,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Process::factory(10)->create();
-        \App\Models\user::factory(1)->create();
+        $this->call([RoleSeeder::class, UserSeeder::class, ]);
 
+        $this->call([
+            ProvinceSeeder::class,
+            CitySeeder::class,
+            CompanySeeder::class,
+            ProcessSeeder::class,
+            ActivitySeeder::class,
+            TaskSeeder::class,
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+            DangerDescriptionSeeder::class,
+            DeficiencyLevelSeeder::class,
+            ExposureLevelSeeder::class,
+            ProbabilityLevelSeeder::class,
+            ConsequenceLevelSeeder::class,
+            InterventionRiskLevelSeeder::class,
+            RiskAcceptabilitySeeder::class,
+            InterventionMeasureSeeder::class,
+        ]);
     }
 }

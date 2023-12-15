@@ -1,7 +1,7 @@
-<x-app-layout>
 <div>
-    <div class="m-10">
-        <x-welcome />
-    </div>
+    <x-app-layout>
+        <div>
+            <x-welcome />
+        </div>
+    </x-app-layout>
 </div>
-</x-app-layout>

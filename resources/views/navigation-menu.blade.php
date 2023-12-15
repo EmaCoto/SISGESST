@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -12,9 +12,17 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link href="/" :active="request()->routeIs('dashboard')">
+                        {{ __('Inicio') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Empresas') }}
+                    </x-nav-link>
+                    @can('Administrador')
+                    <x-nav-link href="{{ route('admin') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Panel administrativo') }}
+                    </x-nav-link>
+                    @endcan
                 </div>
             </div>
 
@@ -81,8 +89,12 @@
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
-                                        {{ Auth::user()->name }}
+                                    <button type="button" class="inline-flex items-center text-left px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                                        <div class="flex flex-col text-black mr-4">
+                                            {{ Auth::user()->name }}
+                                            <p class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</p>
+                                        </div>
+
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -139,27 +151,22 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-responsive-nav-link href="/" :active="request()->routeIs('dashboard')">
+                {{ __('Inicio') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                {{ __('Empresas') }}
+            </x-responsive-nav-link>
+            @can('Administrador')
+            <x-responsive-nav-link href="{{ route('admin') }}" :active="request()->routeIs('dashboard')">
+                {{ __('Panel administrativo') }}
+            </x-responsive-nav-link>
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="flex items-center px-4">
-                @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                    <div class="shrink-0 mr-3">
-                        <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                    </div>
-                @endif
-
-                <div>
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-                </div>
-            </div>
-
-            <div class="mt-3 space-y-1">
+            <div class="space-y-1">
                 <!-- Account Management -->
                 <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
@@ -213,6 +220,68 @@
                         @endforeach
                     @endif
                 @endif
+            </div>
+            <div class="px-3 h-[54vh] overflow-y-auto">
+                <ul class="space-y-1 font-medium">
+                    <div class="flex justify-center items-center text-gray-300 text-sm">
+                        <h1 class="mr-4">Usuarios</h1>
+                        <hr class="w-full items-center">
+                    </div>
+                    <li>
+                        <a href="{{ route('registerperson') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-arrow-right-to-bracket group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Registrar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('evaluators') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-regular fa-id-card group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Evaluadores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('administrators') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-user-tie group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Administradores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('managers') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-clipboard-list group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Gestores de empresas</span>
+                        </a>
+                    </li>
+                    <hr class="w-full items-center">
+                    <li>
+                        <a href="{{ route('parameter') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-list-check group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Criterios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('dangers') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-triangle-exclamation group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Peligros</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('intervention') }}" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-scale-balanced group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Medidas de intervención</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                            <i class="fa-solid fa-building-circle-xmark group-hover:text-white"></i>
+                            <span class="group-hover:text-white ml-3">Empresas desactivadas</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="2xl:w-64 lg:w-56 flex justify-end p-5 text-xl">
+                    <a href="{{ route('admin') }}" class="px-2 text-gray-900 rounded-lg group hover:bg-black hover:bg-opacity-50">
+                        <i class="fa-solid fa-house group-hover:text-white"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

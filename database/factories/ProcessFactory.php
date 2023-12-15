@@ -17,8 +17,12 @@ class ProcessFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->sentence(),
-            'description' =>$this->faker->text()
+            'name' => $this->faker->sentence,
+            'description' => $this->faker->paragraph,
+            'status' => 'sin evaluar',
+            'company_id' => function () {
+                return \App\Models\Company::take(10)->get()->random()->id;
+            },
         ];
     }
 }
